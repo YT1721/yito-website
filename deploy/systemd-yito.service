@@ -1,0 +1,17 @@
+[Unit]
+Description=YITO Next.js Website
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/var/www/yito
+Environment=NODE_ENV=production
+EnvironmentFile=/var/www/yito/.env.production
+ExecStart=/usr/bin/npm run start
+Restart=always
+RestartSec=5
+User=www-data
+Group=www-data
+
+[Install]
+WantedBy=multi-user.target

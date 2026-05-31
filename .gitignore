@@ -1,0 +1,13 @@
+.next
+node_modules
+.npm-cache
+backups
+deploy/dist
+content/site.backup.json
+content/site.tmp.json
+.env
+.env.local
+.env.production
+.env*.local
+*.log
+.DS_Store

@@ -1,0 +1,242 @@
+{
+  "hero": {
+    "no": "01",
+    "title": "AI-NATIVE COMMERCIAL VISUAL STUDIO",
+    "subtitle": "AI 原生商业视觉工作室",
+    "primaryCta": "查看案例",
+    "secondaryCta": "联系合作",
+    "visual": "canyon",
+    "visualLabel": "YITO VISUAL STUDIO"
+  },
+  "about": {
+    "no": "02",
+    "title": "ABOUT YITO",
+    "subtitle": "关于 YITO",
+    "body": "YITO 是一家 AI 原生商业视觉工作室。我们结合 AI 生成技术、电影化视觉语言与商业品牌策略，为品牌提供高效、高质感的新一代视觉内容解决方案。",
+    "capabilities": ["AI 原生", "高效交付", "电影级质感", "商业策略驱动"],
+    "statement": "AI 不只是工具，而是下一代内容生产方式。",
+    "visual": "portrait",
+    "visualLabel": "CONTENT PIPELINE"
+  },
+  "services": {
+    "no": "03",
+    "title": "OUR SERVICES",
+    "subtitle": "我们的服务",
+    "microCopy": "用 AI 创造价值，而非制造廉价视觉噪音。",
+    "items": [
+      {
+        "title": "AI品牌广告片",
+        "en": "TVC / Brand Film",
+        "icon": "clapperboard",
+        "visual": "service-a"
+      },
+      {
+        "title": "企业宣传片",
+        "en": "Corporate Film",
+        "icon": "film",
+        "visual": "service-b"
+      },
+      {
+        "title": "电影感商业视觉",
+        "en": "Cinematic Visual",
+        "icon": "sparkles",
+        "visual": "service-c"
+      },
+      {
+        "title": "AI概念设计",
+        "en": "Concept Design",
+        "icon": "pen",
+        "visual": "service-d"
+      },
+      {
+        "title": "社媒内容视觉",
+        "en": "Social Content",
+        "icon": "boxes",
+        "visual": "service-e"
+      }
+    ]
+  },
+  "selectedWorks": {
+    "no": "04",
+    "title": "SELECTED WORKS",
+    "subtitle": "精选案例",
+    "intro": "我们为企业品牌、消费品牌与科技公司提供商业级视觉内容与品牌影像设计。",
+    "linkText": "探索更多案例",
+    "items": [
+      {
+        "title": "汽车广告片",
+        "en": "TVC",
+        "visual": "work-car",
+        "caseSlug": "ev-launch-film"
+      },
+      {
+        "title": "科技品牌",
+        "en": "Tech",
+        "visual": "work-tech",
+        "caseSlug": "tech-brand-film"
+      },
+      {
+        "title": "酒类品牌",
+        "en": "Alcohol",
+        "visual": "work-bottle",
+        "caseSlug": "premium-liquor-film"
+      },
+      {
+        "title": "医疗科技",
+        "en": "Healthcare",
+        "visual": "work-city",
+        "caseSlug": "tech-brand-film"
+      },
+      {
+        "title": "文化教育",
+        "en": "Culture",
+        "visual": "work-culture",
+        "caseSlug": "ai-concept-visual"
+      }
+    ]
+  },
+  "caseStudies": [
+    {
+      "no": "05",
+      "slug": "ev-launch-film",
+      "title": "汽车品牌广告片",
+      "en": "TVC / AI Commercial",
+      "summary": "面向新能源车发布场景的 AI 品牌广告片，用电影化光影、未来城市氛围和产品运动镜头强化品牌科技感。",
+      "description": "YITO 从品牌调性、产品卖点和发布场景出发，建立视觉关键词、镜头节奏与 AI 生成工作流。项目重点解决前期视觉探索成本高、拍摄周期长的问题，并为官网、发布会与社媒提供多尺寸内容资产。",
+      "industry": "汽车 / 新能源",
+      "tags": ["AI广告片", "汽车", "发布视觉", "电影感"],
+      "meta": [
+        "项目类型  品牌广告片",
+        "时长  30s",
+        "核心目标  提升品牌科技感与未来感"
+      ],
+      "visual": "case-car",
+      "thumbs": [
+        { "visual": "car-a" },
+        { "visual": "car-b" },
+        { "visual": "car-c" },
+        { "visual": "car-d" },
+        { "visual": "car-e" }
+      ]
+    },
+    {
+      "no": "06",
+      "slug": "tech-brand-film",
+      "title": "科技品牌宣传片",
+      "en": "Corporate Film",
+      "summary": "为科技公司构建品牌宣传短片，用抽象空间、产品隐喻和商业叙事表达创新能力。",
+      "description": "项目以企业愿景和技术能力为核心，将复杂的产品价值转译为更易传播的视觉叙事。AI 生成用于快速探索场景、材质和镜头方向，后期制作统一节奏、调色和品牌语气。",
+      "industry": "科技 / 企业服务",
+      "tags": ["企业宣传片", "科技", "品牌叙事", "AI视觉"],
+      "meta": [
+        "项目类型  企业宣传片",
+        "时长  90s",
+        "核心目标  传递品牌创新与技术实力"
+      ],
+      "visual": "case-tech",
+      "thumbs": [
+        { "visual": "tech-a" },
+        { "visual": "tech-b" },
+        { "visual": "tech-c" },
+        { "visual": "tech-d" },
+        { "visual": "tech-e" }
+      ]
+    },
+    {
+      "no": "07",
+      "slug": "premium-liquor-film",
+      "title": "高端酒类品牌片",
+      "en": "Brand Film",
+      "summary": "为高端酒类品牌打造东方审美视觉资产，强调器物质感、暗调光影和礼赠场景。",
+      "description": "YITO 以品牌历史、包装质感和消费场景为基础，设计可延展的影像语言。项目输出适用于品牌片、详情页、招商资料和社媒传播的静帧与短片素材。",
+      "industry": "消费品 / 酒类",
+      "tags": ["品牌片", "酒类", "东方审美", "商业静帧"],
+      "meta": [
+        "项目类型  品牌广告片",
+        "时长  45s",
+        "核心目标  塑造品质感与东方审美"
+      ],
+      "visual": "case-bottle",
+      "thumbs": [
+        { "visual": "bottle-a" },
+        { "visual": "bottle-b" },
+        { "visual": "bottle-c" },
+        { "visual": "bottle-d" },
+        { "visual": "bottle-e" }
+      ]
+    },
+    {
+      "no": "08",
+      "slug": "ai-concept-visual",
+      "title": "AI 概念视觉设计",
+      "en": "Concept Design",
+      "summary": "用于新品提案和品牌视觉探索的 AI 概念视觉，帮助团队快速确认方向。",
+      "description": "在正式制作前，通过 AI 快速生成不同世界观、空间、材质和镜头方案，降低试错成本。最终可沉淀为 KV、分镜、空间概念或后续商业短片的视觉基准。",
+      "industry": "品牌 / 概念设计",
+      "tags": ["概念视觉", "新品提案", "AI生成", "视觉方向"],
+      "meta": [
+        "项目类型  概念视觉",
+        "适用场景  产品发布 / 品牌视觉",
+        "核心目标  探索未来视觉可能性"
+      ],
+      "visual": "case-concept",
+      "thumbs": [
+        { "visual": "concept-a" },
+        { "visual": "concept-b" },
+        { "visual": "concept-c" },
+        { "visual": "concept-d" },
+        { "visual": "concept-e" }
+      ]
+    }
+  ],
+  "process": {
+    "no": "10",
+    "title": "OUR PROCESS",
+    "subtitle": "工作流程",
+    "steps": [
+      { "title": "需求沟通", "detail": "了解目标与预算" },
+      { "title": "创意策划", "detail": "脚本与视觉方向" },
+      { "title": "分镜设计", "detail": "AI 分镜与画面规划" },
+      { "title": "AI视觉生成", "detail": "画面生成与风格统一" },
+      { "title": "后期制作", "detail": "剪辑 / 调色 / 配乐" },
+      { "title": "交付上线", "detail": "资产交付与优化" }
+    ]
+  },
+  "why": {
+    "no": "11",
+    "title": "WHY CHOOSE YITO",
+    "subtitle": "为什么选择我们",
+    "items": [
+      {
+        "title": "更低成本",
+        "text": "AI 提升视觉探索效率，降低 50-70% 前期成本。",
+        "icon": "gauge"
+      },
+      {
+        "title": "更快交付",
+        "text": "精选流程模板，最快 3-5 天完成首版方向。",
+        "icon": "badge"
+      },
+      {
+        "title": "电影级质感",
+        "text": "用镜头语言、光影与节奏提升商业说服力。",
+        "icon": "clapperboard"
+      },
+      {
+        "title": "灵活可控",
+        "text": "快速迭代，支持多版本、多渠道内容资产。",
+        "icon": "wand"
+      }
+    ]
+  },
+  "contact": {
+    "no": "12",
+    "title": "CONTACT US",
+    "subtitle": "联系我们",
+    "wechat": "yito-visual",
+    "email": "hello@yito.visual",
+    "xiaohongshu": "YITO Visual",
+    "visual": "contact",
+    "visualLabel": "START A PROJECT"
+  }
+}
