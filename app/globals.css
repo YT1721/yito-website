@@ -599,10 +599,7 @@ a {
 }
 
 .has-image {
-  background-image: var(--visual-image);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: var(--visual-image) center / cover no-repeat #0a0c0a;
 }
 
 .admin-shell {
