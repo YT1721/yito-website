@@ -79,7 +79,7 @@ export default function Home() {
         >
           <motion.div variants={fadeUp} className="brand-lockup">
             <Image
-              src="/yito-logo-white.png"
+              src="/yito-logo-white-v2.png"
               alt="YITO visual logo"
               width={88}
               height={88}
@@ -318,7 +318,7 @@ function FloatingNav() {
     <header className="floating-nav">
       <a href="#hero" aria-label="YITO home">
         <Image
-          src="/yito-logo-white.png"
+          src="/yito-logo-white-v2.png"
           alt="YITO visual logo"
           width={34}
           height={34}

@@ -146,7 +146,7 @@ function DetailNav() {
     <header className="detail-nav">
       <Link href="/" className="detail-logo" aria-label="YITO home">
         <Image
-          src="/yito-logo-white.png"
+          src="/yito-logo-white-v2.png"
           alt="YITO visual logo"
           width={42}
           height={42}

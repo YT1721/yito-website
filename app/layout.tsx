@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/yito-logo-white.png",
+        url: "/yito-logo-white-v2.png",
         width: 136,
         height: 128,
         alt: "YITO visual logo",
@@ -43,11 +43,11 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "YITO | AI-Native Commercial Visual Studio",
     description: "用 AI 技术，为品牌低成本制作电影级商业视觉内容。",
-    images: ["/yito-logo-white.png"],
+    images: ["/yito-logo-white-v2.png"],
   },
   icons: {
-    icon: "/yito-logo-white.png",
-    apple: "/yito-logo-white.png",
+    icon: "/yito-logo-white-v2.png",
+    apple: "/yito-logo-white-v2.png",
   },
   alternates: {
     canonical: siteUrl,

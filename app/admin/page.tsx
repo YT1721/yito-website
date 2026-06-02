@@ -117,7 +117,7 @@ export default function AdminPage() {
       <aside className="admin-sidebar">
         <Link href="/" className="admin-brand">
           <Image
-            src="/yito-logo-white.png"
+            src="/yito-logo-white-v2.png"
             alt="YITO visual logo"
             width={42}
             height={42}

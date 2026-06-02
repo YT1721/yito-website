@@ -40,7 +40,7 @@ export async function generateMetadata({
       locale: "zh_CN",
       images: [
         {
-          url: work.image || "/yito-logo-white.png",
+          url: work.image || "/yito-logo-white-v2.png",
           width: 1200,
           height: 630,
           alt: work.title,
@@ -51,7 +51,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: `${work.title} | YITO`,
       description: work.summary,
-      images: [work.image || "/yito-logo-white.png"],
+      images: [work.image || "/yito-logo-white-v2.png"],
     },
   };
 }

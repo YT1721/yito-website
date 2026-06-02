@@ -191,4 +191,4 @@ deploy/WORKBENCH_DEPLOY_GUIDE.md
 
 ## 品牌资产
 
-LOGO 已放置在 `public/yito-logo-white.png`，页面导航和后台会直接引用该文件。
+LOGO 已放置在 `public/yito-logo-white-v2.png`，页面导航和后台会直接引用该文件。
