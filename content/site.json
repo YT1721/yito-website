@@ -6,7 +6,8 @@
     "primaryCta": "查看案例",
     "secondaryCta": "联系合作",
     "visual": "canyon",
-    "visualLabel": "YITO VISUAL STUDIO"
+    "visualLabel": "YITO VISUAL STUDIO",
+    "image": "/uploads/1780420827007-f335067a-5c47-4980-85c9-a0bbc925a049-jimeng-2026-05-15-3771-1-ppt-ai-native-comm.png"
   },
   "about": {
     "no": "02",
@@ -112,11 +113,21 @@
       ],
       "visual": "case-car",
       "thumbs": [
-        { "visual": "car-a" },
-        { "visual": "car-b" },
-        { "visual": "car-c" },
-        { "visual": "car-d" },
-        { "visual": "car-e" }
+        {
+          "visual": "car-a"
+        },
+        {
+          "visual": "car-b"
+        },
+        {
+          "visual": "car-c"
+        },
+        {
+          "visual": "car-d"
+        },
+        {
+          "visual": "car-e"
+        }
       ]
     },
     {
@@ -135,11 +146,21 @@
       ],
       "visual": "case-tech",
       "thumbs": [
-        { "visual": "tech-a" },
-        { "visual": "tech-b" },
-        { "visual": "tech-c" },
-        { "visual": "tech-d" },
-        { "visual": "tech-e" }
+        {
+          "visual": "tech-a"
+        },
+        {
+          "visual": "tech-b"
+        },
+        {
+          "visual": "tech-c"
+        },
+        {
+          "visual": "tech-d"
+        },
+        {
+          "visual": "tech-e"
+        }
       ]
     },
     {
@@ -158,11 +179,21 @@
       ],
       "visual": "case-bottle",
       "thumbs": [
-        { "visual": "bottle-a" },
-        { "visual": "bottle-b" },
-        { "visual": "bottle-c" },
-        { "visual": "bottle-d" },
-        { "visual": "bottle-e" }
+        {
+          "visual": "bottle-a"
+        },
+        {
+          "visual": "bottle-b"
+        },
+        {
+          "visual": "bottle-c"
+        },
+        {
+          "visual": "bottle-d"
+        },
+        {
+          "visual": "bottle-e"
+        }
       ]
     },
     {
@@ -181,11 +212,21 @@
       ],
       "visual": "case-concept",
       "thumbs": [
-        { "visual": "concept-a" },
-        { "visual": "concept-b" },
-        { "visual": "concept-c" },
-        { "visual": "concept-d" },
-        { "visual": "concept-e" }
+        {
+          "visual": "concept-a"
+        },
+        {
+          "visual": "concept-b"
+        },
+        {
+          "visual": "concept-c"
+        },
+        {
+          "visual": "concept-d"
+        },
+        {
+          "visual": "concept-e"
+        }
       ]
     }
   ],
@@ -194,12 +235,30 @@
     "title": "OUR PROCESS",
     "subtitle": "工作流程",
     "steps": [
-      { "title": "需求沟通", "detail": "了解目标与预算" },
-      { "title": "创意策划", "detail": "脚本与视觉方向" },
-      { "title": "分镜设计", "detail": "AI 分镜与画面规划" },
-      { "title": "AI视觉生成", "detail": "画面生成与风格统一" },
-      { "title": "后期制作", "detail": "剪辑 / 调色 / 配乐" },
-      { "title": "交付上线", "detail": "资产交付与优化" }
+      {
+        "title": "需求沟通",
+        "detail": "了解目标与预算"
+      },
+      {
+        "title": "创意策划",
+        "detail": "脚本与视觉方向"
+      },
+      {
+        "title": "分镜设计",
+        "detail": "AI 分镜与画面规划"
+      },
+      {
+        "title": "AI视觉生成",
+        "detail": "画面生成与风格统一"
+      },
+      {
+        "title": "后期制作",
+        "detail": "剪辑 / 调色 / 配乐"
+      },
+      {
+        "title": "交付上线",
+        "detail": "资产交付与优化"
+      }
     ]
   },
   "why": {

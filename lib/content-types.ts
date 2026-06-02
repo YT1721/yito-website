@@ -9,7 +9,7 @@ export type IconName =
   | "wand";
 
 export type VisualBlock = {
-  visual: string;
+  visual?: string;
   image?: string;
 };
 
@@ -19,7 +19,7 @@ export type HeroContent = {
   subtitle: string;
   primaryCta: string;
   secondaryCta: string;
-  visual: string;
+  visual?: string;
   image?: string;
   visualLabel: string;
 };
@@ -31,7 +31,7 @@ export type AboutContent = {
   body: string;
   capabilities: string[];
   statement: string;
-  visual: string;
+  visual?: string;
   image?: string;
   visualLabel: string;
 };
@@ -97,7 +97,7 @@ export type ContactContent = {
   wechat: string;
   email: string;
   xiaohongshu: string;
-  visual: string;
+  visual?: string;
   image?: string;
   visualLabel: string;
 };

@@ -567,40 +567,17 @@ a {
   position: relative;
   min-height: 100%;
   overflow: hidden;
-  border-left: 1px solid rgba(244, 244, 239, 0.12);
   background:
-    linear-gradient(
-      90deg,
-      rgba(3, 4, 3, 0.28),
-      transparent 34%,
-      rgba(3, 4, 3, 0.46)
+    radial-gradient(
+      ellipse at 20% 20%,
+      rgba(139, 207, 74, 0.15),
+      transparent 45%
     ),
-    #111;
+    linear-gradient(135deg, #0a0c0a 0%, #1a1c1a 50%, #0a0c0a 100%);
   transition:
     transform 320ms ease,
     border-color 320ms ease,
     filter 320ms ease;
-}
-
-.cinematic-visual::before,
-.card-visual::before,
-.selected-visual::before,
-.thumb::before {
-  position: absolute;
-  inset: 0;
-  content: "";
-}
-
-.cinematic-visual::after,
-.card-visual::after,
-.selected-visual::after,
-.thumb::after {
-  position: absolute;
-  inset: 0;
-  content: "";
-  background:
-    linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.48) 100%),
-    linear-gradient(120deg, rgba(255, 255, 255, 0.18), transparent 25%);
 }
 
 .card-visual,
@@ -608,228 +585,24 @@ a {
 .thumb {
   position: relative;
   overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 20% 20%,
+      rgba(139, 207, 74, 0.12),
+      transparent 40%
+    ),
+    linear-gradient(135deg, #0a0c0a 0%, #1a1c1a 50%, #0a0c0a 100%);
   transition:
     transform 320ms ease,
     border-color 320ms ease,
     filter 320ms ease;
 }
 
-.visual-label {
-  position: absolute;
-  left: 1rem;
-  bottom: 0.8rem;
-  z-index: 2;
-  color: rgba(244, 244, 239, 0.54);
-  font-size: 0.68rem;
-  text-transform: uppercase;
-}
-
-.human-scale {
-  position: absolute;
-  left: 51%;
-  bottom: 11%;
-  z-index: 2;
-  width: 0.5rem;
-  height: 3.2rem;
-  border-radius: 999px 999px 0 0;
-  background: #020302;
-  box-shadow: 0 0 0 1px rgba(244, 244, 239, 0.28);
-}
-
-.human-scale::before {
-  position: absolute;
-  top: -0.44rem;
-  left: 50%;
-  width: 0.62rem;
-  height: 0.62rem;
-  border-radius: 999px;
-  content: "";
-  background: #020302;
-  transform: translateX(-50%);
-}
-
-.frame-line {
-  position: absolute;
-  z-index: 1;
-  background: rgba(244, 244, 239, 0.12);
-}
-
-.frame-line-a {
-  left: 8%;
-  right: 8%;
-  bottom: 17%;
-  height: 1px;
-}
-
-.frame-line-b {
-  top: 12%;
-  bottom: 12%;
-  left: 54%;
-  width: 1px;
-}
-
-.canyon {
-  background:
-    radial-gradient(
-      ellipse at 58% 20%,
-      rgba(255, 255, 255, 0.78),
-      transparent 7rem
-    ),
-    linear-gradient(
-      98deg,
-      #030403 0 20%,
-      #181a17 34%,
-      #f4f4ef 49%,
-      #111411 61%,
-      #020302 100%
-    );
-}
-
-.canyon::before {
-  background:
-    linear-gradient(110deg, #030403 0 28%, transparent 38%),
-    linear-gradient(72deg, transparent 44%, #090a09 58%, #020302 100%);
-  clip-path: polygon(
-    0 0,
-    48% 0,
-    34% 100%,
-    0 100%,
-    0 0,
-    100% 0,
-    100% 100%,
-    67% 100%,
-    55% 0
-  );
-}
-
-.portrait {
-  background:
-    radial-gradient(
-      circle at 66% 52%,
-      rgba(139, 207, 74, 0.45),
-      transparent 2.8rem
-    ),
-    radial-gradient(circle at 54% 43%, #262722, #020302 38rem);
-}
-
-.portrait::before {
-  background:
-    linear-gradient(
-      90deg,
-      transparent 0 33%,
-      rgba(244, 244, 239, 0.13) 34% 50%,
-      transparent 52%
-    ),
-    radial-gradient(
-      ellipse at 42% 46%,
-      transparent 0 10rem,
-      rgba(3, 4, 3, 0.92) 10.2rem
-    );
-  clip-path: polygon(30% 0, 100% 0, 100% 100%, 45% 100%, 58% 62%, 50% 24%);
-}
-
-.case-car,
-.work-car,
-.service-a,
-.car-a,
-.car-b,
-.car-c,
-.car-d,
-.car-e {
-  background: linear-gradient(
-    135deg,
-    #050707,
-    #132733 42%,
-    #8fb3c0 48%,
-    #080a09 70%
-  );
-}
-
-.case-tech,
-.work-tech,
-.service-b,
-.tech-a,
-.tech-b,
-.tech-c,
-.tech-d,
-.tech-e {
-  background:
-    radial-gradient(circle at 62% 35%, #9ab7c7, transparent 4rem),
-    linear-gradient(135deg, #050707, #25313a 48%, #0a0d0f);
-}
-
-.case-bottle,
-.work-bottle,
-.service-c,
-.bottle-a,
-.bottle-b,
-.bottle-c,
-.bottle-d,
-.bottle-e {
-  background:
-    radial-gradient(circle at 56% 45%, #f0a65f, transparent 3.6rem),
-    linear-gradient(135deg, #080604, #3b2516 50%, #050403);
-}
-
-.case-concept,
-.service-d,
-.concept-a,
-.concept-b,
-.concept-c,
-.concept-d,
-.concept-e {
-  background:
-    radial-gradient(circle at 50% 38%, #d5dad2, transparent 4rem),
-    linear-gradient(135deg, #050605, #333a35 47%, #070807);
-}
-
-.work-city,
-.service-e {
-  background: linear-gradient(135deg, #050605, #5f6259 50%, #12130f);
-}
-
-.work-culture {
-  background: linear-gradient(135deg, #0a0805, #5f4632 46%, #15110c);
-}
-
-.contact {
-  background:
-    radial-gradient(
-      ellipse at 72% 42%,
-      rgba(244, 244, 239, 0.58),
-      transparent 7rem
-    ),
-    linear-gradient(
-      115deg,
-      #030403,
-      #1b1d1a 48%,
-      #f4f4ef 51%,
-      #090a09 62%,
-      #030403
-    );
-}
-
 .has-image {
-  background-image:
-    linear-gradient(
-      90deg,
-      rgba(3, 4, 3, 0.24),
-      transparent 38%,
-      rgba(3, 4, 3, 0.6)
-    ),
-    var(--visual-image) !important;
+  background-image: var(--visual-image);
   background-position: center;
   background-size: cover;
-}
-
-.card-visual.has-image,
-.selected-visual.has-image,
-.thumb.has-image {
-  background-image:
-    linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.38) 100%),
-    var(--visual-image) !important;
-  background-position: center;
-  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .admin-shell {

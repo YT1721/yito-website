@@ -21,25 +21,6 @@ const iconOptions: IconName[] = [
   "badge",
   "wand",
 ];
-const visualOptions = [
-  "canyon",
-  "portrait",
-  "contact",
-  "service-a",
-  "service-b",
-  "service-c",
-  "service-d",
-  "service-e",
-  "work-car",
-  "work-tech",
-  "work-bottle",
-  "work-city",
-  "work-culture",
-  "case-car",
-  "case-tech",
-  "case-bottle",
-  "case-concept",
-];
 
 export default function AdminPage() {
   const [content, setContent] = useState<SiteContent>(
@@ -199,6 +180,7 @@ export default function AdminPage() {
             </Grid>
             <VisualEditor
               block={content.hero}
+              recommendedSize="推荐尺寸：1600×1200（竖向或横幅）"
               onChange={(patch) => update((d) => Object.assign(d.hero, patch))}
             />
           </Panel>
@@ -258,6 +240,7 @@ export default function AdminPage() {
             />
             <VisualEditor
               block={content.about}
+              recommendedSize="推荐尺寸：1600×1200"
               onChange={(patch) => update((d) => Object.assign(d.about, patch))}
             />
           </Panel>
@@ -335,6 +318,7 @@ export default function AdminPage() {
                   />
                   <VisualEditor
                     block={item}
+                    recommendedSize="推荐尺寸：1200×800"
                     onChange={(patch) =>
                       update((d) =>
                         Object.assign(d.services.items[index], patch),
@@ -350,7 +334,6 @@ export default function AdminPage() {
                       title: "新服务",
                       en: "Service",
                       icon: "sparkles",
-                      visual: "service-a",
                     }),
                   )
                 }
@@ -443,6 +426,7 @@ export default function AdminPage() {
                   />
                   <VisualEditor
                     block={item}
+                    recommendedSize="推荐尺寸：1600×1200"
                     onChange={(patch) =>
                       update((d) =>
                         Object.assign(d.selectedWorks.items[index], patch),
@@ -457,7 +441,6 @@ export default function AdminPage() {
                     d.selectedWorks.items.push({
                       title: "新案例",
                       en: "Case",
-                      visual: "work-car",
                       caseSlug: d.caseStudies[0]?.slug,
                     }),
                   )
@@ -600,6 +583,7 @@ export default function AdminPage() {
                   />
                   <VisualEditor
                     block={item}
+                    recommendedSize="推荐尺寸：1600×1200"
                     onChange={(patch) =>
                       update((d) =>
                         Object.assign(d.caseStudies[caseIndex], patch),
@@ -616,6 +600,7 @@ export default function AdminPage() {
                         <VisualEditor
                           block={thumb}
                           compact
+                          recommendedSize="推荐尺寸：800×600"
                           onChange={(patch) =>
                             update((d) =>
                               Object.assign(
@@ -641,11 +626,7 @@ export default function AdminPage() {
                     ))}
                     <AddButton
                       onClick={() =>
-                        update((d) =>
-                          d.caseStudies[caseIndex].thumbs.push({
-                            visual: "case-car",
-                          }),
-                        )
+                        update((d) => d.caseStudies[caseIndex].thumbs.push({}))
                       }
                     >
                       添加缩略图
@@ -667,8 +648,7 @@ export default function AdminPage() {
                       industry: "行业",
                       tags: ["AI视觉"],
                       meta: ["项目类型  商业视觉"],
-                      visual: "case-car",
-                      thumbs: [{ visual: "car-a" }, { visual: "car-b" }],
+                      thumbs: [{}, {}],
                     }),
                   )
                 }
@@ -867,6 +847,7 @@ export default function AdminPage() {
             />
             <VisualEditor
               block={content.contact}
+              recommendedSize="推荐尺寸：1600×1200"
               onChange={(patch) =>
                 update((d) => Object.assign(d.contact, patch))
               }
@@ -970,14 +951,17 @@ function SelectField({
   onChange,
 }: {
   label: string;
-  value: string;
+  value: string | undefined;
   options: string[];
   onChange: (value: string) => void;
 }) {
   return (
     <label className="admin-field">
       <span>{label}</span>
-      <select value={value} onChange={(event) => onChange(event.target.value)}>
+      <select
+        value={value ?? ""}
+        onChange={(event) => onChange(event.target.value)}
+      >
         {options.map((option) => (
           <option key={option} value={option}>
             {option}
@@ -1025,10 +1009,12 @@ function SectionFields({
 function VisualEditor({
   block,
   compact,
+  recommendedSize,
   onChange,
 }: {
   block: VisualBlock;
   compact?: boolean;
+  recommendedSize?: string;
   onChange: (patch: Partial<VisualBlock>) => void;
 }) {
   async function upload(event: ChangeEvent<HTMLInputElement>) {
@@ -1047,19 +1033,13 @@ function VisualEditor({
 
   return (
     <div className={compact ? "visual-editor is-compact" : "visual-editor"}>
-      <SelectField
-        label="备用视觉风格"
-        value={block.visual}
-        options={visualOptions}
-        onChange={(value) => onChange({ visual: value })}
-      />
       <Field
         label="图片 URL"
         value={block.image ?? ""}
         onChange={(value) => onChange({ image: value || undefined })}
       />
       <label className="upload-field">
-        <span>上传图片</span>
+        <span>上传图片 {recommendedSize ? `· ${recommendedSize}` : ""}</span>
         <input type="file" accept="image/*" onChange={upload} />
       </label>
       {block.image ? (

@@ -96,10 +96,7 @@ export default function Home() {
             <a href="#contact">{content.hero.secondaryCta}</a>
           </motion.div>
         </motion.div>
-        <CinematicVisual
-          block={content.hero}
-          label={content.hero.visualLabel}
-        />
+        <CinematicVisual block={content.hero} />
       </Chapter>
 
       <Chapter
@@ -121,10 +118,7 @@ export default function Home() {
           </div>
           <p className="statement">{content.about.statement}</p>
         </div>
-        <CinematicVisual
-          block={content.about}
-          label={content.about.visualLabel}
-        />
+        <CinematicVisual block={content.about} />
       </Chapter>
 
       <Chapter
@@ -216,7 +210,7 @@ export default function Home() {
             className="case-visual-link"
             aria-label={`查看${item.title}详情`}
           >
-            <CinematicVisual block={item} label={item.en} />
+            <CinematicVisual block={item} />
           </Link>
           <div className="thumb-row">
             {item.thumbs.map((thumb, index) => (
@@ -304,10 +298,7 @@ export default function Home() {
             小红书 {content.contact.xiaohongshu}
           </a>
         </div>
-        <CinematicVisual
-          block={content.contact}
-          label={content.contact.visualLabel}
-        />
+        <CinematicVisual block={content.contact} />
       </Chapter>
     </main>
   );
@@ -388,23 +379,12 @@ function Chapter({
   );
 }
 
-function CinematicVisual({
-  block,
-  label,
-}: {
-  block: VisualBlock;
-  label: string;
-}) {
+function CinematicVisual({ block }: { block: VisualBlock }) {
   return (
     <div
-      className={`cinematic-visual ${block.visual} ${block.image ? "has-image" : ""}`}
+      className={`cinematic-visual ${block.image ? "has-image" : ""}`}
       style={visualStyle(block.image)}
-    >
-      <span className="visual-label">{label}</span>
-      <span className="human-scale" />
-      <span className="frame-line frame-line-a" />
-      <span className="frame-line frame-line-b" />
-    </div>
+    />
   );
 }
 
@@ -417,7 +397,7 @@ function VisualSurface({
 }) {
   return (
     <div
-      className={`${className} ${block.visual} ${block.image ? "has-image" : ""}`}
+      className={`${className} ${block.image ? "has-image" : ""}`}
       style={visualStyle(block.image)}
     />
   );
