@@ -79,6 +79,27 @@ export type CaseStudy = VisualBlock & {
   thumbs: VisualBlock[];
 };
 
+export type SocialCard = VisualBlock & {
+  title: string;
+  en: string;
+  platform: string;
+};
+
+export type SocialMetric = {
+  label: string;
+  value: string;
+};
+
+export type SocialContentSection = {
+  no: string;
+  title: string;
+  subtitle: string;
+  intro: string;
+  platform: string;
+  cards: SocialCard[];
+  metrics: SocialMetric[];
+};
+
 export type ProcessStep = {
   title: string;
   detail: string;
@@ -108,6 +129,7 @@ export type SiteContent = {
   services: ServiceSection;
   selectedWorks: WorkSection;
   caseStudies: CaseStudy[];
+  socialContent: SocialContentSection;
   process: {
     no: string;
     title: string;

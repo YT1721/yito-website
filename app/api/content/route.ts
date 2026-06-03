@@ -2,7 +2,10 @@ import { NextResponse } from "next/server";
 import { copyFile, rename, writeFile } from "fs/promises";
 import path from "path";
 import type { SiteContent } from "../../../lib/content-types";
-import { readSiteContent } from "../../../lib/content-store";
+import {
+  normalizeSiteContent,
+  readSiteContent,
+} from "../../../lib/content-store";
 
 const contentPath = path.join(process.cwd(), "content", "site.json");
 const backupPath = path.join(process.cwd(), "content", "site.backup.json");
@@ -13,7 +16,7 @@ export async function GET() {
 }
 
 export async function POST(request: Request) {
-  const content = (await request.json()) as SiteContent;
+  const content = normalizeSiteContent((await request.json()) as SiteContent);
 
   const validationError = validateContent(content);
 
@@ -36,6 +39,10 @@ function validateContent(content: SiteContent) {
   if (!content.contact?.email) return "Contact email is required";
   if (!Array.isArray(content.caseStudies))
     return "Case studies must be an array";
+  if (!Array.isArray(content.socialContent?.cards))
+    return "Social content cards must be an array";
+  if (!Array.isArray(content.socialContent?.metrics))
+    return "Social content metrics must be an array";
 
   const slugs = new Set<string>();
 

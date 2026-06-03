@@ -6,6 +6,8 @@ import { useEffect, useMemo, useState } from "react";
 import type { ChangeEvent } from "react";
 import type {
   IconName,
+  SocialCard,
+  SocialMetric,
   SiteContent,
   VisualBlock,
 } from "../../lib/content-types";
@@ -22,6 +24,58 @@ const iconOptions: IconName[] = [
   "wand",
 ];
 
+type ImageGuide = {
+  usage: string;
+  ratio: string;
+  size: string;
+  note: string;
+};
+
+const imageGuides = {
+  hero: {
+    usage: "首页首屏主视觉",
+    ratio: "16:9",
+    size: "1920×1080",
+    note: "主体建议放在画面中间偏右，左侧需给标题留暗部空间。",
+  },
+  wide: {
+    usage: "大幅横向视觉",
+    ratio: "16:9",
+    size: "1920×1080",
+    note: "适合人物、空间、产品场景，重要信息避免贴边。",
+  },
+  service: {
+    usage: "服务卡片封面",
+    ratio: "4:3",
+    size: "1200×900",
+    note: "画面会在卡片内裁切，主体放中间最稳。",
+  },
+  selected: {
+    usage: "精选案例竖版卡片",
+    ratio: "3:4",
+    size: "1200×1600",
+    note: "适合竖构图海报，标题和主体避免贴近上下边缘。",
+  },
+  caseMain: {
+    usage: "案例详情主图",
+    ratio: "16:9",
+    size: "1920×1080",
+    note: "首页案例板块和详情页都会使用，建议保持电影横幅构图。",
+  },
+  caseThumb: {
+    usage: "案例缩略图",
+    ratio: "16:9",
+    size: "960×540",
+    note: "缩略图较小，主体要清晰，不建议放过多文字。",
+  },
+  social: {
+    usage: "社媒竖版内容卡片",
+    ratio: "9:16",
+    size: "1080×1920",
+    note: "适合小红书、抖音、Reels，主体放中间，顶部和底部留安全区。",
+  },
+} satisfies Record<string, ImageGuide>;
+
 export default function AdminPage() {
   const [content, setContent] = useState<SiteContent>(
     initialContent as SiteContent,
@@ -37,6 +91,7 @@ export default function AdminPage() {
       ["services", "服务管理"],
       ["works", "精选案例"],
       ["cases", "案例详情"],
+      ["social", "社媒内容"],
       ["process", "工作流程"],
       ["why", "选择理由"],
       ["contact", "联系方式"],
@@ -180,7 +235,7 @@ export default function AdminPage() {
             </Grid>
             <VisualEditor
               block={content.hero}
-              recommendedSize="推荐尺寸：1600×1200（竖向或横幅）"
+              imageGuide={imageGuides.hero}
               onChange={(patch) => update((d) => Object.assign(d.hero, patch))}
             />
           </Panel>
@@ -240,7 +295,7 @@ export default function AdminPage() {
             />
             <VisualEditor
               block={content.about}
-              recommendedSize="推荐尺寸：1600×1200"
+              imageGuide={imageGuides.wide}
               onChange={(patch) => update((d) => Object.assign(d.about, patch))}
             />
           </Panel>
@@ -318,7 +373,7 @@ export default function AdminPage() {
                   />
                   <VisualEditor
                     block={item}
-                    recommendedSize="推荐尺寸：1200×800"
+                    imageGuide={imageGuides.service}
                     onChange={(patch) =>
                       update((d) =>
                         Object.assign(d.services.items[index], patch),
@@ -426,7 +481,7 @@ export default function AdminPage() {
                   />
                   <VisualEditor
                     block={item}
-                    recommendedSize="推荐尺寸：1600×1200"
+                    imageGuide={imageGuides.selected}
                     onChange={(patch) =>
                       update((d) =>
                         Object.assign(d.selectedWorks.items[index], patch),
@@ -583,7 +638,7 @@ export default function AdminPage() {
                   />
                   <VisualEditor
                     block={item}
-                    recommendedSize="推荐尺寸：1600×1200"
+                    imageGuide={imageGuides.caseMain}
                     onChange={(patch) =>
                       update((d) =>
                         Object.assign(d.caseStudies[caseIndex], patch),
@@ -600,7 +655,7 @@ export default function AdminPage() {
                         <VisualEditor
                           block={thumb}
                           compact
-                          recommendedSize="推荐尺寸：800×600"
+                          imageGuide={imageGuides.caseThumb}
                           onChange={(patch) =>
                             update((d) =>
                               Object.assign(
@@ -654,6 +709,168 @@ export default function AdminPage() {
                 }
               >
                 添加案例详情
+              </AddButton>
+            </Stack>
+          </Panel>
+        )}
+
+        {active === "social" && (
+          <Panel
+            title="Social Content 社媒内容"
+            intro="管理 09 社媒内容视觉板块：竖版卡片、平台说明和效果数据。"
+          >
+            <SectionFields
+              no={content.socialContent.no}
+              title={content.socialContent.title}
+              subtitle={content.socialContent.subtitle}
+              onChange={(field, value) =>
+                update(
+                  (d) =>
+                    void ((
+                      d.socialContent as unknown as Record<string, string>
+                    )[field] = value),
+                )
+              }
+            />
+            <TextArea
+              label="板块介绍"
+              value={content.socialContent.intro}
+              onChange={(value) =>
+                update((d) => void (d.socialContent.intro = value))
+              }
+            />
+            <Field
+              label="平台 / 场景"
+              value={content.socialContent.platform}
+              onChange={(value) =>
+                update((d) => void (d.socialContent.platform = value))
+              }
+            />
+            <Stack>
+              {content.socialContent.cards.map((item, index) => (
+                <EditableCard
+                  key={`${item.title}-${index}`}
+                  title={`社媒卡片 ${index + 1}`}
+                  onRemove={() =>
+                    update((d) => d.socialContent.cards.splice(index, 1))
+                  }
+                  onMoveUp={() =>
+                    update((d) => move(d.socialContent.cards, index, index - 1))
+                  }
+                  onMoveDown={() =>
+                    update((d) => move(d.socialContent.cards, index, index + 1))
+                  }
+                >
+                  <Grid>
+                    <Field
+                      label="标题"
+                      value={item.title}
+                      onChange={(value) =>
+                        update(
+                          (d) =>
+                            void (d.socialContent.cards[index].title = value),
+                        )
+                      }
+                    />
+                    <Field
+                      label="英文/类型"
+                      value={item.en}
+                      onChange={(value) =>
+                        update(
+                          (d) => void (d.socialContent.cards[index].en = value),
+                        )
+                      }
+                    />
+                  </Grid>
+                  <Field
+                    label="平台"
+                    value={item.platform}
+                    onChange={(value) =>
+                      update(
+                        (d) =>
+                          void (d.socialContent.cards[index].platform = value),
+                      )
+                    }
+                  />
+                  <VisualEditor
+                    block={item}
+                    imageGuide={imageGuides.social}
+                    onChange={(patch) =>
+                      update((d) =>
+                        Object.assign(d.socialContent.cards[index], patch),
+                      )
+                    }
+                  />
+                </EditableCard>
+              ))}
+              <AddButton
+                onClick={() =>
+                  update((d) =>
+                    d.socialContent.cards.push({
+                      title: "新社媒视觉",
+                      en: "Social Visual",
+                      platform: "小红书",
+                    } satisfies SocialCard),
+                  )
+                }
+              >
+                添加社媒卡片
+              </AddButton>
+            </Stack>
+            <Stack>
+              {content.socialContent.metrics.map((item, index) => (
+                <EditableCard
+                  key={`${item.label}-${index}`}
+                  title={`效果数据 ${index + 1}`}
+                  onRemove={() =>
+                    update((d) => d.socialContent.metrics.splice(index, 1))
+                  }
+                  onMoveUp={() =>
+                    update((d) =>
+                      move(d.socialContent.metrics, index, index - 1),
+                    )
+                  }
+                  onMoveDown={() =>
+                    update((d) =>
+                      move(d.socialContent.metrics, index, index + 1),
+                    )
+                  }
+                >
+                  <Grid>
+                    <Field
+                      label="指标名称"
+                      value={item.label}
+                      onChange={(value) =>
+                        update(
+                          (d) =>
+                            void (d.socialContent.metrics[index].label = value),
+                        )
+                      }
+                    />
+                    <Field
+                      label="指标数值"
+                      value={item.value}
+                      onChange={(value) =>
+                        update(
+                          (d) =>
+                            void (d.socialContent.metrics[index].value = value),
+                        )
+                      }
+                    />
+                  </Grid>
+                </EditableCard>
+              ))}
+              <AddButton
+                onClick={() =>
+                  update((d) =>
+                    d.socialContent.metrics.push({
+                      label: "新指标",
+                      value: "100%+",
+                    } satisfies SocialMetric),
+                  )
+                }
+              >
+                添加效果数据
               </AddButton>
             </Stack>
           </Panel>
@@ -847,7 +1064,7 @@ export default function AdminPage() {
             />
             <VisualEditor
               block={content.contact}
-              recommendedSize="推荐尺寸：1600×1200"
+              imageGuide={imageGuides.wide}
               onChange={(patch) =>
                 update((d) => Object.assign(d.contact, patch))
               }
@@ -1009,12 +1226,12 @@ function SectionFields({
 function VisualEditor({
   block,
   compact,
-  recommendedSize,
+  imageGuide,
   onChange,
 }: {
   block: VisualBlock;
   compact?: boolean;
-  recommendedSize?: string;
+  imageGuide: ImageGuide;
   onChange: (patch: Partial<VisualBlock>) => void;
 }) {
   const [uploadStatus, setUploadStatus] = useState("");
@@ -1054,7 +1271,13 @@ function VisualEditor({
         onChange={(value) => onChange({ image: value || undefined })}
       />
       <label className="upload-field">
-        <span>上传图片 {recommendedSize ? `· ${recommendedSize}` : ""}</span>
+        <span>上传图片</span>
+        <div className="image-guide">
+          <strong>{imageGuide.usage}</strong>
+          <small>比例：{imageGuide.ratio}</small>
+          <small>推荐尺寸：{imageGuide.size}</small>
+          <small>{imageGuide.note}</small>
+        </div>
         <input type="file" accept="image/*" onChange={upload} />
       </label>
       {uploadStatus ? <p className="upload-status">{uploadStatus}</p> : null}

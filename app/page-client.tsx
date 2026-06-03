@@ -232,6 +232,46 @@ export default function HomeClient({
       ))}
 
       <Chapter
+        no={content.socialContent.no}
+        title={content.socialContent.title}
+        subtitle={content.socialContent.subtitle}
+        className="social-chapter"
+      >
+        <div className="social-copy">
+          <p>{content.socialContent.intro}</p>
+          <span>{content.socialContent.platform}</span>
+        </div>
+        <div className="social-card-strip">
+          {content.socialContent.cards.map((card, index) => (
+            <motion.article
+              key={`${card.title}-${index}`}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.06, duration: 0.55 }}
+              className="social-card"
+            >
+              <VisualSurface block={card} className="social-visual" />
+              <div className="social-card-body">
+                <p>{card.platform}</p>
+                <h3>{card.title}</h3>
+                <span>{card.en}</span>
+              </div>
+            </motion.article>
+          ))}
+        </div>
+        <div className="social-metrics">
+          {content.socialContent.metrics.map((metric) => (
+            <div key={`${metric.label}-${metric.value}`}>
+              <Sparkles size={15} />
+              <span>{metric.label}</span>
+              <strong>{metric.value}</strong>
+            </div>
+          ))}
+        </div>
+      </Chapter>
+
+      <Chapter
         id="workflow"
         no={content.process.no}
         title={content.process.title}
