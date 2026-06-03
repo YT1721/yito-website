@@ -2,8 +2,12 @@
 set -euo pipefail
 
 APP_DIR="/var/www/yito"
+UPLOAD_DIR="/var/www/yito/shared/uploads"
 
 cd "$APP_DIR"
+
+sudo mkdir -p "$UPLOAD_DIR"
+sudo chown -R "$USER":"$USER" "$UPLOAD_DIR"
 
 if [ ! -f ".env.production" ]; then
   cp .env.example .env.production

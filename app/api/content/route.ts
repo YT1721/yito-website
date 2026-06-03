@@ -1,15 +1,15 @@
 import { NextResponse } from "next/server";
-import { copyFile, readFile, rename, writeFile } from "fs/promises";
+import { copyFile, rename, writeFile } from "fs/promises";
 import path from "path";
 import type { SiteContent } from "../../../lib/content-types";
+import { readSiteContent } from "../../../lib/content-store";
 
 const contentPath = path.join(process.cwd(), "content", "site.json");
 const backupPath = path.join(process.cwd(), "content", "site.backup.json");
 const tempPath = path.join(process.cwd(), "content", "site.tmp.json");
 
 export async function GET() {
-  const file = await readFile(contentPath, "utf8");
-  return NextResponse.json(JSON.parse(file));
+  return NextResponse.json(await readSiteContent());
 }
 
 export async function POST(request: Request) {

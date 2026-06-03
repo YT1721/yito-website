@@ -2,6 +2,7 @@ import { mkdir, writeFile } from "fs/promises";
 import path from "path";
 import { randomUUID } from "crypto";
 import { NextResponse } from "next/server";
+import { getUploadDirectory } from "../../../lib/content-store";
 
 const allowedTypes = new Set([
   "image/jpeg",
@@ -46,7 +47,7 @@ export async function POST(request: Request) {
 
   const extension = extensionFromType(file.type);
   const filename = `${Date.now()}-${randomUUID()}-${slugify(file.name)}.${extension}`;
-  const uploadDir = path.join(process.cwd(), "public", "uploads");
+  const uploadDir = getUploadDirectory();
   const outputPath = path.join(uploadDir, filename);
 
   await mkdir(uploadDir, { recursive: true });

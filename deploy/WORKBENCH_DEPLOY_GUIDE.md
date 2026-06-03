@@ -51,12 +51,15 @@ sudo mkdir -p /var/www
 sudo rm -rf /var/www/yito
 git clone --branch main "$REPO_URL" /var/www/yito
 cd /var/www/yito
+sudo mkdir -p /var/www/yito/shared/uploads
 sudo chown -R "$USER":"$USER" /var/www/yito
+sudo chown -R "$USER":"$USER" /var/www/yito/shared/uploads
 
 cat > .env.production <<'ENV'
 ADMIN_USERNAME=admin
 ADMIN_PASSWORD=change-this-before-public
 NEXT_PUBLIC_SITE_URL=https://yitoai.top
+UPLOAD_DIR=/var/www/yito/shared/uploads
 MAX_IMAGE_UPLOAD_MB=12
 MAX_VIDEO_UPLOAD_MB=200
 ENV
@@ -118,5 +121,8 @@ cd /var/www/yito
 git pull origin main
 npm install
 npm run build
-pm2 reload yito-website
+pm2 reload yito-website --update-env
+sudo cp deploy/nginx-yito.conf /etc/nginx/sites-available/yito
+sudo nginx -t
+sudo systemctl reload nginx
 ```

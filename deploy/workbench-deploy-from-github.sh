@@ -4,6 +4,7 @@ set -euo pipefail
 REPO_URL="${1:-}"
 BRANCH="${2:-main}"
 APP_DIR="/var/www/yito"
+UPLOAD_DIR="/var/www/yito/shared/uploads"
 
 if [ -z "$REPO_URL" ]; then
   echo "Usage: bash deploy/workbench-deploy-from-github.sh https://github.com/user/repo.git [branch]"
@@ -41,7 +42,9 @@ else
   cd "$APP_DIR"
 fi
 
+sudo mkdir -p "$UPLOAD_DIR"
 sudo chown -R "$USER":"$USER" "$APP_DIR"
+sudo chown -R "$USER":"$USER" "$UPLOAD_DIR"
 
 if [ ! -f ".env.production" ]; then
   cp .env.example .env.production
@@ -49,6 +52,7 @@ if [ ! -f ".env.production" ]; then
 ADMIN_USERNAME=admin
 ADMIN_PASSWORD=change-this-before-public
 NEXT_PUBLIC_SITE_URL=https://yitoai.top
+UPLOAD_DIR=/var/www/yito/shared/uploads
 MAX_IMAGE_UPLOAD_MB=12
 MAX_VIDEO_UPLOAD_MB=200
 ENV

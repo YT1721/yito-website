@@ -22,7 +22,7 @@ tar \
   -czf deploy/dist/yito-website.tar.gz .
 
 echo "==> Uploading archive"
-ssh "$SERVER" "sudo mkdir -p $APP_DIR && sudo chown -R \$(whoami):\$(whoami) $APP_DIR"
+ssh "$SERVER" "sudo mkdir -p $APP_DIR /var/www/yito/shared/uploads && sudo chown -R \$(whoami):\$(whoami) $APP_DIR /var/www/yito/shared/uploads"
 scp deploy/dist/yito-website.tar.gz "$SERVER:/tmp/yito-website.tar.gz"
 ssh "$SERVER" "tar -xzf /tmp/yito-website.tar.gz -C $APP_DIR && cd $APP_DIR && bash deploy/server-start.sh"
 

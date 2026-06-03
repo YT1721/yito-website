@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import content from "../../../content/site.json";
-import type { SiteContent } from "../../../lib/content-types";
+import { readSiteContent } from "../../../lib/content-store";
 import WorkDetailClient from "./work-detail-client";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.yito.visual";
-const siteContent = content as SiteContent;
+
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,
@@ -12,6 +12,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  const siteContent = await readSiteContent();
   const work = siteContent.caseStudies.find((item) => item.slug === slug);
 
   if (!work) {
@@ -62,6 +63,7 @@ export default async function WorkDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  const siteContent = await readSiteContent();
 
-  return <WorkDetailClient slug={slug} />;
+  return <WorkDetailClient slug={slug} initialContent={siteContent} />;
 }

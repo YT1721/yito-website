@@ -81,7 +81,7 @@ export default function AdminPage() {
       return;
     }
 
-    setStatus("保存成功，刷新前台即可看到更新");
+    setStatus("保存成功，已发布到前台；刷新页面即可看到最新内容");
   }
 
   function applyJson() {
@@ -1017,10 +1017,13 @@ function VisualEditor({
   recommendedSize?: string;
   onChange: (patch: Partial<VisualBlock>) => void;
 }) {
+  const [uploadStatus, setUploadStatus] = useState("");
+
   async function upload(event: ChangeEvent<HTMLInputElement>) {
     const file = event.target.files?.[0];
     if (!file) return;
 
+    setUploadStatus("正在上传图片...");
     const formData = new FormData();
     formData.append("file", file);
     const response = await fetch("/api/upload", {
@@ -1028,7 +1031,19 @@ function VisualEditor({
       body: formData,
     });
     const result = (await response.json()) as { url?: string; error?: string };
-    if (result.url) onChange({ image: result.url });
+
+    if (!response.ok || !result.url) {
+      setUploadStatus(result.error || "上传失败，请检查服务器日志");
+      return;
+    }
+
+    const canPreview = await isAssetReachable(result.url);
+    onChange({ image: result.url });
+    setUploadStatus(
+      canPreview
+        ? "图片已上传，预览可访问；点击保存并发布后前台生效"
+        : "图片已上传但 URL 暂不可访问，请检查 /uploads 静态目录配置",
+    );
   }
 
   return (
@@ -1042,6 +1057,7 @@ function VisualEditor({
         <span>上传图片 {recommendedSize ? `· ${recommendedSize}` : ""}</span>
         <input type="file" accept="image/*" onChange={upload} />
       </label>
+      {uploadStatus ? <p className="upload-status">{uploadStatus}</p> : null}
       {block.image ? (
         <div
           className="admin-preview"
@@ -1107,26 +1123,53 @@ function UploadOnly({
   accept: string;
   onUploaded: (url: string) => void;
 }) {
+  const [uploadStatus, setUploadStatus] = useState("");
+
   async function upload(event: ChangeEvent<HTMLInputElement>) {
     const file = event.target.files?.[0];
     if (!file) return;
 
+    setUploadStatus("正在上传文件...");
     const formData = new FormData();
     formData.append("file", file);
     const response = await fetch("/api/upload", {
       method: "POST",
       body: formData,
     });
-    const result = (await response.json()) as { url?: string };
-    if (result.url) onUploaded(result.url);
+    const result = (await response.json()) as { url?: string; error?: string };
+
+    if (!response.ok || !result.url) {
+      setUploadStatus(result.error || "上传失败，请检查服务器日志");
+      return;
+    }
+
+    const canPreview = await isAssetReachable(result.url);
+    onUploaded(result.url);
+    setUploadStatus(
+      canPreview
+        ? "文件已上传，URL 可访问；点击保存并发布后前台生效"
+        : "文件已上传但 URL 暂不可访问，请检查 /uploads 静态目录配置",
+    );
   }
 
   return (
-    <label className="upload-field standalone-upload">
-      <span>{label}</span>
-      <input type="file" accept={accept} onChange={upload} />
-    </label>
+    <div>
+      <label className="upload-field standalone-upload">
+        <span>{label}</span>
+        <input type="file" accept={accept} onChange={upload} />
+      </label>
+      {uploadStatus ? <p className="upload-status">{uploadStatus}</p> : null}
+    </div>
   );
+}
+
+async function isAssetReachable(url: string) {
+  try {
+    const response = await fetch(url, { method: "HEAD", cache: "no-store" });
+    return response.ok;
+  } catch {
+    return false;
+  }
 }
 
 function move<T>(items: T[], from: number, to: number) {

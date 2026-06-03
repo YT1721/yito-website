@@ -5,17 +5,20 @@ import Image from "next/image";
 import type { CSSProperties } from "react";
 import { useEffect, useMemo, useState } from "react";
 import { ArrowLeft, ArrowUpRight, Film, ImageIcon, Tag } from "lucide-react";
-import initialContent from "../../../content/site.json";
 import type {
   CaseStudy,
   SiteContent,
   VisualBlock,
 } from "../../../lib/content-types";
 
-export default function WorkDetailClient({ slug }: { slug: string }) {
-  const [content, setContent] = useState<SiteContent>(
-    initialContent as SiteContent,
-  );
+export default function WorkDetailClient({
+  slug,
+  initialContent,
+}: {
+  slug: string;
+  initialContent: SiteContent;
+}) {
+  const [content, setContent] = useState<SiteContent>(initialContent);
 
   useEffect(() => {
     fetch("/api/content", { cache: "no-store" })

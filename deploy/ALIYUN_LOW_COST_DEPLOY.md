@@ -6,7 +6,7 @@
 - Node.js 运行 Next.js
 - Nginx 反向代理
 - 内容保存到服务器磁盘：`content/site.json`
-- 少量图片保存到：`public/uploads`
+- 少量图片保存到：`/var/www/yito/shared/uploads`
 - 视频只填写外部链接，不上传到服务器
 
 ## 推荐配置
@@ -44,6 +44,8 @@ sudo apt install -y nginx git
 
 ```bash
 cd /var/www/yito
+sudo mkdir -p /var/www/yito/shared/uploads
+sudo chown -R "$USER":"$USER" /var/www/yito/shared/uploads
 npm install --omit=dev
 npm run build
 ```
@@ -60,6 +62,7 @@ cp .env.example .env.production
 ADMIN_USERNAME=你的后台账号
 ADMIN_PASSWORD=强密码
 NEXT_PUBLIC_SITE_URL=https://yitoai.top
+UPLOAD_DIR=/var/www/yito/shared/uploads
 MAX_IMAGE_UPLOAD_MB=12
 MAX_VIDEO_UPLOAD_MB=200
 ```

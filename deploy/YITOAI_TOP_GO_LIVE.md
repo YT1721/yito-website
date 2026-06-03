@@ -63,6 +63,7 @@ http://8.146.236.73
 ADMIN_USERNAME=你的后台账号
 ADMIN_PASSWORD=你的强密码
 NEXT_PUBLIC_SITE_URL=https://yitoai.top
+UPLOAD_DIR=/var/www/yito/shared/uploads
 MAX_IMAGE_UPLOAD_MB=12
 MAX_VIDEO_UPLOAD_MB=200
 ```

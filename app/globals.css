@@ -842,6 +842,14 @@ a {
   font-size: 0.78rem;
 }
 
+.upload-status {
+  align-self: center;
+  margin: 0;
+  color: #62655f;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
 .admin-preview {
   grid-column: 1 / -1;
   min-height: 11rem;

@@ -62,7 +62,7 @@ ADMIN_PASSWORD=your-strong-password
 
 每个可视化区域都有两种方式：
 
-1. 上传本地图片：后台会自动保存到 `public/uploads`。
+1. 上传本地图片：本地开发默认保存到 `public/uploads`，ECS 生产环境建议保存到 `/var/www/yito/shared/uploads`。
 2. 填写图片 URL：可使用外部 CDN 或站内路径。
 
 如果不上传图片，页面会使用内置的电影感渐变视觉作为备用封面。
@@ -72,6 +72,12 @@ ADMIN_PASSWORD=your-strong-password
 ```bash
 MAX_IMAGE_UPLOAD_MB=12
 MAX_VIDEO_UPLOAD_MB=200
+```
+
+ECS 生产环境建议额外设置持久上传目录：
+
+```bash
+UPLOAD_DIR=/var/www/yito/shared/uploads
 ```
 
 ## 作品二级页
@@ -139,7 +145,7 @@ NEXT_PUBLIC_SITE_URL=https://your-domain.com
 - `why`：选择理由
 - `contact`：联系方式
 
-后台会通过 `/api/content` 读写这份文件，图片上传接口为 `/api/upload`。
+后台会通过 `/api/content` 读写这份文件，图片上传接口为 `/api/upload`。前台页面会在请求时读取当前 `content/site.json`，后台保存后刷新前台即可看到最新内容。
 
 ## Vercel 部署
 
@@ -155,7 +161,7 @@ NEXT_PUBLIC_SITE_URL=https://your-domain.com
 生产部署建议：
 
 - 必须修改后台默认账号密码
-- 自有服务器需要给 `content` 和 `public/uploads` 目录写入权限
+- 自有服务器需要给 `content` 和生产上传目录写入权限
 - Vercel 等 Serverless 平台需要接入持久化存储
 - 上传大视频建议使用对象存储或 CDN
 
@@ -166,9 +172,9 @@ NEXT_PUBLIC_SITE_URL=https://your-domain.com
 - 一台阿里云轻量应用服务器或 ECS
 - Next.js + Nginx
 - 内容持久化到 `content/site.json`
-- 少量上传图片放到 `public/uploads`
+- 少量上传图片放到 `/var/www/yito/shared/uploads`
 - 视频只保存链接
-- 每天定时备份 `content` 和 `public/uploads`
+- 每天定时备份 `content` 和上传目录
 
 详细步骤见：
 
