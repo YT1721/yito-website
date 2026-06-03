@@ -405,6 +405,12 @@ function VisualSurface({
 
 function visualStyle(image?: string): CSSProperties | undefined {
   return image
-    ? ({ "--visual-image": `url("${image}")` } as CSSProperties)
+    ? {
+        backgroundImage: `url("${image}")`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundColor: "#0a0c0a",
+      }
     : undefined;
 }
