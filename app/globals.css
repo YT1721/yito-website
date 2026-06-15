@@ -46,6 +46,35 @@ a {
   text-decoration: none;
 }
 
+.site-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  padding: 1rem clamp(1rem, 3vw, 2rem);
+  border-top: 1px solid rgba(244, 244, 239, 0.14);
+  background: #030403;
+  color: var(--yito-muted);
+  font-size: 0.78rem;
+}
+
+.site-footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: color 180ms ease;
+}
+
+.site-footer a:hover {
+  color: var(--yito-paper);
+}
+
+.site-footer img {
+  width: 18px;
+  height: 20px;
+  object-fit: contain;
+}
+
 ::selection {
   background: var(--yito-green);
   color: #061004;

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import type { ReactNode } from "react";
 import "./globals.css";
 
@@ -61,7 +62,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN">
-      <body>{children}</body>
+      <body>
+        {children}
+        <footer className="site-footer">
+          <a
+            href="https://beian.mps.gov.cn/#/query/webSearch?code=11010502061257"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <Image
+              src="/beian-icon.png"
+              alt=""
+              width={18}
+              height={20}
+              aria-hidden="true"
+            />
+            <span>京公网安备11010502061257号</span>
+          </a>
+        </footer>
+      </body>
     </html>
   );
 }
