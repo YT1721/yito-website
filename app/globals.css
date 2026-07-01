@@ -771,6 +771,15 @@ a {
   object-fit: cover;
 }
 
+.visual-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .video-link-badge {
   position: absolute;
   right: 1rem;
@@ -1281,14 +1290,6 @@ a {
   overflow: hidden;
   border: 1px solid var(--yito-line);
   background: #121411;
-}
-
-.work-media-stage.has-image,
-.visual-tile.has-image {
-  background-image: var(--visual-image);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .work-media-stage video {

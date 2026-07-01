@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import type { CSSProperties, ReactNode } from "react";
+import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -102,7 +102,7 @@ export default function HomeClient({
             <a href="#contact">{content.hero.secondaryCta}</a>
           </motion.div>
         </motion.div>
-        <CinematicVisual block={content.hero} />
+        <CinematicVisual block={content.hero} priority />
       </Chapter>
 
       <Chapter
@@ -431,12 +431,17 @@ function Chapter({
   );
 }
 
-function CinematicVisual({ block }: { block: VisualBlock }) {
+function CinematicVisual({
+  block,
+  priority,
+}: {
+  block: VisualBlock;
+  priority?: boolean;
+}) {
   return (
-    <div
-      className={`cinematic-visual ${block.image ? "has-image" : ""}`}
-      style={visualStyle(block.image)}
-    />
+    <div className={`cinematic-visual ${block.image ? "has-image" : ""}`}>
+      <VisualImage block={block} priority={priority} />
+    </div>
   );
 }
 
@@ -445,7 +450,6 @@ function CaseMediaPreview({ work }: { work: CaseStudy }) {
     return (
       <div
         className={`cinematic-visual has-video ${work.image ? "has-image" : ""}`}
-        style={visualStyle(work.image)}
       >
         <video
           src={work.videoUrl}
@@ -460,10 +464,8 @@ function CaseMediaPreview({ work }: { work: CaseStudy }) {
   }
 
   return (
-    <div
-      className={`cinematic-visual ${work.image ? "has-image" : ""}`}
-      style={visualStyle(work.image)}
-    >
+    <div className={`cinematic-visual ${work.image ? "has-image" : ""}`}>
+      <VisualImage block={work} />
       {work.videoUrl ? (
         <span className="video-link-badge">
           视频链接 <ArrowUpRight size={13} />
@@ -481,23 +483,33 @@ function VisualSurface({
   className: string;
 }) {
   return (
-    <div
-      className={`${className} ${block.image ? "has-image" : ""}`}
-      style={visualStyle(block.image)}
-    />
+    <div className={`${className} ${block.image ? "has-image" : ""}`}>
+      <VisualImage block={block} />
+    </div>
   );
 }
 
-function visualStyle(image?: string): CSSProperties | undefined {
-  return image
-    ? {
-        backgroundImage: `url("${image}")`,
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundColor: "#0a0c0a",
-      }
-    : undefined;
+function VisualImage({
+  block,
+  priority,
+}: {
+  block: VisualBlock;
+  priority?: boolean;
+}) {
+  if (!block.image) return null;
+
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={block.image}
+      alt=""
+      className="visual-media"
+      loading={priority ? "eager" : "lazy"}
+      decoding="async"
+      fetchPriority={priority ? "high" : "auto"}
+      aria-hidden="true"
+    />
+  );
 }
 
 function isDirectVideoUrl(url: string) {

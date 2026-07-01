@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import type { CSSProperties } from "react";
 import { useEffect, useMemo, useState } from "react";
 import { ArrowLeft, ArrowUpRight, Film, ImageIcon, Tag } from "lucide-react";
 import type {
@@ -175,8 +174,8 @@ function MediaStage({ work }: { work: CaseStudy }) {
   return (
     <div
       className={`work-media-stage ${work.visual} ${work.image ? "has-image" : ""}`}
-      style={visualStyle(work.image)}
     >
+      <VisualImage block={work} priority />
       <span className="media-badge">
         <Film size={15} />
         {work.videoUrl ? "Video Link" : "Visual Preview"}
@@ -207,8 +206,8 @@ function VisualTile({
   return (
     <div
       className={`${compact ? "visual-tile is-compact" : "visual-tile"} ${block.visual} ${block.image ? "has-image" : ""}`}
-      style={visualStyle(block.image)}
     >
+      <VisualImage block={block} />
       {index ? (
         <span>
           <ImageIcon size={14} />
@@ -219,10 +218,27 @@ function VisualTile({
   );
 }
 
-function visualStyle(image?: string): CSSProperties | undefined {
-  return image
-    ? ({ "--visual-image": `url("${image}")` } as CSSProperties)
-    : undefined;
+function VisualImage({
+  block,
+  priority,
+}: {
+  block: VisualBlock;
+  priority?: boolean;
+}) {
+  if (!block.image) return null;
+
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={block.image}
+      alt=""
+      className="visual-media"
+      loading={priority ? "eager" : "lazy"}
+      decoding="async"
+      fetchPriority={priority ? "high" : "auto"}
+      aria-hidden="true"
+    />
+  );
 }
 
 function isDirectVideoUrl(url: string) {
