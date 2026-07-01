@@ -39,6 +39,8 @@ export type AboutContent = {
 export type ServiceItem = VisualBlock & {
   title: string;
   en: string;
+  description?: string;
+  scenes?: string;
   icon: IconName;
 };
 

@@ -2,58 +2,83 @@
   "hero": {
     "no": "01",
     "title": "AI-NATIVE COMMERCIAL VISUAL STUDIO",
-    "subtitle": "AI 原生商业视觉工作室",
+    "subtitle": "AI 原生商业视觉工作室｜用 AI 技术，为品牌低成本制作电影级商业视觉内容。",
     "primaryCta": "查看案例",
     "secondaryCta": "联系合作",
     "visual": "canyon",
-    "visualLabel": "YITO VISUAL STUDIO",
+    "visualLabel": "AI Commercial Film / Brand Visual / Motion Content / Creative Direction",
     "image": "/uploads/1780420827007-f335067a-5c47-4980-85c9-a0bbc925a049-jimeng-2026-05-15-3771-1-ppt-ai-native-comm.png"
   },
   "about": {
     "no": "02",
     "title": "ABOUT YITO",
     "subtitle": "关于 YITO",
-    "body": "YITO 是一家 AI 原生商业视觉工作室。我们结合 AI 生成技术、电影化视觉语言与商业品牌策略，为品牌提供高效、高质感的新一代视觉内容解决方案。",
+    "body": "YITO 是一家 AI 原生商业视觉工作室。我们结合 AI 生成技术、电影化视觉语言与商业品牌策略，为品牌提供高效率、高质感的新一代视觉内容解决方案。相比传统视觉制作流程，YITO 更强调创意、效率与商业结果的平衡，帮助企业以更灵活的成本，获得接近传统广告团队质感的商业视觉内容。",
     "capabilities": ["AI 原生", "高效交付", "电影级质感", "商业策略驱动"],
-    "statement": "AI 不只是工具，而是下一代内容生产方式。",
+    "statement": "AI 不是替代创意的按钮，而是放大创意执行力的新工具。",
     "visual": "portrait",
-    "visualLabel": "CONTENT PIPELINE"
+    "visualLabel": "CONTENT PIPELINE",
+    "image": "/visuals/about-ai-portrait.png"
   },
   "services": {
     "no": "03",
     "title": "OUR SERVICES",
-    "subtitle": "我们的服务",
-    "microCopy": "用 AI 创造价值，而非制造廉价视觉噪音。",
+    "subtitle": "服务内容",
+    "microCopy": "YITO 提供从创意到交付的一体化 AI 商业视觉服务，帮助品牌更快、更灵活地完成高质感内容生产。",
     "items": [
       {
         "title": "AI品牌广告片",
-        "en": "TVC / Brand Film",
+        "en": "Brand Film / Commercial",
         "icon": "clapperboard",
-        "visual": "service-a"
+        "visual": "service-ai-ad",
+        "image": "/visuals/service-ai-ad.png",
+        "description": "面向品牌发布、产品推广、招商传播与社媒投放，提供从创意脚本、分镜设计到 AI 视频制作的一体化服务。",
+        "scenes": "新品发布 / 品牌升级 / 产品推广 / 社媒投放"
       },
       {
-        "title": "企业宣传片",
+        "title": "AI企业宣传片",
         "en": "Corporate Film",
         "icon": "film",
-        "visual": "service-b"
+        "visual": "service-corporate",
+        "image": "/visuals/service-corporate.png",
+        "description": "为企业打造高质感形象短片、业务介绍片、产品宣传片，适合官网、展会、发布会与招商场景。",
+        "scenes": "企业官网 / 展会展示 / 招商路演 / 品牌介绍"
       },
       {
-        "title": "电影感商业视觉",
-        "en": "Cinematic Visual",
+        "title": "AI电影感短片",
+        "en": "Cinematic Short",
         "icon": "sparkles",
-        "visual": "service-c"
+        "visual": "service-cinematic",
+        "image": "/visuals/service-cinematic.png",
+        "description": "以导演思维构建剧本视觉化、镜头结构、场景设定与 AI 视频生成，完成具有情绪和叙事的商业短片。",
+        "scenes": "品牌故事 / 剧情广告 / 概念片 / 内容 IP"
       },
       {
-        "title": "AI概念设计",
-        "en": "Concept Design",
+        "title": "AI概念视觉设计",
+        "en": "Concept Visual",
         "icon": "pen",
-        "visual": "service-d"
+        "visual": "service-concept",
+        "image": "/visuals/service-concept.png",
+        "description": "提供品牌 KV、电影感海报、产品概念图、视觉方向提案，帮助客户快速获得高级视觉方案。",
+        "scenes": "活动视觉 / 海报设计 / 产品概念 / Campaign 提案"
       },
       {
-        "title": "社媒内容视觉",
-        "en": "Social Content",
+        "title": "品牌视觉设计",
+        "en": "Brand Identity",
+        "icon": "badge",
+        "visual": "service-brand",
+        "image": "/visuals/service-brand.png",
+        "description": "从标识、视觉系统到商业应用延展，建立清晰、统一且有记忆点的品牌识别。",
+        "scenes": "品牌升级 / 新品牌创建 / 视觉系统 / 营销物料"
+      },
+      {
+        "title": "包装与产品视觉",
+        "en": "Packaging / Product Visual",
         "icon": "boxes",
-        "visual": "service-e"
+        "visual": "service-packaging",
+        "image": "/visuals/service-packaging.png",
+        "description": "围绕产品定位、人群和品牌调性，完成包装设计、礼盒视觉、产品主图与商业摄影式展示。",
+        "scenes": "包装设计 / 电商详情 / 社媒种草 / 招商物料"
       }
     ]
   },
@@ -61,171 +86,312 @@
     "no": "04",
     "title": "SELECTED WORKS",
     "subtitle": "精选案例",
-    "intro": "我们为企业品牌、消费品牌与科技公司提供商业级视觉内容与品牌影像设计。",
-    "linkText": "探索更多案例",
+    "intro": "我们不只是生成画面，而是围绕品牌目标、商业场景与传播需求，构建完整的视觉表达。",
+    "linkText": "点击任意案例图片查看详情",
     "items": [
       {
-        "title": "汽车广告片",
-        "en": "TVC",
-        "visual": "work-car",
-        "caseSlug": "ev-launch-film"
+        "title": "AI品牌广告片",
+        "en": "AI Video",
+        "visual": "work-ai-ad",
+        "image": "/visuals/work-ai-ad.png",
+        "caseSlug": "ai-brand-commercial"
       },
       {
-        "title": "科技品牌",
-        "en": "Tech",
-        "visual": "work-tech",
-        "caseSlug": "tech-brand-film"
+        "title": "AI企业宣传片",
+        "en": "Corporate",
+        "visual": "work-corporate",
+        "image": "/visuals/work-corporate.png",
+        "caseSlug": "ai-corporate-film"
       },
       {
-        "title": "酒类品牌",
-        "en": "Alcohol",
-        "visual": "work-bottle",
-        "caseSlug": "premium-liquor-film"
+        "title": "AI电影感短片",
+        "en": "Cinematic",
+        "visual": "work-cinematic",
+        "image": "/visuals/work-cinematic.png",
+        "caseSlug": "cinematic-ai-short"
       },
       {
-        "title": "医疗科技",
-        "en": "Healthcare",
-        "visual": "work-city",
-        "caseSlug": "tech-brand-film"
-      },
-      {
-        "title": "文化教育",
-        "en": "Culture",
-        "visual": "work-culture",
+        "title": "AI概念视觉",
+        "en": "Concept",
+        "visual": "work-concept",
+        "image": "/visuals/work-concept.png",
         "caseSlug": "ai-concept-visual"
+      },
+      {
+        "title": "品牌视觉设计",
+        "en": "Brand",
+        "visual": "work-brand",
+        "image": "/visuals/work-brand.png",
+        "caseSlug": "brand-visual-system"
+      },
+      {
+        "title": "包装与产品视觉",
+        "en": "Packaging",
+        "visual": "work-packaging",
+        "image": "/visuals/work-packaging.png",
+        "caseSlug": "packaging-product-visual"
       }
     ]
   },
   "caseStudies": [
     {
       "no": "05",
-      "slug": "ev-launch-film",
-      "title": "汽车品牌广告片",
-      "en": "TVC / AI Commercial",
-      "summary": "面向新能源车发布场景的 AI 品牌广告片，用电影化光影、未来城市氛围和产品运动镜头强化品牌科技感。",
-      "description": "YITO 从品牌调性、产品卖点和发布场景出发，建立视觉关键词、镜头节奏与 AI 生成工作流。项目重点解决前期视觉探索成本高、拍摄周期长的问题，并为官网、发布会与社媒提供多尺寸内容资产。",
-      "industry": "汽车 / 新能源",
-      "tags": ["AI广告片", "汽车", "发布视觉", "电影感"],
-      "meta": [
-        "项目类型  品牌广告片",
-        "时长  30s",
-        "核心目标  提升品牌科技感与未来感"
+      "slug": "ai-brand-commercial",
+      "title": "AI品牌广告片",
+      "en": "Brand Film / Commercial Visual",
+      "summary": "面向品牌发布、产品推广与社媒传播的电影级商业短片。",
+      "description": "通过 AI 静帧生成、AI 视频生成与后期剪辑流程，将品牌概念转化为高质感商业影像，适合新品发布、招商传播、社媒投放与品牌形象升级。YITO 会从品牌定位、视觉关键词、镜头节奏和交付渠道出发，建立可复用的 AI 商业影像工作流。",
+      "industry": "品牌广告 / 产品推广",
+      "tags": [
+        "AI Video",
+        "Brand Film",
+        "Commercial Visual",
+        "Creative Direction"
       ],
-      "visual": "case-car",
+      "meta": [
+        "项目类型  AI品牌广告片",
+        "建议时长  15s / 30s / 60s",
+        "适用场景  新品发布 / 招商传播 / 社媒投放",
+        "推荐主图  16:9，1920×1080",
+        "推荐视频  16:9 MP4 / WebM，1920×1080"
+      ],
+      "visual": "case-ai-ad-main",
+      "image": "/visuals/case-ai-ad-main.png",
       "thumbs": [
         {
-          "visual": "car-a"
+          "image": "/visuals/ai-ad-thumb-1.png",
+          "visual": "ai-ad-thumb-1"
         },
         {
-          "visual": "car-b"
+          "image": "/visuals/ai-ad-thumb-2.png",
+          "visual": "ai-ad-thumb-2"
         },
         {
-          "visual": "car-c"
+          "image": "/visuals/ai-ad-thumb-3.png",
+          "visual": "ai-ad-thumb-3"
         },
         {
-          "visual": "car-d"
+          "image": "/visuals/ai-ad-thumb-4.png",
+          "visual": "ai-ad-thumb-4"
         },
         {
-          "visual": "car-e"
+          "image": "/visuals/ai-ad-thumb-5.png",
+          "visual": "ai-ad-thumb-5"
         }
       ]
     },
     {
       "no": "06",
-      "slug": "tech-brand-film",
-      "title": "科技品牌宣传片",
-      "en": "Corporate Film",
-      "summary": "为科技公司构建品牌宣传短片，用抽象空间、产品隐喻和商业叙事表达创新能力。",
-      "description": "项目以企业愿景和技术能力为核心，将复杂的产品价值转译为更易传播的视觉叙事。AI 生成用于快速探索场景、材质和镜头方向，后期制作统一节奏、调色和品牌语气。",
-      "industry": "科技 / 企业服务",
-      "tags": ["企业宣传片", "科技", "品牌叙事", "AI视觉"],
-      "meta": [
-        "项目类型  企业宣传片",
-        "时长  90s",
-        "核心目标  传递品牌创新与技术实力"
+      "slug": "ai-corporate-film",
+      "title": "AI企业宣传片",
+      "en": "Corporate Film / AI Production",
+      "summary": "为企业打造更具视觉质感的品牌形象内容。",
+      "description": "适用于企业官网、展会、招商、发布会与业务介绍场景。通过电影化镜头语言和 AI 视觉生成流程，YITO 将企业愿景、业务价值和技术能力转译成更容易被客户理解的视觉叙事。",
+      "industry": "企业服务 / 科技品牌",
+      "tags": [
+        "Corporate Film",
+        "AI Production",
+        "Visual Strategy",
+        "Brand Story"
       ],
-      "visual": "case-tech",
+      "meta": [
+        "项目类型  AI企业宣传片",
+        "建议时长  60s / 90s / 3min",
+        "适用场景  官网 / 展会 / 路演 / 发布会",
+        "推荐主图  16:9，1920×1080",
+        "推荐视频  16:9 MP4 / WebM，1920×1080"
+      ],
+      "visual": "case-corporate-main",
+      "image": "/visuals/case-corporate-main.png",
       "thumbs": [
         {
-          "visual": "tech-a"
+          "image": "/visuals/corporate-thumb-1.png",
+          "visual": "corporate-thumb-1"
         },
         {
-          "visual": "tech-b"
+          "image": "/visuals/corporate-thumb-2.png",
+          "visual": "corporate-thumb-2"
         },
         {
-          "visual": "tech-c"
+          "image": "/visuals/corporate-thumb-3.png",
+          "visual": "corporate-thumb-3"
         },
         {
-          "visual": "tech-d"
+          "image": "/visuals/corporate-thumb-4.png",
+          "visual": "corporate-thumb-4"
         },
         {
-          "visual": "tech-e"
+          "image": "/visuals/corporate-thumb-5.png",
+          "visual": "corporate-thumb-5"
         }
       ]
     },
     {
       "no": "07",
-      "slug": "premium-liquor-film",
-      "title": "高端酒类品牌片",
-      "en": "Brand Film",
-      "summary": "为高端酒类品牌打造东方审美视觉资产，强调器物质感、暗调光影和礼赠场景。",
-      "description": "YITO 以品牌历史、包装质感和消费场景为基础，设计可延展的影像语言。项目输出适用于品牌片、详情页、招商资料和社媒传播的静帧与短片素材。",
-      "industry": "消费品 / 酒类",
-      "tags": ["品牌片", "酒类", "东方审美", "商业静帧"],
-      "meta": [
-        "项目类型  品牌广告片",
-        "时长  45s",
-        "核心目标  塑造品质感与东方审美"
+      "slug": "cinematic-ai-short",
+      "title": "AI电影感短片",
+      "en": "Cinematic AI / Storytelling",
+      "summary": "以导演思维构建镜头、情绪与视觉叙事。",
+      "description": "结合剧本视觉化、分镜设计、角色设定、场景设定与 AI 视频生成，完成具有电影感的短片内容，适合品牌故事、剧情广告、概念片与内容 IP。YITO 更关注镜头语言、光影、节奏和情绪，而不是简单堆叠生成画面。",
+      "industry": "品牌故事 / 内容 IP",
+      "tags": [
+        "Cinematic AI",
+        "Storytelling",
+        "Visual Direction",
+        "AI Short Film"
       ],
-      "visual": "case-bottle",
+      "meta": [
+        "项目类型  AI电影感短片",
+        "建议时长  30s / 60s / 90s",
+        "适用场景  品牌故事 / 剧情广告 / 概念片",
+        "推荐主图  16:9，1920×1080",
+        "推荐视频  16:9 MP4 / WebM，1920×1080"
+      ],
+      "visual": "case-cinematic-main",
+      "image": "/visuals/case-cinematic-main.png",
       "thumbs": [
         {
-          "visual": "bottle-a"
+          "image": "/visuals/cinematic-thumb-1.png",
+          "visual": "cinematic-thumb-1"
         },
         {
-          "visual": "bottle-b"
+          "image": "/visuals/cinematic-thumb-2.png",
+          "visual": "cinematic-thumb-2"
         },
         {
-          "visual": "bottle-c"
+          "image": "/visuals/cinematic-thumb-3.png",
+          "visual": "cinematic-thumb-3"
         },
         {
-          "visual": "bottle-d"
+          "image": "/visuals/cinematic-thumb-4.png",
+          "visual": "cinematic-thumb-4"
         },
         {
-          "visual": "bottle-e"
+          "image": "/visuals/cinematic-thumb-5.png",
+          "visual": "cinematic-thumb-5"
         }
       ]
     },
     {
       "no": "08",
       "slug": "ai-concept-visual",
-      "title": "AI 概念视觉设计",
-      "en": "Concept Design",
-      "summary": "用于新品提案和品牌视觉探索的 AI 概念视觉，帮助团队快速确认方向。",
-      "description": "在正式制作前，通过 AI 快速生成不同世界观、空间、材质和镜头方案，降低试错成本。最终可沉淀为 KV、分镜、空间概念或后续商业短片的视觉基准。",
-      "industry": "品牌 / 概念设计",
-      "tags": ["概念视觉", "新品提案", "AI生成", "视觉方向"],
+      "title": "AI概念视觉",
+      "en": "Key Visual / Concept Art",
+      "summary": "快速建立品牌视觉方向与创意表达。",
+      "description": "为品牌 Campaign、产品广告、活动 KV、电影感海报与视觉提案提供高效率概念设计，帮助客户在早期阶段快速看到视觉可能性。适合作为广告片、发布会、包装、社媒视觉的前期方向基准。",
+      "industry": "Campaign / 概念设计",
+      "tags": ["Key Visual", "Concept Art", "Campaign", "AI生成"],
       "meta": [
-        "项目类型  概念视觉",
-        "适用场景  产品发布 / 品牌视觉",
-        "核心目标  探索未来视觉可能性"
+        "项目类型  AI概念视觉设计",
+        "交付内容  KV / 海报 / 分镜 / 视觉方向",
+        "适用场景  Campaign 提案 / 产品概念 / 活动视觉",
+        "推荐主图  16:9，1920×1080",
+        "推荐缩略图  16:9，960×540"
       ],
-      "visual": "case-concept",
+      "visual": "case-concept-main",
+      "image": "/visuals/case-concept-main.png",
       "thumbs": [
         {
-          "visual": "concept-a"
+          "image": "/visuals/concept-thumb-1.png",
+          "visual": "concept-thumb-1"
         },
         {
-          "visual": "concept-b"
+          "image": "/visuals/concept-thumb-2.png",
+          "visual": "concept-thumb-2"
         },
         {
-          "visual": "concept-c"
+          "image": "/visuals/concept-thumb-3.png",
+          "visual": "concept-thumb-3"
         },
         {
-          "visual": "concept-d"
+          "image": "/visuals/concept-thumb-4.png",
+          "visual": "concept-thumb-4"
         },
         {
-          "visual": "concept-e"
+          "image": "/visuals/concept-thumb-5.png",
+          "visual": "concept-thumb-5"
+        }
+      ]
+    },
+    {
+      "no": "W05",
+      "slug": "brand-visual-system",
+      "title": "品牌视觉设计",
+      "en": "Brand Identity / Visual System",
+      "summary": "从标识到视觉系统，建立清晰的品牌识别。",
+      "description": "基于多年商业设计经验，YITO 为品牌提供标志设计、视觉识别系统、品牌延展与商业应用设计，让品牌在不同传播场景中保持统一而有记忆点的视觉表达。该方向适合创业品牌升级、产品线扩展和营销视觉统一。",
+      "industry": "品牌设计 / 视觉识别",
+      "tags": ["Brand Identity", "Visual System", "Logo Design", "Design"],
+      "meta": [
+        "项目类型  品牌视觉设计",
+        "交付内容  标志 / 识别系统 / 应用延展",
+        "适用场景  品牌升级 / 新品牌创建 / 营销视觉统一",
+        "推荐主图  16:9，1920×1080",
+        "推荐展示图  3:4 或 16:9"
+      ],
+      "visual": "case-brand-main",
+      "image": "/visuals/case-brand-main.png",
+      "thumbs": [
+        {
+          "image": "/visuals/brand-thumb-1.png",
+          "visual": "brand-thumb-1"
+        },
+        {
+          "image": "/visuals/brand-thumb-2.png",
+          "visual": "brand-thumb-2"
+        },
+        {
+          "image": "/visuals/brand-thumb-3.png",
+          "visual": "brand-thumb-3"
+        },
+        {
+          "image": "/visuals/brand-thumb-4.png",
+          "visual": "brand-thumb-4"
+        },
+        {
+          "image": "/visuals/brand-thumb-5.png",
+          "visual": "brand-thumb-5"
+        }
+      ]
+    },
+    {
+      "no": "W06",
+      "slug": "packaging-product-visual",
+      "title": "包装与产品视觉",
+      "en": "Packaging / Product Visual",
+      "summary": "让产品在货架、传播与消费场景中更有吸引力。",
+      "description": "围绕产品定位、消费人群与品牌调性，完成包装设计、礼盒设计、产品视觉与商业摄影式展示图，提升产品的识别度与销售转化力。AI 可以用于快速探索材质、场景和氛围，最终仍以商业设计判断完成收束。",
+      "industry": "消费品 / 产品包装",
+      "tags": ["Packaging", "Product Visual", "Commercial Design", "AI Mockup"],
+      "meta": [
+        "项目类型  包装与产品视觉",
+        "交付内容  包装设计 / 产品主图 / 礼盒视觉 / 场景图",
+        "适用场景  电商详情 / 社媒种草 / 招商物料",
+        "推荐主图  16:9，1920×1080",
+        "推荐竖版  3:4，1200×1600"
+      ],
+      "visual": "case-packaging-main",
+      "image": "/visuals/case-packaging-main.png",
+      "thumbs": [
+        {
+          "image": "/visuals/packaging-thumb-1.png",
+          "visual": "packaging-thumb-1"
+        },
+        {
+          "image": "/visuals/packaging-thumb-2.png",
+          "visual": "packaging-thumb-2"
+        },
+        {
+          "image": "/visuals/packaging-thumb-3.png",
+          "visual": "packaging-thumb-3"
+        },
+        {
+          "image": "/visuals/packaging-thumb-4.png",
+          "visual": "packaging-thumb-4"
+        },
+        {
+          "image": "/visuals/packaging-thumb-5.png",
+          "visual": "packaging-thumb-5"
         }
       ]
     }
@@ -234,46 +400,50 @@
     "no": "09",
     "title": "社媒内容视觉",
     "subtitle": "SOCIAL CONTENT",
-    "intro": "为品牌社媒、内容种草与活动传播制作高质感竖版视觉资产，兼顾商业质感与平台传播效率。",
-    "platform": "抖音 / 小红书 / Instagram",
+    "intro": "为小红书、抖音、视频号、Instagram 等平台制作短视频视觉、封面海报、内容包装与批量化视觉资产，让品牌内容既有质感，也适合平台传播节奏。",
+    "platform": "小红书 / 抖音 / 视频号 / Instagram",
     "cards": [
       {
         "title": "腕表种草视觉",
         "en": "Watch Campaign",
         "platform": "小红书",
-        "visual": "social-watch"
+        "visual": "social-watch",
+        "image": "/visuals/social-watch.png"
       },
       {
         "title": "科技新品海报",
         "en": "Future Launch",
         "platform": "抖音",
-        "visual": "social-tech"
+        "visual": "social-tech",
+        "image": "/visuals/social-tech.png"
       },
       {
         "title": "咖啡品牌内容",
         "en": "Coffee Time",
         "platform": "Instagram",
-        "visual": "social-coffee"
+        "visual": "social-coffee",
+        "image": "/visuals/social-coffee.png"
       },
       {
         "title": "城市穿搭短片",
         "en": "Urban Visual",
-        "platform": "小红书",
-        "visual": "social-fashion"
+        "platform": "视频号",
+        "visual": "social-fashion",
+        "image": "/visuals/social-fashion.png"
       }
     ],
     "metrics": [
       {
-        "label": "曝光提升",
-        "value": "300%+"
+        "label": "内容生产效率",
+        "value": "3-5天"
       },
       {
-        "label": "互动增长",
-        "value": "200%+"
+        "label": "视觉方向探索",
+        "value": "6组+"
       },
       {
-        "label": "内容迭代",
-        "value": "150%+"
+        "label": "多平台适配",
+        "value": "4类+"
       }
     ]
   },
@@ -284,53 +454,53 @@
     "steps": [
       {
         "title": "需求沟通",
-        "detail": "了解目标与预算"
+        "detail": "明确品牌背景、传播目标、受众、预算与周期"
       },
       {
-        "title": "创意策划",
-        "detail": "脚本与视觉方向"
+        "title": "创意方向",
+        "detail": "制定视觉风格、内容方向、情绪基调与表达策略"
       },
       {
-        "title": "分镜设计",
-        "detail": "AI 分镜与画面规划"
+        "title": "脚本与分镜",
+        "detail": "转化为脚本、镜头结构、画面节奏与分镜方案"
       },
       {
         "title": "AI视觉生成",
-        "detail": "画面生成与风格统一"
+        "detail": "完成静帧、角色、场景与视频核心视觉资产"
       },
       {
-        "title": "后期制作",
-        "detail": "剪辑 / 调色 / 配乐"
+        "title": "视频制作与精修",
+        "detail": "剪辑、调色、字幕、声音与整体质感优化"
       },
       {
-        "title": "交付上线",
-        "detail": "资产交付与优化"
+        "title": "成片交付",
+        "detail": "按平台交付成片、封面、海报与视觉素材"
       }
     ]
   },
   "why": {
     "no": "11",
     "title": "WHY CHOOSE YITO",
-    "subtitle": "为什么选择我们",
+    "subtitle": "为什么选择 YITO",
     "items": [
       {
-        "title": "更低成本",
-        "text": "AI 提升视觉探索效率，降低 50-70% 前期成本。",
-        "icon": "gauge"
-      },
-      {
-        "title": "更快交付",
-        "text": "精选流程模板，最快 3-5 天完成首版方向。",
+        "title": "商业设计经验",
+        "text": "YITO 拥有品牌设计、包装设计、营销视觉与商业内容制作经验，不只是生成画面，更理解品牌需要什么。",
         "icon": "badge"
       },
       {
-        "title": "电影级质感",
-        "text": "用镜头语言、光影与节奏提升商业说服力。",
+        "title": "电影化视觉表达",
+        "text": "以导演思维处理镜头、构图、光影、情绪与节奏，让 AI 内容更接近商业影像。",
         "icon": "clapperboard"
       },
       {
-        "title": "灵活可控",
-        "text": "快速迭代，支持多版本、多渠道内容资产。",
+        "title": "更高效率与更低成本",
+        "text": "AI 让创意验证、视觉生成和内容制作更高效，帮助品牌以更灵活的预算完成高质感内容。",
+        "icon": "gauge"
+      },
+      {
+        "title": "完整交付流程",
+        "text": "从需求、创意、分镜、生成到后期交付，提供完整流程，而不是零散的 AI 图片。",
         "icon": "wand"
       }
     ]
@@ -338,11 +508,12 @@
   "contact": {
     "no": "12",
     "title": "CONTACT US",
-    "subtitle": "联系我们",
+    "subtitle": "联系合作",
     "wechat": "yito-visual",
-    "email": "hello@yito.visual",
+    "email": "yt1721@126.com",
     "xiaohongshu": "YITO Visual",
     "visual": "contact",
-    "visualLabel": "START A PROJECT"
+    "visualLabel": "START A PROJECT",
+    "image": "/visuals/contact-architecture.png"
   }
 }

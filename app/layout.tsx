@@ -12,13 +12,20 @@ export const metadata: Metadata = {
     template: "%s | YITO",
   },
   description:
-    "YITO 是一家 AI 原生商业视觉工作室，用 AI 技术、电影级视觉语言与品牌策略，为企业制作高质感商业视觉内容。",
+    "YITO 是一家 AI 原生商业视觉工作室，专注 AI 品牌广告片、企业宣传片、商业短片、电影级视觉与品牌内容创作。",
   keywords: [
     "YITO",
     "AI商业视觉",
     "AI广告片",
+    "AI品牌宣传片",
+    "AI企业宣传片",
+    "AI视频制作",
     "AI短片",
+    "商业视觉设计",
+    "AI视觉工作室",
     "品牌视觉",
+    "品牌广告片",
+    "电影感视觉",
     "商业视觉工作室",
   ],
   authors: [{ name: "YITO" }],
@@ -26,7 +33,8 @@ export const metadata: Metadata = {
   publisher: "YITO",
   openGraph: {
     title: "YITO | AI-Native Commercial Visual Studio",
-    description: "用 AI 技术，为品牌低成本制作电影级商业视觉内容。",
+    description:
+      "结合 AI 生成技术、电影化视觉语言与商业品牌策略，为品牌提供高效率、高质感的新一代商业视觉内容解决方案。",
     url: siteUrl,
     siteName: "YITO",
     locale: "zh_CN",

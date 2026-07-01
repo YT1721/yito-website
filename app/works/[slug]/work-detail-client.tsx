@@ -164,7 +164,7 @@ function DetailNav() {
 }
 
 function MediaStage({ work }: { work: CaseStudy }) {
-  if (work.videoUrl) {
+  if (work.videoUrl && isDirectVideoUrl(work.videoUrl)) {
     return (
       <div className="work-media-stage">
         <video src={work.videoUrl} controls playsInline poster={work.image} />
@@ -179,8 +179,18 @@ function MediaStage({ work }: { work: CaseStudy }) {
     >
       <span className="media-badge">
         <Film size={15} />
-        Visual Preview
+        {work.videoUrl ? "Video Link" : "Visual Preview"}
       </span>
+      {work.videoUrl ? (
+        <a
+          className="work-video-link"
+          href={work.videoUrl}
+          target="_blank"
+          rel="noreferrer"
+        >
+          打开视频链接 <ArrowUpRight size={14} />
+        </a>
+      ) : null}
     </div>
   );
 }
@@ -213,4 +223,8 @@ function visualStyle(image?: string): CSSProperties | undefined {
   return image
     ? ({ "--visual-image": `url("${image}")` } as CSSProperties)
     : undefined;
+}
+
+function isDirectVideoUrl(url: string) {
+  return /\.(mp4|webm|mov)(\?.*)?$/i.test(url);
 }

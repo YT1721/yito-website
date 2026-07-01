@@ -359,6 +359,28 @@ export default function AdminPage() {
                       }
                     />
                   </Grid>
+                  <TextArea
+                    label="服务说明"
+                    value={item.description ?? ""}
+                    onChange={(value) =>
+                      update(
+                        (d) =>
+                          void (d.services.items[index].description =
+                            value || undefined),
+                      )
+                    }
+                  />
+                  <Field
+                    label="适用场景"
+                    value={item.scenes ?? ""}
+                    onChange={(value) =>
+                      update(
+                        (d) =>
+                          void (d.services.items[index].scenes =
+                            value || undefined),
+                      )
+                    }
+                  />
                   <SelectField
                     label="图标"
                     value={item.icon}
@@ -388,6 +410,8 @@ export default function AdminPage() {
                     d.services.items.push({
                       title: "新服务",
                       en: "Service",
+                      description: "填写服务说明。",
+                      scenes: "填写适用场景。",
                       icon: "sparkles",
                     }),
                   )
@@ -607,7 +631,7 @@ export default function AdminPage() {
                     }
                   />
                   <Field
-                    label="视频地址（可选，支持 /uploads/xxx.mp4 或外部 URL）"
+                    label="视频地址（可选：mp4/webm/mov 直链可播放，普通外链会作为按钮打开）"
                     value={item.videoUrl ?? ""}
                     onChange={(value) =>
                       update(
@@ -617,6 +641,20 @@ export default function AdminPage() {
                       )
                     }
                   />
+                  <div className="image-guide media-guide">
+                    <strong>案例视频 / 动效展示</strong>
+                    <small>
+                      比例：16:9 横版为主，社媒短视频可在详情说明中补充 9:16
+                      链接
+                    </small>
+                    <small>
+                      推荐尺寸：1920×1080，H.264 MP4 / WebM，20-60 秒预览最稳
+                    </small>
+                    <small>
+                      如使用 B站、网盘、Frame.io
+                      等外部页面链接，前台会显示为“打开视频链接”。
+                    </small>
+                  </div>
                   <UploadOnly
                     label="上传作品视频"
                     accept="video/mp4,video/webm,video/quicktime"

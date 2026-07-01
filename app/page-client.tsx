@@ -18,7 +18,12 @@ import {
   Sparkles,
   Wand2,
 } from "lucide-react";
-import type { IconName, SiteContent, VisualBlock } from "../lib/content-types";
+import type {
+  CaseStudy,
+  IconName,
+  SiteContent,
+  VisualBlock,
+} from "../lib/content-types";
 
 const iconMap = {
   badge: BadgeCheck,
@@ -144,6 +149,12 @@ export default function HomeClient({
                   <Icon size={18} />
                   <h3>{service.title}</h3>
                   <p>{service.en}</p>
+                  {service.description ? (
+                    <p className="service-description">{service.description}</p>
+                  ) : null}
+                  {service.scenes ? (
+                    <small className="service-scenes">{service.scenes}</small>
+                  ) : null}
                 </div>
               </motion.article>
             );
@@ -193,7 +204,7 @@ export default function HomeClient({
         </div>
       </Chapter>
 
-      {content.caseStudies.map((item) => (
+      {content.caseStudies.slice(0, 4).map((item) => (
         <Chapter
           key={`${item.no}-${item.title}`}
           no={item.no}
@@ -211,7 +222,7 @@ export default function HomeClient({
             className="case-visual-link"
             aria-label={`查看${item.title}详情`}
           >
-            <CinematicVisual block={item} />
+            <CaseMediaPreview work={item} />
           </Link>
           <div className="thumb-row">
             {item.thumbs.map((thumb, index) => (
@@ -429,6 +440,39 @@ function CinematicVisual({ block }: { block: VisualBlock }) {
   );
 }
 
+function CaseMediaPreview({ work }: { work: CaseStudy }) {
+  if (work.videoUrl && isDirectVideoUrl(work.videoUrl)) {
+    return (
+      <div
+        className={`cinematic-visual has-video ${work.image ? "has-image" : ""}`}
+        style={visualStyle(work.image)}
+      >
+        <video
+          src={work.videoUrl}
+          poster={work.image}
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className={`cinematic-visual ${work.image ? "has-image" : ""}`}
+      style={visualStyle(work.image)}
+    >
+      {work.videoUrl ? (
+        <span className="video-link-badge">
+          视频链接 <ArrowUpRight size={13} />
+        </span>
+      ) : null}
+    </div>
+  );
+}
+
 function VisualSurface({
   block,
   className,
@@ -454,4 +498,8 @@ function visualStyle(image?: string): CSSProperties | undefined {
         backgroundColor: "#0a0c0a",
       }
     : undefined;
+}
+
+function isDirectVideoUrl(url: string) {
+  return /\.(mp4|webm|mov)(\?.*)?$/i.test(url);
 }
