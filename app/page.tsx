@@ -1,10 +1,10 @@
 import HomeClient from "./page-client";
-import { readSiteContent } from "../lib/content-store";
+import { readRuntimeSiteContent } from "../lib/runtime-content";
 
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  const content = await readSiteContent();
+  const content = await readRuntimeSiteContent();
 
-  return <HomeClient initialContent={content} />;
+  return <HomeClient content={content} />;
 }

@@ -1,6 +1,12 @@
 import { readFile } from "fs/promises";
 import path from "path";
-import type { SiteContent, SocialContentSection } from "./content-types";
+import type {
+  AiCapabilitySection,
+  AiStudioSection,
+  ClientsSection,
+  FooterContent,
+  SiteContent,
+} from "./content-types";
 
 const contentPath = path.join(process.cwd(), "content", "site.json");
 
@@ -15,62 +21,77 @@ export function getUploadDirectory() {
   );
 }
 
-export const defaultSocialContent: SocialContentSection = {
-  no: "09",
-  title: "社媒内容视觉",
-  subtitle: "SOCIAL CONTENT",
+export const defaultAiCapability: AiCapabilitySection = {
+  no: "05",
+  title: "AI Studio System",
+  subtitle: "AI 商业视觉生产系统",
   intro:
-    "为小红书、抖音、视频号、Instagram 等平台制作短视频视觉、封面海报、内容包装与批量化视觉资产。重点不是把画面做满，而是让每一张封面和每一段短片都具备点击欲、识别度和品牌质感。",
-  platform: "小红书 / 抖音 / 视频号 / Instagram",
-  cards: [
+    "YITO 正在构建面向一人工作室的 AI 商业视觉生产系统，将创意策略、分镜设计、提示词工程、AI 静帧、AI 视频和后期制作整合为稳定流程。",
+  items: [
+    "AI 创意方向生成",
+    "AI 分镜脚本设计",
+    "AI 静态视觉生成",
+    "AI 视频镜头生成",
+    "AI 角色与场景设定",
+    "AI 商业海报与 KV",
+    "AI 社媒内容批量生产",
+    "AI 视频后期辅助",
+  ],
+  note: "AI 是工具，导演判断才是价值。",
+};
+
+export const defaultAiStudio: AiStudioSection = {
+  no: "05",
+  title: "AI Studio System",
+  subtitle: "AI 商业视觉生产系统",
+  body: "YITO 正在构建面向一人工作室的 AI 商业视觉生产系统，将创意策略、分镜设计、提示词工程、AI 静帧、AI 视频和后期制作整合为稳定流程。\n\n这套系统让我们可以更快完成视觉测试，更灵活地探索创意方向，并在有限预算内提供更高质量的商业视觉内容。",
+  items: defaultAiCapability.items,
+  statement: "我们不出售 AI 生成图，我们交付面向商业结果的视觉内容。",
+  image: "/project-assets/yito-site/contact-board.png",
+  visual: "ai-studio-system",
+};
+
+export const defaultClients: ClientsSection = {
+  no: "08",
+  title: "Clients & Industries",
+  subtitle: "客户与行业",
+  intro:
+    "YITO 过去服务经验覆盖科技、医疗、金融、消费品、文化、空间、互联网与营销传播等多个领域。",
+  groups: [
     {
-      title: "短剧封面视觉",
-      en: "Drama Cover",
-      platform: "抖音 / 视频号",
-      visual: "social-drama",
-      image: "/project-assets/social-phone-vertical.jpg",
+      title: "Past Design Clients",
+      subtitle: "过往设计服务客户",
+      items: ["科技", "医疗健康", "金融", "消费品牌", "酒类饮品", "文化旅游"],
     },
     {
-      title: "概念短视频海报",
-      en: "Concept Reel",
-      platform: "小红书 / 抖音",
-      visual: "social-concept",
-      image: "/project-assets/reborn-door-vertical.jpg",
-    },
-    {
-      title: "游戏内容封面",
-      en: "Game Launch",
-      platform: "视频号 / B站",
-      visual: "social-game",
-      image: "/project-assets/redwolf-card-action.jpg",
-    },
-    {
-      title: "产品细节种草",
-      en: "Product Detail",
-      platform: "小红书",
-      visual: "social-product",
-      image: "/project-assets/product-detail-card.jpg",
+      title: "AI Visual Direction",
+      subtitle: "AI 商业视觉方向",
+      items: [
+        "AI 品牌广告",
+        "企业宣传片",
+        "商业短片",
+        "概念视觉",
+        "社媒内容",
+        "品牌 Campaign",
+      ],
     },
   ],
-  metrics: [
-    {
-      label: "封面方向探索",
-      value: "6组+",
-    },
-    {
-      label: "短视频适配比例",
-      value: "9:16",
-    },
-    {
-      label: "内容交付周期",
-      value: "3-5天",
-    },
-  ],
+};
+
+export const defaultFooter: FooterContent = {
+  brand: "YITO",
+  subtitle: "AI-Native Commercial Visual Studio",
+  services: "AI品牌广告片｜企业宣传片｜AI商业短片｜概念视觉设计",
+  copyright: "© 2026 YITO Visual. All Rights Reserved.",
+  credit: "Designed with AI-native workflow.",
 };
 
 export function normalizeSiteContent(content: SiteContent): SiteContent {
   return {
     ...content,
-    socialContent: content.socialContent ?? defaultSocialContent,
+    aiCapability: content.aiCapability ?? defaultAiCapability,
+    aiStudio: content.aiStudio ?? defaultAiStudio,
+    clients: content.clients ?? defaultClients,
+    footer: content.footer ?? defaultFooter,
   };
 }

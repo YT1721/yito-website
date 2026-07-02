@@ -17,8 +17,12 @@ export type HeroContent = {
   no: string;
   title: string;
   subtitle: string;
+  positioning?: string;
+  description?: string;
+  note?: string;
   primaryCta: string;
   secondaryCta: string;
+  tags?: string[];
   visual?: string;
   image?: string;
   visualLabel: string;
@@ -56,6 +60,7 @@ export type WorkSection = {
   subtitle: string;
   intro: string;
   linkText: string;
+  categories?: string[];
   items: WorkItem[];
 };
 
@@ -72,8 +77,16 @@ export type CaseStudy = VisualBlock & {
   slug: string;
   title: string;
   en: string;
+  category?: string;
+  year?: string;
+  cover?: string;
   summary: string;
   description: string;
+  challenge?: string;
+  strategy?: string;
+  solution?: string;
+  result?: string;
+  services?: string[];
   industry: string;
   tags: string[];
   videoUrl?: string;
@@ -81,30 +94,28 @@ export type CaseStudy = VisualBlock & {
   thumbs: VisualBlock[];
 };
 
-export type SocialCard = VisualBlock & {
+export type ProcessStep = {
   title: string;
-  en: string;
-  platform: string;
+  en?: string;
+  detail: string;
 };
 
-export type SocialMetric = {
-  label: string;
-  value: string;
-};
-
-export type SocialContentSection = {
+export type AiCapabilitySection = {
   no: string;
   title: string;
   subtitle: string;
   intro: string;
-  platform: string;
-  cards: SocialCard[];
-  metrics: SocialMetric[];
+  items: string[];
+  note: string;
 };
 
-export type ProcessStep = {
+export type AiStudioSection = VisualBlock & {
+  no: string;
   title: string;
-  detail: string;
+  subtitle: string;
+  body: string;
+  items: string[];
+  statement: string;
 };
 
 export type WhyItem = {
@@ -117,12 +128,37 @@ export type ContactContent = {
   no: string;
   title: string;
   subtitle: string;
+  intro?: string;
+  note?: string;
   wechat: string;
   email: string;
   xiaohongshu: string;
+  location?: string;
   visual?: string;
   image?: string;
   visualLabel: string;
+};
+
+export type ClientGroup = {
+  title: string;
+  subtitle: string;
+  items: string[];
+};
+
+export type ClientsSection = {
+  no: string;
+  title: string;
+  subtitle: string;
+  intro: string;
+  groups: ClientGroup[];
+};
+
+export type FooterContent = {
+  brand: string;
+  subtitle: string;
+  services: string;
+  copyright: string;
+  credit: string;
 };
 
 export type SiteContent = {
@@ -131,18 +167,23 @@ export type SiteContent = {
   services: ServiceSection;
   selectedWorks: WorkSection;
   caseStudies: CaseStudy[];
-  socialContent: SocialContentSection;
+  aiStudio?: AiStudioSection;
   process: {
     no: string;
     title: string;
     subtitle: string;
+    intro?: string;
     steps: ProcessStep[];
   };
   why: {
     no: string;
     title: string;
     subtitle: string;
+    intro?: string;
     items: WhyItem[];
   };
+  clients?: ClientsSection;
+  aiCapability: AiCapabilitySection;
   contact: ContactContent;
+  footer?: FooterContent;
 };

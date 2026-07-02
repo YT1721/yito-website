@@ -6,12 +6,11 @@ import { useEffect, useMemo, useState } from "react";
 import type { ChangeEvent } from "react";
 import type {
   IconName,
-  SocialCard,
-  SocialMetric,
   SiteContent,
   VisualBlock,
 } from "../../lib/content-types";
 import initialContent from "../../content/site.json";
+import ImageWithFallback from "../../components/ImageWithFallback";
 
 const iconOptions: IconName[] = [
   "sparkles",
@@ -68,12 +67,6 @@ const imageGuides = {
     size: "960×540",
     note: "缩略图较小，主体要清晰，不建议放过多文字。",
   },
-  social: {
-    usage: "社媒竖版内容卡片",
-    ratio: "9:16",
-    size: "1080×1920",
-    note: "适合小红书、抖音、Reels，主体放中间，顶部和底部留安全区。",
-  },
 } satisfies Record<string, ImageGuide>;
 
 export default function AdminPage() {
@@ -91,10 +84,12 @@ export default function AdminPage() {
       ["services", "服务管理"],
       ["works", "精选案例"],
       ["cases", "案例详情"],
-      ["social", "社媒内容"],
+      ["studio", "AI生产系统"],
       ["process", "工作流程"],
       ["why", "选择理由"],
+      ["clients", "客户行业"],
       ["contact", "联系方式"],
+      ["footer", "页脚信息"],
       ["advanced", "高级 JSON"],
     ],
     [],
@@ -211,10 +206,36 @@ export default function AdminPage() {
               onChange={(value) => update((d) => void (d.hero.title = value))}
             />
             <Field
-              label="副标题"
+              label="英文副标题"
               value={content.hero.subtitle}
               onChange={(value) =>
                 update((d) => void (d.hero.subtitle = value))
+              }
+            />
+            <Field
+              label="中文定位"
+              value={content.hero.positioning ?? ""}
+              onChange={(value) =>
+                update((d) => void (d.hero.positioning = value))
+              }
+            />
+            <TextArea
+              label="首页主文案"
+              value={content.hero.description ?? ""}
+              onChange={(value) =>
+                update((d) => void (d.hero.description = value))
+              }
+            />
+            <TextArea
+              label="首页补充说明"
+              value={content.hero.note ?? ""}
+              onChange={(value) => update((d) => void (d.hero.note = value))}
+            />
+            <TextArea
+              label="小标签（每行一个）"
+              value={(content.hero.tags ?? []).join("\n")}
+              onChange={(value) =>
+                update((d) => void (d.hero.tags = lines(value)))
               }
             />
             <Grid>
@@ -452,6 +473,13 @@ export default function AdminPage() {
                 update((d) => void (d.selectedWorks.linkText = value))
               }
             />
+            <TextArea
+              label="案例分类标签（每行一个）"
+              value={(content.selectedWorks.categories ?? []).join("\n")}
+              onChange={(value) =>
+                update((d) => void (d.selectedWorks.categories = lines(value)))
+              }
+            />
             <Stack>
               {content.selectedWorks.items.map((item, index) => (
                 <EditableCard
@@ -594,6 +622,30 @@ export default function AdminPage() {
                       }
                     />
                   </Grid>
+                  <Grid>
+                    <Field
+                      label="案例类型"
+                      value={item.category ?? ""}
+                      onChange={(value) =>
+                        update(
+                          (d) =>
+                            void (d.caseStudies[caseIndex].category =
+                              value || undefined),
+                        )
+                      }
+                    />
+                    <Field
+                      label="年份"
+                      value={item.year ?? ""}
+                      onChange={(value) =>
+                        update(
+                          (d) =>
+                            void (d.caseStudies[caseIndex].year =
+                              value || undefined),
+                        )
+                      }
+                    />
+                  </Grid>
                   <Field
                     label="英文/类型"
                     value={item.en}
@@ -617,6 +669,61 @@ export default function AdminPage() {
                       update(
                         (d) =>
                           void (d.caseStudies[caseIndex].description = value),
+                      )
+                    }
+                  />
+                  <TextArea
+                    label="项目目标"
+                    value={item.challenge ?? ""}
+                    onChange={(value) =>
+                      update(
+                        (d) =>
+                          void (d.caseStudies[caseIndex].challenge =
+                            value || undefined),
+                      )
+                    }
+                  />
+                  <TextArea
+                    label="视觉策略"
+                    value={item.strategy ?? ""}
+                    onChange={(value) =>
+                      update(
+                        (d) =>
+                          void (d.caseStudies[caseIndex].strategy =
+                            value || undefined),
+                      )
+                    }
+                  />
+                  <TextArea
+                    label="制作流程"
+                    value={item.solution ?? ""}
+                    onChange={(value) =>
+                      update(
+                        (d) =>
+                          void (d.caseStudies[caseIndex].solution =
+                            value || undefined),
+                      )
+                    }
+                  />
+                  <TextArea
+                    label="成果展示"
+                    value={item.result ?? ""}
+                    onChange={(value) =>
+                      update(
+                        (d) =>
+                          void (d.caseStudies[caseIndex].result =
+                            value || undefined),
+                      )
+                    }
+                  />
+                  <TextArea
+                    label="服务内容（每行一个）"
+                    value={(item.services ?? []).join("\n")}
+                    onChange={(value) =>
+                      update(
+                        (d) =>
+                          void (d.caseStudies[caseIndex].services =
+                            lines(value)),
                       )
                     }
                   />
@@ -665,7 +772,7 @@ export default function AdminPage() {
                     }
                   />
                   <TextArea
-                    label="项目信息（每行一条）"
+                    label="前台项目信息（每行一条，仅填写客户可见内容）"
                     value={item.meta.join("\n")}
                     onChange={(value) =>
                       update(
@@ -738,7 +845,14 @@ export default function AdminPage() {
                       summary: "一句话介绍这个作品。",
                       description:
                         "在这里填写作品背景、目标、制作方式和交付内容。",
+                      category: "AI 商业视觉",
                       industry: "行业",
+                      year: "2026",
+                      challenge: "填写项目目标。",
+                      strategy: "填写视觉策略。",
+                      solution: "填写制作流程。",
+                      result: "填写成果展示。",
+                      services: ["创意方向", "AI 视觉生成"],
                       tags: ["AI视觉"],
                       meta: ["项目类型  商业视觉"],
                       thumbs: [{}, {}],
@@ -752,165 +866,62 @@ export default function AdminPage() {
           </Panel>
         )}
 
-        {active === "social" && (
+        {active === "studio" && (
           <Panel
-            title="Social Content 社媒内容"
-            intro="管理 09 社媒内容视觉板块：竖版卡片、平台说明和效果数据。"
+            title="AI Studio System AI生产系统"
+            intro="展示 YITO 的 AI 商业视觉生产方法，不是工具清单。"
           >
             <SectionFields
-              no={content.socialContent.no}
-              title={content.socialContent.title}
-              subtitle={content.socialContent.subtitle}
+              no={content.aiStudio?.no ?? ""}
+              title={content.aiStudio?.title ?? ""}
+              subtitle={content.aiStudio?.subtitle ?? ""}
               onChange={(field, value) =>
-                update(
-                  (d) =>
-                    void ((
-                      d.socialContent as unknown as Record<string, string>
-                    )[field] = value),
-                )
+                update((d) => {
+                  d.aiStudio ??= createEmptyAiStudio();
+                  d.aiStudio[field] = value;
+                })
               }
             />
             <TextArea
-              label="板块介绍"
-              value={content.socialContent.intro}
+              label="正文说明"
+              value={content.aiStudio?.body ?? ""}
               onChange={(value) =>
-                update((d) => void (d.socialContent.intro = value))
+                update((d) => {
+                  d.aiStudio ??= createEmptyAiStudio();
+                  d.aiStudio.body = value;
+                })
               }
             />
-            <Field
-              label="平台 / 场景"
-              value={content.socialContent.platform}
+            <TextArea
+              label="能力列表（每行一个）"
+              value={(content.aiStudio?.items ?? []).join("\n")}
               onChange={(value) =>
-                update((d) => void (d.socialContent.platform = value))
+                update((d) => {
+                  d.aiStudio ??= createEmptyAiStudio();
+                  d.aiStudio.items = lines(value);
+                })
               }
             />
-            <Stack>
-              {content.socialContent.cards.map((item, index) => (
-                <EditableCard
-                  key={`${item.title}-${index}`}
-                  title={`社媒卡片 ${index + 1}`}
-                  onRemove={() =>
-                    update((d) => d.socialContent.cards.splice(index, 1))
-                  }
-                  onMoveUp={() =>
-                    update((d) => move(d.socialContent.cards, index, index - 1))
-                  }
-                  onMoveDown={() =>
-                    update((d) => move(d.socialContent.cards, index, index + 1))
-                  }
-                >
-                  <Grid>
-                    <Field
-                      label="标题"
-                      value={item.title}
-                      onChange={(value) =>
-                        update(
-                          (d) =>
-                            void (d.socialContent.cards[index].title = value),
-                        )
-                      }
-                    />
-                    <Field
-                      label="英文/类型"
-                      value={item.en}
-                      onChange={(value) =>
-                        update(
-                          (d) => void (d.socialContent.cards[index].en = value),
-                        )
-                      }
-                    />
-                  </Grid>
-                  <Field
-                    label="平台"
-                    value={item.platform}
-                    onChange={(value) =>
-                      update(
-                        (d) =>
-                          void (d.socialContent.cards[index].platform = value),
-                      )
-                    }
-                  />
-                  <VisualEditor
-                    block={item}
-                    imageGuide={imageGuides.social}
-                    onChange={(patch) =>
-                      update((d) =>
-                        Object.assign(d.socialContent.cards[index], patch),
-                      )
-                    }
-                  />
-                </EditableCard>
-              ))}
-              <AddButton
-                onClick={() =>
-                  update((d) =>
-                    d.socialContent.cards.push({
-                      title: "新社媒视觉",
-                      en: "Social Visual",
-                      platform: "小红书",
-                    } satisfies SocialCard),
-                  )
-                }
-              >
-                添加社媒卡片
-              </AddButton>
-            </Stack>
-            <Stack>
-              {content.socialContent.metrics.map((item, index) => (
-                <EditableCard
-                  key={`${item.label}-${index}`}
-                  title={`效果数据 ${index + 1}`}
-                  onRemove={() =>
-                    update((d) => d.socialContent.metrics.splice(index, 1))
-                  }
-                  onMoveUp={() =>
-                    update((d) =>
-                      move(d.socialContent.metrics, index, index - 1),
-                    )
-                  }
-                  onMoveDown={() =>
-                    update((d) =>
-                      move(d.socialContent.metrics, index, index + 1),
-                    )
-                  }
-                >
-                  <Grid>
-                    <Field
-                      label="指标名称"
-                      value={item.label}
-                      onChange={(value) =>
-                        update(
-                          (d) =>
-                            void (d.socialContent.metrics[index].label = value),
-                        )
-                      }
-                    />
-                    <Field
-                      label="指标数值"
-                      value={item.value}
-                      onChange={(value) =>
-                        update(
-                          (d) =>
-                            void (d.socialContent.metrics[index].value = value),
-                        )
-                      }
-                    />
-                  </Grid>
-                </EditableCard>
-              ))}
-              <AddButton
-                onClick={() =>
-                  update((d) =>
-                    d.socialContent.metrics.push({
-                      label: "新指标",
-                      value: "100%+",
-                    } satisfies SocialMetric),
-                  )
-                }
-              >
-                添加效果数据
-              </AddButton>
-            </Stack>
+            <TextArea
+              label="强表达句"
+              value={content.aiStudio?.statement ?? ""}
+              onChange={(value) =>
+                update((d) => {
+                  d.aiStudio ??= createEmptyAiStudio();
+                  d.aiStudio.statement = value;
+                })
+              }
+            />
+            <VisualEditor
+              block={content.aiStudio ?? createEmptyAiStudio()}
+              imageGuide={imageGuides.wide}
+              onChange={(patch) =>
+                update((d) => {
+                  d.aiStudio ??= createEmptyAiStudio();
+                  Object.assign(d.aiStudio, patch);
+                })
+              }
+            />
           </Panel>
         )}
 
@@ -927,6 +938,13 @@ export default function AdminPage() {
                       field
                     ] = value),
                 )
+              }
+            />
+            <TextArea
+              label="模块说明"
+              value={content.process.intro ?? ""}
+              onChange={(value) =>
+                update((d) => void (d.process.intro = value))
               }
             />
             <Stack>
@@ -955,15 +973,26 @@ export default function AdminPage() {
                       }
                     />
                     <Field
-                      label="步骤说明"
-                      value={step.detail}
+                      label="英文名称"
+                      value={step.en ?? ""}
                       onChange={(value) =>
                         update(
-                          (d) => void (d.process.steps[index].detail = value),
+                          (d) =>
+                            void (d.process.steps[index].en =
+                              value || undefined),
                         )
                       }
                     />
                   </Grid>
+                  <Field
+                    label="步骤说明"
+                    value={step.detail}
+                    onChange={(value) =>
+                      update(
+                        (d) => void (d.process.steps[index].detail = value),
+                      )
+                    }
+                  />
                 </EditableCard>
               ))}
               <AddButton
@@ -971,6 +1000,7 @@ export default function AdminPage() {
                   update((d) =>
                     d.process.steps.push({
                       title: "新步骤",
+                      en: "Step",
                       detail: "步骤说明",
                     }),
                   )
@@ -995,6 +1025,11 @@ export default function AdminPage() {
                       value),
                 )
               }
+            />
+            <TextArea
+              label="模块说明"
+              value={content.why.intro ?? ""}
+              onChange={(value) => update((d) => void (d.why.intro = value))}
             />
             <Stack>
               {content.why.items.map((item, index) => (
@@ -1055,6 +1090,108 @@ export default function AdminPage() {
           </Panel>
         )}
 
+        {active === "clients" && (
+          <Panel
+            title="Clients & Industries 客户行业"
+            intro="展示过往经验覆盖和 AI 商业视觉方向，避免堆砌客户 Logo。"
+          >
+            <SectionFields
+              no={content.clients?.no ?? ""}
+              title={content.clients?.title ?? ""}
+              subtitle={content.clients?.subtitle ?? ""}
+              onChange={(field, value) =>
+                update((d) => {
+                  d.clients ??= createEmptyClients();
+                  d.clients[field] = value;
+                })
+              }
+            />
+            <TextArea
+              label="模块说明"
+              value={content.clients?.intro ?? ""}
+              onChange={(value) =>
+                update((d) => {
+                  d.clients ??= createEmptyClients();
+                  d.clients.intro = value;
+                })
+              }
+            />
+            <Stack>
+              {(content.clients?.groups ?? []).map((group, index) => (
+                <EditableCard
+                  key={`${group.title}-${index}`}
+                  title={`行业组 ${index + 1}`}
+                  onRemove={() =>
+                    update((d) => {
+                      d.clients ??= createEmptyClients();
+                      d.clients.groups.splice(index, 1);
+                    })
+                  }
+                  onMoveUp={() =>
+                    update((d) => {
+                      d.clients ??= createEmptyClients();
+                      move(d.clients.groups, index, index - 1);
+                    })
+                  }
+                  onMoveDown={() =>
+                    update((d) => {
+                      d.clients ??= createEmptyClients();
+                      move(d.clients.groups, index, index + 1);
+                    })
+                  }
+                >
+                  <Grid>
+                    <Field
+                      label="英文标题"
+                      value={group.title}
+                      onChange={(value) =>
+                        update((d) => {
+                          d.clients ??= createEmptyClients();
+                          d.clients.groups[index].title = value;
+                        })
+                      }
+                    />
+                    <Field
+                      label="中文标题"
+                      value={group.subtitle}
+                      onChange={(value) =>
+                        update((d) => {
+                          d.clients ??= createEmptyClients();
+                          d.clients.groups[index].subtitle = value;
+                        })
+                      }
+                    />
+                  </Grid>
+                  <TextArea
+                    label="标签（每行一个）"
+                    value={group.items.join("\n")}
+                    onChange={(value) =>
+                      update((d) => {
+                        d.clients ??= createEmptyClients();
+                        d.clients.groups[index].items = lines(value);
+                      })
+                    }
+                  />
+                </EditableCard>
+              ))}
+              <AddButton
+                onClick={() =>
+                  update((d) => {
+                    d.clients ??= createEmptyClients();
+                    d.clients.groups.push({
+                      title: "New Group",
+                      subtitle: "新分组",
+                      items: ["行业标签"],
+                    });
+                  })
+                }
+              >
+                添加行业分组
+              </AddButton>
+            </Stack>
+          </Panel>
+        )}
+
         {active === "contact" && (
           <Panel title="Contact 联系方式" intro="修改联系方式和结尾视觉。">
             <SectionFields
@@ -1069,6 +1206,18 @@ export default function AdminPage() {
                     ] = value),
                 )
               }
+            />
+            <TextArea
+              label="主文案"
+              value={content.contact.intro ?? ""}
+              onChange={(value) =>
+                update((d) => void (d.contact.intro = value))
+              }
+            />
+            <TextArea
+              label="副文案"
+              value={content.contact.note ?? ""}
+              onChange={(value) => update((d) => void (d.contact.note = value))}
             />
             <Grid>
               <Field
@@ -1094,6 +1243,13 @@ export default function AdminPage() {
               }
             />
             <Field
+              label="所在地 / 服务方式"
+              value={content.contact.location ?? ""}
+              onChange={(value) =>
+                update((d) => void (d.contact.location = value || undefined))
+              }
+            />
+            <Field
               label="视觉标签"
               value={content.contact.visualLabel}
               onChange={(value) =>
@@ -1107,6 +1263,95 @@ export default function AdminPage() {
                 update((d) => Object.assign(d.contact, patch))
               }
             />
+          </Panel>
+        )}
+
+        {active === "footer" && (
+          <Panel title="Footer 页脚" intro="修改网站底部品牌与版权信息。">
+            <Grid>
+              <Field
+                label="品牌"
+                value={content.footer?.brand ?? ""}
+                onChange={(value) =>
+                  update((d) => {
+                    d.footer ??= {
+                      brand: "",
+                      subtitle: "",
+                      services: "",
+                      copyright: "",
+                      credit: "",
+                    };
+                    d.footer.brand = value;
+                  })
+                }
+              />
+              <Field
+                label="副标题"
+                value={content.footer?.subtitle ?? ""}
+                onChange={(value) =>
+                  update((d) => {
+                    d.footer ??= {
+                      brand: "",
+                      subtitle: "",
+                      services: "",
+                      copyright: "",
+                      credit: "",
+                    };
+                    d.footer.subtitle = value;
+                  })
+                }
+              />
+            </Grid>
+            <Field
+              label="服务短句"
+              value={content.footer?.services ?? ""}
+              onChange={(value) =>
+                update((d) => {
+                  d.footer ??= {
+                    brand: "",
+                    subtitle: "",
+                    services: "",
+                    copyright: "",
+                    credit: "",
+                  };
+                  d.footer.services = value;
+                })
+              }
+            />
+            <Grid>
+              <Field
+                label="版权"
+                value={content.footer?.copyright ?? ""}
+                onChange={(value) =>
+                  update((d) => {
+                    d.footer ??= {
+                      brand: "",
+                      subtitle: "",
+                      services: "",
+                      copyright: "",
+                      credit: "",
+                    };
+                    d.footer.copyright = value;
+                  })
+                }
+              />
+              <Field
+                label="制作说明"
+                value={content.footer?.credit ?? ""}
+                onChange={(value) =>
+                  update((d) => {
+                    d.footer ??= {
+                      brand: "",
+                      subtitle: "",
+                      services: "",
+                      copyright: "",
+                      credit: "",
+                    };
+                    d.footer.credit = value;
+                  })
+                }
+              />
+            </Grid>
           </Panel>
         )}
 
@@ -1320,10 +1565,13 @@ function VisualEditor({
       </label>
       {uploadStatus ? <p className="upload-status">{uploadStatus}</p> : null}
       {block.image ? (
-        <div
-          className="admin-preview"
-          style={{ backgroundImage: `url("${block.image}")` }}
-        >
+        <div className="admin-preview">
+          <ImageWithFallback
+            src={block.image}
+            alt="后台图片预览"
+            className="admin-preview-image"
+            sizes="320px"
+          />
           <button onClick={() => onChange({ image: undefined })}>
             移除图片
           </button>
@@ -1454,4 +1702,36 @@ function slugify(value: string) {
       .replace(/^-+|-+$/g, "")
       .slice(0, 80) || "work"
   );
+}
+
+function createEmptyAiStudio(): NonNullable<SiteContent["aiStudio"]> {
+  return {
+    no: "05",
+    title: "AI Studio System",
+    subtitle: "AI 商业视觉生产系统",
+    body: "填写 AI 商业视觉生产系统说明。",
+    items: ["AI 创意方向生成", "AI 静态视觉生成"],
+    statement: "AI 是工具，导演判断才是价值。",
+  };
+}
+
+function createEmptyClients(): NonNullable<SiteContent["clients"]> {
+  return {
+    no: "08",
+    title: "Clients & Industries",
+    subtitle: "客户与行业",
+    intro: "填写过往服务经验覆盖的行业与当前 AI 商业视觉方向。",
+    groups: [
+      {
+        title: "Past Design Clients",
+        subtitle: "过往设计服务客户",
+        items: ["科技", "消费品牌"],
+      },
+      {
+        title: "AI Visual Direction",
+        subtitle: "AI 商业视觉方向",
+        items: ["AI 品牌广告", "企业宣传片"],
+      },
+    ],
+  };
 }

@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowUpRight,
@@ -18,12 +17,10 @@ import {
   Sparkles,
   Wand2,
 } from "lucide-react";
-import type {
-  CaseStudy,
-  IconName,
-  SiteContent,
-  VisualBlock,
-} from "../lib/content-types";
+import type { SiteContentData } from "../content/site";
+import type { IconName } from "../lib/content-types";
+import type { WorkContent } from "../content/works";
+import ImageWithFallback from "../components/ImageWithFallback";
 
 const iconMap = {
   badge: BadgeCheck,
@@ -37,25 +34,15 @@ const iconMap = {
 } satisfies Record<IconName, typeof Sparkles>;
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 26 },
+  hidden: { opacity: 0, y: 24 },
   show: { opacity: 1, y: 0 },
 };
 
-export default function HomeClient({
-  initialContent,
-}: {
-  initialContent: SiteContent;
-}) {
-  const [content, setContent] = useState<SiteContent>(initialContent);
-
-  useEffect(() => {
-    fetch("/api/content", { cache: "no-store" })
-      .then((response) => (response.ok ? response.json() : null))
-      .then((nextContent: SiteContent | null) => {
-        if (nextContent) setContent(nextContent);
-      })
-      .catch(() => undefined);
-  }, []);
+export default function HomeClient({ content }: { content: SiteContentData }) {
+  const featuredWorks = content.works
+    .filter((work) => work.featured)
+    .sort((a, b) => a.homepageOrder - b.homepageOrder)
+    .slice(0, 6);
 
   return (
     <main className="site-shell">
@@ -65,18 +52,18 @@ export default function HomeClient({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
-            name: "YITO",
-            description: "AI-Native Commercial Visual Studio",
-            url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.yito.visual",
+            name: content.navigation.brand,
+            description: content.hero.subtitle,
+            url: process.env.NEXT_PUBLIC_SITE_URL || "https://yito-visual.com",
             areaServed: "China",
-            serviceType: ["AI品牌广告片", "AI商业短片", "AI概念视觉"],
+            serviceType: content.services.items.map((service) => service.title),
             email: content.contact.email,
           }),
         }}
       />
-      <FloatingNav />
+      <FloatingNav content={content} />
 
-      <Chapter id="hero" no={content.hero.no} className="hero-chapter">
+      <Chapter id="hero" no={sectionNo(1)} className="hero-chapter">
         <motion.div
           initial="hidden"
           animate="show"
@@ -96,40 +83,57 @@ export default function HomeClient({
           <motion.p variants={fadeUp} className="hero-subtitle">
             {content.hero.subtitle}
           </motion.p>
+          <motion.p variants={fadeUp} className="hero-positioning">
+            {content.hero.positioning}
+          </motion.p>
+          <motion.p variants={fadeUp} className="hero-description">
+            {content.hero.statement}
+          </motion.p>
+          <motion.p variants={fadeUp} className="hero-note">
+            {content.hero.description}
+          </motion.p>
+          <motion.div variants={fadeUp} className="hero-tags">
+            {content.hero.tags.map((tag) => (
+              <span key={tag}>{tag}</span>
+            ))}
+          </motion.div>
           <motion.div variants={fadeUp} className="green-rule" />
           <motion.div variants={fadeUp} className="hero-actions">
             <a href="#work">{content.hero.primaryCta}</a>
             <a href="#contact">{content.hero.secondaryCta}</a>
           </motion.div>
         </motion.div>
-        <CinematicVisual block={content.hero} priority />
+        <CinematicVisual image={content.hero.cover} priority />
       </Chapter>
 
       <Chapter
         id="about"
-        no={content.about.no}
+        no={sectionNo(2)}
         title={content.about.title}
         subtitle={content.about.subtitle}
         className="about-chapter"
       >
         <div className="chapter-text">
-          <p>{content.about.body}</p>
+          {content.about.body.map((line) => (
+            <p key={line}>{line}</p>
+          ))}
           <div className="capability-row">
             {content.about.capabilities.map((item) => (
-              <span key={item}>
+              <span key={item.title}>
                 <Sparkles size={15} />
-                {item}
+                <strong>{item.title}</strong>
+                <small>{item.description}</small>
               </span>
             ))}
           </div>
           <p className="statement">{content.about.statement}</p>
         </div>
-        <CinematicVisual block={content.about} />
+        <CinematicVisual image={content.about.cover} />
       </Chapter>
 
       <Chapter
         id="services"
-        no={content.services.no}
+        no={sectionNo(3)}
         title={content.services.title}
         subtitle={content.services.subtitle}
         className="services-chapter"
@@ -139,190 +143,121 @@ export default function HomeClient({
             const Icon = iconMap[service.icon] ?? Sparkles;
             return (
               <motion.article
-                key={`${service.title}-${service.en}`}
-                whileHover={{ y: -8, scale: 1.015 }}
+                key={service.id}
+                whileHover={{ y: -7, scale: 1.012 }}
                 transition={{ type: "spring", stiffness: 260, damping: 24 }}
                 className="service-card"
               >
-                <VisualSurface block={service} className="card-visual" />
+                <VisualSurface image={service.cover} className="card-visual" />
                 <div className="card-body">
                   <Icon size={18} />
                   <h3>{service.title}</h3>
-                  <p>{service.en}</p>
-                  {service.description ? (
-                    <p className="service-description">{service.description}</p>
-                  ) : null}
-                  {service.scenes ? (
-                    <small className="service-scenes">{service.scenes}</small>
-                  ) : null}
+                  <p>{service.subtitle}</p>
+                  <p className="service-description">{service.description}</p>
+                  <div className="service-scenes">
+                    {service.scenes.map((scene) => (
+                      <span key={scene}>{scene}</span>
+                    ))}
+                  </div>
                 </div>
               </motion.article>
             );
           })}
         </div>
-        <p className="micro-copy">{content.services.microCopy}</p>
+        <p className="micro-copy">{content.services.description}</p>
       </Chapter>
 
       <Chapter
         id="work"
-        no={content.selectedWorks.no}
+        no={sectionNo(4)}
         title={content.selectedWorks.title}
         subtitle={content.selectedWorks.subtitle}
         className="works-chapter"
       >
         <div className="works-intro">
-          <p>{content.selectedWorks.intro}</p>
+          <p>{content.selectedWorks.description}</p>
           <a href="#work" className="text-link">
-            {content.selectedWorks.linkText} <ArrowUpRight size={14} />
+            {content.selectedWorks.linkLabel} <ArrowUpRight size={14} />
           </a>
         </div>
         <div className="selected-strip">
-          {content.selectedWorks.items.map((work, index) => (
-            <motion.article
-              key={`${work.title}-${work.en}`}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.06, duration: 0.55 }}
-              className="selected-card"
-            >
-              <Link
-                href={`/works/${work.caseSlug ?? content.caseStudies[index % content.caseStudies.length]?.slug ?? ""}`}
-                className="work-card-link"
-              >
-                <VisualSurface block={work} className="selected-visual" />
-                <div>
-                  <h3>{work.title}</h3>
-                  <p>{work.en}</p>
-                </div>
-                <span className="open-work-link">
-                  查看详情 <ArrowUpRight size={13} />
-                </span>
-              </Link>
-            </motion.article>
+          {featuredWorks.map((work, index) => (
+            <WorkCard key={work.slug} work={work} index={index} />
           ))}
         </div>
       </Chapter>
 
-      {content.caseStudies.slice(0, 4).map((item) => (
-        <Chapter
-          key={`${item.no}-${item.title}`}
-          no={item.no}
-          title={item.title}
-          subtitle={item.en}
-          className="case-chapter"
-        >
-          <div className="case-info">
-            {item.meta.map((line) => (
-              <p key={line}>{line}</p>
-            ))}
-          </div>
-          <Link
-            href={`/works/${item.slug}`}
-            className="case-visual-link"
-            aria-label={`查看${item.title}详情`}
-          >
-            <CaseMediaPreview work={item} />
-          </Link>
-          <div className="thumb-row">
-            {item.thumbs.map((thumb, index) => (
-              <Link
-                key={`${item.no}-${index}`}
-                href={`/works/${item.slug}`}
-                className="thumb-link"
-                aria-label={`查看${item.title}详情`}
-              >
-                <VisualSurface block={thumb} className="thumb" />
-              </Link>
-            ))}
-          </div>
-          <Link href={`/works/${item.slug}`} className="case-detail-link">
-            查看作品详情 <ArrowUpRight size={14} />
-          </Link>
-        </Chapter>
-      ))}
-
       <Chapter
-        no={content.socialContent.no}
-        title={content.socialContent.title}
-        subtitle={content.socialContent.subtitle}
-        className="social-chapter"
+        id="ai-studio"
+        no={sectionNo(5)}
+        title={content.aiStudio.title}
+        subtitle={content.aiStudio.subtitle}
+        className="ai-studio-chapter"
       >
-        <div className="social-copy">
-          <p>{content.socialContent.intro}</p>
-          <span>{content.socialContent.platform}</span>
-        </div>
-        <div className="social-card-strip">
-          {content.socialContent.cards.map((card, index) => (
-            <motion.article
-              key={`${card.title}-${index}`}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.06, duration: 0.55 }}
-              className="social-card"
-            >
-              <VisualSurface block={card} className="social-visual" />
-              <div className="social-card-body">
-                <p>{card.platform}</p>
-                <h3>{card.title}</h3>
-                <span>{card.en}</span>
-              </div>
-            </motion.article>
+        <div className="ai-studio-copy">
+          {content.aiStudio.body.map((line) => (
+            <p key={line}>{line}</p>
           ))}
+          <strong>{content.aiStudio.statement}</strong>
         </div>
-        <div className="social-metrics">
-          {content.socialContent.metrics.map((metric) => (
-            <div key={`${metric.label}-${metric.value}`}>
-              <Sparkles size={15} />
-              <span>{metric.label}</span>
-              <strong>{metric.value}</strong>
-            </div>
-          ))}
+        <div className="ai-studio-panel">
+          <VisualSurface
+            image={content.aiStudio.cover}
+            className="ai-studio-visual"
+          />
+          <div className="ai-capability-grid">
+            {content.aiStudio.capabilities.map((item) => (
+              <span key={item}>
+                <Sparkles size={15} />
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
       </Chapter>
 
       <Chapter
         id="workflow"
-        no={content.process.no}
-        title={content.process.title}
-        subtitle={content.process.subtitle}
+        no={sectionNo(6)}
+        title={content.workflow.title}
+        subtitle={content.workflow.subtitle}
         className="process-chapter"
       >
+        <p className="section-intro">{content.workflow.description}</p>
         <div className="process-map">
-          {content.process.steps.map((item, index) => (
+          {content.workflow.steps.map((item, index) => (
             <motion.div
-              key={`${item.title}-${index}`}
+              key={item.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.07, duration: 0.55 }}
+              transition={{ delay: index * 0.06, duration: 0.5 }}
               className="process-step"
             >
-              <span className="process-dot">
-                {String(index + 1).padStart(2, "0")}
-              </span>
+              <span className="process-dot">{sectionNo(index + 1)}</span>
               <strong>{item.title}</strong>
-              <small>{item.detail}</small>
+              <em>{item.subtitle}</em>
+              <small>{item.description}</small>
             </motion.div>
           ))}
         </div>
       </Chapter>
 
       <Chapter
-        no={content.why.no}
-        title={content.why.title}
-        subtitle={content.why.subtitle}
+        no={sectionNo(7)}
+        title={content.whyChoose.title}
+        subtitle={content.whyChoose.subtitle}
         className="why-chapter"
       >
+        <p className="section-intro">{content.whyChoose.description}</p>
         <div className="why-grid">
-          {content.why.items.map((item) => {
+          {content.whyChoose.items.map((item) => {
             const Icon = iconMap[item.icon] ?? Sparkles;
             return (
-              <article key={item.title} className="why-card">
+              <article key={item.id} className="why-card">
                 <Icon size={20} />
                 <h3>{item.title}</h3>
-                <p>{item.text}</p>
+                <p>{item.description}</p>
               </article>
             );
           })}
@@ -330,36 +265,62 @@ export default function HomeClient({
       </Chapter>
 
       <Chapter
+        no={sectionNo(8)}
+        title={content.clients.title}
+        subtitle={content.clients.subtitle}
+        className="clients-chapter"
+      >
+        <p className="section-intro">{content.clients.description}</p>
+        <div className="client-groups">
+          {content.clients.groups.map((group) => (
+            <article key={group.title} className="client-group">
+              <p>{group.title}</p>
+              <h3>{group.subtitle}</h3>
+              <div>
+                {group.items.map((item) => (
+                  <span key={item}>{item}</span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </Chapter>
+
+      <Chapter
         id="contact"
-        no={content.contact.no}
+        no={sectionNo(9)}
         title={content.contact.title}
         subtitle={content.contact.subtitle}
         className="contact-chapter"
       >
         <div className="contact-list">
+          <p>{content.contact.description}</p>
+          <small>{content.contact.note}</small>
           <a href="#contact">
             <MessageCircle size={15} />
-            微信 {content.contact.wechat}
+            {content.contact.wechat}
           </a>
           <a href={`mailto:${content.contact.email}`}>
             <Mail size={15} />
             {content.contact.email}
           </a>
-          <a href="#contact">
+          <a href="#work">
             <ArrowUpRight size={15} />
-            小红书 {content.contact.xiaohongshu}
+            {content.selectedWorks.linkLabel}
           </a>
+          <span>{content.contact.xiaohongshu}</span>
+          <span>{content.contact.location}</span>
         </div>
-        <CinematicVisual block={content.contact} />
+        <CinematicVisual image={content.contact.cover} />
       </Chapter>
     </main>
   );
 }
 
-function FloatingNav() {
+function FloatingNav({ content }: { content: SiteContentData }) {
   return (
     <header className="floating-nav">
-      <a href="#hero" aria-label="YITO home">
+      <a href="#hero" aria-label={content.navigation.brand}>
         <Image
           src="/yito-logo-white-v2.png"
           alt="YITO visual logo"
@@ -368,13 +329,49 @@ function FloatingNav() {
         />
       </a>
       <nav>
-        <HoverNavLink href="#about" en="ABOUT" zh="关于" />
-        <HoverNavLink href="#services" en="SERVICES" zh="服务" />
-        <HoverNavLink href="#work" en="WORK" zh="案例" />
-        <HoverNavLink href="#workflow" en="PROCESS" zh="流程" />
-        <HoverNavLink href="#contact" en="CONTACT" zh="联系" />
+        {content.navigation.items.map((item) => (
+          <HoverNavLink
+            key={item.href}
+            href={item.href}
+            en={item.label}
+            zh={item.zhLabel}
+          />
+        ))}
+        <a href={content.navigation.cta.href} className="nav-cta">
+          {content.navigation.cta.label}
+        </a>
       </nav>
     </header>
+  );
+}
+
+function WorkCard({ work, index }: { work: WorkContent; index: number }) {
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.05, duration: 0.5 }}
+      className="selected-card"
+    >
+      <Link href={`/works/${work.slug}`} className="work-card-link">
+        <VisualSurface image={work.cover} className="selected-visual" />
+        <div className="selected-card-body">
+          <span className="work-category">{work.category}</span>
+          <h3>{work.title}</h3>
+          <p className="work-subtitle">{work.subtitle}</p>
+          <p className="work-description">{work.description}</p>
+          <div className="work-tag-row">
+            {work.tags.map((tag) => (
+              <span key={tag}>{tag}</span>
+            ))}
+          </div>
+        </div>
+        <span className="open-work-link">
+          {sectionNo(work.homepageOrder)} <ArrowUpRight size={13} />
+        </span>
+      </Link>
+    </motion.article>
   );
 }
 
@@ -415,8 +412,8 @@ function Chapter({
       id={id}
       initial={{ opacity: 0, y: 34 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.24 }}
-      transition={{ duration: 0.72, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.22 }}
+      transition={{ duration: 0.68, ease: "easeOut" }}
       className={`chapter ${className}`}
     >
       <span className="chapter-no">{no}</span>
@@ -432,86 +429,51 @@ function Chapter({
 }
 
 function CinematicVisual({
-  block,
+  image,
   priority,
 }: {
-  block: VisualBlock;
+  image: string;
   priority?: boolean;
 }) {
   return (
-    <div className={`cinematic-visual ${block.image ? "has-image" : ""}`}>
-      <VisualImage block={block} priority={priority} />
-    </div>
-  );
-}
-
-function CaseMediaPreview({ work }: { work: CaseStudy }) {
-  if (work.videoUrl && isDirectVideoUrl(work.videoUrl)) {
-    return (
-      <div
-        className={`cinematic-visual has-video ${work.image ? "has-image" : ""}`}
-      >
-        <video
-          src={work.videoUrl}
-          poster={work.image}
-          autoPlay
-          muted
-          loop
-          playsInline
-        />
-      </div>
-    );
-  }
-
-  return (
-    <div className={`cinematic-visual ${work.image ? "has-image" : ""}`}>
-      <VisualImage block={work} />
-      {work.videoUrl ? (
-        <span className="video-link-badge">
-          视频链接 <ArrowUpRight size={13} />
-        </span>
-      ) : null}
+    <div className="cinematic-visual has-image">
+      <VisualImage image={image} priority={priority} />
     </div>
   );
 }
 
 function VisualSurface({
-  block,
+  image,
   className,
 }: {
-  block: VisualBlock;
+  image: string;
   className: string;
 }) {
   return (
-    <div className={`${className} ${block.image ? "has-image" : ""}`}>
-      <VisualImage block={block} />
+    <div className={`${className} has-image`}>
+      <VisualImage image={image} />
     </div>
   );
 }
 
 function VisualImage({
-  block,
+  image,
   priority,
 }: {
-  block: VisualBlock;
+  image: string;
   priority?: boolean;
 }) {
-  if (!block.image) return null;
-
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={block.image}
+    <ImageWithFallback
+      src={image}
       alt=""
       className="visual-media"
-      loading={priority ? "eager" : "lazy"}
-      decoding="async"
-      fetchPriority={priority ? "high" : "auto"}
-      aria-hidden="true"
+      priority={priority}
+      sizes="(max-width: 820px) 100vw, 50vw"
     />
   );
 }
 
-function isDirectVideoUrl(url: string) {
-  return /\.(mp4|webm|mov)(\?.*)?$/i.test(url);
+function sectionNo(value: number) {
+  return String(value).padStart(2, "0");
 }

@@ -39,10 +39,12 @@ function validateContent(content: SiteContent) {
   if (!content.contact?.email) return "Contact email is required";
   if (!Array.isArray(content.caseStudies))
     return "Case studies must be an array";
-  if (!Array.isArray(content.socialContent?.cards))
-    return "Social content cards must be an array";
-  if (!Array.isArray(content.socialContent?.metrics))
-    return "Social content metrics must be an array";
+  if (!Array.isArray(content.aiCapability?.items))
+    return "AI capability items must be an array";
+  if (content.aiStudio && !Array.isArray(content.aiStudio.items))
+    return "AI studio items must be an array";
+  if (content.clients && !Array.isArray(content.clients.groups))
+    return "Client groups must be an array";
 
   const slugs = new Set<string>();
 
