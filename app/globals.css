@@ -673,47 +673,121 @@ a {
   min-height: calc(100vh - 4.4rem);
 }
 
-.ai-studio-chapter,
-.ai-capability-chapter {
-  grid-template-columns: minmax(20rem, 0.38fr) minmax(34rem, 0.62fr);
+.ai-studio-chapter {
+  grid-template-columns: minmax(18rem, 0.31fr) minmax(0, 0.69fr);
+  grid-template-rows: auto minmax(0, 1fr);
+  align-items: stretch;
+  align-content: stretch;
 }
 
-.ai-studio-copy,
-.ai-capability-copy {
-  align-self: end;
+.ai-studio-chapter .chapter-heading {
+  align-self: start;
+  max-width: 31rem;
+}
+
+.ai-studio-chapter .chapter-heading h2 {
+  max-width: 32rem;
+  font-size: clamp(2.8rem, 4.8vw, 5.8rem);
+  line-height: 0.98;
+}
+
+.ai-studio-layout {
+  display: contents;
+}
+
+.ai-studio-copy {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: start;
   display: grid;
-  gap: 1rem;
-  max-width: 34rem;
+  gap: clamp(1rem, 2vw, 1.6rem);
+  max-width: 28rem;
+  margin-top: clamp(4rem, 12vh, 8rem);
   color: var(--yito-muted);
-  line-height: 1.85;
 }
 
-.ai-studio-copy p,
-.ai-capability-copy p {
+.ai-studio-body {
+  max-width: 40rem;
+}
+
+.ai-studio-copy p {
   margin: 0;
+  font-size: clamp(0.94rem, 1vw, 1.05rem);
+  line-height: 1.82;
+}
+
+.ai-studio-copy p + p {
+  margin-top: 0.75rem;
 }
 
 .ai-studio-copy strong {
   display: block;
-  margin-top: 0.4rem;
+  align-self: start;
+  margin: 0;
   color: var(--yito-paper);
-  font-size: clamp(1.15rem, 1.7vw, 1.8rem);
+  font-size: clamp(1.32rem, 1.75vw, 2.25rem);
   font-weight: 300;
-  line-height: 1.45;
+  line-height: 1.42;
 }
 
 .ai-studio-panel {
-  align-self: end;
-  display: grid;
-  grid-template-columns: minmax(18rem, 0.45fr) minmax(24rem, 0.55fr);
-  gap: 0.8rem;
+  grid-column: 2;
+  grid-row: 2;
+  align-self: start;
+  position: relative;
+  display: block;
+  min-height: clamp(20rem, 34vh, 28rem);
+  margin-top: clamp(4rem, 12vh, 8rem);
+  overflow: hidden;
+  border: 1px solid rgba(244, 244, 239, 0.13);
+  background:
+    radial-gradient(
+      ellipse at 52% 0%,
+      rgba(139, 207, 74, 0.12),
+      transparent 24rem
+    ),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.045), transparent 42%),
+    rgba(5, 6, 5, 0.82);
+}
+
+.ai-studio-panel > .visual-media {
+  z-index: 0;
+  opacity: 0.16;
+  filter: grayscale(0.2) contrast(1.1);
+  object-position: center;
+}
+
+.ai-studio-panel::before {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(244, 244, 239, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244, 244, 239, 0.025) 1px, transparent 1px);
+  background-size: 9rem 9rem;
+}
+
+.ai-studio-panel::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(4, 5, 4, 0.72), rgba(4, 5, 4, 0.52)),
+    radial-gradient(
+      circle at 24% 34%,
+      rgba(139, 207, 74, 0.08),
+      transparent 20rem
+    );
 }
 
 .ai-studio-visual {
   position: relative;
-  min-height: clamp(18rem, 30vw, 27rem);
+  min-height: 100%;
   overflow: hidden;
-  border: 1px solid rgba(244, 244, 239, 0.12);
   background:
     radial-gradient(
       ellipse at 28% 18%,
@@ -723,22 +797,53 @@ a {
     linear-gradient(135deg, #0a0c0a 0%, #1a1c1a 50%, #0a0c0a 100%);
 }
 
+.ai-studio-visual .visual-media {
+  object-position: center;
+}
+
 .ai-capability-grid {
+  position: relative;
+  z-index: 3;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.65rem;
-  align-self: end;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  height: 100%;
+  min-height: inherit;
+  padding: 1px;
+  background: rgba(244, 244, 239, 0.11);
 }
 
 .ai-capability-grid span {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  min-height: 3.5rem;
-  border: 1px solid rgba(244, 244, 239, 0.12);
-  padding: 0 1rem;
-  background: rgba(255, 255, 255, 0.045);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  align-content: space-between;
+  gap: 1.2rem;
+  min-height: clamp(9rem, 16vh, 12.5rem);
+  padding: clamp(1rem, 1.5vw, 1.45rem);
+  background: rgba(7, 9, 7, 0.9);
+  color: rgba(244, 244, 239, 0.88);
+  font-size: clamp(0.95rem, 1.18vw, 1.45rem);
+  font-weight: 400;
+  line-height: 1.32;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.ai-capability-grid span:hover {
+  background: rgba(13, 16, 12, 0.98);
   color: var(--yito-paper);
+  transform: translateY(-2px);
+}
+
+.ai-capability-grid span em {
+  color: rgba(139, 207, 74, 0.78);
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    monospace;
+  font-size: 0.68rem;
+  font-style: normal;
 }
 
 .ai-capability-grid svg {
@@ -2437,6 +2542,7 @@ a {
   .works-chapter .chapter-heading,
   .works-intro,
   .selected-strip,
+  .ai-studio-layout,
   .ai-studio-copy,
   .ai-studio-panel,
   .ai-capability-copy,
@@ -2454,6 +2560,35 @@ a {
   .capability-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .ai-studio-layout {
+    display: grid;
+    min-height: auto;
+    grid-template-rows: auto;
+  }
+
+  .ai-studio-copy {
+    grid-template-columns: 1fr;
+    max-width: none;
+    margin-top: 0;
+  }
+
+  .ai-studio-body {
+    max-width: none;
+  }
+
+  .ai-studio-panel {
+    min-height: 24rem;
+    margin-top: 0;
+  }
+
+  .ai-studio-panel::before {
+    background: linear-gradient(180deg, transparent 38%, rgba(3, 4, 3, 0.88));
+  }
+
+  .ai-capability-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 560px) {
@@ -2468,6 +2603,8 @@ a {
 
   .service-strip,
   .selected-strip,
+  .ai-studio-layout,
+  .ai-studio-copy,
   .ai-studio-panel,
   .ai-capability-grid,
   .client-groups,
@@ -2491,6 +2628,22 @@ a {
 
   .chapter-heading h2 {
     padding-right: 2.8rem;
+  }
+
+  .ai-studio-chapter .chapter-heading h2 {
+    font-size: 3rem;
+  }
+
+  .ai-studio-visual {
+    min-height: 18rem;
+  }
+
+  .ai-capability-grid {
+    padding: 1px;
+  }
+
+  .ai-capability-grid span {
+    min-height: 9rem;
   }
 
   .selected-card,

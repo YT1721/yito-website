@@ -9,12 +9,17 @@ import {
   BadgeCheck,
   Boxes,
   Clapperboard,
+  DraftingCompass,
   Film,
   Gauge,
+  Image as ImageIcon,
+  Layers3,
   Mail,
   MessageCircle,
   PenTool,
+  ScanFace,
   Sparkles,
+  Video,
   Wand2,
 } from "lucide-react";
 import type { SiteContentData } from "../content/site";
@@ -37,6 +42,17 @@ const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   show: { opacity: 1, y: 0 },
 };
+
+const aiStudioIcons = [
+  Sparkles,
+  Clapperboard,
+  ImageIcon,
+  Video,
+  ScanFace,
+  PenTool,
+  Layers3,
+  Wand2,
+];
 
 export default function HomeClient({ content }: { content: SiteContentData }) {
   const featuredWorks = content.works
@@ -194,24 +210,29 @@ export default function HomeClient({ content }: { content: SiteContentData }) {
         subtitle={content.aiStudio.subtitle}
         className="ai-studio-chapter"
       >
-        <div className="ai-studio-copy">
-          {content.aiStudio.body.map((line) => (
-            <p key={line}>{line}</p>
-          ))}
-          <strong>{content.aiStudio.statement}</strong>
-        </div>
-        <div className="ai-studio-panel">
-          <VisualSurface
-            image={content.aiStudio.cover}
-            className="ai-studio-visual"
-          />
-          <div className="ai-capability-grid">
-            {content.aiStudio.capabilities.map((item) => (
-              <span key={item}>
-                <Sparkles size={15} />
-                {item}
-              </span>
-            ))}
+        <div className="ai-studio-layout">
+          <div className="ai-studio-copy">
+            <div className="ai-studio-body">
+              {content.aiStudio.body.map((line) => (
+                <p key={line}>{line}</p>
+              ))}
+            </div>
+            <strong>{content.aiStudio.statement}</strong>
+          </div>
+          <div className="ai-studio-panel">
+            <VisualImage image={content.aiStudio.cover} />
+            <div className="ai-capability-grid">
+              {content.aiStudio.capabilities.map((item, index) => (
+                <span key={item}>
+                  <em>{sectionNo(index + 1)}</em>
+                  {(() => {
+                    const Icon = aiStudioIcons[index] ?? DraftingCompass;
+                    return <Icon size={30} strokeWidth={1.4} />;
+                  })()}
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </Chapter>
