@@ -253,6 +253,12 @@ export default function HomeClient({ content }: { content: SiteContentData }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.06, duration: 0.5 }}
+              whileHover={{
+                y: -18,
+                scale: 1.06,
+                transition: { type: "spring", stiffness: 260, damping: 20 },
+              }}
+              whileTap={{ scale: 0.98 }}
               className="process-step"
             >
               <span className="process-dot">{sectionNo(index + 1)}</span>
@@ -265,34 +271,35 @@ export default function HomeClient({ content }: { content: SiteContentData }) {
       </Chapter>
 
       <Chapter
+        id="why"
         no={sectionNo(7)}
         title={content.whyChoose.title}
         subtitle={content.whyChoose.subtitle}
         className="why-chapter"
       >
+        <div className="why-background" aria-hidden="true">
+          <VisualImage image={content.aiStudio.cover} />
+        </div>
         <p className="section-intro">{content.whyChoose.description}</p>
         <div className="why-grid">
-          {content.whyChoose.items.map((item) => {
+          {content.whyChoose.items.map((item, index) => {
             const Icon = iconMap[item.icon] ?? Sparkles;
             return (
               <article key={item.id} className="why-card">
-                <Icon size={20} />
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
+                <span className="why-card-top">
+                  <em>{sectionNo(index + 1)}</em>
+                  <Icon size={20} />
+                </span>
+                <span className="why-card-body">
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </span>
               </article>
             );
           })}
         </div>
-      </Chapter>
-
-      <Chapter
-        no={sectionNo(8)}
-        title={content.clients.title}
-        subtitle={content.clients.subtitle}
-        className="clients-chapter"
-      >
-        <p className="section-intro">{content.clients.description}</p>
-        <div className="client-groups">
+        <div className="why-industries">
+          <p>{content.clients.description}</p>
           {content.clients.groups.map((group) => (
             <article key={group.title} className="client-group">
               <p>{group.title}</p>
@@ -309,7 +316,7 @@ export default function HomeClient({ content }: { content: SiteContentData }) {
 
       <Chapter
         id="contact"
-        no={sectionNo(9)}
+        no={sectionNo(8)}
         title={content.contact.title}
         subtitle={content.contact.subtitle}
         className="contact-chapter"
