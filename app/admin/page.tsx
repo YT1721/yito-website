@@ -7,7 +7,9 @@ import type { ChangeEvent } from "react";
 import type {
   IconName,
   SiteContent,
+  ScrollWorldScene,
   VisualBlock,
+  WorkVideo,
 } from "../../lib/content-types";
 import initialContent from "../../content/site.json";
 import ImageWithFallback from "../../components/ImageWithFallback";
@@ -67,6 +69,12 @@ const imageGuides = {
     size: "960×540",
     note: "缩略图较小，主体要清晰，不建议放过多文字。",
   },
+  scrollPoster: {
+    usage: "Scroll World 首屏 Poster",
+    ratio: "16:9",
+    size: "1920×1080",
+    note: "作为视频加载前和失败时的兜底画面，左侧需保留文字安全区。",
+  },
 } satisfies Record<string, ImageGuide>;
 
 export default function AdminPage() {
@@ -76,10 +84,12 @@ export default function AdminPage() {
   const [status, setStatus] = useState("已加载本地默认内容");
   const [active, setActive] = useState("hero");
   const [advancedJson, setAdvancedJson] = useState("");
+  const scrollWorld = content.scrollWorld ?? createEmptyScrollWorld();
 
   const sections = useMemo(
     () => [
       ["hero", "首页首屏"],
+      ["scrollWorld", "滚动视觉"],
       ["about", "关于我们"],
       ["services", "服务管理"],
       ["works", "精选案例"],
@@ -259,6 +269,115 @@ export default function AdminPage() {
               imageGuide={imageGuides.hero}
               onChange={(patch) => update((d) => Object.assign(d.hero, patch))}
             />
+          </Panel>
+        )}
+
+        {active === "scrollWorld" && (
+          <Panel
+            title="Scroll World 滚动视觉"
+            intro="配置首页首屏滚动驱动视频样机；关闭后自动使用普通 Hero。"
+          >
+            <Grid>
+              <SelectField
+                label="启用滚动视频"
+                value={scrollWorld.enabled ? "true" : "false"}
+                options={["false", "true"]}
+                onChange={(value) =>
+                  update((d) => {
+                    d.scrollWorld ??= createEmptyScrollWorld();
+                    d.scrollWorld.enabled = value === "true";
+                  })
+                }
+              />
+              <SelectField
+                label="视频失败兜底方式"
+                value={scrollWorld.fallbackMode}
+                options={["poster", "static"]}
+                onChange={(value) =>
+                  update((d) => {
+                    d.scrollWorld ??= createEmptyScrollWorld();
+                    d.scrollWorld.fallbackMode =
+                      value === "static" ? "static" : "poster";
+                  })
+                }
+              />
+            </Grid>
+            <Grid>
+              <Field
+                label="样机标题"
+                value={scrollWorld.introTitle}
+                onChange={(value) =>
+                  update((d) => {
+                    d.scrollWorld ??= createEmptyScrollWorld();
+                    d.scrollWorld.introTitle = value;
+                  })
+                }
+              />
+              <Field
+                label="样机副标题"
+                value={scrollWorld.introSubtitle}
+                onChange={(value) =>
+                  update((d) => {
+                    d.scrollWorld ??= createEmptyScrollWorld();
+                    d.scrollWorld.introSubtitle = value;
+                  })
+                }
+              />
+            </Grid>
+            <Field
+              label="桌面视频 URL（16:9，建议 1280×720 MP4）"
+              value={scrollWorld.desktopVideo}
+              onChange={(value) =>
+                update((d) => {
+                  d.scrollWorld ??= createEmptyScrollWorld();
+                  d.scrollWorld.desktopVideo = value;
+                })
+              }
+            />
+            <UploadOnly
+              label="上传桌面视频（MP4/WebM/MOV，第一阶段建议 720p）"
+              accept="video/mp4,video/webm,video/quicktime"
+              onUploaded={(url) =>
+                update((d) => {
+                  d.scrollWorld ??= createEmptyScrollWorld();
+                  d.scrollWorld.desktopVideo = url;
+                })
+              }
+            />
+            <Field
+              label="移动视频 URL（可选，9:16）"
+              value={scrollWorld.mobileVideo ?? ""}
+              onChange={(value) =>
+                update((d) => {
+                  d.scrollWorld ??= createEmptyScrollWorld();
+                  d.scrollWorld.mobileVideo = value;
+                })
+              }
+            />
+            <VisualEditor
+              block={{ image: scrollWorld.poster }}
+              imageGuide={imageGuides.scrollPoster}
+              onChange={(patch) =>
+                update((d) => {
+                  d.scrollWorld ??= createEmptyScrollWorld();
+                  d.scrollWorld.poster = patch.image || "";
+                })
+              }
+            />
+            <ScrollWorldSceneEditor
+              scenes={scrollWorld.scenes ?? defaultScrollWorldScenes()}
+              services={content.services.items}
+              onChange={(scenes) =>
+                update((d) => {
+                  d.scrollWorld ??= createEmptyScrollWorld();
+                  d.scrollWorld.scenes = scenes;
+                })
+              }
+            />
+            <p className="admin-help">
+              推荐流程：先用 GPT 生成 1920×1080 poster，再用即梦 CLI 生成 720p
+              横版视频。视频未生成前可保持关闭或使用 poster fallback。
+            </p>
           </Panel>
         )}
 
@@ -727,6 +846,17 @@ export default function AdminPage() {
                       )
                     }
                   />
+                  <ServiceRelationEditor
+                    services={content.services.items}
+                    value={item.serviceIds ?? []}
+                    onChange={(serviceIds) =>
+                      update(
+                        (d) =>
+                          void (d.caseStudies[caseIndex].serviceIds =
+                            serviceIds),
+                      )
+                    }
+                  />
                   <TextArea
                     label="标签（每行一个）"
                     value={item.tags.join("\n")}
@@ -737,10 +867,15 @@ export default function AdminPage() {
                       )
                     }
                   />
-                  <Field
-                    label="视频地址（可选：mp4/webm/mov 直链可播放，普通外链会作为按钮打开）"
-                    value={item.videoUrl ?? ""}
-                    onChange={(value) =>
+                  <VideoEditor
+                    value={item.video}
+                    fallbackUrl={item.videoUrl}
+                    onChange={(video) =>
+                      update(
+                        (d) => void (d.caseStudies[caseIndex].video = video),
+                      )
+                    }
+                    onFallbackChange={(value) =>
                       update(
                         (d) =>
                           void (d.caseStudies[caseIndex].videoUrl =
@@ -767,7 +902,12 @@ export default function AdminPage() {
                     accept="video/mp4,video/webm,video/quicktime"
                     onUploaded={(url) =>
                       update(
-                        (d) => void (d.caseStudies[caseIndex].videoUrl = url),
+                        (d) =>
+                          void (d.caseStudies[caseIndex].video = {
+                            type: "local",
+                            url,
+                            title: "作品视频",
+                          }),
                       )
                     }
                   />
@@ -853,6 +993,7 @@ export default function AdminPage() {
                       solution: "填写制作流程。",
                       result: "填写成果展示。",
                       services: ["创意方向", "AI 视觉生成"],
+                      serviceIds: ["ai-brand-film"],
                       tags: ["AI视觉"],
                       meta: ["项目类型  商业视觉"],
                       thumbs: [{}, {}],
@@ -1404,6 +1545,207 @@ function Stack({ children }: { children: React.ReactNode }) {
   return <div className="admin-stack">{children}</div>;
 }
 
+type EditableService = SiteContent["services"]["items"][number];
+
+function serviceOptionId(service: EditableService, index: number) {
+  return (
+    service.id || slugify(service.en || service.title || `service-${index + 1}`)
+  );
+}
+
+function ServiceRelationEditor({
+  services,
+  value,
+  onChange,
+}: {
+  services: EditableService[];
+  value: string[];
+  onChange: (value: string[]) => void;
+}) {
+  function toggle(id: string) {
+    onChange(
+      value.includes(id) ? value.filter((item) => item !== id) : [...value, id],
+    );
+  }
+
+  return (
+    <div className="admin-choice-group">
+      <span>关联服务（决定首页服务章节自动展示哪些案例）</span>
+      <div>
+        {services.map((service, index) => {
+          const id = serviceOptionId(service, index);
+          return (
+            <label key={id}>
+              <input
+                type="checkbox"
+                checked={value.includes(id)}
+                onChange={() => toggle(id)}
+              />
+              {service.title}
+            </label>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function VideoEditor({
+  value,
+  fallbackUrl,
+  onChange,
+  onFallbackChange,
+}: {
+  value?: WorkVideo;
+  fallbackUrl?: string;
+  onChange: (value: WorkVideo | undefined) => void;
+  onFallbackChange: (value: string) => void;
+}) {
+  const video = value ?? {
+    type: "external",
+    url: fallbackUrl ?? "",
+    title: "",
+    embedUrl: "",
+  };
+
+  function patch(patchValue: Partial<WorkVideo>) {
+    const next = { ...video, ...patchValue };
+    onChange(next.url ? next : undefined);
+  }
+
+  return (
+    <div className="admin-video-editor">
+      <Grid>
+        <SelectField
+          label="视频类型"
+          value={video.type}
+          options={["bilibili", "external", "local"]}
+          onChange={(type) => patch({ type: type as WorkVideo["type"] })}
+        />
+        <Field
+          label="视频标题（可选）"
+          value={video.title ?? ""}
+          onChange={(title) => patch({ title: title || undefined })}
+        />
+      </Grid>
+      <Field
+        label="视频 URL（B站页面 / 外链 / 本地 mp4）"
+        value={video.url}
+        onChange={(url) => patch({ url })}
+      />
+      <Field
+        label="B站 embed 地址（可选，有则站内 iframe 播放）"
+        value={video.embedUrl ?? ""}
+        onChange={(embedUrl) => patch({ embedUrl: embedUrl || undefined })}
+      />
+      <Field
+        label="兼容旧视频地址 videoUrl（旧数据可保留，不建议新填）"
+        value={fallbackUrl ?? ""}
+        onChange={onFallbackChange}
+      />
+    </div>
+  );
+}
+
+function ScrollWorldSceneEditor({
+  scenes,
+  services,
+  onChange,
+}: {
+  scenes: ScrollWorldScene[];
+  services: EditableService[];
+  onChange: (scenes: ScrollWorldScene[]) => void;
+}) {
+  const serviceOptions = [
+    "",
+    ...services.map((service, index) => serviceOptionId(service, index)),
+  ];
+
+  function patch(index: number, patchValue: Partial<ScrollWorldScene>) {
+    onChange(
+      scenes.map((scene, sceneIndex) =>
+        sceneIndex === index ? { ...scene, ...patchValue } : scene,
+      ),
+    );
+  }
+
+  return (
+    <div className="admin-sublist">
+      <h4>Scroll World 六个场景</h4>
+      {scenes.map((scene, index) => (
+        <EditableCard
+          key={`${scene.id}-${index}`}
+          title={`场景 ${index + 1}`}
+          onRemove={() =>
+            onChange(scenes.filter((_, itemIndex) => itemIndex !== index))
+          }
+          onMoveUp={() => onChange(moveCopy(scenes, index, index - 1))}
+          onMoveDown={() => onChange(moveCopy(scenes, index, index + 1))}
+        >
+          <Grid>
+            <Field
+              label="场景编号"
+              value={scene.no}
+              onChange={(no) => patch(index, { no })}
+            />
+            <Field
+              label="场景 ID"
+              value={scene.id}
+              onChange={(id) => patch(index, { id: slugify(id) })}
+            />
+          </Grid>
+          <Grid>
+            <Field
+              label="场景标题"
+              value={scene.title}
+              onChange={(title) => patch(index, { title })}
+            />
+            <Field
+              label="中文副标题"
+              value={scene.subtitle}
+              onChange={(subtitle) => patch(index, { subtitle })}
+            />
+          </Grid>
+          <TextArea
+            label="场景说明"
+            value={scene.body}
+            onChange={(body) => patch(index, { body })}
+          />
+          <SelectField
+            label="关联服务（可选）"
+            value={scene.serviceId ?? ""}
+            options={serviceOptions}
+            onChange={(serviceId) =>
+              patch(index, { serviceId: serviceId || undefined })
+            }
+          />
+          <VisualEditor
+            block={{ image: scene.poster }}
+            imageGuide={imageGuides.scrollPoster}
+            onChange={(visual) => patch(index, { poster: visual.image })}
+          />
+        </EditableCard>
+      ))}
+      <AddButton
+        onClick={() =>
+          onChange([
+            ...scenes,
+            {
+              id: `scene-${Date.now()}`,
+              no: String(scenes.length + 1).padStart(2, "0"),
+              title: "新场景",
+              subtitle: "场景说明",
+              body: "填写滚动章节文案。",
+            },
+          ])
+        }
+      >
+        添加滚动场景
+      </AddButton>
+    </div>
+  );
+}
+
 function Field({
   label,
   value,
@@ -1687,6 +2029,12 @@ function move<T>(items: T[], from: number, to: number) {
   items.splice(to, 0, item);
 }
 
+function moveCopy<T>(items: T[], from: number, to: number) {
+  const next = [...items];
+  move(next, from, to);
+  return next;
+}
+
 function lines(value: string) {
   return value
     .split("\n")
@@ -1713,6 +2061,77 @@ function createEmptyAiStudio(): NonNullable<SiteContent["aiStudio"]> {
     items: ["AI 创意方向生成", "AI 静态视觉生成"],
     statement: "AI 是工具，导演判断才是价值。",
   };
+}
+
+function createEmptyScrollWorld(): NonNullable<SiteContent["scrollWorld"]> {
+  return {
+    enabled: false,
+    desktopVideo: "/videos/scroll-world/yito-hero-720p.mp4",
+    mobileVideo: "",
+    poster: "/images/scroll-world/yito-hero-poster.jpg",
+    introTitle: "YITO Scroll World",
+    introSubtitle: "滚动穿越 AI 商业视觉世界",
+    fallbackMode: "poster",
+    scenes: defaultScrollWorldScenes(),
+  };
+}
+
+function defaultScrollWorldScenes(): ScrollWorldScene[] {
+  return [
+    {
+      id: "portal",
+      no: "01",
+      title: "YITO Portal",
+      subtitle: "AI 原生商业视觉工作室",
+      body: "进入 YITO 的电影化商业视觉世界，从品牌主张到最终交付形成连续体验。",
+      poster: "/images/scroll-world/yito-hero-poster.jpg",
+    },
+    {
+      id: "ai-brand-film",
+      no: "02",
+      title: "AI 品牌广告片",
+      subtitle: "AI Brand Film",
+      body: "为品牌发布、产品推广和社媒投放建立高质感商业影像。",
+      serviceId: "ai-brand-film",
+      poster: "/images/services/service-ai-brand-film.jpg",
+    },
+    {
+      id: "ai-corporate-film",
+      no: "03",
+      title: "AI 企业宣传片",
+      subtitle: "Corporate Film",
+      body: "用科技场景、企业叙事和视觉系统表达公司形象与业务价值。",
+      serviceId: "ai-corporate-film",
+      poster: "/images/services/service-corporate-film.jpg",
+    },
+    {
+      id: "ai-commercial-short-film",
+      no: "04",
+      title: "AI 商业短片",
+      subtitle: "Commercial Short Film",
+      body: "以角色、故事和镜头调度，让品牌内容具备传播叙事。",
+      serviceId: "ai-commercial-short-film",
+      poster: "/images/services/service-commercial-short.jpg",
+    },
+    {
+      id: "ai-concept-visual",
+      no: "05",
+      title: "AI 概念视觉设计",
+      subtitle: "AI Concept Visual",
+      body: "快速建立活动 KV、产品概念和视觉提案方向。",
+      serviceId: "ai-concept-visual",
+      poster: "/images/services/service-concept-visual.jpg",
+    },
+    {
+      id: "social-content-visual",
+      no: "06",
+      title: "社媒内容视觉",
+      subtitle: "Social Content Visual",
+      body: "构建短视频、封面海报和内容矩阵，服务小红书、抖音和视频号传播。",
+      serviceId: "social-content-visual",
+      poster: "/images/services/service-social-content.jpg",
+    },
+  ];
 }
 
 function createEmptyClients(): NonNullable<SiteContent["clients"]> {

@@ -6,7 +6,7 @@ export type WorkContent = {
   category: string;
   industry: string;
   cover: string;
-  video?: string;
+  video?: WorkVideo;
   videoUrl?: string;
   description: string;
   challenge: string;
@@ -16,10 +16,18 @@ export type WorkContent = {
   representativeProjects?: string[];
   result: string;
   services: string[];
+  serviceIds: string[];
   tags: string[];
   images: string[];
   featured: boolean;
   homepageOrder: number;
+};
+
+export type WorkVideo = {
+  type: "bilibili" | "external" | "local";
+  url: string;
+  embedUrl?: string;
+  title?: string;
 };
 
 export type WorkGroup =
@@ -91,6 +99,7 @@ export const worksContent = [
     result:
       "最终形成一组适用于品牌广告片、发布会视觉、官网首屏视频和社媒传播的汽车商业视觉方案。",
     services: ["AI 品牌广告片", "AI 视觉生成", "视频制作"],
+    serviceIds: ["ai-brand-film"],
     tags: ["AI Video", "Automotive", "Brand Film", "Cinematic"],
     images: [
       "/images/works/ai-car/shot-01.jpg",
@@ -137,6 +146,7 @@ export const worksContent = [
     result:
       "项目可延展为品牌主片、产品介绍、赛场纪录、亲子成长短片、社媒切片等多种内容形式。",
     services: ["AI 品牌广告片", "品牌叙事", "商业短片"],
+    serviceIds: ["ai-brand-film", "ai-commercial-short-film"],
     tags: ["Brand Film", "Outdoor", "Education", "AI Visual"],
     images: [
       "/images/works/apollo/race-01.jpg",
@@ -182,6 +192,7 @@ export const worksContent = [
     result:
       "最终视频可用于展厅循环播放、官网展示、招商介绍、线上传播与产品系列推广。",
     services: ["AI 企业宣传片", "产品视觉", "企业形象内容"],
+    serviceIds: ["ai-corporate-film"],
     tags: ["Corporate Film", "Product Film", "Fresh Life", "AI Production"],
     images: [
       "/images/works/fresh-life/product-01.jpg",
@@ -226,6 +237,7 @@ export const worksContent = [
     ],
     result: "项目适合用于品牌招商、官网展示、展会播放、电商主视觉与社媒宣传。",
     services: ["AI 企业宣传片", "产品形象片", "生活方式视觉"],
+    serviceIds: ["ai-corporate-film", "ai-commercial-short-film"],
     tags: ["Product Film", "Lifestyle", "Premium Visual", "Brand Image"],
     images: [
       "/images/works/junlin/lifestyle-01.jpg",
@@ -262,6 +274,7 @@ export const worksContent = [
     result:
       "该类经验可继续延展到 AI 酒类广告片、产品短片、招商视觉和电商主视觉中。",
     services: ["AI 概念视觉设计", "产品视觉", "品牌视觉"],
+    serviceIds: ["ai-concept-visual"],
     tags: ["Luxury Brand", "Liquor", "Product Visual", "Commercial"],
     images: [
       "/images/works/liquor/package-01.jpg",
@@ -303,6 +316,7 @@ export const worksContent = [
     result:
       "这些历史项目证明 YITO 具备品牌识别、商业设计和跨行业视觉表达经验，可为 AI 商业视觉项目提供更稳定的审美与策略支撑。",
     services: ["品牌视觉设计", "包装设计", "商业视觉", "AI 视觉策略"],
+    serviceIds: ["ai-concept-visual", "social-content-visual"],
     tags: ["Brand Identity", "Packaging", "Visual System", "Design"],
     images: [
       "/images/works/brand-selected/foison-01.jpg",

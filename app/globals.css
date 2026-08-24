@@ -356,6 +356,225 @@ a {
   background: rgba(139, 207, 74, 0.045);
 }
 
+.scroll-world-hero {
+  position: relative;
+  min-height: 190vh;
+  scroll-margin-top: 4.4rem;
+  border-bottom: 1px solid var(--yito-line);
+  background: #030403;
+}
+
+.scroll-world-sticky {
+  position: sticky;
+  top: 4.4rem;
+  min-height: calc(100vh - 4.4rem);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.scroll-world-media,
+.scroll-world-vignette {
+  position: absolute;
+  inset: 0;
+}
+
+.scroll-world-media {
+  z-index: 0;
+  background: #030403;
+}
+
+.scroll-world-media video,
+.scroll-world-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 66% 50%;
+}
+
+.scroll-world-media video {
+  z-index: 2;
+}
+
+.scroll-world-poster {
+  z-index: 1;
+  filter: grayscale(0.08) contrast(1.14) brightness(0.72);
+  transform: scale(1.025);
+}
+
+.scroll-world-vignette {
+  z-index: 3;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 4, 3, 0.96) 0%,
+      rgba(3, 4, 3, 0.74) 34%,
+      rgba(3, 4, 3, 0.2) 62%,
+      rgba(3, 4, 3, 0.82) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(3, 4, 3, 0.56),
+      rgba(3, 4, 3, 0.18) 44%,
+      rgba(3, 4, 3, 0.92)
+    ),
+    radial-gradient(
+      circle at 76% 52%,
+      rgba(139, 207, 74, 0.13),
+      transparent 30rem
+    );
+}
+
+.scroll-world-vignette::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background-image:
+    linear-gradient(rgba(244, 244, 239, 0.065) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244, 244, 239, 0.05) 1px, transparent 1px);
+  background-size:
+    100% 19rem,
+    33.333% 100%;
+  opacity: 0.8;
+}
+
+.scroll-world-copy {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(100vh - 4.4rem);
+  max-width: 36rem;
+  padding: clamp(2rem, 3.8vw, 4.6rem);
+}
+
+.scroll-world-copy h1 {
+  margin: clamp(1.2rem, 2vw, 1.8rem) 0 0;
+  color: var(--yito-paper);
+  font-size: clamp(3.8rem, 8vw, 9.5rem);
+  font-weight: 300;
+  line-height: 0.92;
+  letter-spacing: 0;
+}
+
+.scroll-world-kicker {
+  margin: clamp(1rem, 1.4vw, 1.5rem) 0 0;
+  color: var(--yito-green);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.scroll-world-progress {
+  position: absolute;
+  right: clamp(1.4rem, 3vw, 2.4rem);
+  bottom: clamp(1.2rem, 2.4vw, 2rem);
+  z-index: 4;
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  color: rgba(244, 244, 239, 0.52);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.scroll-world-progress::before {
+  width: clamp(4rem, 12vw, 12rem);
+  height: 1px;
+  content: "";
+  background: linear-gradient(90deg, transparent, rgba(139, 207, 74, 0.6));
+}
+
+.scroll-world-status {
+  position: absolute;
+  right: clamp(1.4rem, 3vw, 2.4rem);
+  top: clamp(1.2rem, 2.4vw, 2rem);
+  z-index: 4;
+  margin: 0;
+  color: rgba(244, 244, 239, 0.58);
+  font-size: 0.72rem;
+}
+
+.scroll-world-scene-card {
+  position: absolute;
+  right: clamp(1.4rem, 4vw, 4.6rem);
+  bottom: clamp(6.5rem, 14vh, 9rem);
+  z-index: 4;
+  display: grid;
+  gap: 0.55rem;
+  width: min(31rem, 34vw);
+  border-left: 1px solid rgba(139, 207, 74, 0.46);
+  padding-left: 1.1rem;
+  color: rgba(244, 244, 239, 0.68);
+}
+
+.scroll-world-scene-card span {
+  color: rgba(139, 207, 74, 0.9);
+  font-size: 0.72rem;
+}
+
+.scroll-world-scene-card p,
+.scroll-world-scene-card strong,
+.scroll-world-scene-card small {
+  margin: 0;
+}
+
+.scroll-world-scene-card p {
+  color: var(--yito-paper);
+  font-size: clamp(1.35rem, 2.1vw, 2.55rem);
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.scroll-world-scene-card strong {
+  color: rgba(244, 244, 239, 0.75);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.scroll-world-scene-card small {
+  max-width: 27rem;
+  color: rgba(244, 244, 239, 0.58);
+  font-size: 0.82rem;
+  line-height: 1.75;
+}
+
+.scroll-world-rail {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(1.3rem, 2.5vw, 2rem);
+  z-index: 4;
+  display: flex;
+  gap: 0.55rem;
+  transform: translateX(-50%);
+}
+
+.scroll-world-rail span {
+  display: grid;
+  width: 1.95rem;
+  height: 1.95rem;
+  place-items: center;
+  border: 1px solid rgba(244, 244, 239, 0.12);
+  color: rgba(244, 244, 239, 0.46);
+  font-size: 0.62rem;
+  transition:
+    border-color 220ms ease,
+    color 220ms ease,
+    background 220ms ease,
+    transform 220ms ease;
+}
+
+.scroll-world-rail span.is-active {
+  border-color: rgba(139, 207, 74, 0.66);
+  background: rgba(139, 207, 74, 0.08);
+  color: var(--yito-green);
+  transform: translateY(-2px);
+}
+
 .about-chapter {
   grid-template-columns: minmax(22rem, 0.52fr) minmax(28rem, 0.48fr);
   grid-template-rows: auto 1fr auto;
@@ -509,6 +728,129 @@ a {
   color: var(--yito-green);
   font-size: 0.62rem;
   line-height: 1.25;
+}
+
+.service-world-chapter {
+  grid-template-columns: minmax(20rem, 0.32fr) minmax(25rem, 0.38fr) minmax(
+      18rem,
+      0.3fr
+    );
+  grid-template-rows: auto minmax(0, 1fr);
+  align-items: end;
+  min-height: calc(100vh - 4.4rem);
+}
+
+.service-world-chapter.is-reversed {
+  grid-template-columns: minmax(18rem, 0.3fr) minmax(25rem, 0.38fr) minmax(
+      20rem,
+      0.32fr
+    );
+}
+
+.service-world-chapter .chapter-heading {
+  grid-column: 1;
+}
+
+.service-world-copy {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: end;
+  display: grid;
+  gap: 1rem;
+  max-width: 30rem;
+  color: rgba(244, 244, 239, 0.72);
+}
+
+.service-world-copy > svg {
+  color: var(--yito-green);
+}
+
+.service-world-copy p {
+  margin: 0;
+  font-size: clamp(0.95rem, 1.1vw, 1.15rem);
+  line-height: 1.9;
+}
+
+.service-world-visual {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  min-height: clamp(28rem, 68vh, 46rem);
+  border: 1px solid rgba(244, 244, 239, 0.12);
+}
+
+.service-related-works {
+  grid-column: 3;
+  grid-row: 2;
+  align-self: end;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.service-world-chapter.is-reversed .chapter-heading,
+.service-world-chapter.is-reversed .service-world-copy {
+  grid-column: 3;
+}
+
+.service-world-chapter.is-reversed .service-world-visual {
+  grid-column: 2;
+}
+
+.service-world-chapter.is-reversed .service-related-works {
+  grid-column: 1;
+}
+
+.service-related-works > span {
+  color: var(--yito-green);
+  font-size: 0.72rem;
+}
+
+.service-related-card {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: 0.65rem 0.8rem;
+  align-items: end;
+  min-height: 6.5rem;
+  border: 1px solid rgba(244, 244, 239, 0.12);
+  padding: 0.55rem;
+  background: rgba(255, 255, 255, 0.035);
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.service-related-card:hover {
+  border-color: rgba(139, 207, 74, 0.44);
+  background: rgba(255, 255, 255, 0.055);
+  transform: translateY(-3px);
+}
+
+.service-related-thumb {
+  grid-row: span 3;
+  min-height: 5.4rem;
+}
+
+.service-related-card small,
+.service-related-card em {
+  color: var(--yito-muted);
+  font-size: 0.68rem;
+  font-style: normal;
+}
+
+.service-related-card strong {
+  color: var(--yito-paper);
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.service-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  width: fit-content;
+  color: var(--yito-green);
+  font-size: 0.74rem;
 }
 
 .micro-copy {
@@ -879,6 +1221,44 @@ a {
   font-size: clamp(1.32rem, 1.75vw, 2.25rem);
   font-weight: 300;
   line-height: 1.42;
+}
+
+.workflow-mini-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid rgba(244, 244, 239, 0.11);
+  background: rgba(244, 244, 239, 0.09);
+}
+
+.workflow-mini-list span {
+  display: grid;
+  gap: 0.45rem;
+  min-height: 6.7rem;
+  align-content: end;
+  padding: 0.8rem;
+  background: rgba(6, 8, 6, 0.82);
+}
+
+.workflow-mini-list em {
+  color: var(--yito-green);
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    monospace;
+  font-size: 0.66rem;
+  font-style: normal;
+}
+
+.workflow-mini-list strong {
+  color: var(--yito-paper);
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.workflow-mini-list small {
+  color: var(--yito-muted);
+  font-size: 0.68rem;
 }
 
 .ai-studio-panel {
@@ -1829,6 +2209,13 @@ a {
   object-fit: cover;
 }
 
+.case-video-section iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid rgba(244, 244, 239, 0.14);
+  background: #000;
+}
+
 .case-video-section > a {
   display: inline-flex;
   width: fit-content;
@@ -2151,12 +2538,57 @@ a {
   font-size: 0.74rem;
 }
 
+.admin-choice-group,
+.admin-video-editor {
+  display: grid;
+  gap: 0.65rem;
+  border: 1px solid rgba(21, 22, 18, 0.1);
+  padding: 0.85rem;
+  background: rgba(244, 244, 239, 0.52);
+}
+
+.admin-choice-group > span {
+  color: #62655f;
+  font-size: 0.78rem;
+}
+
+.admin-choice-group > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.admin-choice-group label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  border: 1px solid rgba(21, 22, 18, 0.12);
+  padding: 0.42rem 0.58rem;
+  background: #fff;
+  color: #151612;
+  font-size: 0.8rem;
+}
+
+.admin-choice-group input {
+  accent-color: #8bcf4a;
+}
+
 .upload-status {
   align-self: center;
   margin: 0;
   color: #62655f;
   font-size: 0.78rem;
   line-height: 1.5;
+}
+
+.admin-help {
+  margin: 0;
+  border-left: 2px solid #8bcf4a;
+  padding: 0.65rem 0.85rem;
+  background: rgba(139, 207, 74, 0.08);
+  color: #62655f;
+  font-size: 0.8rem;
+  line-height: 1.7;
 }
 
 .admin-preview {
@@ -2779,6 +3211,30 @@ a {
     min-height: calc(100vh - 4.4rem);
   }
 
+  .scroll-world-hero {
+    min-height: 140vh;
+  }
+
+  .scroll-world-copy {
+    max-width: 34rem;
+    padding: 1.4rem;
+  }
+
+  .scroll-world-copy h1 {
+    font-size: clamp(3rem, 16vw, 5.8rem);
+  }
+
+  .scroll-world-progress {
+    left: 1.4rem;
+    right: 1.4rem;
+    justify-content: space-between;
+  }
+
+  .scroll-world-media video,
+  .scroll-world-poster {
+    object-position: 58% 50%;
+  }
+
   .hero-copy {
     max-width: 32rem;
   }
@@ -2902,6 +3358,26 @@ a {
     font-size: 2.55rem;
   }
 
+  .scroll-world-copy {
+    justify-content: end;
+    padding-bottom: 5.5rem;
+  }
+
+  .scroll-world-copy h1 {
+    font-size: 3.4rem;
+  }
+
+  .scroll-world-progress {
+    display: none;
+  }
+
+  .scroll-world-status {
+    left: 1rem;
+    right: 1rem;
+    top: auto;
+    bottom: 1rem;
+  }
+
   .chapter-heading h2 {
     padding-right: 2.8rem;
   }
@@ -2925,5 +3401,76 @@ a {
   .selected-card,
   .service-card {
     min-height: auto;
+  }
+}
+
+@media (max-width: 980px) {
+  .service-world-chapter,
+  .service-world-chapter.is-reversed {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .service-world-chapter .chapter-heading,
+  .service-world-copy,
+  .service-world-visual,
+  .service-related-works,
+  .service-world-chapter.is-reversed .chapter-heading,
+  .service-world-chapter.is-reversed .service-world-copy,
+  .service-world-chapter.is-reversed .service-world-visual,
+  .service-world-chapter.is-reversed .service-related-works {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .service-world-copy,
+  .service-related-works {
+    max-width: none;
+  }
+
+  .service-world-visual {
+    min-height: 24rem;
+  }
+
+  .service-related-card {
+    grid-template-columns: 7rem 1fr;
+  }
+
+  .scroll-world-scene-card {
+    left: clamp(1rem, 5vw, 2rem);
+    right: clamp(1rem, 5vw, 2rem);
+    bottom: 7rem;
+    width: auto;
+  }
+
+  .scroll-world-rail {
+    left: clamp(1rem, 5vw, 2rem);
+    transform: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .scroll-world-scene-card {
+    display: none;
+  }
+
+  .scroll-world-rail {
+    display: none;
+  }
+
+  .workflow-mini-list {
+    grid-template-columns: 1fr;
+  }
+
+  .service-related-card {
+    grid-template-columns: 5.8rem 1fr;
+  }
+
+  .service-related-thumb {
+    min-height: 4.8rem;
+  }
+
+  .admin-choice-group > div {
+    display: grid;
   }
 }

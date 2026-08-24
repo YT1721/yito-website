@@ -54,13 +54,32 @@ export type ContactContentData = {
   cover: string;
 };
 
+export type ScrollWorldContentData = {
+  enabled: boolean;
+  desktopVideo: string;
+  mobileVideo?: string;
+  poster: string;
+  introTitle: string;
+  introSubtitle: string;
+  fallbackMode: "poster" | "static";
+  scenes: Array<{
+    id: string;
+    no: string;
+    title: string;
+    subtitle: string;
+    body: string;
+    serviceId?: string;
+    poster?: string;
+  }>;
+};
+
 export const siteContent = {
   navigation: {
     brand: "YITO",
     items: [
       { href: "#work", label: "WORK", zhLabel: "案例" },
       { href: "#services", label: "SERVICES", zhLabel: "服务" },
-      { href: "#workflow", label: "WORKFLOW", zhLabel: "流程" },
+      { href: "#ai-studio", label: "WORKFLOW", zhLabel: "流程" },
       { href: "#about", label: "ABOUT", zhLabel: "关于" },
       { href: "#contact", label: "CONTACT", zhLabel: "联系" },
     ],
@@ -112,6 +131,64 @@ export const siteContent = {
       "Social Content",
     ],
     cover: "/images/hero/hero-light-gate.jpg",
+  },
+  scrollWorld: {
+    enabled: true,
+    desktopVideo: "/videos/scroll-world/yito-hero-720p.mp4",
+    mobileVideo: "",
+    poster: "/images/scroll-world/yito-hero-poster.jpg",
+    introTitle: "YITO Scroll World",
+    introSubtitle: "滚动穿越 AI 商业视觉世界",
+    fallbackMode: "poster",
+    scenes: [
+      {
+        id: "portal",
+        no: "01",
+        title: "YITO Portal",
+        subtitle: "AI 原生商业视觉工作室",
+        body: "从一个光门进入 YITO 的商业视觉生产世界。",
+      },
+      {
+        id: "ai-brand-film",
+        no: "02",
+        title: "AI 品牌广告片",
+        subtitle: "Brand film powered by AI",
+        body: "把品牌发布、产品广告和招商传播转化为电影级商业影像。",
+        serviceId: "ai-brand-film",
+      },
+      {
+        id: "ai-corporate-film",
+        no: "03",
+        title: "AI 企业宣传片",
+        subtitle: "Corporate visual narrative",
+        body: "为官网、展会、发布会和招商场景建立更高级的企业形象内容。",
+        serviceId: "ai-corporate-film",
+      },
+      {
+        id: "ai-commercial-short-film",
+        no: "04",
+        title: "AI 商业短片",
+        subtitle: "Cinematic short content",
+        body: "用镜头、角色和节奏完成品牌故事、产品短片和内容 IP。",
+        serviceId: "ai-commercial-short-film",
+      },
+      {
+        id: "ai-concept-visual",
+        no: "05",
+        title: "AI 概念视觉设计",
+        subtitle: "Concept visual system",
+        body: "为 Campaign、KV、海报和视觉提案快速建立方向。",
+        serviceId: "ai-concept-visual",
+      },
+      {
+        id: "social-content-visual",
+        no: "06",
+        title: "社媒内容视觉",
+        subtitle: "Social content visual",
+        body: "为小红书、抖音、视频号和品牌日常内容建立可持续视觉生产方式。",
+        serviceId: "social-content-visual",
+      },
+    ],
   },
   selectedWorks: {
     title: "Selected Works",
@@ -209,6 +286,7 @@ export const siteContent = {
   };
   meta: SiteMetaContent;
   hero: HeroContentData;
+  scrollWorld: ScrollWorldContentData;
   about: AboutContentData;
   aiStudio: {
     title: string;

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, Film, Play, Tag } from "lucide-react";
-import type { WorkContent } from "../../../content/works";
+import type { WorkContent, WorkVideo } from "../../../content/works";
 import ImageWithFallback from "../../../components/ImageWithFallback";
 import { readRuntimeWorks } from "../../../lib/runtime-content";
 
@@ -82,7 +82,7 @@ export default async function WorkDetailPage({ params }: WorkPageParams) {
 
   if (!work) notFound();
 
-  const videoUrl = work.video ?? work.videoUrl;
+  const video = normalizeWorkVideo(work);
 
   return (
     <main className="case-detail-shell">
@@ -140,32 +140,7 @@ export default async function WorkDetailPage({ params }: WorkPageParams) {
         </div>
       </section>
 
-      {videoUrl ? (
-        <section className="case-video-section">
-          <SectionHeading
-            index="00"
-            title="Video Preview"
-            subtitle="视频预览"
-          />
-          {isDirectVideoUrl(videoUrl) ? (
-            <video
-              src={videoUrl}
-              poster={work.cover}
-              controls
-              playsInline
-              preload="metadata"
-            />
-          ) : (
-            <Link href={videoUrl} target="_blank" rel="noreferrer">
-              <Play size={18} />
-              打开视频链接
-              <ArrowUpRight size={16} />
-            </Link>
-          )}
-        </section>
-      ) : null}
-
-      <section className="case-overview-section">
+      <section className="case-overview-section is-media-first">
         <SectionHeading
           index="01"
           title="Project Overview"
@@ -174,52 +149,40 @@ export default async function WorkDetailPage({ params }: WorkPageParams) {
         <p>{work.description}</p>
       </section>
 
-      <section className="case-narrative-grid">
-        <NarrativeBlock
-          index="02"
-          title="Challenge"
-          subtitle="项目目标"
-          body={work.challenge}
-        />
-        <NarrativeBlock
-          index="03"
-          title="Creative Strategy"
-          subtitle="创意策略"
-          body={work.strategy}
-        />
-      </section>
-
-      <section className="case-direction-section">
-        <SectionHeading
-          index="04"
-          title="Visual Direction"
-          subtitle="视觉关键词"
-        />
-        <div className="case-keyword-grid">
-          {work.visualKeywords.map((keyword) => (
-            <span key={keyword}>{keyword}</span>
-          ))}
-        </div>
-      </section>
-
-      <section className="case-process-section">
-        <SectionHeading
-          index="05"
-          title="Production Process"
-          subtitle="制作流程"
-        />
-        <ol>
-          {work.process.map((step, index) => (
-            <li key={step}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              {step}
-            </li>
-          ))}
-        </ol>
-      </section>
+      {video ? (
+        <section className="case-video-section">
+          <SectionHeading
+            index="02"
+            title={video.title || "Video Preview"}
+            subtitle="视频展示"
+          />
+          {video.embedUrl ? (
+            <iframe
+              src={video.embedUrl}
+              title={video.title || work.title}
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+            />
+          ) : video.type === "local" || isDirectVideoUrl(video.url) ? (
+            <video
+              src={video.url}
+              poster={work.cover}
+              controls
+              playsInline
+              preload="metadata"
+            />
+          ) : (
+            <Link href={video.url} target="_blank" rel="noreferrer">
+              <Play size={18} />
+              打开视频链接
+              <ArrowUpRight size={16} />
+            </Link>
+          )}
+        </section>
+      ) : null}
 
       <section className="case-gallery-section">
-        <SectionHeading index="06" title="Gallery" subtitle="图片展示" />
+        <SectionHeading index="03" title="Gallery" subtitle="图片展示" />
         <div className="case-gallery-grid">
           {work.images.map((image, index) => (
             <figure key={image} className={index === 0 ? "is-featured" : ""}>
@@ -229,24 +192,6 @@ export default async function WorkDetailPage({ params }: WorkPageParams) {
               />
               <figcaption>{String(index + 1).padStart(2, "0")}</figcaption>
             </figure>
-          ))}
-        </div>
-      </section>
-
-      <section className="case-result-section">
-        <SectionHeading index="07" title="Result" subtitle="成果说明" />
-        <p>{work.result}</p>
-      </section>
-
-      <section className="case-services-section">
-        <SectionHeading
-          index="08"
-          title="Related Services"
-          subtitle="相关服务"
-        />
-        <div>
-          {work.services.map((service) => (
-            <span key={service}>{service}</span>
           ))}
         </div>
       </section>
@@ -294,25 +239,6 @@ function SectionHeading({
   );
 }
 
-function NarrativeBlock({
-  index,
-  title,
-  subtitle,
-  body,
-}: {
-  index: string;
-  title: string;
-  subtitle: string;
-  body: string;
-}) {
-  return (
-    <article>
-      <SectionHeading index={index} title={title} subtitle={subtitle} />
-      <p>{body}</p>
-    </article>
-  );
-}
-
 function CinematicImage({
   src,
   label,
@@ -341,4 +267,15 @@ function CinematicImage({
 
 function isDirectVideoUrl(url: string) {
   return /\.(mp4|webm|mov)(\?.*)?$/i.test(url);
+}
+
+function normalizeWorkVideo(work: WorkContent): WorkVideo | undefined {
+  if (work.video?.url) return work.video;
+  if (!work.videoUrl) return undefined;
+
+  return {
+    type: isDirectVideoUrl(work.videoUrl) ? "local" : "external",
+    url: work.videoUrl,
+    title: "作品视频",
+  };
 }

@@ -25,7 +25,9 @@ import {
 import type { SiteContentData } from "../content/site";
 import type { IconName } from "../lib/content-types";
 import type { WorkContent } from "../content/works";
+import type { ServiceContent } from "../content/services";
 import ImageWithFallback from "../components/ImageWithFallback";
+import ScrollWorldHero from "../components/ScrollWorldHero";
 
 const iconMap = {
   badge: BadgeCheck,
@@ -59,6 +61,7 @@ export default function HomeClient({ content }: { content: SiteContentData }) {
     .filter((work) => work.featured)
     .sort((a, b) => a.homepageOrder - b.homepageOrder)
     .slice(0, 6);
+  const serviceChapters = content.services.items;
 
   return (
     <main className="site-shell">
@@ -79,48 +82,55 @@ export default function HomeClient({ content }: { content: SiteContentData }) {
       />
       <FloatingNav content={content} />
 
-      <Chapter id="hero" no={sectionNo(1)} className="hero-chapter">
-        <motion.div
-          initial="hidden"
-          animate="show"
-          transition={{ staggerChildren: 0.12, delayChildren: 0.1 }}
-          className="hero-copy"
-        >
-          <motion.div variants={fadeUp} className="brand-lockup">
-            <Image
-              src="/yito-logo-white-v2.png"
-              alt="YITO visual logo"
-              width={88}
-              height={88}
-              priority
-            />
+      {content.scrollWorld.enabled ? (
+        <ScrollWorldHero
+          hero={content.hero}
+          scrollWorld={content.scrollWorld}
+        />
+      ) : (
+        <Chapter id="hero" no={sectionNo(1)} className="hero-chapter">
+          <motion.div
+            initial="hidden"
+            animate="show"
+            transition={{ staggerChildren: 0.12, delayChildren: 0.1 }}
+            className="hero-copy"
+          >
+            <motion.div variants={fadeUp} className="brand-lockup">
+              <Image
+                src="/yito-logo-white-v2.png"
+                alt="YITO visual logo"
+                width={88}
+                height={88}
+                priority
+              />
+            </motion.div>
+            <motion.h1 variants={fadeUp}>{content.hero.title}</motion.h1>
+            <motion.p variants={fadeUp} className="hero-subtitle">
+              {content.hero.subtitle}
+            </motion.p>
+            <motion.p variants={fadeUp} className="hero-positioning">
+              {content.hero.positioning}
+            </motion.p>
+            <motion.p variants={fadeUp} className="hero-description">
+              {content.hero.statement}
+            </motion.p>
+            <motion.p variants={fadeUp} className="hero-note">
+              {content.hero.description}
+            </motion.p>
+            <motion.div variants={fadeUp} className="hero-tags">
+              {content.hero.tags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </motion.div>
+            <motion.div variants={fadeUp} className="green-rule" />
+            <motion.div variants={fadeUp} className="hero-actions">
+              <a href="#work">{content.hero.primaryCta}</a>
+              <a href="#contact">{content.hero.secondaryCta}</a>
+            </motion.div>
           </motion.div>
-          <motion.h1 variants={fadeUp}>{content.hero.title}</motion.h1>
-          <motion.p variants={fadeUp} className="hero-subtitle">
-            {content.hero.subtitle}
-          </motion.p>
-          <motion.p variants={fadeUp} className="hero-positioning">
-            {content.hero.positioning}
-          </motion.p>
-          <motion.p variants={fadeUp} className="hero-description">
-            {content.hero.statement}
-          </motion.p>
-          <motion.p variants={fadeUp} className="hero-note">
-            {content.hero.description}
-          </motion.p>
-          <motion.div variants={fadeUp} className="hero-tags">
-            {content.hero.tags.map((tag) => (
-              <span key={tag}>{tag}</span>
-            ))}
-          </motion.div>
-          <motion.div variants={fadeUp} className="green-rule" />
-          <motion.div variants={fadeUp} className="hero-actions">
-            <a href="#work">{content.hero.primaryCta}</a>
-            <a href="#contact">{content.hero.secondaryCta}</a>
-          </motion.div>
-        </motion.div>
-        <CinematicVisual image={content.hero.cover} priority />
-      </Chapter>
+          <CinematicVisual image={content.hero.cover} priority />
+        </Chapter>
+      )}
 
       <Chapter
         id="about"
@@ -147,45 +157,19 @@ export default function HomeClient({ content }: { content: SiteContentData }) {
         <CinematicVisual image={content.about.cover} />
       </Chapter>
 
-      <Chapter
-        id="services"
-        no={sectionNo(3)}
-        title={content.services.title}
-        subtitle={content.services.subtitle}
-        className="services-chapter"
-      >
-        <div className="service-strip">
-          {content.services.items.map((service) => {
-            const Icon = iconMap[service.icon] ?? Sparkles;
-            return (
-              <motion.article
-                key={service.id}
-                whileHover={{ y: -7, scale: 1.012 }}
-                transition={{ type: "spring", stiffness: 260, damping: 24 }}
-                className="service-card"
-              >
-                <VisualSurface image={service.cover} className="card-visual" />
-                <div className="card-body">
-                  <Icon size={18} />
-                  <h3>{service.title}</h3>
-                  <p>{service.subtitle}</p>
-                  <p className="service-description">{service.description}</p>
-                  <div className="service-scenes">
-                    {service.scenes.map((scene) => (
-                      <span key={scene}>{scene}</span>
-                    ))}
-                  </div>
-                </div>
-              </motion.article>
-            );
-          })}
-        </div>
-        <p className="micro-copy">{content.services.description}</p>
-      </Chapter>
+      {serviceChapters.map((service, index) => (
+        <ServiceWorldChapter
+          key={service.id}
+          service={service}
+          works={getRelatedWorks(content.works, service.id, service.title)}
+          no={sectionNo(index + 3)}
+          isReversed={index % 2 === 1}
+        />
+      ))}
 
       <Chapter
         id="work"
-        no={sectionNo(4)}
+        no={sectionNo(8)}
         title={content.selectedWorks.title}
         subtitle={content.selectedWorks.subtitle}
         className="works-chapter"
@@ -205,9 +189,9 @@ export default function HomeClient({ content }: { content: SiteContentData }) {
 
       <Chapter
         id="ai-studio"
-        no={sectionNo(5)}
-        title={content.aiStudio.title}
-        subtitle={content.aiStudio.subtitle}
+        no={sectionNo(9)}
+        title="System & Workflow"
+        subtitle="生产系统与工作流程"
         className="ai-studio-chapter"
       >
         <div className="ai-studio-layout">
@@ -218,6 +202,15 @@ export default function HomeClient({ content }: { content: SiteContentData }) {
               ))}
             </div>
             <strong>{content.aiStudio.statement}</strong>
+            <div className="workflow-mini-list">
+              {content.workflow.steps.map((item, index) => (
+                <span key={item.id}>
+                  <em>{sectionNo(index + 1)}</em>
+                  <strong>{item.title}</strong>
+                  <small>{item.subtitle}</small>
+                </span>
+              ))}
+            </div>
           </div>
           <div className="ai-studio-panel">
             <VisualImage image={content.aiStudio.cover} />
@@ -238,41 +231,8 @@ export default function HomeClient({ content }: { content: SiteContentData }) {
       </Chapter>
 
       <Chapter
-        id="workflow"
-        no={sectionNo(6)}
-        title={content.workflow.title}
-        subtitle={content.workflow.subtitle}
-        className="process-chapter"
-      >
-        <p className="section-intro">{content.workflow.description}</p>
-        <div className="process-map">
-          {content.workflow.steps.map((item, index) => (
-            <motion.div
-              key={item.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.06, duration: 0.5 }}
-              whileHover={{
-                y: -18,
-                scale: 1.06,
-                transition: { type: "spring", stiffness: 260, damping: 20 },
-              }}
-              whileTap={{ scale: 0.98 }}
-              className="process-step"
-            >
-              <span className="process-dot">{sectionNo(index + 1)}</span>
-              <strong>{item.title}</strong>
-              <em>{item.subtitle}</em>
-              <small>{item.description}</small>
-            </motion.div>
-          ))}
-        </div>
-      </Chapter>
-
-      <Chapter
         id="why"
-        no={sectionNo(7)}
+        no={sectionNo(10)}
         title={content.whyChoose.title}
         subtitle={content.whyChoose.subtitle}
         className="why-chapter"
@@ -316,7 +276,7 @@ export default function HomeClient({ content }: { content: SiteContentData }) {
 
       <Chapter
         id="contact"
-        no={sectionNo(8)}
+        no={sectionNo(11)}
         title={content.contact.title}
         subtitle={content.contact.subtitle}
         className="contact-chapter"
@@ -401,6 +361,92 @@ function WorkCard({ work, index }: { work: WorkContent; index: number }) {
       </Link>
     </motion.article>
   );
+}
+
+function ServiceWorldChapter({
+  service,
+  works,
+  no,
+  isReversed,
+}: {
+  service: ServiceContent;
+  works: WorkContent[];
+  no: string;
+  isReversed: boolean;
+}) {
+  const Icon = iconMap[service.icon] ?? Sparkles;
+  const visibleWorks = works.slice(0, 3);
+  const hasMore = works.length > visibleWorks.length;
+
+  return (
+    <Chapter
+      id={service.id}
+      no={no}
+      title={service.title}
+      subtitle={service.subtitle}
+      className={`service-world-chapter ${isReversed ? "is-reversed" : ""}`}
+    >
+      <div className="service-world-copy">
+        <Icon size={22} />
+        <p>{service.description}</p>
+        <div className="service-scenes">
+          {service.scenes.map((scene) => (
+            <span key={scene}>{scene}</span>
+          ))}
+        </div>
+        <Link href={`/works?service=${service.id}`} className="text-link">
+          查看全部相关案例 <ArrowUpRight size={14} />
+        </Link>
+      </div>
+      <VisualSurface image={service.cover} className="service-world-visual" />
+      <div className="service-related-works">
+        <span>Related Work</span>
+        {visibleWorks.length ? (
+          visibleWorks.map((work) => (
+            <Link
+              href={`/works/${work.slug}`}
+              key={work.slug}
+              className="service-related-card"
+            >
+              <VisualSurface
+                image={work.cover}
+                className="service-related-thumb"
+              />
+              <small>{work.category}</small>
+              <strong>{work.title}</strong>
+              <em>{work.subtitle}</em>
+            </Link>
+          ))
+        ) : (
+          <p>相关案例整理中。</p>
+        )}
+        {hasMore ? (
+          <Link href={`/works?service=${service.id}`} className="service-more">
+            还有 {works.length - visibleWorks.length} 个案例
+            <ArrowUpRight size={13} />
+          </Link>
+        ) : null}
+      </div>
+    </Chapter>
+  );
+}
+
+function getRelatedWorks(
+  works: WorkContent[],
+  serviceId: string,
+  serviceTitle: string,
+) {
+  return works
+    .filter((work) => {
+      const serviceText = work.services.join(" ");
+      return (
+        work.serviceIds.includes(serviceId) ||
+        work.services.includes(serviceTitle) ||
+        work.category.includes(serviceTitle) ||
+        serviceText.includes(serviceTitle)
+      );
+    })
+    .sort((a, b) => a.homepageOrder - b.homepageOrder);
 }
 
 function HoverNavLink({

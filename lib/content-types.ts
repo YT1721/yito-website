@@ -41,11 +41,19 @@ export type AboutContent = {
 };
 
 export type ServiceItem = VisualBlock & {
+  id?: string;
   title: string;
   en: string;
   description?: string;
   scenes?: string;
   icon: IconName;
+};
+
+export type WorkVideo = {
+  type: "bilibili" | "external" | "local";
+  url: string;
+  embedUrl?: string;
+  title?: string;
 };
 
 export type WorkItem = VisualBlock & {
@@ -87,8 +95,10 @@ export type CaseStudy = VisualBlock & {
   solution?: string;
   result?: string;
   services?: string[];
+  serviceIds?: string[];
   industry: string;
   tags: string[];
+  video?: WorkVideo;
   videoUrl?: string;
   meta: string[];
   thumbs: VisualBlock[];
@@ -161,7 +171,29 @@ export type FooterContent = {
   credit: string;
 };
 
+export type ScrollWorldContent = {
+  enabled: boolean;
+  desktopVideo: string;
+  mobileVideo?: string;
+  poster: string;
+  introTitle: string;
+  introSubtitle: string;
+  fallbackMode: "poster" | "static";
+  scenes?: ScrollWorldScene[];
+};
+
+export type ScrollWorldScene = {
+  id: string;
+  no: string;
+  title: string;
+  subtitle: string;
+  body: string;
+  serviceId?: string;
+  poster?: string;
+};
+
 export type SiteContent = {
+  scrollWorld?: ScrollWorldContent;
   hero: HeroContent;
   about: AboutContent;
   services: ServiceSection;

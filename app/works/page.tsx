@@ -21,11 +21,21 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function WorksPage() {
-  const orderedWorks = (await readRuntimeWorks()).sort((a, b) => {
-    if (a.featured !== b.featured) return a.featured ? -1 : 1;
-    return a.homepageOrder - b.homepageOrder;
-  });
+export default async function WorksPage({
+  searchParams,
+}: {
+  searchParams?: Promise<{ service?: string }>;
+}) {
+  const params = await searchParams;
+  const activeService = params?.service;
+  const orderedWorks = (await readRuntimeWorks())
+    .filter((work) =>
+      activeService ? work.serviceIds.includes(activeService) : true,
+    )
+    .sort((a, b) => {
+      if (a.featured !== b.featured) return a.featured ? -1 : 1;
+      return a.homepageOrder - b.homepageOrder;
+    });
 
   return (
     <main className="works-page-shell">
@@ -44,7 +54,11 @@ export default async function WorksPage() {
         <h1>
           {worksPageContent.title} / {worksPageContent.subtitle}
         </h1>
-        <p>{worksPageContent.description}</p>
+        <p>
+          {activeService
+            ? "当前正在查看该服务下关联的案例。点击案例可进入详情页查看封面、视频和图片 Gallery。"
+            : worksPageContent.description}
+        </p>
       </section>
 
       <section className="works-page-content" aria-label="精选案例列表">

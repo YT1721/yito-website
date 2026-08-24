@@ -38,6 +38,13 @@ export function adaptEditableContent(content: SiteContent): SiteContentData {
 
   return {
     ...defaultSiteContent,
+    scrollWorld: {
+      ...defaultSiteContent.scrollWorld,
+      ...(content.scrollWorld ?? {}),
+      scenes: content.scrollWorld?.scenes?.length
+        ? content.scrollWorld.scenes
+        : defaultSiteContent.scrollWorld.scenes,
+    },
     hero: {
       ...defaultSiteContent.hero,
       title: content.hero?.title || defaultSiteContent.hero.title,
@@ -180,7 +187,9 @@ export function adaptEditableContent(content: SiteContent): SiteContentData {
 
 function mapService(service: ServiceItem, index: number) {
   return {
-    id: slugify(service.en || service.title || `service-${index + 1}`),
+    id:
+      service.id ||
+      slugify(service.en || service.title || `service-${index + 1}`),
     title: service.title,
     subtitle: service.en,
     description: service.description || "",
@@ -213,7 +222,7 @@ function mapWork(item: EditableCaseStudy, index: number): WorkContent {
     category: item.category || "",
     industry: item.industry || "",
     cover: item.cover || item.image || images[0] || "/images/placeholder.jpg",
-    video: item.videoUrl,
+    video: item.video ?? legacyVideo(item.videoUrl),
     videoUrl: item.videoUrl,
     description: item.description || item.summary,
     challenge: item.challenge || item.summary || item.description,
@@ -231,11 +240,44 @@ function mapWork(item: EditableCaseStudy, index: number): WorkContent {
     representativeProjects: item.representativeProjects,
     result: item.result || item.solution || item.description,
     services: item.services || [],
+    serviceIds: item.serviceIds?.length
+      ? item.serviceIds
+      : inferServiceIds(item),
     tags: item.tags || [],
     images,
     featured: item.featured ?? index < 6,
     homepageOrder: (item.homepageOrder ?? Number(item.no)) || index + 1,
   };
+}
+
+function legacyVideo(videoUrl?: string) {
+  if (!videoUrl) return undefined;
+  return {
+    type: isLocalVideoUrl(videoUrl) ? "local" : "external",
+    url: videoUrl,
+    title: "作品视频",
+  } as const;
+}
+
+function isLocalVideoUrl(value: string) {
+  return /\.(mp4|webm|mov)(\?.*)?$/i.test(value);
+}
+
+function inferServiceIds(work: EditableCaseStudy) {
+  const text = `${work.title} ${work.category} ${(work.services ?? []).join(" ")}`;
+  const ids: string[] = [];
+
+  for (const service of defaultSiteContent.services.items) {
+    if (text.includes(service.title) || text.includes(service.id)) {
+      ids.push(service.id);
+    }
+  }
+
+  if (text.includes("商业短片") || text.includes("品牌叙事")) {
+    ids.push("ai-commercial-short-film");
+  }
+
+  return Array.from(new Set(ids));
 }
 
 function inferWorkGroup(work: EditableCaseStudy): WorkGroup {

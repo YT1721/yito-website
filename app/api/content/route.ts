@@ -45,12 +45,24 @@ function validateContent(content: SiteContent) {
     return "AI studio items must be an array";
   if (content.clients && !Array.isArray(content.clients.groups))
     return "Client groups must be an array";
+  if (
+    content.scrollWorld &&
+    !["poster", "static"].includes(content.scrollWorld.fallbackMode)
+  )
+    return "Scroll world fallback mode must be poster or static";
+  if (content.scrollWorld?.scenes && !Array.isArray(content.scrollWorld.scenes))
+    return "Scroll world scenes must be an array";
 
   const slugs = new Set<string>();
 
   for (const work of content.caseStudies) {
     if (!work.slug) return "Every case study requires a slug";
     if (slugs.has(work.slug)) return `Duplicate case study slug: ${work.slug}`;
+    if (
+      work.video &&
+      !["bilibili", "external", "local"].includes(work.video.type)
+    )
+      return `Invalid video type in case study: ${work.slug}`;
     slugs.add(work.slug);
   }
 
