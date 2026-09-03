@@ -2,6 +2,8 @@
 # 快速部署脚本 - 拉取 GitHub 最新代码并部署到服务器
 # 使用方法: bash deploy-quick.sh root@8.146.236.73
 
+set -euo pipefail
+
 SERVER="${1:-}"
 
 if [ -z "$SERVER" ]; then
@@ -13,6 +15,8 @@ echo "🚀 开始部署..."
 echo "目标服务器: $SERVER"
 
 ssh "$SERVER" << 'ENDSSH'
+set -euo pipefail
+
 cd /var/www/yito
 
 echo "📥 拉取最新代码..."
