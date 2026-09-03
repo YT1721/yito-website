@@ -1,5 +1,6 @@
 # Next.js
 .next
+.next.cache-bak-*
 out
 build
 
@@ -9,6 +10,7 @@ node_modules
 
 # Build artifacts
 deploy/dist
+tmp/
 
 # Content backups
 backups

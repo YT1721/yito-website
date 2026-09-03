@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowUpRight,
@@ -202,15 +202,6 @@ export default function HomeClient({ content }: { content: SiteContentData }) {
               ))}
             </div>
             <strong>{content.aiStudio.statement}</strong>
-            <div className="workflow-mini-list">
-              {content.workflow.steps.map((item, index) => (
-                <span key={item.id}>
-                  <em>{sectionNo(index + 1)}</em>
-                  <strong>{item.title}</strong>
-                  <small>{item.subtitle}</small>
-                </span>
-              ))}
-            </div>
           </div>
           <div className="ai-studio-panel">
             <VisualImage image={content.aiStudio.cover} />
@@ -227,6 +218,22 @@ export default function HomeClient({ content }: { content: SiteContentData }) {
               ))}
             </div>
           </div>
+          <div className="workflow-linear">
+            <div className="workflow-linear-heading">
+              <p>{content.workflow.title}</p>
+              <span>{content.workflow.description}</span>
+            </div>
+            <ol>
+              {content.workflow.steps.map((item, index) => (
+                <li key={item.id}>
+                  <em>{sectionNo(index + 1)}</em>
+                  <strong>{item.title}</strong>
+                  <small>{item.subtitle}</small>
+                  <p>{item.description}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
       </Chapter>
 
@@ -240,7 +247,23 @@ export default function HomeClient({ content }: { content: SiteContentData }) {
         <div className="why-background" aria-hidden="true">
           <VisualImage image={content.aiStudio.cover} />
         </div>
-        <p className="section-intro">{content.whyChoose.description}</p>
+        <div className="why-trust-copy">
+          <p className="section-intro">{content.whyChoose.description}</p>
+          <p>{content.clients.description}</p>
+          <div className="why-industries">
+            {content.clients.groups.map((group) => (
+              <article key={group.title} className="client-group">
+                <p>{group.title}</p>
+                <h3>{group.subtitle}</h3>
+                <div>
+                  {group.items.map((item) => (
+                    <span key={item}>{item}</span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
         <div className="why-grid">
           {content.whyChoose.items.map((item, index) => {
             const Icon = iconMap[item.icon] ?? Sparkles;
@@ -257,20 +280,6 @@ export default function HomeClient({ content }: { content: SiteContentData }) {
               </article>
             );
           })}
-        </div>
-        <div className="why-industries">
-          <p>{content.clients.description}</p>
-          {content.clients.groups.map((group) => (
-            <article key={group.title} className="client-group">
-              <p>{group.title}</p>
-              <h3>{group.subtitle}</h3>
-              <div>
-                {group.items.map((item) => (
-                  <span key={item}>{item}</span>
-                ))}
-              </div>
-            </article>
-          ))}
         </div>
       </Chapter>
 
@@ -377,6 +386,13 @@ function ServiceWorldChapter({
   const Icon = iconMap[service.icon] ?? Sparkles;
   const visibleWorks = works.slice(0, 3);
   const hasMore = works.length > visibleWorks.length;
+  const [activeWorkSlug, setActiveWorkSlug] = useState(
+    visibleWorks[0]?.slug ?? "service-cover",
+  );
+  const backgroundLayers = [
+    { key: "service-cover", image: service.cover },
+    ...visibleWorks.map((work) => ({ key: work.slug, image: work.cover })),
+  ];
 
   return (
     <Chapter
@@ -386,6 +402,18 @@ function ServiceWorldChapter({
       subtitle={service.subtitle}
       className={`service-world-chapter ${isReversed ? "is-reversed" : ""}`}
     >
+      <div className="service-world-background" aria-hidden="true">
+        {backgroundLayers.map((layer) => (
+          <div
+            className={`service-bg-layer ${
+              activeWorkSlug === layer.key ? "is-active" : ""
+            }`}
+            key={layer.key}
+          >
+            <VisualImage image={layer.image} />
+          </div>
+        ))}
+      </div>
       <div className="service-world-copy">
         <Icon size={22} />
         <p>{service.description}</p>
@@ -398,7 +426,6 @@ function ServiceWorldChapter({
           查看全部相关案例 <ArrowUpRight size={14} />
         </Link>
       </div>
-      <VisualSurface image={service.cover} className="service-world-visual" />
       <div className="service-related-works">
         <span>Related Work</span>
         {visibleWorks.length ? (
@@ -406,12 +433,15 @@ function ServiceWorldChapter({
             <Link
               href={`/works/${work.slug}`}
               key={work.slug}
-              className="service-related-card"
+              className={`service-related-card ${
+                activeWorkSlug === work.slug ? "is-active" : ""
+              }`}
+              onFocus={() => setActiveWorkSlug(work.slug)}
+              onMouseEnter={() => setActiveWorkSlug(work.slug)}
             >
-              <VisualSurface
-                image={work.cover}
-                className="service-related-thumb"
-              />
+              <span className="service-related-index">
+                {sectionNo(work.homepageOrder)}
+              </span>
               <small>{work.category}</small>
               <strong>{work.title}</strong>
               <em>{work.subtitle}</em>

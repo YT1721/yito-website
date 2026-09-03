@@ -85,25 +85,48 @@ export default function AdminPage() {
   const [active, setActive] = useState("hero");
   const [advancedJson, setAdvancedJson] = useState("");
   const scrollWorld = content.scrollWorld ?? createEmptyScrollWorld();
+  const meta = content.meta ?? createEmptySeo();
+  const featuredCases = useMemo(
+    () =>
+      [...content.caseStudies]
+        .filter((item, index) => item.featured ?? index < 6)
+        .sort(
+          (a, b) =>
+            (a.homepageOrder ?? Number(a.no) ?? 0) -
+            (b.homepageOrder ?? Number(b.no) ?? 0),
+        )
+        .slice(0, 6),
+    [content.caseStudies],
+  );
 
   const sections = useMemo(
     () => [
-      ["hero", "首页首屏"],
-      ["scrollWorld", "滚动视觉"],
-      ["about", "关于我们"],
-      ["services", "服务管理"],
-      ["works", "精选案例"],
-      ["cases", "案例详情"],
-      ["studio", "AI生产系统"],
-      ["process", "工作流程"],
-      ["why", "选择理由"],
-      ["clients", "客户行业"],
-      ["contact", "联系方式"],
-      ["footer", "页脚信息"],
-      ["advanced", "高级 JSON"],
+      ["hero", "首页首屏", "Hero"],
+      ["scrollWorld", "滚动视觉", "Scroll video"],
+      ["about", "关于我们", "About"],
+      ["services", "服务管理", "Service pages"],
+      ["works", "首页精选案例", "Featured rules"],
+      ["cases", "案例详情", "Works data"],
+      ["studio", "AI生产系统", "System"],
+      ["process", "工作流程", "Workflow"],
+      ["why", "选择理由", "Trust"],
+      ["clients", "客户行业", "Industries"],
+      ["contact", "联系方式", "Conversion"],
+      ["seo", "SEO / 分享", "Metadata"],
+      ["footer", "页脚信息", "Footer"],
+      ["advanced", "高级 JSON", "Backup"],
     ],
     [],
   );
+  const activeSection = sections.find(([id]) => id === active);
+  const statusKind =
+    status.includes("失败") || status.includes("不正确")
+      ? "error"
+      : status.includes("未保存") || status.includes("正在")
+        ? "pending"
+        : status.includes("成功") || status.includes("同步")
+          ? "ok"
+          : "neutral";
 
   useEffect(() => {
     fetch("/api/content", { cache: "no-store" })
@@ -130,18 +153,25 @@ export default function AdminPage() {
 
   async function save() {
     setStatus("正在保存...");
-    const response = await fetch("/api/content", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(content),
-    });
+    try {
+      const response = await fetch("/api/content", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(content),
+      });
 
-    if (!response.ok) {
-      setStatus("保存失败，请检查终端日志");
-      return;
+      if (!response.ok) {
+        const result = (await response.json().catch(() => ({}))) as {
+          error?: string;
+        };
+        setStatus(result.error || "保存失败，请检查终端日志");
+        return;
+      }
+
+      setStatus("保存成功，已发布到前台；刷新页面即可看到最新内容");
+    } catch {
+      setStatus("保存失败，请检查网络或本地服务状态");
     }
-
-    setStatus("保存成功，已发布到前台；刷新页面即可看到最新内容");
   }
 
   function applyJson() {
@@ -166,17 +196,18 @@ export default function AdminPage() {
           <span>YITO CMS</span>
         </Link>
         <nav>
-          {sections.map(([id, label]) => (
+          {sections.map(([id, label, description]) => (
             <button
               key={id}
               className={active === id ? "is-active" : ""}
               onClick={() => setActive(id)}
             >
-              {label}
+              <span>{label}</span>
+              <small>{description}</small>
             </button>
           ))}
         </nav>
-        <div className="admin-status">
+        <div className={`admin-status is-${statusKind}`}>
           <p>{status}</p>
           <button onClick={save}>保存所有修改</button>
           <Link href="/" target="_blank">
@@ -190,6 +221,11 @@ export default function AdminPage() {
           <div>
             <p>Content Operations</p>
             <h1>网站后台管理系统</h1>
+            {activeSection ? (
+              <span>
+                当前编辑：{activeSection[1]} / {activeSection[2]}
+              </span>
+            ) : null}
           </div>
           <button onClick={save}>保存并发布</button>
         </div>
@@ -564,7 +600,10 @@ export default function AdminPage() {
         )}
 
         {active === "works" && (
-          <Panel title="Selected Works 精选案例" intro="管理精选案例入口卡片。">
+          <Panel
+            title="Selected Works 首页精选案例"
+            intro="管理首页 Selected Works 的模块文案，以及哪些案例进入首页。案例卡片内容来自“案例详情”。"
+          >
             <SectionFields
               no={content.selectedWorks.no}
               title={content.selectedWorks.title}
@@ -599,82 +638,100 @@ export default function AdminPage() {
                 update((d) => void (d.selectedWorks.categories = lines(value)))
               }
             />
+            <div className="admin-callout">
+              <strong>前台对应关系</strong>
+              <p>
+                首页 Selected Works 只显示“案例详情”里开启首页展示的前 6
+                个案例，并按首页排序升序排列。标题、简介、封面图、标签、视频和详情页内容都在“案例详情”维护。
+              </p>
+            </div>
             <Stack>
-              {content.selectedWorks.items.map((item, index) => (
+              {content.caseStudies.map((item, index) => (
                 <EditableCard
-                  key={`${item.title}-${index}`}
-                  title={`精选案例 ${index + 1}`}
-                  onRemove={() =>
-                    update((d) => d.selectedWorks.items.splice(index, 1))
-                  }
+                  key={`${item.slug}-${index}`}
+                  title={item.title}
+                  meta={[
+                    item.slug,
+                    item.category ?? "",
+                    (item.featured ?? index < 6)
+                      ? "已进入首页候选"
+                      : "未进入首页",
+                  ]}
+                  href={`/works/${item.slug}`}
+                  onRemove={() => update((d) => d.caseStudies.splice(index, 1))}
                   onMoveUp={() =>
-                    update((d) => move(d.selectedWorks.items, index, index - 1))
+                    update((d) => move(d.caseStudies, index, index - 1))
                   }
                   onMoveDown={() =>
-                    update((d) => move(d.selectedWorks.items, index, index + 1))
+                    update((d) => move(d.caseStudies, index, index + 1))
                   }
                 >
                   <Grid>
-                    <Field
-                      label="标题"
-                      value={item.title}
+                    <SelectField
+                      label="是否在首页 Selected Works 展示"
+                      value={(item.featured ?? index < 6) ? "true" : "false"}
+                      options={["true", "false"]}
                       onChange={(value) =>
                         update(
                           (d) =>
-                            void (d.selectedWorks.items[index].title = value),
+                            void (d.caseStudies[index].featured =
+                              value === "true"),
                         )
                       }
                     />
                     <Field
-                      label="标签"
-                      value={item.en}
+                      label="首页排序"
+                      value={String(
+                        (item.homepageOrder ?? Number(item.no)) || index + 1,
+                      )}
                       onChange={(value) =>
                         update(
-                          (d) => void (d.selectedWorks.items[index].en = value),
+                          (d) =>
+                            void (d.caseStudies[index].homepageOrder =
+                              Number(value) || index + 1),
                         )
                       }
                     />
                   </Grid>
-                  <SelectField
-                    label="关联详情页"
-                    value={item.caseSlug ?? ""}
-                    options={[
-                      "",
-                      ...content.caseStudies.map((caseItem) => caseItem.slug),
-                    ]}
-                    onChange={(value) =>
+                  <ServiceRelationEditor
+                    services={content.services.items}
+                    value={item.serviceIds ?? []}
+                    onChange={(serviceIds) =>
                       update(
                         (d) =>
-                          void (d.selectedWorks.items[index].caseSlug =
-                            value || undefined),
+                          void (d.caseStudies[index].serviceIds = serviceIds),
                       )
                     }
                   />
-                  <VisualEditor
-                    block={item}
-                    imageGuide={imageGuides.selected}
-                    onChange={(patch) =>
-                      update((d) =>
-                        Object.assign(d.selectedWorks.items[index], patch),
-                      )
-                    }
-                  />
+                  <div className="admin-case-preview">
+                    <ImageWithFallback
+                      src={
+                        item.cover || item.image || "/images/placeholder.jpg"
+                      }
+                      alt={`${item.title} 封面预览`}
+                      className="admin-case-preview-image"
+                      sizes="220px"
+                    />
+                    <div>
+                      <span>前台卡片预览</span>
+                      <strong>{item.en}</strong>
+                      <p>{item.summary}</p>
+                    </div>
+                  </div>
                 </EditableCard>
               ))}
-              <AddButton
-                onClick={() =>
-                  update((d) =>
-                    d.selectedWorks.items.push({
-                      title: "新案例",
-                      en: "Case",
-                      caseSlug: d.caseStudies[0]?.slug,
-                    }),
-                  )
-                }
-              >
-                添加精选案例
-              </AddButton>
             </Stack>
+            <div className="admin-selected-summary">
+              <strong>当前首页会显示</strong>
+              <div>
+                {featuredCases.map((item) => (
+                  <span key={item.slug}>
+                    {String(item.homepageOrder ?? item.no).padStart(2, "0")} ·{" "}
+                    {item.title}
+                  </span>
+                ))}
+              </div>
+            </div>
           </Panel>
         )}
 
@@ -688,6 +745,12 @@ export default function AdminPage() {
                 <EditableCard
                   key={`${item.no}-${caseIndex}`}
                   title={`案例 ${caseIndex + 1}`}
+                  meta={[
+                    item.title,
+                    item.slug,
+                    item.featured ? "首页展示" : "仅列表/详情",
+                  ]}
+                  href={`/works/${item.slug}`}
                   onRemove={() =>
                     update((d) => d.caseStudies.splice(caseIndex, 1))
                   }
@@ -714,6 +777,36 @@ export default function AdminPage() {
                       onChange={(value) =>
                         update(
                           (d) => void (d.caseStudies[caseIndex].title = value),
+                        )
+                      }
+                    />
+                  </Grid>
+                  <Grid>
+                    <SelectField
+                      label="首页 Selected Works 展示"
+                      value={
+                        (item.featured ?? caseIndex < 6) ? "true" : "false"
+                      }
+                      options={["true", "false"]}
+                      onChange={(value) =>
+                        update(
+                          (d) =>
+                            void (d.caseStudies[caseIndex].featured =
+                              value === "true"),
+                        )
+                      }
+                    />
+                    <Field
+                      label="首页排序（数字越小越靠前）"
+                      value={String(
+                        (item.homepageOrder ?? Number(item.no)) ||
+                          caseIndex + 1,
+                      )}
+                      onChange={(value) =>
+                        update(
+                          (d) =>
+                            void (d.caseStudies[caseIndex].homepageOrder =
+                              Number(value) || caseIndex + 1),
                         )
                       }
                     />
@@ -995,6 +1088,8 @@ export default function AdminPage() {
                       services: ["创意方向", "AI 视觉生成"],
                       serviceIds: ["ai-brand-film"],
                       tags: ["AI视觉"],
+                      featured: false,
+                      homepageOrder: d.caseStudies.length + 1,
                       meta: ["项目类型  商业视觉"],
                       thumbs: [{}, {}],
                     }),
@@ -1402,6 +1497,118 @@ export default function AdminPage() {
               imageGuide={imageGuides.wide}
               onChange={(patch) =>
                 update((d) => Object.assign(d.contact, patch))
+              }
+            />
+          </Panel>
+        )}
+
+        {active === "seo" && (
+          <Panel
+            title="SEO / OpenGraph 分享"
+            intro="管理搜索引擎标题、描述、关键词和社交分享图。保存后前台 metadata 会读取这里。"
+          >
+            <Grid>
+              <Field
+                label="网站标题 title"
+                value={meta.title}
+                onChange={(value) =>
+                  update((d) => {
+                    d.meta ??= createEmptySeo();
+                    d.meta.title = value;
+                  })
+                }
+              />
+              <Field
+                label="OG 标题"
+                value={meta.openGraph.title}
+                onChange={(value) =>
+                  update((d) => {
+                    d.meta ??= createEmptySeo();
+                    d.meta.openGraph.title = value;
+                  })
+                }
+              />
+            </Grid>
+            <TextArea
+              label="SEO 描述 description"
+              value={meta.description}
+              onChange={(value) =>
+                update((d) => {
+                  d.meta ??= createEmptySeo();
+                  d.meta.description = value;
+                })
+              }
+            />
+            <TextArea
+              label="关键词 keywords（每行一个）"
+              value={meta.keywords.join("\n")}
+              onChange={(value) =>
+                update((d) => {
+                  d.meta ??= createEmptySeo();
+                  d.meta.keywords = lines(value);
+                })
+              }
+            />
+            <Grid>
+              <Field
+                label="OG 描述"
+                value={meta.openGraph.description}
+                onChange={(value) =>
+                  update((d) => {
+                    d.meta ??= createEmptySeo();
+                    d.meta.openGraph.description = value;
+                  })
+                }
+              />
+              <Field
+                label="站点名称 siteName"
+                value={meta.openGraph.siteName}
+                onChange={(value) =>
+                  update((d) => {
+                    d.meta ??= createEmptySeo();
+                    d.meta.openGraph.siteName = value;
+                  })
+                }
+              />
+            </Grid>
+            <Grid>
+              <Field
+                label="语言 locale"
+                value={meta.openGraph.locale}
+                onChange={(value) =>
+                  update((d) => {
+                    d.meta ??= createEmptySeo();
+                    d.meta.openGraph.locale = value;
+                  })
+                }
+              />
+              <SelectField
+                label="OG 类型"
+                value={meta.openGraph.type}
+                options={["website"]}
+                onChange={(value) =>
+                  update((d) => {
+                    d.meta ??= createEmptySeo();
+                    d.meta.openGraph.type =
+                      value === "website" ? value : "website";
+                  })
+                }
+              />
+            </Grid>
+            <VisualEditor
+              block={{ image: meta.openGraph.image }}
+              imageGuide={{
+                usage: "社交分享图 / OpenGraph",
+                ratio: "1.91:1",
+                size: "1200×630",
+                note: "用于微信、社交平台和搜索分享预览，文字不要贴边。",
+              }}
+              onChange={(patch) =>
+                update((d) => {
+                  d.meta ??= createEmptySeo();
+                  d.meta.openGraph.image =
+                    patch.image || "/images/seo/og-image.jpg";
+                })
               }
             />
           </Panel>
@@ -1925,12 +2132,16 @@ function VisualEditor({
 
 function EditableCard({
   title,
+  meta,
+  href,
   children,
   onRemove,
   onMoveUp,
   onMoveDown,
 }: {
   title: string;
+  meta?: string[];
+  href?: string;
   children: React.ReactNode;
   onRemove: () => void;
   onMoveUp: () => void;
@@ -1939,8 +2150,22 @@ function EditableCard({
   return (
     <article className="editable-card">
       <header>
-        <h3>{title}</h3>
+        <div className="editable-card-title">
+          <h3>{title}</h3>
+          {meta?.length ? (
+            <p>
+              {meta.filter(Boolean).map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </p>
+          ) : null}
+        </div>
         <div>
+          {href ? (
+            <Link href={href} target="_blank">
+              预览
+            </Link>
+          ) : null}
           <button onClick={onMoveUp}>上移</button>
           <button onClick={onMoveDown}>下移</button>
           <button onClick={onRemove}>删除</button>
@@ -2063,12 +2288,41 @@ function createEmptyAiStudio(): NonNullable<SiteContent["aiStudio"]> {
   };
 }
 
+function createEmptySeo(): NonNullable<SiteContent["meta"]> {
+  return {
+    title: "YITO｜AI-Native Commercial Visual Studio",
+    description:
+      "YITO 是一家 AI 原生商业视觉工作室，专注 AI 品牌广告片、企业宣传片、商业短片、电影级视觉与品牌内容创作。",
+    keywords: [
+      "AI商业视觉",
+      "AI广告片",
+      "AI品牌宣传片",
+      "AI企业宣传片",
+      "AI视频制作",
+      "AI商业短片",
+      "AI视觉工作室",
+      "品牌广告片",
+      "电影感视觉",
+      "商业视觉设计",
+      "YITO",
+    ],
+    openGraph: {
+      title: "YITO｜AI-Native Commercial Visual Studio",
+      description: "用 AI 技术，为品牌低成本制作电影级商业视觉内容。",
+      siteName: "YITO Visual",
+      locale: "zh_CN",
+      type: "website",
+      image: "/images/seo/og-image.jpg",
+    },
+  };
+}
+
 function createEmptyScrollWorld(): NonNullable<SiteContent["scrollWorld"]> {
   return {
     enabled: false,
-    desktopVideo: "/videos/scroll-world/yito-hero-720p.mp4",
+    desktopVideo: "/videos/scroll-world/yito-scroll-world-720p.mp4",
     mobileVideo: "",
-    poster: "/images/scroll-world/yito-hero-poster.jpg",
+    poster: "/images/scroll-world/generated/01-yito-portal.png",
     introTitle: "YITO Scroll World",
     introSubtitle: "滚动穿越 AI 商业视觉世界",
     fallbackMode: "poster",
@@ -2084,7 +2338,7 @@ function defaultScrollWorldScenes(): ScrollWorldScene[] {
       title: "YITO Portal",
       subtitle: "AI 原生商业视觉工作室",
       body: "进入 YITO 的电影化商业视觉世界，从品牌主张到最终交付形成连续体验。",
-      poster: "/images/scroll-world/yito-hero-poster.jpg",
+      poster: "/images/scroll-world/generated/01-yito-portal.png",
     },
     {
       id: "ai-brand-film",
@@ -2093,7 +2347,7 @@ function defaultScrollWorldScenes(): ScrollWorldScene[] {
       subtitle: "AI Brand Film",
       body: "为品牌发布、产品推广和社媒投放建立高质感商业影像。",
       serviceId: "ai-brand-film",
-      poster: "/images/services/service-ai-brand-film.jpg",
+      poster: "/images/scroll-world/generated/02-ai-brand-film.png",
     },
     {
       id: "ai-corporate-film",
@@ -2102,7 +2356,7 @@ function defaultScrollWorldScenes(): ScrollWorldScene[] {
       subtitle: "Corporate Film",
       body: "用科技场景、企业叙事和视觉系统表达公司形象与业务价值。",
       serviceId: "ai-corporate-film",
-      poster: "/images/services/service-corporate-film.jpg",
+      poster: "/images/scroll-world/generated/03-ai-corporate-film.png",
     },
     {
       id: "ai-commercial-short-film",
@@ -2111,7 +2365,7 @@ function defaultScrollWorldScenes(): ScrollWorldScene[] {
       subtitle: "Commercial Short Film",
       body: "以角色、故事和镜头调度，让品牌内容具备传播叙事。",
       serviceId: "ai-commercial-short-film",
-      poster: "/images/services/service-commercial-short.jpg",
+      poster: "/images/scroll-world/generated/04-ai-commercial-short.png",
     },
     {
       id: "ai-concept-visual",
@@ -2120,7 +2374,7 @@ function defaultScrollWorldScenes(): ScrollWorldScene[] {
       subtitle: "AI Concept Visual",
       body: "快速建立活动 KV、产品概念和视觉提案方向。",
       serviceId: "ai-concept-visual",
-      poster: "/images/services/service-concept-visual.jpg",
+      poster: "/images/scroll-world/generated/05-ai-concept-visual.png",
     },
     {
       id: "social-content-visual",
@@ -2129,7 +2383,7 @@ function defaultScrollWorldScenes(): ScrollWorldScene[] {
       subtitle: "Social Content Visual",
       body: "构建短视频、封面海报和内容矩阵，服务小红书、抖音和视频号传播。",
       serviceId: "social-content-visual",
-      poster: "/images/services/service-social-content.jpg",
+      poster: "/images/scroll-world/generated/06-social-content-visual.png",
     },
   ];
 }

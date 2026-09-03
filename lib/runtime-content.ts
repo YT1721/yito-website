@@ -38,6 +38,17 @@ export function adaptEditableContent(content: SiteContent): SiteContentData {
 
   return {
     ...defaultSiteContent,
+    meta: {
+      ...defaultSiteContent.meta,
+      ...(content.meta ?? {}),
+      openGraph: {
+        ...defaultSiteContent.meta.openGraph,
+        ...(content.meta?.openGraph ?? {}),
+      },
+      keywords: content.meta?.keywords?.length
+        ? content.meta.keywords
+        : defaultSiteContent.meta.keywords,
+    },
     scrollWorld: {
       ...defaultSiteContent.scrollWorld,
       ...(content.scrollWorld ?? {}),

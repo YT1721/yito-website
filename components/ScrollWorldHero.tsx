@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { HeroContentData, ScrollWorldContentData } from "../content/site";
 import ImageWithFallback from "./ImageWithFallback";
 
@@ -16,8 +16,9 @@ export default function ScrollWorldHero({
 }: ScrollWorldHeroProps) {
   const sectionRef = useRef<HTMLElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const rafRef = useRef<number | null>(null);
   const durationRef = useRef(0);
+  const progressRef = useRef(0);
+  const touchYRef = useRef<number | null>(null);
   const [isReady, setIsReady] = useState(false);
   const [hasVideoError, setHasVideoError] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
@@ -45,6 +46,30 @@ export default function ScrollWorldHero({
         },
       ];
   const activeScene = scenes[activeSceneIndex] ?? scenes[0];
+
+  const scrubToProgress = useCallback(
+    (progress: number) => {
+      const nextProgress = clamp(progress, 0, 1);
+      progressRef.current = nextProgress;
+
+      const video = videoRef.current;
+      const duration = durationRef.current || video?.duration || 0;
+
+      if (video && duration && Number.isFinite(duration)) {
+        video.currentTime = nextProgress * duration;
+      }
+
+      const nextSceneIndex = Math.min(
+        scenes.length - 1,
+        Math.floor(nextProgress * scenes.length),
+      );
+
+      setActiveSceneIndex((current) =>
+        current === nextSceneIndex ? current : nextSceneIndex,
+      );
+    },
+    [scenes.length],
+  );
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -81,77 +106,58 @@ export default function ScrollWorldHero({
   useEffect(() => {
     if (!shouldUseVideo) return;
 
-    let metadataTimer: number | null = null;
-
-    const updateDuration = () => {
-      const video = videoRef.current;
-      const duration = video?.duration || 0;
-      if (duration) {
-        durationRef.current = duration;
-        setIsReady(true);
-        if (metadataTimer) {
-          window.clearInterval(metadataTimer);
-          metadataTimer = null;
-        }
-      }
-      return duration;
-    };
-
-    const syncVideoTime = () => {
+    const canScrubInsideHero = (delta: number) => {
       const section = sectionRef.current;
-      const video = videoRef.current;
-      const duration = durationRef.current || updateDuration();
+      if (!section) return false;
 
-      if (!section || !video || !duration) return;
+      const topTolerance = 12;
+      const isAtHeroTop = window.scrollY <= section.offsetTop + topTolerance;
 
-      const scrollableDistance = Math.max(
-        section.offsetHeight - window.innerHeight,
-        1,
-      );
-      const progress = clamp(
-        (window.scrollY - section.offsetTop) / scrollableDistance,
-        0,
-        1,
-      );
-      const targetTime = progress * duration;
-      const nextSceneIndex = Math.min(
-        scenes.length - 1,
-        Math.floor(progress * scenes.length),
-      );
-
-      if (Number.isFinite(targetTime)) {
-        video.currentTime = targetTime;
-      }
-
-      setActiveSceneIndex((current) =>
-        current === nextSceneIndex ? current : nextSceneIndex,
-      );
+      if (!isAtHeroTop) return false;
+      if (delta > 0) return progressRef.current < 1;
+      if (delta < 0) return progressRef.current > 0;
+      return false;
     };
 
-    const requestSync = () => {
-      if (rafRef.current) return;
-      rafRef.current = window.requestAnimationFrame(() => {
-        rafRef.current = null;
-        syncVideoTime();
-      });
+    const handleWheel = (event: WheelEvent) => {
+      if (!canScrubInsideHero(event.deltaY)) return;
+
+      event.preventDefault();
+      const sensitivity = window.innerWidth < 768 ? 2200 : 3600;
+      scrubToProgress(progressRef.current + event.deltaY / sensitivity);
     };
 
-    const video = videoRef.current;
-    requestSync();
-    video?.addEventListener("loadedmetadata", requestSync);
-    window.addEventListener("scroll", requestSync, { passive: true });
-    window.addEventListener("resize", requestSync);
-    metadataTimer = window.setInterval(requestSync, 250);
+    const handleTouchStart = (event: TouchEvent) => {
+      touchYRef.current = event.touches[0]?.clientY ?? null;
+    };
+
+    const handleTouchMove = (event: TouchEvent) => {
+      const currentY = event.touches[0]?.clientY;
+      const previousY = touchYRef.current;
+      if (currentY == null || previousY == null) return;
+
+      const delta = previousY - currentY;
+      touchYRef.current = currentY;
+
+      if (!canScrubInsideHero(delta)) return;
+
+      event.preventDefault();
+      scrubToProgress(progressRef.current + delta / 1800);
+    };
+
+    const section = sectionRef.current;
+    section?.addEventListener("wheel", handleWheel, { passive: false });
+    section?.addEventListener("touchstart", handleTouchStart, {
+      passive: true,
+    });
+    section?.addEventListener("touchmove", handleTouchMove, { passive: false });
 
     return () => {
-      if (rafRef.current) window.cancelAnimationFrame(rafRef.current);
-      rafRef.current = null;
-      video?.removeEventListener("loadedmetadata", requestSync);
-      window.removeEventListener("scroll", requestSync);
-      window.removeEventListener("resize", requestSync);
-      if (metadataTimer) window.clearInterval(metadataTimer);
+      section?.removeEventListener("wheel", handleWheel);
+      section?.removeEventListener("touchstart", handleTouchStart);
+      section?.removeEventListener("touchmove", handleTouchMove);
     };
-  }, [scenes.length, shouldUseVideo]);
+  }, [isReady, scrubToProgress, shouldUseVideo]);
 
   if (hasVideoError && scrollWorld.fallbackMode === "static") {
     return <StaticHeroFallback hero={hero} poster={scrollWorld.poster} />;
@@ -180,19 +186,8 @@ export default function ScrollWorldHero({
                 const duration = event.currentTarget.duration || 0;
                 durationRef.current = duration;
                 setIsReady(true);
-                const section = sectionRef.current;
-                if (section && duration) {
-                  const scrollableDistance = Math.max(
-                    section.offsetHeight - window.innerHeight,
-                    1,
-                  );
-                  const progress = clamp(
-                    (window.scrollY - section.offsetTop) / scrollableDistance,
-                    0,
-                    1,
-                  );
-                  event.currentTarget.currentTime = progress * duration;
-                }
+                event.currentTarget.currentTime =
+                  progressRef.current * duration;
               }}
               onError={() => {
                 setHasVideoError(true);

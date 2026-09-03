@@ -1,59 +1,65 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import type { ReactNode } from "react";
-import { siteContent } from "../content/site";
+import { readRuntimeSiteContent } from "../lib/runtime-content";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yito-visual.com";
 
-export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: {
-    default: siteContent.meta.title,
-    template: "%s | YITO",
-  },
-  description: siteContent.meta.description,
-  keywords: siteContent.meta.keywords,
-  authors: [{ name: "YITO" }],
-  creator: "YITO",
-  publisher: "YITO",
-  openGraph: {
-    title: siteContent.meta.openGraph.title,
-    description: siteContent.meta.openGraph.description,
-    url: siteUrl,
-    siteName: siteContent.meta.openGraph.siteName,
-    locale: siteContent.meta.openGraph.locale,
-    type: siteContent.meta.openGraph.type,
-    images: [
-      {
-        url: siteContent.meta.openGraph.image,
-        width: 1200,
-        height: 630,
-        alt: "YITO AI-Native Commercial Visual Studio",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: siteContent.meta.openGraph.title,
-    description: siteContent.meta.openGraph.description,
-    images: [siteContent.meta.openGraph.image],
-  },
-  icons: {
-    icon: "/yito-logo-white-v2.png",
-    apple: "/yito-logo-white-v2.png",
-  },
-  alternates: {
-    canonical: siteUrl,
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const content = await readRuntimeSiteContent();
+  const meta = content.meta;
+
+  return {
+    metadataBase: new URL(siteUrl),
+    title: {
+      default: meta.title,
+      template: "%s | YITO",
+    },
+    description: meta.description,
+    keywords: meta.keywords,
+    authors: [{ name: "YITO" }],
+    creator: "YITO",
+    publisher: "YITO",
+    openGraph: {
+      title: meta.openGraph.title,
+      description: meta.openGraph.description,
+      url: siteUrl,
+      siteName: meta.openGraph.siteName,
+      locale: meta.openGraph.locale,
+      type: meta.openGraph.type,
+      images: [
+        {
+          url: meta.openGraph.image,
+          width: 1200,
+          height: 630,
+          alt: meta.openGraph.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: meta.openGraph.title,
+      description: meta.openGraph.description,
+      images: [meta.openGraph.image],
+    },
+    icons: {
+      icon: "/yito-logo-white-v2.png",
+      apple: "/yito-logo-white-v2.png",
+    },
+    alternates: {
+      canonical: siteUrl,
+    },
+  };
+}
 
 export default async function RootLayout({
   children,
 }: Readonly<{
   children: ReactNode;
 }>) {
-  const footer = siteContent.footer;
+  const content = await readRuntimeSiteContent();
+  const footer = content.footer;
 
   return (
     <html lang="zh-CN">

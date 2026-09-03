@@ -21,9 +21,9 @@
   },
   "scrollWorld": {
     "enabled": true,
-    "desktopVideo": "/videos/scroll-world/yito-hero-720p.mp4",
+    "desktopVideo": "/videos/scroll-world/yito-scroll-world-720p.mp4",
     "mobileVideo": "",
-    "poster": "/images/scroll-world/yito-hero-poster.jpg",
+    "poster": "/images/scroll-world/generated/01-yito-portal.png",
     "introTitle": "YITO Scroll World",
     "introSubtitle": "滚动穿越 AI 商业视觉世界",
     "fallbackMode": "poster",
@@ -34,7 +34,7 @@
         "title": "YITO Portal",
         "subtitle": "AI 原生商业视觉工作室",
         "body": "进入 YITO 的电影化商业视觉世界，从品牌主张到最终交付形成连续体验。",
-        "poster": "/images/scroll-world/yito-hero-poster.jpg"
+        "poster": "/images/scroll-world/generated/01-yito-portal.png"
       },
       {
         "id": "ai-brand-film",
@@ -43,7 +43,7 @@
         "subtitle": "AI Brand Film",
         "body": "为品牌发布、产品推广和社媒投放建立高质感商业影像。",
         "serviceId": "ai-brand-film",
-        "poster": "/images/services/service-ai-brand-film.jpg"
+        "poster": "/images/scroll-world/generated/02-ai-brand-film.png"
       },
       {
         "id": "ai-corporate-film",
@@ -52,7 +52,7 @@
         "subtitle": "Corporate Film",
         "body": "用科技场景、企业叙事和视觉系统表达公司形象与业务价值。",
         "serviceId": "ai-corporate-film",
-        "poster": "/images/services/service-corporate-film.jpg"
+        "poster": "/images/scroll-world/generated/03-ai-corporate-film.png"
       },
       {
         "id": "ai-commercial-short-film",
@@ -61,7 +61,7 @@
         "subtitle": "Commercial Short Film",
         "body": "以角色、故事和镜头调度，让品牌内容具备传播叙事。",
         "serviceId": "ai-commercial-short-film",
-        "poster": "/images/services/service-commercial-short.jpg"
+        "poster": "/images/scroll-world/generated/04-ai-commercial-short.png"
       },
       {
         "id": "ai-concept-visual",
@@ -70,7 +70,7 @@
         "subtitle": "AI Concept Visual",
         "body": "快速建立活动 KV、产品概念和视觉提案方向。",
         "serviceId": "ai-concept-visual",
-        "poster": "/images/services/service-concept-visual.jpg"
+        "poster": "/images/scroll-world/generated/05-ai-concept-visual.png"
       },
       {
         "id": "social-content-visual",
@@ -79,7 +79,7 @@
         "subtitle": "Social Content Visual",
         "body": "构建短视频、封面海报和内容矩阵，服务小红书、抖音和视频号传播。",
         "serviceId": "social-content-visual",
-        "poster": "/images/services/service-social-content.jpg"
+        "poster": "/images/scroll-world/generated/06-social-content-visual.png"
       }
     ]
   },

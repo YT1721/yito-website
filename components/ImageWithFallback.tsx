@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const DEFAULT_FALLBACK_SRC = "/images/placeholder.jpg";
 
@@ -24,6 +24,10 @@ export default function ImageWithFallback({
 }: ImageWithFallbackProps) {
   const [resolvedSrc, setResolvedSrc] = useState(src || fallbackSrc);
 
+  useEffect(() => {
+    setResolvedSrc(src || fallbackSrc);
+  }, [fallbackSrc, src]);
+
   return (
     <Image
       src={resolvedSrc}
@@ -32,6 +36,7 @@ export default function ImageWithFallback({
       priority={priority}
       sizes={sizes}
       className={className}
+      draggable={false}
       onError={() => {
         if (resolvedSrc !== fallbackSrc) setResolvedSrc(fallbackSrc);
       }}

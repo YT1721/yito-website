@@ -56,6 +56,20 @@ export type WorkVideo = {
   title?: string;
 };
 
+export type SeoContent = {
+  title: string;
+  description: string;
+  keywords: string[];
+  openGraph: {
+    title: string;
+    description: string;
+    siteName: string;
+    locale: string;
+    type: "website";
+    image: string;
+  };
+};
+
 export type WorkItem = VisualBlock & {
   title: string;
   en: string;
@@ -100,6 +114,8 @@ export type CaseStudy = VisualBlock & {
   tags: string[];
   video?: WorkVideo;
   videoUrl?: string;
+  featured?: boolean;
+  homepageOrder?: number;
   meta: string[];
   thumbs: VisualBlock[];
 };
@@ -193,6 +209,7 @@ export type ScrollWorldScene = {
 };
 
 export type SiteContent = {
+  meta?: SeoContent;
   scrollWorld?: ScrollWorldContent;
   hero: HeroContent;
   about: AboutContent;

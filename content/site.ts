@@ -134,9 +134,9 @@ export const siteContent = {
   },
   scrollWorld: {
     enabled: true,
-    desktopVideo: "/videos/scroll-world/yito-hero-720p.mp4",
+    desktopVideo: "/videos/scroll-world/yito-scroll-world-720p.mp4",
     mobileVideo: "",
-    poster: "/images/scroll-world/yito-hero-poster.jpg",
+    poster: "/images/scroll-world/generated/01-yito-portal.png",
     introTitle: "YITO Scroll World",
     introSubtitle: "滚动穿越 AI 商业视觉世界",
     fallbackMode: "poster",
@@ -147,6 +147,7 @@ export const siteContent = {
         title: "YITO Portal",
         subtitle: "AI 原生商业视觉工作室",
         body: "从一个光门进入 YITO 的商业视觉生产世界。",
+        poster: "/images/scroll-world/generated/01-yito-portal.png",
       },
       {
         id: "ai-brand-film",
@@ -155,6 +156,7 @@ export const siteContent = {
         subtitle: "Brand film powered by AI",
         body: "把品牌发布、产品广告和招商传播转化为电影级商业影像。",
         serviceId: "ai-brand-film",
+        poster: "/images/scroll-world/generated/02-ai-brand-film.png",
       },
       {
         id: "ai-corporate-film",
@@ -163,6 +165,7 @@ export const siteContent = {
         subtitle: "Corporate visual narrative",
         body: "为官网、展会、发布会和招商场景建立更高级的企业形象内容。",
         serviceId: "ai-corporate-film",
+        poster: "/images/scroll-world/generated/03-ai-corporate-film.png",
       },
       {
         id: "ai-commercial-short-film",
@@ -171,6 +174,7 @@ export const siteContent = {
         subtitle: "Cinematic short content",
         body: "用镜头、角色和节奏完成品牌故事、产品短片和内容 IP。",
         serviceId: "ai-commercial-short-film",
+        poster: "/images/scroll-world/generated/04-ai-commercial-short.png",
       },
       {
         id: "ai-concept-visual",
@@ -179,6 +183,7 @@ export const siteContent = {
         subtitle: "Concept visual system",
         body: "为 Campaign、KV、海报和视觉提案快速建立方向。",
         serviceId: "ai-concept-visual",
+        poster: "/images/scroll-world/generated/05-ai-concept-visual.png",
       },
       {
         id: "social-content-visual",
@@ -187,6 +192,7 @@ export const siteContent = {
         subtitle: "Social content visual",
         body: "为小红书、抖音、视频号和品牌日常内容建立可持续视觉生产方式。",
         serviceId: "social-content-visual",
+        poster: "/images/scroll-world/generated/06-social-content-visual.png",
       },
     ],
   },
