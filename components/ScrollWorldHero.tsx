@@ -18,6 +18,9 @@ export default function ScrollWorldHero({
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const durationRef = useRef(0);
   const progressRef = useRef(0);
+  const targetProgressRef = useRef(0);
+  const seekFrameRef = useRef<number | null>(null);
+  const lastSeekTimeRef = useRef(-1);
   const touchYRef = useRef<number | null>(null);
   const [isReady, setIsReady] = useState(false);
   const [hasVideoError, setHasVideoError] = useState(false);
@@ -47,17 +50,38 @@ export default function ScrollWorldHero({
       ];
   const activeScene = scenes[activeSceneIndex] ?? scenes[0];
 
+  const applyVideoSeek = useCallback(() => {
+    seekFrameRef.current = null;
+
+    const video = videoRef.current;
+    const duration = durationRef.current || video?.duration || 0;
+
+    if (!video || !duration || !Number.isFinite(duration)) return;
+    if (video.readyState < HTMLMediaElement.HAVE_METADATA) return;
+
+    const nextTime = targetProgressRef.current * duration;
+
+    if (Math.abs(nextTime - lastSeekTimeRef.current) < 0.04) return;
+
+    try {
+      video.currentTime = nextTime;
+      lastSeekTimeRef.current = nextTime;
+    } catch {
+      // Some browsers reject seeks before the media pipeline is ready.
+    }
+  }, []);
+
+  const scheduleVideoSeek = useCallback(() => {
+    if (seekFrameRef.current != null) return;
+    seekFrameRef.current = window.requestAnimationFrame(applyVideoSeek);
+  }, [applyVideoSeek]);
+
   const scrubToProgress = useCallback(
     (progress: number) => {
       const nextProgress = clamp(progress, 0, 1);
       progressRef.current = nextProgress;
-
-      const video = videoRef.current;
-      const duration = durationRef.current || video?.duration || 0;
-
-      if (video && duration && Number.isFinite(duration)) {
-        video.currentTime = nextProgress * duration;
-      }
+      targetProgressRef.current = nextProgress;
+      scheduleVideoSeek();
 
       const nextSceneIndex = Math.min(
         scenes.length - 1,
@@ -68,7 +92,7 @@ export default function ScrollWorldHero({
         current === nextSceneIndex ? current : nextSceneIndex,
       );
     },
-    [scenes.length],
+    [scenes.length, scheduleVideoSeek],
   );
 
   useEffect(() => {
@@ -86,9 +110,20 @@ export default function ScrollWorldHero({
 
   useEffect(() => {
     durationRef.current = 0;
+    lastSeekTimeRef.current = -1;
+    targetProgressRef.current = progressRef.current;
     setIsReady(false);
     setHasVideoError(false);
   }, [videoSrc]);
+
+  useEffect(
+    () => () => {
+      if (seekFrameRef.current != null) {
+        window.cancelAnimationFrame(seekFrameRef.current);
+      }
+    },
+    [],
+  );
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 767px)");
@@ -181,13 +216,13 @@ export default function ScrollWorldHero({
               poster={scrollWorld.poster || hero.cover}
               muted
               playsInline
-              preload="metadata"
+              preload="auto"
               onLoadedMetadata={(event) => {
                 const duration = event.currentTarget.duration || 0;
                 durationRef.current = duration;
                 setIsReady(true);
-                event.currentTarget.currentTime =
-                  progressRef.current * duration;
+                targetProgressRef.current = progressRef.current;
+                scheduleVideoSeek();
               }}
               onError={() => {
                 setHasVideoError(true);

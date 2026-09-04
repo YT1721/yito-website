@@ -2320,7 +2320,7 @@ function createEmptySeo(): NonNullable<SiteContent["meta"]> {
 function createEmptyScrollWorld(): NonNullable<SiteContent["scrollWorld"]> {
   return {
     enabled: false,
-    desktopVideo: "/videos/scroll-world/yito-scroll-world-720p.mp4",
+    desktopVideo: "/videos/scroll-world/yito-scroll-world-720p-scrub.mp4",
     mobileVideo: "",
     poster: "/images/scroll-world/generated/01-yito-portal.png",
     introTitle: "YITO Scroll World",
