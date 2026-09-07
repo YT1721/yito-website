@@ -84,6 +84,9 @@ export default function AdminPage() {
   const [status, setStatus] = useState("已加载本地默认内容");
   const [active, setActive] = useState("hero");
   const [advancedJson, setAdvancedJson] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
+  const [dirty, setDirty] = useState(false);
   const scrollWorld = content.scrollWorld ?? createEmptyScrollWorld();
   const meta = content.meta ?? createEmptySeo();
   const featuredCases = useMemo(
@@ -130,13 +133,27 @@ export default function AdminPage() {
 
   useEffect(() => {
     fetch("/api/content", { cache: "no-store" })
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) throw new Error("读取失败");
+        return response.json();
+      })
       .then((data: SiteContent) => {
         setContent(data);
         setStatus("已同步最新网站内容");
       })
-      .catch(() => setStatus("读取最新内容失败，正在使用本地默认内容"));
+      .catch(() => setStatus("读取最新内容失败，请刷新页面重试；暂不可保存"))
+      .then(() => setLoading(false));
   }, []);
+
+  useEffect(() => {
+    if (!dirty) return;
+    const warn = (event: BeforeUnloadEvent) => {
+      event.preventDefault();
+      event.returnValue = "";
+    };
+    window.addEventListener("beforeunload", warn);
+    return () => window.removeEventListener("beforeunload", warn);
+  }, [dirty]);
 
   useEffect(() => {
     setAdvancedJson(JSON.stringify(content, null, 2));
@@ -149,9 +166,12 @@ export default function AdminPage() {
       return next;
     });
     setStatus("有未保存修改");
+    setDirty(true);
   }
 
   async function save() {
+    if (saving || loading) return;
+    setSaving(true);
     setStatus("正在保存...");
     try {
       const response = await fetch("/api/content", {
@@ -169,14 +189,18 @@ export default function AdminPage() {
       }
 
       setStatus("保存成功，已发布到前台；刷新页面即可看到最新内容");
+      setDirty(false);
     } catch {
       setStatus("保存失败，请检查网络或本地服务状态");
+    } finally {
+      setSaving(false);
     }
   }
 
   function applyJson() {
     try {
       setContent(JSON.parse(advancedJson) as SiteContent);
+      setDirty(true);
       setStatus("JSON 已应用，记得保存");
     } catch {
       setStatus("JSON 格式不正确，暂未应用");
@@ -195,12 +219,16 @@ export default function AdminPage() {
           />
           <span>YITO CMS</span>
         </Link>
-        <nav>
+        <nav aria-label="内容管理栏目">
           {sections.map(([id, label, description]) => (
             <button
               key={id}
               className={active === id ? "is-active" : ""}
-              onClick={() => setActive(id)}
+              aria-current={active === id ? "page" : undefined}
+              onClick={() => {
+                setActive(id);
+                window.scrollTo({ top: 0, behavior: "instant" });
+              }}
             >
               <span>{label}</span>
               <small>{description}</small>
@@ -208,8 +236,15 @@ export default function AdminPage() {
           ))}
         </nav>
         <div className={`admin-status is-${statusKind}`}>
-          <p>{status}</p>
-          <button onClick={save}>保存所有修改</button>
+          <p role="status" aria-live="polite">
+            {status}
+          </p>
+          <button
+            disabled={loading || saving || status.includes("读取最新内容失败")}
+            onClick={save}
+          >
+            {saving ? "正在保存…" : "保存并发布"}
+          </button>
           <Link href="/" target="_blank">
             打开前台
           </Link>
@@ -227,1065 +262,349 @@ export default function AdminPage() {
               </span>
             ) : null}
           </div>
-          <button onClick={save}>保存并发布</button>
+          <button
+            disabled={loading || saving || status.includes("读取最新内容失败")}
+            onClick={save}
+          >
+            {saving ? "正在保存…" : "保存并发布"}
+          </button>
         </div>
 
-        {active === "hero" && (
-          <Panel title="Hero 首屏" intro="修改首页第一屏标题、按钮和主视觉。">
-            <Grid>
+        <fieldset
+          className="admin-editing-fields"
+          disabled={loading || saving || status.includes("读取最新内容失败")}
+        >
+          {active === "hero" && (
+            <Panel title="Hero 首屏" intro="修改首页第一屏标题、按钮和主视觉。">
+              <Grid>
+                <Field
+                  label="章节编号"
+                  value={content.hero.no}
+                  onChange={(value) => update((d) => void (d.hero.no = value))}
+                />
+                <Field
+                  label="视觉标签"
+                  value={content.hero.visualLabel}
+                  onChange={(value) =>
+                    update((d) => void (d.hero.visualLabel = value))
+                  }
+                />
+              </Grid>
+              <TextArea
+                label="主标题"
+                value={content.hero.title}
+                onChange={(value) => update((d) => void (d.hero.title = value))}
+              />
               <Field
-                label="章节编号"
-                value={content.hero.no}
-                onChange={(value) => update((d) => void (d.hero.no = value))}
+                label="英文副标题"
+                value={content.hero.subtitle}
+                onChange={(value) =>
+                  update((d) => void (d.hero.subtitle = value))
+                }
+              />
+              <Field
+                label="中文定位"
+                value={content.hero.positioning ?? ""}
+                onChange={(value) =>
+                  update((d) => void (d.hero.positioning = value))
+                }
+              />
+              <TextArea
+                label="首页主文案"
+                value={content.hero.description ?? ""}
+                onChange={(value) =>
+                  update((d) => void (d.hero.description = value))
+                }
+              />
+              <TextArea
+                label="首页补充说明"
+                value={content.hero.note ?? ""}
+                onChange={(value) => update((d) => void (d.hero.note = value))}
+              />
+              <TextArea
+                label="小标签（每行一个）"
+                value={(content.hero.tags ?? []).join("\n")}
+                onChange={(value) =>
+                  update((d) => void (d.hero.tags = lines(value)))
+                }
+              />
+              <Grid>
+                <Field
+                  label="主按钮"
+                  value={content.hero.primaryCta}
+                  onChange={(value) =>
+                    update((d) => void (d.hero.primaryCta = value))
+                  }
+                />
+                <Field
+                  label="副按钮"
+                  value={content.hero.secondaryCta}
+                  onChange={(value) =>
+                    update((d) => void (d.hero.secondaryCta = value))
+                  }
+                />
+              </Grid>
+              <VisualEditor
+                block={content.hero}
+                imageGuide={imageGuides.hero}
+                onChange={(patch) =>
+                  update((d) => Object.assign(d.hero, patch))
+                }
+              />
+            </Panel>
+          )}
+
+          {active === "scrollWorld" && (
+            <Panel
+              title="Scroll World 滚动视觉"
+              intro="配置首页首屏滚动驱动视频样机；关闭后自动使用普通 Hero。"
+            >
+              <Grid>
+                <SelectField
+                  label="启用滚动视频"
+                  value={scrollWorld.enabled ? "true" : "false"}
+                  options={["false", "true"]}
+                  onChange={(value) =>
+                    update((d) => {
+                      d.scrollWorld ??= createEmptyScrollWorld();
+                      d.scrollWorld.enabled = value === "true";
+                    })
+                  }
+                />
+                <SelectField
+                  label="视频失败兜底方式"
+                  value={scrollWorld.fallbackMode}
+                  options={["poster", "static"]}
+                  onChange={(value) =>
+                    update((d) => {
+                      d.scrollWorld ??= createEmptyScrollWorld();
+                      d.scrollWorld.fallbackMode =
+                        value === "static" ? "static" : "poster";
+                    })
+                  }
+                />
+              </Grid>
+              <Grid>
+                <Field
+                  label="样机标题"
+                  value={scrollWorld.introTitle}
+                  onChange={(value) =>
+                    update((d) => {
+                      d.scrollWorld ??= createEmptyScrollWorld();
+                      d.scrollWorld.introTitle = value;
+                    })
+                  }
+                />
+                <Field
+                  label="样机副标题"
+                  value={scrollWorld.introSubtitle}
+                  onChange={(value) =>
+                    update((d) => {
+                      d.scrollWorld ??= createEmptyScrollWorld();
+                      d.scrollWorld.introSubtitle = value;
+                    })
+                  }
+                />
+              </Grid>
+              <Field
+                label="桌面视频 URL（16:9，建议 1280×720 MP4）"
+                value={scrollWorld.desktopVideo}
+                onChange={(value) =>
+                  update((d) => {
+                    d.scrollWorld ??= createEmptyScrollWorld();
+                    d.scrollWorld.desktopVideo = value;
+                  })
+                }
+              />
+              <UploadOnly
+                label="上传桌面视频（MP4/WebM/MOV，第一阶段建议 720p）"
+                accept="video/mp4,video/webm,video/quicktime"
+                onUploaded={(url) =>
+                  update((d) => {
+                    d.scrollWorld ??= createEmptyScrollWorld();
+                    d.scrollWorld.desktopVideo = url;
+                  })
+                }
+              />
+              <Field
+                label="移动视频 URL（可选，9:16）"
+                value={scrollWorld.mobileVideo ?? ""}
+                onChange={(value) =>
+                  update((d) => {
+                    d.scrollWorld ??= createEmptyScrollWorld();
+                    d.scrollWorld.mobileVideo = value;
+                  })
+                }
+              />
+              <VisualEditor
+                block={{ image: scrollWorld.poster }}
+                imageGuide={imageGuides.scrollPoster}
+                onChange={(patch) =>
+                  update((d) => {
+                    d.scrollWorld ??= createEmptyScrollWorld();
+                    d.scrollWorld.poster = patch.image || "";
+                  })
+                }
+              />
+              <ScrollWorldSceneEditor
+                scenes={scrollWorld.scenes ?? defaultScrollWorldScenes()}
+                services={content.services.items}
+                onChange={(scenes) =>
+                  update((d) => {
+                    d.scrollWorld ??= createEmptyScrollWorld();
+                    d.scrollWorld.scenes = scenes;
+                  })
+                }
+              />
+              <p className="admin-help">
+                推荐流程：先用 GPT 生成 1920×1080 poster，再用即梦 CLI 生成 720p
+                横版视频。视频未生成前可保持关闭或使用 poster fallback。
+              </p>
+            </Panel>
+          )}
+
+          {active === "about" && (
+            <Panel
+              title="About 关于"
+              intro="修改工作室介绍、能力标签和右侧主视觉。"
+            >
+              <Grid>
+                <Field
+                  label="章节编号"
+                  value={content.about.no}
+                  onChange={(value) => update((d) => void (d.about.no = value))}
+                />
+                <Field
+                  label="标题"
+                  value={content.about.title}
+                  onChange={(value) =>
+                    update((d) => void (d.about.title = value))
+                  }
+                />
+              </Grid>
+              <Field
+                label="副标题"
+                value={content.about.subtitle}
+                onChange={(value) =>
+                  update((d) => void (d.about.subtitle = value))
+                }
+              />
+              <TextArea
+                label="介绍正文"
+                value={content.about.body}
+                onChange={(value) => update((d) => void (d.about.body = value))}
+              />
+              <TextArea
+                label="能力标签（每行一个）"
+                value={content.about.capabilities.join("\n")}
+                onChange={(value) =>
+                  update((d) => void (d.about.capabilities = lines(value)))
+                }
+              />
+              <TextArea
+                label="底部观点"
+                value={content.about.statement}
+                onChange={(value) =>
+                  update((d) => void (d.about.statement = value))
+                }
               />
               <Field
                 label="视觉标签"
-                value={content.hero.visualLabel}
+                value={content.about.visualLabel}
                 onChange={(value) =>
-                  update((d) => void (d.hero.visualLabel = value))
+                  update((d) => void (d.about.visualLabel = value))
                 }
               />
-            </Grid>
-            <TextArea
-              label="主标题"
-              value={content.hero.title}
-              onChange={(value) => update((d) => void (d.hero.title = value))}
-            />
-            <Field
-              label="英文副标题"
-              value={content.hero.subtitle}
-              onChange={(value) =>
-                update((d) => void (d.hero.subtitle = value))
-              }
-            />
-            <Field
-              label="中文定位"
-              value={content.hero.positioning ?? ""}
-              onChange={(value) =>
-                update((d) => void (d.hero.positioning = value))
-              }
-            />
-            <TextArea
-              label="首页主文案"
-              value={content.hero.description ?? ""}
-              onChange={(value) =>
-                update((d) => void (d.hero.description = value))
-              }
-            />
-            <TextArea
-              label="首页补充说明"
-              value={content.hero.note ?? ""}
-              onChange={(value) => update((d) => void (d.hero.note = value))}
-            />
-            <TextArea
-              label="小标签（每行一个）"
-              value={(content.hero.tags ?? []).join("\n")}
-              onChange={(value) =>
-                update((d) => void (d.hero.tags = lines(value)))
-              }
-            />
-            <Grid>
-              <Field
-                label="主按钮"
-                value={content.hero.primaryCta}
-                onChange={(value) =>
-                  update((d) => void (d.hero.primaryCta = value))
+              <VisualEditor
+                block={content.about}
+                imageGuide={imageGuides.wide}
+                onChange={(patch) =>
+                  update((d) => Object.assign(d.about, patch))
                 }
               />
-              <Field
-                label="副按钮"
-                value={content.hero.secondaryCta}
-                onChange={(value) =>
-                  update((d) => void (d.hero.secondaryCta = value))
-                }
-              />
-            </Grid>
-            <VisualEditor
-              block={content.hero}
-              imageGuide={imageGuides.hero}
-              onChange={(patch) => update((d) => Object.assign(d.hero, patch))}
-            />
-          </Panel>
-        )}
+            </Panel>
+          )}
 
-        {active === "scrollWorld" && (
-          <Panel
-            title="Scroll World 滚动视觉"
-            intro="配置首页首屏滚动驱动视频样机；关闭后自动使用普通 Hero。"
-          >
-            <Grid>
-              <SelectField
-                label="启用滚动视频"
-                value={scrollWorld.enabled ? "true" : "false"}
-                options={["false", "true"]}
-                onChange={(value) =>
-                  update((d) => {
-                    d.scrollWorld ??= createEmptyScrollWorld();
-                    d.scrollWorld.enabled = value === "true";
-                  })
-                }
-              />
-              <SelectField
-                label="视频失败兜底方式"
-                value={scrollWorld.fallbackMode}
-                options={["poster", "static"]}
-                onChange={(value) =>
-                  update((d) => {
-                    d.scrollWorld ??= createEmptyScrollWorld();
-                    d.scrollWorld.fallbackMode =
-                      value === "static" ? "static" : "poster";
-                  })
-                }
-              />
-            </Grid>
-            <Grid>
-              <Field
-                label="样机标题"
-                value={scrollWorld.introTitle}
-                onChange={(value) =>
-                  update((d) => {
-                    d.scrollWorld ??= createEmptyScrollWorld();
-                    d.scrollWorld.introTitle = value;
-                  })
-                }
-              />
-              <Field
-                label="样机副标题"
-                value={scrollWorld.introSubtitle}
-                onChange={(value) =>
-                  update((d) => {
-                    d.scrollWorld ??= createEmptyScrollWorld();
-                    d.scrollWorld.introSubtitle = value;
-                  })
-                }
-              />
-            </Grid>
-            <Field
-              label="桌面视频 URL（16:9，建议 1280×720 MP4）"
-              value={scrollWorld.desktopVideo}
-              onChange={(value) =>
-                update((d) => {
-                  d.scrollWorld ??= createEmptyScrollWorld();
-                  d.scrollWorld.desktopVideo = value;
-                })
-              }
-            />
-            <UploadOnly
-              label="上传桌面视频（MP4/WebM/MOV，第一阶段建议 720p）"
-              accept="video/mp4,video/webm,video/quicktime"
-              onUploaded={(url) =>
-                update((d) => {
-                  d.scrollWorld ??= createEmptyScrollWorld();
-                  d.scrollWorld.desktopVideo = url;
-                })
-              }
-            />
-            <Field
-              label="移动视频 URL（可选，9:16）"
-              value={scrollWorld.mobileVideo ?? ""}
-              onChange={(value) =>
-                update((d) => {
-                  d.scrollWorld ??= createEmptyScrollWorld();
-                  d.scrollWorld.mobileVideo = value;
-                })
-              }
-            />
-            <VisualEditor
-              block={{ image: scrollWorld.poster }}
-              imageGuide={imageGuides.scrollPoster}
-              onChange={(patch) =>
-                update((d) => {
-                  d.scrollWorld ??= createEmptyScrollWorld();
-                  d.scrollWorld.poster = patch.image || "";
-                })
-              }
-            />
-            <ScrollWorldSceneEditor
-              scenes={scrollWorld.scenes ?? defaultScrollWorldScenes()}
-              services={content.services.items}
-              onChange={(scenes) =>
-                update((d) => {
-                  d.scrollWorld ??= createEmptyScrollWorld();
-                  d.scrollWorld.scenes = scenes;
-                })
-              }
-            />
-            <p className="admin-help">
-              推荐流程：先用 GPT 生成 1920×1080 poster，再用即梦 CLI 生成 720p
-              横版视频。视频未生成前可保持关闭或使用 poster fallback。
-            </p>
-          </Panel>
-        )}
-
-        {active === "about" && (
-          <Panel
-            title="About 关于"
-            intro="修改工作室介绍、能力标签和右侧主视觉。"
-          >
-            <Grid>
-              <Field
-                label="章节编号"
-                value={content.about.no}
-                onChange={(value) => update((d) => void (d.about.no = value))}
-              />
-              <Field
-                label="标题"
-                value={content.about.title}
-                onChange={(value) =>
-                  update((d) => void (d.about.title = value))
-                }
-              />
-            </Grid>
-            <Field
-              label="副标题"
-              value={content.about.subtitle}
-              onChange={(value) =>
-                update((d) => void (d.about.subtitle = value))
-              }
-            />
-            <TextArea
-              label="介绍正文"
-              value={content.about.body}
-              onChange={(value) => update((d) => void (d.about.body = value))}
-            />
-            <TextArea
-              label="能力标签（每行一个）"
-              value={content.about.capabilities.join("\n")}
-              onChange={(value) =>
-                update((d) => void (d.about.capabilities = lines(value)))
-              }
-            />
-            <TextArea
-              label="底部观点"
-              value={content.about.statement}
-              onChange={(value) =>
-                update((d) => void (d.about.statement = value))
-              }
-            />
-            <Field
-              label="视觉标签"
-              value={content.about.visualLabel}
-              onChange={(value) =>
-                update((d) => void (d.about.visualLabel = value))
-              }
-            />
-            <VisualEditor
-              block={content.about}
-              imageGuide={imageGuides.wide}
-              onChange={(patch) => update((d) => Object.assign(d.about, patch))}
-            />
-          </Panel>
-        )}
-
-        {active === "services" && (
-          <Panel
-            title="Services 服务"
-            intro="添加、删除、排序服务卡片，替换每张卡片封面。"
-          >
-            <SectionFields
-              no={content.services.no}
-              title={content.services.title}
-              subtitle={content.services.subtitle}
-              onChange={(field, value) =>
-                update(
-                  (d) =>
-                    void ((d.services as unknown as Record<string, string>)[
-                      field
-                    ] = value),
-                )
-              }
-            />
-            <TextArea
-              label="模块说明"
-              value={content.services.microCopy}
-              onChange={(value) =>
-                update((d) => void (d.services.microCopy = value))
-              }
-            />
-            <Stack>
-              {content.services.items.map((item, index) => (
-                <EditableCard
-                  key={`${item.title}-${index}`}
-                  title={`服务 ${index + 1}`}
-                  onRemove={() =>
-                    update((d) => d.services.items.splice(index, 1))
-                  }
-                  onMoveUp={() =>
-                    update((d) => move(d.services.items, index, index - 1))
-                  }
-                  onMoveDown={() =>
-                    update((d) => move(d.services.items, index, index + 1))
-                  }
-                >
-                  <Grid>
-                    <Field
-                      label="中文名称"
-                      value={item.title}
-                      onChange={(value) =>
-                        update(
-                          (d) => void (d.services.items[index].title = value),
-                        )
-                      }
-                    />
-                    <Field
-                      label="英文说明"
-                      value={item.en}
-                      onChange={(value) =>
-                        update((d) => void (d.services.items[index].en = value))
-                      }
-                    />
-                  </Grid>
-                  <TextArea
-                    label="服务说明"
-                    value={item.description ?? ""}
-                    onChange={(value) =>
-                      update(
-                        (d) =>
-                          void (d.services.items[index].description =
-                            value || undefined),
-                      )
-                    }
-                  />
-                  <Field
-                    label="适用场景"
-                    value={item.scenes ?? ""}
-                    onChange={(value) =>
-                      update(
-                        (d) =>
-                          void (d.services.items[index].scenes =
-                            value || undefined),
-                      )
-                    }
-                  />
-                  <SelectField
-                    label="图标"
-                    value={item.icon}
-                    options={iconOptions}
-                    onChange={(value) =>
-                      update(
-                        (d) =>
-                          void (d.services.items[index].icon =
-                            value as IconName),
-                      )
-                    }
-                  />
-                  <VisualEditor
-                    block={item}
-                    imageGuide={imageGuides.service}
-                    onChange={(patch) =>
-                      update((d) =>
-                        Object.assign(d.services.items[index], patch),
-                      )
-                    }
-                  />
-                </EditableCard>
-              ))}
-              <AddButton
-                onClick={() =>
-                  update((d) =>
-                    d.services.items.push({
-                      title: "新服务",
-                      en: "Service",
-                      description: "填写服务说明。",
-                      scenes: "填写适用场景。",
-                      icon: "sparkles",
-                    }),
+          {active === "services" && (
+            <Panel
+              title="Services 服务"
+              intro="添加、删除、排序服务卡片，替换每张卡片封面。"
+            >
+              <SectionFields
+                no={content.services.no}
+                title={content.services.title}
+                subtitle={content.services.subtitle}
+                onChange={(field, value) =>
+                  update(
+                    (d) =>
+                      void ((d.services as unknown as Record<string, string>)[
+                        field
+                      ] = value),
                   )
                 }
-              >
-                添加服务
-              </AddButton>
-            </Stack>
-          </Panel>
-        )}
-
-        {active === "works" && (
-          <Panel
-            title="Selected Works 首页精选案例"
-            intro="管理首页 Selected Works 的模块文案，以及哪些案例进入首页。案例卡片内容来自“案例详情”。"
-          >
-            <SectionFields
-              no={content.selectedWorks.no}
-              title={content.selectedWorks.title}
-              subtitle={content.selectedWorks.subtitle}
-              onChange={(field, value) =>
-                update(
-                  (d) =>
-                    void ((
-                      d.selectedWorks as unknown as Record<string, string>
-                    )[field] = value),
-                )
-              }
-            />
-            <TextArea
-              label="模块介绍"
-              value={content.selectedWorks.intro}
-              onChange={(value) =>
-                update((d) => void (d.selectedWorks.intro = value))
-              }
-            />
-            <Field
-              label="链接文字"
-              value={content.selectedWorks.linkText}
-              onChange={(value) =>
-                update((d) => void (d.selectedWorks.linkText = value))
-              }
-            />
-            <TextArea
-              label="案例分类标签（每行一个）"
-              value={(content.selectedWorks.categories ?? []).join("\n")}
-              onChange={(value) =>
-                update((d) => void (d.selectedWorks.categories = lines(value)))
-              }
-            />
-            <div className="admin-callout">
-              <strong>前台对应关系</strong>
-              <p>
-                首页 Selected Works 只显示“案例详情”里开启首页展示的前 6
-                个案例，并按首页排序升序排列。标题、简介、封面图、标签、视频和详情页内容都在“案例详情”维护。
-              </p>
-            </div>
-            <Stack>
-              {content.caseStudies.map((item, index) => (
-                <EditableCard
-                  key={`${item.slug}-${index}`}
-                  title={item.title}
-                  meta={[
-                    item.slug,
-                    item.category ?? "",
-                    (item.featured ?? index < 6)
-                      ? "已进入首页候选"
-                      : "未进入首页",
-                  ]}
-                  href={`/works/${item.slug}`}
-                  onRemove={() => update((d) => d.caseStudies.splice(index, 1))}
-                  onMoveUp={() =>
-                    update((d) => move(d.caseStudies, index, index - 1))
-                  }
-                  onMoveDown={() =>
-                    update((d) => move(d.caseStudies, index, index + 1))
-                  }
-                >
-                  <Grid>
-                    <SelectField
-                      label="是否在首页 Selected Works 展示"
-                      value={(item.featured ?? index < 6) ? "true" : "false"}
-                      options={["true", "false"]}
-                      onChange={(value) =>
-                        update(
-                          (d) =>
-                            void (d.caseStudies[index].featured =
-                              value === "true"),
-                        )
-                      }
-                    />
-                    <Field
-                      label="首页排序"
-                      value={String(
-                        (item.homepageOrder ?? Number(item.no)) || index + 1,
-                      )}
-                      onChange={(value) =>
-                        update(
-                          (d) =>
-                            void (d.caseStudies[index].homepageOrder =
-                              Number(value) || index + 1),
-                        )
-                      }
-                    />
-                  </Grid>
-                  <ServiceRelationEditor
-                    services={content.services.items}
-                    value={item.serviceIds ?? []}
-                    onChange={(serviceIds) =>
-                      update(
-                        (d) =>
-                          void (d.caseStudies[index].serviceIds = serviceIds),
-                      )
+              />
+              <TextArea
+                label="模块说明"
+                value={content.services.microCopy}
+                onChange={(value) =>
+                  update((d) => void (d.services.microCopy = value))
+                }
+              />
+              <Stack>
+                {content.services.items.map((item, index) => (
+                  <EditableCard
+                    key={`${item.title}-${index}`}
+                    title={`服务 ${index + 1}`}
+                    onRemove={() =>
+                      update((d) => d.services.items.splice(index, 1))
                     }
-                  />
-                  <div className="admin-case-preview">
-                    <ImageWithFallback
-                      src={
-                        item.cover || item.image || "/images/placeholder.jpg"
-                      }
-                      alt={`${item.title} 封面预览`}
-                      className="admin-case-preview-image"
-                      sizes="220px"
-                    />
-                    <div>
-                      <span>前台卡片预览</span>
-                      <strong>{item.en}</strong>
-                      <p>{item.summary}</p>
-                    </div>
-                  </div>
-                </EditableCard>
-              ))}
-            </Stack>
-            <div className="admin-selected-summary">
-              <strong>当前首页会显示</strong>
-              <div>
-                {featuredCases.map((item) => (
-                  <span key={item.slug}>
-                    {String(item.homepageOrder ?? item.no).padStart(2, "0")} ·{" "}
-                    {item.title}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </Panel>
-        )}
-
-        {active === "cases" && (
-          <Panel
-            title="Case Studies 案例详情"
-            intro="管理详情案例页：主图、说明、缩略图都可以替换。"
-          >
-            <Stack>
-              {content.caseStudies.map((item, caseIndex) => (
-                <EditableCard
-                  key={`${item.no}-${caseIndex}`}
-                  title={`案例 ${caseIndex + 1}`}
-                  meta={[
-                    item.title,
-                    item.slug,
-                    item.featured ? "首页展示" : "仅列表/详情",
-                  ]}
-                  href={`/works/${item.slug}`}
-                  onRemove={() =>
-                    update((d) => d.caseStudies.splice(caseIndex, 1))
-                  }
-                  onMoveUp={() =>
-                    update((d) => move(d.caseStudies, caseIndex, caseIndex - 1))
-                  }
-                  onMoveDown={() =>
-                    update((d) => move(d.caseStudies, caseIndex, caseIndex + 1))
-                  }
-                >
-                  <Grid>
-                    <Field
-                      label="编号"
-                      value={item.no}
-                      onChange={(value) =>
-                        update(
-                          (d) => void (d.caseStudies[caseIndex].no = value),
-                        )
-                      }
-                    />
-                    <Field
-                      label="标题"
-                      value={item.title}
-                      onChange={(value) =>
-                        update(
-                          (d) => void (d.caseStudies[caseIndex].title = value),
-                        )
-                      }
-                    />
-                  </Grid>
-                  <Grid>
-                    <SelectField
-                      label="首页 Selected Works 展示"
-                      value={
-                        (item.featured ?? caseIndex < 6) ? "true" : "false"
-                      }
-                      options={["true", "false"]}
+                    onMoveUp={() =>
+                      update((d) => move(d.services.items, index, index - 1))
+                    }
+                    onMoveDown={() =>
+                      update((d) => move(d.services.items, index, index + 1))
+                    }
+                  >
+                    <Grid>
+                      <Field
+                        label="中文名称"
+                        value={item.title}
+                        onChange={(value) =>
+                          update(
+                            (d) => void (d.services.items[index].title = value),
+                          )
+                        }
+                      />
+                      <Field
+                        label="英文说明"
+                        value={item.en}
+                        onChange={(value) =>
+                          update(
+                            (d) => void (d.services.items[index].en = value),
+                          )
+                        }
+                      />
+                    </Grid>
+                    <TextArea
+                      label="服务说明"
+                      value={item.description ?? ""}
                       onChange={(value) =>
                         update(
                           (d) =>
-                            void (d.caseStudies[caseIndex].featured =
-                              value === "true"),
-                        )
-                      }
-                    />
-                    <Field
-                      label="首页排序（数字越小越靠前）"
-                      value={String(
-                        (item.homepageOrder ?? Number(item.no)) ||
-                          caseIndex + 1,
-                      )}
-                      onChange={(value) =>
-                        update(
-                          (d) =>
-                            void (d.caseStudies[caseIndex].homepageOrder =
-                              Number(value) || caseIndex + 1),
-                        )
-                      }
-                    />
-                  </Grid>
-                  <Grid>
-                    <Field
-                      label="详情页路径 slug"
-                      value={item.slug}
-                      onChange={(value) =>
-                        update(
-                          (d) =>
-                            void (d.caseStudies[caseIndex].slug =
-                              slugify(value)),
-                        )
-                      }
-                    />
-                    <Field
-                      label="行业"
-                      value={item.industry}
-                      onChange={(value) =>
-                        update(
-                          (d) =>
-                            void (d.caseStudies[caseIndex].industry = value),
-                        )
-                      }
-                    />
-                  </Grid>
-                  <Grid>
-                    <Field
-                      label="案例类型"
-                      value={item.category ?? ""}
-                      onChange={(value) =>
-                        update(
-                          (d) =>
-                            void (d.caseStudies[caseIndex].category =
+                            void (d.services.items[index].description =
                               value || undefined),
                         )
                       }
                     />
                     <Field
-                      label="年份"
-                      value={item.year ?? ""}
+                      label="适用场景"
+                      value={item.scenes ?? ""}
                       onChange={(value) =>
                         update(
                           (d) =>
-                            void (d.caseStudies[caseIndex].year =
+                            void (d.services.items[index].scenes =
                               value || undefined),
                         )
-                      }
-                    />
-                  </Grid>
-                  <Field
-                    label="英文/类型"
-                    value={item.en}
-                    onChange={(value) =>
-                      update((d) => void (d.caseStudies[caseIndex].en = value))
-                    }
-                  />
-                  <TextArea
-                    label="作品简介"
-                    value={item.summary}
-                    onChange={(value) =>
-                      update(
-                        (d) => void (d.caseStudies[caseIndex].summary = value),
-                      )
-                    }
-                  />
-                  <TextArea
-                    label="详细介绍"
-                    value={item.description}
-                    onChange={(value) =>
-                      update(
-                        (d) =>
-                          void (d.caseStudies[caseIndex].description = value),
-                      )
-                    }
-                  />
-                  <TextArea
-                    label="项目目标"
-                    value={item.challenge ?? ""}
-                    onChange={(value) =>
-                      update(
-                        (d) =>
-                          void (d.caseStudies[caseIndex].challenge =
-                            value || undefined),
-                      )
-                    }
-                  />
-                  <TextArea
-                    label="视觉策略"
-                    value={item.strategy ?? ""}
-                    onChange={(value) =>
-                      update(
-                        (d) =>
-                          void (d.caseStudies[caseIndex].strategy =
-                            value || undefined),
-                      )
-                    }
-                  />
-                  <TextArea
-                    label="制作流程"
-                    value={item.solution ?? ""}
-                    onChange={(value) =>
-                      update(
-                        (d) =>
-                          void (d.caseStudies[caseIndex].solution =
-                            value || undefined),
-                      )
-                    }
-                  />
-                  <TextArea
-                    label="成果展示"
-                    value={item.result ?? ""}
-                    onChange={(value) =>
-                      update(
-                        (d) =>
-                          void (d.caseStudies[caseIndex].result =
-                            value || undefined),
-                      )
-                    }
-                  />
-                  <TextArea
-                    label="服务内容（每行一个）"
-                    value={(item.services ?? []).join("\n")}
-                    onChange={(value) =>
-                      update(
-                        (d) =>
-                          void (d.caseStudies[caseIndex].services =
-                            lines(value)),
-                      )
-                    }
-                  />
-                  <ServiceRelationEditor
-                    services={content.services.items}
-                    value={item.serviceIds ?? []}
-                    onChange={(serviceIds) =>
-                      update(
-                        (d) =>
-                          void (d.caseStudies[caseIndex].serviceIds =
-                            serviceIds),
-                      )
-                    }
-                  />
-                  <TextArea
-                    label="标签（每行一个）"
-                    value={item.tags.join("\n")}
-                    onChange={(value) =>
-                      update(
-                        (d) =>
-                          void (d.caseStudies[caseIndex].tags = lines(value)),
-                      )
-                    }
-                  />
-                  <VideoEditor
-                    value={item.video}
-                    fallbackUrl={item.videoUrl}
-                    onChange={(video) =>
-                      update(
-                        (d) => void (d.caseStudies[caseIndex].video = video),
-                      )
-                    }
-                    onFallbackChange={(value) =>
-                      update(
-                        (d) =>
-                          void (d.caseStudies[caseIndex].videoUrl =
-                            value || undefined),
-                      )
-                    }
-                  />
-                  <div className="image-guide media-guide">
-                    <strong>案例视频 / 动效展示</strong>
-                    <small>
-                      比例：16:9 横版为主，社媒短视频可在详情说明中补充 9:16
-                      链接
-                    </small>
-                    <small>
-                      推荐尺寸：1920×1080，H.264 MP4 / WebM，20-60 秒预览最稳
-                    </small>
-                    <small>
-                      如使用 B站、网盘、Frame.io
-                      等外部页面链接，前台会显示为“打开视频链接”。
-                    </small>
-                  </div>
-                  <UploadOnly
-                    label="上传作品视频"
-                    accept="video/mp4,video/webm,video/quicktime"
-                    onUploaded={(url) =>
-                      update(
-                        (d) =>
-                          void (d.caseStudies[caseIndex].video = {
-                            type: "local",
-                            url,
-                            title: "作品视频",
-                          }),
-                      )
-                    }
-                  />
-                  <TextArea
-                    label="前台项目信息（每行一条，仅填写客户可见内容）"
-                    value={item.meta.join("\n")}
-                    onChange={(value) =>
-                      update(
-                        (d) =>
-                          void (d.caseStudies[caseIndex].meta = lines(value)),
-                      )
-                    }
-                  />
-                  <VisualEditor
-                    block={item}
-                    imageGuide={imageGuides.caseMain}
-                    onChange={(patch) =>
-                      update((d) =>
-                        Object.assign(d.caseStudies[caseIndex], patch),
-                      )
-                    }
-                  />
-                  <div className="admin-sublist">
-                    <h4>缩略图</h4>
-                    {item.thumbs.map((thumb, thumbIndex) => (
-                      <div
-                        className="admin-thumb-editor"
-                        key={`${caseIndex}-${thumbIndex}`}
-                      >
-                        <VisualEditor
-                          block={thumb}
-                          compact
-                          imageGuide={imageGuides.caseThumb}
-                          onChange={(patch) =>
-                            update((d) =>
-                              Object.assign(
-                                d.caseStudies[caseIndex].thumbs[thumbIndex],
-                                patch,
-                              ),
-                            )
-                          }
-                        />
-                        <button
-                          onClick={() =>
-                            update((d) =>
-                              d.caseStudies[caseIndex].thumbs.splice(
-                                thumbIndex,
-                                1,
-                              ),
-                            )
-                          }
-                        >
-                          删除缩略图
-                        </button>
-                      </div>
-                    ))}
-                    <AddButton
-                      onClick={() =>
-                        update((d) => d.caseStudies[caseIndex].thumbs.push({}))
-                      }
-                    >
-                      添加缩略图
-                    </AddButton>
-                  </div>
-                </EditableCard>
-              ))}
-              <AddButton
-                onClick={() =>
-                  update((d) =>
-                    d.caseStudies.push({
-                      no: String(d.caseStudies.length + 5).padStart(2, "0"),
-                      slug: `new-case-${Date.now()}`,
-                      title: "新案例",
-                      en: "Case Study",
-                      summary: "一句话介绍这个作品。",
-                      description:
-                        "在这里填写作品背景、目标、制作方式和交付内容。",
-                      category: "AI 商业视觉",
-                      industry: "行业",
-                      year: "2026",
-                      challenge: "填写项目目标。",
-                      strategy: "填写视觉策略。",
-                      solution: "填写制作流程。",
-                      result: "填写成果展示。",
-                      services: ["创意方向", "AI 视觉生成"],
-                      serviceIds: ["ai-brand-film"],
-                      tags: ["AI视觉"],
-                      featured: false,
-                      homepageOrder: d.caseStudies.length + 1,
-                      meta: ["项目类型  商业视觉"],
-                      thumbs: [{}, {}],
-                    }),
-                  )
-                }
-              >
-                添加案例详情
-              </AddButton>
-            </Stack>
-          </Panel>
-        )}
-
-        {active === "studio" && (
-          <Panel
-            title="AI Studio System AI生产系统"
-            intro="展示 YITO 的 AI 商业视觉生产方法，不是工具清单。"
-          >
-            <SectionFields
-              no={content.aiStudio?.no ?? ""}
-              title={content.aiStudio?.title ?? ""}
-              subtitle={content.aiStudio?.subtitle ?? ""}
-              onChange={(field, value) =>
-                update((d) => {
-                  d.aiStudio ??= createEmptyAiStudio();
-                  d.aiStudio[field] = value;
-                })
-              }
-            />
-            <TextArea
-              label="正文说明"
-              value={content.aiStudio?.body ?? ""}
-              onChange={(value) =>
-                update((d) => {
-                  d.aiStudio ??= createEmptyAiStudio();
-                  d.aiStudio.body = value;
-                })
-              }
-            />
-            <TextArea
-              label="能力列表（每行一个）"
-              value={(content.aiStudio?.items ?? []).join("\n")}
-              onChange={(value) =>
-                update((d) => {
-                  d.aiStudio ??= createEmptyAiStudio();
-                  d.aiStudio.items = lines(value);
-                })
-              }
-            />
-            <TextArea
-              label="强表达句"
-              value={content.aiStudio?.statement ?? ""}
-              onChange={(value) =>
-                update((d) => {
-                  d.aiStudio ??= createEmptyAiStudio();
-                  d.aiStudio.statement = value;
-                })
-              }
-            />
-            <VisualEditor
-              block={content.aiStudio ?? createEmptyAiStudio()}
-              imageGuide={imageGuides.wide}
-              onChange={(patch) =>
-                update((d) => {
-                  d.aiStudio ??= createEmptyAiStudio();
-                  Object.assign(d.aiStudio, patch);
-                })
-              }
-            />
-          </Panel>
-        )}
-
-        {active === "process" && (
-          <Panel title="Process 流程" intro="修改流程标题和每一步说明。">
-            <SectionFields
-              no={content.process.no}
-              title={content.process.title}
-              subtitle={content.process.subtitle}
-              onChange={(field, value) =>
-                update(
-                  (d) =>
-                    void ((d.process as unknown as Record<string, string>)[
-                      field
-                    ] = value),
-                )
-              }
-            />
-            <TextArea
-              label="模块说明"
-              value={content.process.intro ?? ""}
-              onChange={(value) =>
-                update((d) => void (d.process.intro = value))
-              }
-            />
-            <Stack>
-              {content.process.steps.map((step, index) => (
-                <EditableCard
-                  key={`${step.title}-${index}`}
-                  title={`步骤 ${index + 1}`}
-                  onRemove={() =>
-                    update((d) => d.process.steps.splice(index, 1))
-                  }
-                  onMoveUp={() =>
-                    update((d) => move(d.process.steps, index, index - 1))
-                  }
-                  onMoveDown={() =>
-                    update((d) => move(d.process.steps, index, index + 1))
-                  }
-                >
-                  <Grid>
-                    <Field
-                      label="步骤名称"
-                      value={step.title}
-                      onChange={(value) =>
-                        update(
-                          (d) => void (d.process.steps[index].title = value),
-                        )
-                      }
-                    />
-                    <Field
-                      label="英文名称"
-                      value={step.en ?? ""}
-                      onChange={(value) =>
-                        update(
-                          (d) =>
-                            void (d.process.steps[index].en =
-                              value || undefined),
-                        )
-                      }
-                    />
-                  </Grid>
-                  <Field
-                    label="步骤说明"
-                    value={step.detail}
-                    onChange={(value) =>
-                      update(
-                        (d) => void (d.process.steps[index].detail = value),
-                      )
-                    }
-                  />
-                </EditableCard>
-              ))}
-              <AddButton
-                onClick={() =>
-                  update((d) =>
-                    d.process.steps.push({
-                      title: "新步骤",
-                      en: "Step",
-                      detail: "步骤说明",
-                    }),
-                  )
-                }
-              >
-                添加流程步骤
-              </AddButton>
-            </Stack>
-          </Panel>
-        )}
-
-        {active === "why" && (
-          <Panel title="Why Choose 选择理由" intro="修改优势卡片。">
-            <SectionFields
-              no={content.why.no}
-              title={content.why.title}
-              subtitle={content.why.subtitle}
-              onChange={(field, value) =>
-                update(
-                  (d) =>
-                    void ((d.why as unknown as Record<string, string>)[field] =
-                      value),
-                )
-              }
-            />
-            <TextArea
-              label="模块说明"
-              value={content.why.intro ?? ""}
-              onChange={(value) => update((d) => void (d.why.intro = value))}
-            />
-            <Stack>
-              {content.why.items.map((item, index) => (
-                <EditableCard
-                  key={`${item.title}-${index}`}
-                  title={`优势 ${index + 1}`}
-                  onRemove={() => update((d) => d.why.items.splice(index, 1))}
-                  onMoveUp={() =>
-                    update((d) => move(d.why.items, index, index - 1))
-                  }
-                  onMoveDown={() =>
-                    update((d) => move(d.why.items, index, index + 1))
-                  }
-                >
-                  <Grid>
-                    <Field
-                      label="标题"
-                      value={item.title}
-                      onChange={(value) =>
-                        update((d) => void (d.why.items[index].title = value))
                       }
                     />
                     <SelectField
@@ -1295,331 +614,1117 @@ export default function AdminPage() {
                       onChange={(value) =>
                         update(
                           (d) =>
-                            void (d.why.items[index].icon = value as IconName),
+                            void (d.services.items[index].icon =
+                              value as IconName),
                         )
                       }
                     />
-                  </Grid>
-                  <TextArea
-                    label="说明"
-                    value={item.text}
-                    onChange={(value) =>
-                      update((d) => void (d.why.items[index].text = value))
-                    }
-                  />
-                </EditableCard>
-              ))}
-              <AddButton
-                onClick={() =>
-                  update((d) =>
-                    d.why.items.push({
-                      title: "新优势",
-                      text: "优势说明",
-                      icon: "sparkles",
-                    }),
+                    <VisualEditor
+                      block={item}
+                      imageGuide={imageGuides.service}
+                      onChange={(patch) =>
+                        update((d) =>
+                          Object.assign(d.services.items[index], patch),
+                        )
+                      }
+                    />
+                  </EditableCard>
+                ))}
+                <AddButton
+                  onClick={() =>
+                    update((d) =>
+                      d.services.items.push({
+                        title: "新服务",
+                        en: "Service",
+                        description: "填写服务说明。",
+                        scenes: "填写适用场景。",
+                        icon: "sparkles",
+                      }),
+                    )
+                  }
+                >
+                  添加服务
+                </AddButton>
+              </Stack>
+            </Panel>
+          )}
+
+          {active === "works" && (
+            <Panel
+              title="Selected Works 首页精选案例"
+              intro="管理首页 Selected Works 的模块文案，以及哪些案例进入首页。案例卡片内容来自“案例详情”。"
+            >
+              <SectionFields
+                no={content.selectedWorks.no}
+                title={content.selectedWorks.title}
+                subtitle={content.selectedWorks.subtitle}
+                onChange={(field, value) =>
+                  update(
+                    (d) =>
+                      void ((
+                        d.selectedWorks as unknown as Record<string, string>
+                      )[field] = value),
                   )
                 }
-              >
-                添加优势
-              </AddButton>
-            </Stack>
-          </Panel>
-        )}
+              />
+              <TextArea
+                label="模块介绍"
+                value={content.selectedWorks.intro}
+                onChange={(value) =>
+                  update((d) => void (d.selectedWorks.intro = value))
+                }
+              />
+              <Field
+                label="链接文字"
+                value={content.selectedWorks.linkText}
+                onChange={(value) =>
+                  update((d) => void (d.selectedWorks.linkText = value))
+                }
+              />
+              <TextArea
+                label="案例分类标签（每行一个）"
+                value={(content.selectedWorks.categories ?? []).join("\n")}
+                onChange={(value) =>
+                  update(
+                    (d) => void (d.selectedWorks.categories = lines(value)),
+                  )
+                }
+              />
+              <div className="admin-callout">
+                <strong>前台对应关系</strong>
+                <p>
+                  首页 Selected Works 只显示“案例详情”里开启首页展示的前 6
+                  个案例，并按首页排序升序排列。标题、简介、封面图、标签、视频和详情页内容都在“案例详情”维护。
+                </p>
+              </div>
+              <Stack>
+                {content.caseStudies.map((item, index) => (
+                  <EditableCard
+                    key={`${item.slug}-${index}`}
+                    title={item.title}
+                    meta={[
+                      item.slug,
+                      item.category ?? "",
+                      (item.featured ?? index < 6)
+                        ? "已进入首页候选"
+                        : "未进入首页",
+                    ]}
+                    href={`/works/${item.slug}`}
+                    onRemove={() =>
+                      update((d) => d.caseStudies.splice(index, 1))
+                    }
+                    onMoveUp={() =>
+                      update((d) => move(d.caseStudies, index, index - 1))
+                    }
+                    onMoveDown={() =>
+                      update((d) => move(d.caseStudies, index, index + 1))
+                    }
+                  >
+                    <Grid>
+                      <SelectField
+                        label="是否在首页 Selected Works 展示"
+                        value={(item.featured ?? index < 6) ? "true" : "false"}
+                        options={["true", "false"]}
+                        onChange={(value) =>
+                          update(
+                            (d) =>
+                              void (d.caseStudies[index].featured =
+                                value === "true"),
+                          )
+                        }
+                      />
+                      <Field
+                        label="首页排序"
+                        value={String(
+                          (item.homepageOrder ?? Number(item.no)) || index + 1,
+                        )}
+                        onChange={(value) =>
+                          update(
+                            (d) =>
+                              void (d.caseStudies[index].homepageOrder =
+                                Number(value) || index + 1),
+                          )
+                        }
+                      />
+                    </Grid>
+                    <ServiceRelationEditor
+                      services={content.services.items}
+                      value={item.serviceIds ?? []}
+                      onChange={(serviceIds) =>
+                        update(
+                          (d) =>
+                            void (d.caseStudies[index].serviceIds = serviceIds),
+                        )
+                      }
+                    />
+                    <div className="admin-case-preview">
+                      <div className="admin-case-preview-media">
+                        <ImageWithFallback
+                          src={
+                            item.cover ||
+                            item.image ||
+                            "/images/placeholder.jpg"
+                          }
+                          alt={`${item.title} 封面预览`}
+                          className="admin-case-preview-image"
+                          sizes="220px"
+                        />
+                      </div>
+                      <div>
+                        <span>前台卡片预览</span>
+                        <strong>{item.en}</strong>
+                        <p>{item.summary}</p>
+                      </div>
+                    </div>
+                  </EditableCard>
+                ))}
+              </Stack>
+              <div className="admin-selected-summary">
+                <strong>当前首页会显示</strong>
+                <div>
+                  {featuredCases.map((item) => (
+                    <span key={item.slug}>
+                      {String(item.homepageOrder ?? item.no).padStart(2, "0")} ·{" "}
+                      {item.title}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </Panel>
+          )}
 
-        {active === "clients" && (
-          <Panel
-            title="Clients & Industries 客户行业"
-            intro="展示过往经验覆盖和 AI 商业视觉方向，避免堆砌客户 Logo。"
-          >
-            <SectionFields
-              no={content.clients?.no ?? ""}
-              title={content.clients?.title ?? ""}
-              subtitle={content.clients?.subtitle ?? ""}
-              onChange={(field, value) =>
-                update((d) => {
-                  d.clients ??= createEmptyClients();
-                  d.clients[field] = value;
-                })
-              }
-            />
-            <TextArea
-              label="模块说明"
-              value={content.clients?.intro ?? ""}
-              onChange={(value) =>
-                update((d) => {
-                  d.clients ??= createEmptyClients();
-                  d.clients.intro = value;
-                })
-              }
-            />
-            <Stack>
-              {(content.clients?.groups ?? []).map((group, index) => (
-                <EditableCard
-                  key={`${group.title}-${index}`}
-                  title={`行业组 ${index + 1}`}
-                  onRemove={() =>
-                    update((d) => {
-                      d.clients ??= createEmptyClients();
-                      d.clients.groups.splice(index, 1);
-                    })
+          {active === "cases" && (
+            <Panel
+              title="Case Studies 案例详情"
+              intro="管理详情案例页：主图、说明、缩略图都可以替换。"
+            >
+              <Stack>
+                {content.caseStudies.map((item, caseIndex) => (
+                  <EditableCard
+                    key={`${item.no}-${caseIndex}`}
+                    title={`案例 ${caseIndex + 1}`}
+                    meta={[
+                      item.title,
+                      item.slug,
+                      item.featured ? "首页展示" : "仅列表/详情",
+                    ]}
+                    href={`/works/${item.slug}`}
+                    onRemove={() =>
+                      update((d) => d.caseStudies.splice(caseIndex, 1))
+                    }
+                    onMoveUp={() =>
+                      update((d) =>
+                        move(d.caseStudies, caseIndex, caseIndex - 1),
+                      )
+                    }
+                    onMoveDown={() =>
+                      update((d) =>
+                        move(d.caseStudies, caseIndex, caseIndex + 1),
+                      )
+                    }
+                  >
+                    <Grid>
+                      <Field
+                        label="编号"
+                        value={item.no}
+                        onChange={(value) =>
+                          update(
+                            (d) => void (d.caseStudies[caseIndex].no = value),
+                          )
+                        }
+                      />
+                      <Field
+                        label="标题"
+                        value={item.title}
+                        onChange={(value) =>
+                          update(
+                            (d) =>
+                              void (d.caseStudies[caseIndex].title = value),
+                          )
+                        }
+                      />
+                    </Grid>
+                    <Grid>
+                      <SelectField
+                        label="首页 Selected Works 展示"
+                        value={
+                          (item.featured ?? caseIndex < 6) ? "true" : "false"
+                        }
+                        options={["true", "false"]}
+                        onChange={(value) =>
+                          update(
+                            (d) =>
+                              void (d.caseStudies[caseIndex].featured =
+                                value === "true"),
+                          )
+                        }
+                      />
+                      <Field
+                        label="首页排序（数字越小越靠前）"
+                        value={String(
+                          (item.homepageOrder ?? Number(item.no)) ||
+                            caseIndex + 1,
+                        )}
+                        onChange={(value) =>
+                          update(
+                            (d) =>
+                              void (d.caseStudies[caseIndex].homepageOrder =
+                                Number(value) || caseIndex + 1),
+                          )
+                        }
+                      />
+                    </Grid>
+                    <Grid>
+                      <Field
+                        label="详情页路径 slug"
+                        value={item.slug}
+                        onChange={(value) =>
+                          update(
+                            (d) =>
+                              void (d.caseStudies[caseIndex].slug =
+                                slugify(value)),
+                          )
+                        }
+                      />
+                      <Field
+                        label="行业"
+                        value={item.industry}
+                        onChange={(value) =>
+                          update(
+                            (d) =>
+                              void (d.caseStudies[caseIndex].industry = value),
+                          )
+                        }
+                      />
+                    </Grid>
+                    <Grid>
+                      <Field
+                        label="案例类型"
+                        value={item.category ?? ""}
+                        onChange={(value) =>
+                          update(
+                            (d) =>
+                              void (d.caseStudies[caseIndex].category =
+                                value || undefined),
+                          )
+                        }
+                      />
+                      <Field
+                        label="年份"
+                        value={item.year ?? ""}
+                        onChange={(value) =>
+                          update(
+                            (d) =>
+                              void (d.caseStudies[caseIndex].year =
+                                value || undefined),
+                          )
+                        }
+                      />
+                    </Grid>
+                    <Field
+                      label="英文/类型"
+                      value={item.en}
+                      onChange={(value) =>
+                        update(
+                          (d) => void (d.caseStudies[caseIndex].en = value),
+                        )
+                      }
+                    />
+                    <TextArea
+                      label="作品简介"
+                      value={item.summary}
+                      onChange={(value) =>
+                        update(
+                          (d) =>
+                            void (d.caseStudies[caseIndex].summary = value),
+                        )
+                      }
+                    />
+                    <TextArea
+                      label="详细介绍"
+                      value={item.description}
+                      onChange={(value) =>
+                        update(
+                          (d) =>
+                            void (d.caseStudies[caseIndex].description = value),
+                        )
+                      }
+                    />
+                    <TextArea
+                      label="项目目标"
+                      value={item.challenge ?? ""}
+                      onChange={(value) =>
+                        update(
+                          (d) =>
+                            void (d.caseStudies[caseIndex].challenge =
+                              value || undefined),
+                        )
+                      }
+                    />
+                    <TextArea
+                      label="视觉策略"
+                      value={item.strategy ?? ""}
+                      onChange={(value) =>
+                        update(
+                          (d) =>
+                            void (d.caseStudies[caseIndex].strategy =
+                              value || undefined),
+                        )
+                      }
+                    />
+                    <TextArea
+                      label="制作流程"
+                      value={item.solution ?? ""}
+                      onChange={(value) =>
+                        update(
+                          (d) =>
+                            void (d.caseStudies[caseIndex].solution =
+                              value || undefined),
+                        )
+                      }
+                    />
+                    <TextArea
+                      label="成果展示"
+                      value={item.result ?? ""}
+                      onChange={(value) =>
+                        update(
+                          (d) =>
+                            void (d.caseStudies[caseIndex].result =
+                              value || undefined),
+                        )
+                      }
+                    />
+                    <TextArea
+                      label="服务内容（每行一个）"
+                      value={(item.services ?? []).join("\n")}
+                      onChange={(value) =>
+                        update(
+                          (d) =>
+                            void (d.caseStudies[caseIndex].services =
+                              lines(value)),
+                        )
+                      }
+                    />
+                    <ServiceRelationEditor
+                      services={content.services.items}
+                      value={item.serviceIds ?? []}
+                      onChange={(serviceIds) =>
+                        update(
+                          (d) =>
+                            void (d.caseStudies[caseIndex].serviceIds =
+                              serviceIds),
+                        )
+                      }
+                    />
+                    <TextArea
+                      label="标签（每行一个）"
+                      value={item.tags.join("\n")}
+                      onChange={(value) =>
+                        update(
+                          (d) =>
+                            void (d.caseStudies[caseIndex].tags = lines(value)),
+                        )
+                      }
+                    />
+                    <VideoEditor
+                      value={item.video}
+                      fallbackUrl={item.videoUrl}
+                      onChange={(video) =>
+                        update(
+                          (d) => void (d.caseStudies[caseIndex].video = video),
+                        )
+                      }
+                      onFallbackChange={(value) =>
+                        update(
+                          (d) =>
+                            void (d.caseStudies[caseIndex].videoUrl =
+                              value || undefined),
+                        )
+                      }
+                    />
+                    <div className="image-guide media-guide">
+                      <strong>案例视频 / 动效展示</strong>
+                      <small>
+                        比例：16:9 横版为主，社媒短视频可在详情说明中补充 9:16
+                        链接
+                      </small>
+                      <small>
+                        推荐尺寸：1920×1080，H.264 MP4 / WebM，20-60 秒预览最稳
+                      </small>
+                      <small>
+                        如使用 B站、网盘、Frame.io
+                        等外部页面链接，前台会显示为“打开视频链接”。
+                      </small>
+                    </div>
+                    <UploadOnly
+                      label="上传作品视频"
+                      accept="video/mp4,video/webm,video/quicktime"
+                      onUploaded={(url) =>
+                        update(
+                          (d) =>
+                            void (d.caseStudies[caseIndex].video = {
+                              type: "local",
+                              url,
+                              title: "作品视频",
+                            }),
+                        )
+                      }
+                    />
+                    <TextArea
+                      label="前台项目信息（每行一条，仅填写客户可见内容）"
+                      value={item.meta.join("\n")}
+                      onChange={(value) =>
+                        update(
+                          (d) =>
+                            void (d.caseStudies[caseIndex].meta = lines(value)),
+                        )
+                      }
+                    />
+                    <VisualEditor
+                      block={item}
+                      imageGuide={imageGuides.caseMain}
+                      onChange={(patch) =>
+                        update((d) =>
+                          Object.assign(d.caseStudies[caseIndex], patch),
+                        )
+                      }
+                    />
+                    <div className="admin-sublist">
+                      <h4>缩略图</h4>
+                      {item.thumbs.map((thumb, thumbIndex) => (
+                        <div
+                          className="admin-thumb-editor"
+                          key={`${caseIndex}-${thumbIndex}`}
+                        >
+                          <VisualEditor
+                            block={thumb}
+                            compact
+                            imageGuide={imageGuides.caseThumb}
+                            onChange={(patch) =>
+                              update((d) =>
+                                Object.assign(
+                                  d.caseStudies[caseIndex].thumbs[thumbIndex],
+                                  patch,
+                                ),
+                              )
+                            }
+                          />
+                          <button
+                            onClick={() =>
+                              update((d) =>
+                                d.caseStudies[caseIndex].thumbs.splice(
+                                  thumbIndex,
+                                  1,
+                                ),
+                              )
+                            }
+                          >
+                            删除缩略图
+                          </button>
+                        </div>
+                      ))}
+                      <AddButton
+                        onClick={() =>
+                          update((d) =>
+                            d.caseStudies[caseIndex].thumbs.push({}),
+                          )
+                        }
+                      >
+                        添加缩略图
+                      </AddButton>
+                    </div>
+                  </EditableCard>
+                ))}
+                <AddButton
+                  onClick={() =>
+                    update((d) =>
+                      d.caseStudies.push({
+                        no: String(d.caseStudies.length + 5).padStart(2, "0"),
+                        slug: `new-case-${Date.now()}`,
+                        title: "新案例",
+                        en: "Case Study",
+                        summary: "一句话介绍这个作品。",
+                        description:
+                          "在这里填写作品背景、目标、制作方式和交付内容。",
+                        category: "AI 商业视觉",
+                        industry: "行业",
+                        year: "2026",
+                        challenge: "填写项目目标。",
+                        strategy: "填写视觉策略。",
+                        solution: "填写制作流程。",
+                        result: "填写成果展示。",
+                        services: ["创意方向", "AI 视觉生成"],
+                        serviceIds: ["ai-brand-film"],
+                        tags: ["AI视觉"],
+                        featured: false,
+                        homepageOrder: d.caseStudies.length + 1,
+                        meta: ["项目类型  商业视觉"],
+                        thumbs: [{}, {}],
+                      }),
+                    )
                   }
-                  onMoveUp={() =>
-                    update((d) => {
-                      d.clients ??= createEmptyClients();
-                      move(d.clients.groups, index, index - 1);
-                    })
+                >
+                  添加案例详情
+                </AddButton>
+              </Stack>
+            </Panel>
+          )}
+
+          {active === "studio" && (
+            <Panel
+              title="AI Studio System AI生产系统"
+              intro="展示 YITO 的 AI 商业视觉生产方法，不是工具清单。"
+            >
+              <SectionFields
+                no={content.aiStudio?.no ?? ""}
+                title={content.aiStudio?.title ?? ""}
+                subtitle={content.aiStudio?.subtitle ?? ""}
+                onChange={(field, value) =>
+                  update((d) => {
+                    d.aiStudio ??= createEmptyAiStudio();
+                    d.aiStudio[field] = value;
+                  })
+                }
+              />
+              <TextArea
+                label="正文说明"
+                value={content.aiStudio?.body ?? ""}
+                onChange={(value) =>
+                  update((d) => {
+                    d.aiStudio ??= createEmptyAiStudio();
+                    d.aiStudio.body = value;
+                  })
+                }
+              />
+              <TextArea
+                label="能力列表（每行一个）"
+                value={(content.aiStudio?.items ?? []).join("\n")}
+                onChange={(value) =>
+                  update((d) => {
+                    d.aiStudio ??= createEmptyAiStudio();
+                    d.aiStudio.items = lines(value);
+                  })
+                }
+              />
+              <TextArea
+                label="强表达句"
+                value={content.aiStudio?.statement ?? ""}
+                onChange={(value) =>
+                  update((d) => {
+                    d.aiStudio ??= createEmptyAiStudio();
+                    d.aiStudio.statement = value;
+                  })
+                }
+              />
+              <VisualEditor
+                block={content.aiStudio ?? createEmptyAiStudio()}
+                imageGuide={imageGuides.wide}
+                onChange={(patch) =>
+                  update((d) => {
+                    d.aiStudio ??= createEmptyAiStudio();
+                    Object.assign(d.aiStudio, patch);
+                  })
+                }
+              />
+            </Panel>
+          )}
+
+          {active === "process" && (
+            <Panel title="Process 流程" intro="修改流程标题和每一步说明。">
+              <SectionFields
+                no={content.process.no}
+                title={content.process.title}
+                subtitle={content.process.subtitle}
+                onChange={(field, value) =>
+                  update(
+                    (d) =>
+                      void ((d.process as unknown as Record<string, string>)[
+                        field
+                      ] = value),
+                  )
+                }
+              />
+              <TextArea
+                label="模块说明"
+                value={content.process.intro ?? ""}
+                onChange={(value) =>
+                  update((d) => void (d.process.intro = value))
+                }
+              />
+              <Stack>
+                {content.process.steps.map((step, index) => (
+                  <EditableCard
+                    key={`${step.title}-${index}`}
+                    title={`步骤 ${index + 1}`}
+                    onRemove={() =>
+                      update((d) => d.process.steps.splice(index, 1))
+                    }
+                    onMoveUp={() =>
+                      update((d) => move(d.process.steps, index, index - 1))
+                    }
+                    onMoveDown={() =>
+                      update((d) => move(d.process.steps, index, index + 1))
+                    }
+                  >
+                    <Grid>
+                      <Field
+                        label="步骤名称"
+                        value={step.title}
+                        onChange={(value) =>
+                          update(
+                            (d) => void (d.process.steps[index].title = value),
+                          )
+                        }
+                      />
+                      <Field
+                        label="英文名称"
+                        value={step.en ?? ""}
+                        onChange={(value) =>
+                          update(
+                            (d) =>
+                              void (d.process.steps[index].en =
+                                value || undefined),
+                          )
+                        }
+                      />
+                    </Grid>
+                    <Field
+                      label="步骤说明"
+                      value={step.detail}
+                      onChange={(value) =>
+                        update(
+                          (d) => void (d.process.steps[index].detail = value),
+                        )
+                      }
+                    />
+                  </EditableCard>
+                ))}
+                <AddButton
+                  onClick={() =>
+                    update((d) =>
+                      d.process.steps.push({
+                        title: "新步骤",
+                        en: "Step",
+                        detail: "步骤说明",
+                      }),
+                    )
                   }
-                  onMoveDown={() =>
+                >
+                  添加流程步骤
+                </AddButton>
+              </Stack>
+            </Panel>
+          )}
+
+          {active === "why" && (
+            <Panel title="Why Choose 选择理由" intro="修改优势卡片。">
+              <SectionFields
+                no={content.why.no}
+                title={content.why.title}
+                subtitle={content.why.subtitle}
+                onChange={(field, value) =>
+                  update(
+                    (d) =>
+                      void ((d.why as unknown as Record<string, string>)[
+                        field
+                      ] = value),
+                  )
+                }
+              />
+              <TextArea
+                label="模块说明"
+                value={content.why.intro ?? ""}
+                onChange={(value) => update((d) => void (d.why.intro = value))}
+              />
+              <Stack>
+                {content.why.items.map((item, index) => (
+                  <EditableCard
+                    key={`${item.title}-${index}`}
+                    title={`优势 ${index + 1}`}
+                    onRemove={() => update((d) => d.why.items.splice(index, 1))}
+                    onMoveUp={() =>
+                      update((d) => move(d.why.items, index, index - 1))
+                    }
+                    onMoveDown={() =>
+                      update((d) => move(d.why.items, index, index + 1))
+                    }
+                  >
+                    <Grid>
+                      <Field
+                        label="标题"
+                        value={item.title}
+                        onChange={(value) =>
+                          update((d) => void (d.why.items[index].title = value))
+                        }
+                      />
+                      <SelectField
+                        label="图标"
+                        value={item.icon}
+                        options={iconOptions}
+                        onChange={(value) =>
+                          update(
+                            (d) =>
+                              void (d.why.items[index].icon =
+                                value as IconName),
+                          )
+                        }
+                      />
+                    </Grid>
+                    <TextArea
+                      label="说明"
+                      value={item.text}
+                      onChange={(value) =>
+                        update((d) => void (d.why.items[index].text = value))
+                      }
+                    />
+                  </EditableCard>
+                ))}
+                <AddButton
+                  onClick={() =>
+                    update((d) =>
+                      d.why.items.push({
+                        title: "新优势",
+                        text: "优势说明",
+                        icon: "sparkles",
+                      }),
+                    )
+                  }
+                >
+                  添加优势
+                </AddButton>
+              </Stack>
+            </Panel>
+          )}
+
+          {active === "clients" && (
+            <Panel
+              title="Clients & Industries 客户行业"
+              intro="展示过往经验覆盖和 AI 商业视觉方向，避免堆砌客户 Logo。"
+            >
+              <SectionFields
+                no={content.clients?.no ?? ""}
+                title={content.clients?.title ?? ""}
+                subtitle={content.clients?.subtitle ?? ""}
+                onChange={(field, value) =>
+                  update((d) => {
+                    d.clients ??= createEmptyClients();
+                    d.clients[field] = value;
+                  })
+                }
+              />
+              <TextArea
+                label="模块说明"
+                value={content.clients?.intro ?? ""}
+                onChange={(value) =>
+                  update((d) => {
+                    d.clients ??= createEmptyClients();
+                    d.clients.intro = value;
+                  })
+                }
+              />
+              <Stack>
+                {(content.clients?.groups ?? []).map((group, index) => (
+                  <EditableCard
+                    key={`${group.title}-${index}`}
+                    title={`行业组 ${index + 1}`}
+                    onRemove={() =>
+                      update((d) => {
+                        d.clients ??= createEmptyClients();
+                        d.clients.groups.splice(index, 1);
+                      })
+                    }
+                    onMoveUp={() =>
+                      update((d) => {
+                        d.clients ??= createEmptyClients();
+                        move(d.clients.groups, index, index - 1);
+                      })
+                    }
+                    onMoveDown={() =>
+                      update((d) => {
+                        d.clients ??= createEmptyClients();
+                        move(d.clients.groups, index, index + 1);
+                      })
+                    }
+                  >
+                    <Grid>
+                      <Field
+                        label="英文标题"
+                        value={group.title}
+                        onChange={(value) =>
+                          update((d) => {
+                            d.clients ??= createEmptyClients();
+                            d.clients.groups[index].title = value;
+                          })
+                        }
+                      />
+                      <Field
+                        label="中文标题"
+                        value={group.subtitle}
+                        onChange={(value) =>
+                          update((d) => {
+                            d.clients ??= createEmptyClients();
+                            d.clients.groups[index].subtitle = value;
+                          })
+                        }
+                      />
+                    </Grid>
+                    <TextArea
+                      label="标签（每行一个）"
+                      value={group.items.join("\n")}
+                      onChange={(value) =>
+                        update((d) => {
+                          d.clients ??= createEmptyClients();
+                          d.clients.groups[index].items = lines(value);
+                        })
+                      }
+                    />
+                  </EditableCard>
+                ))}
+                <AddButton
+                  onClick={() =>
                     update((d) => {
                       d.clients ??= createEmptyClients();
-                      move(d.clients.groups, index, index + 1);
+                      d.clients.groups.push({
+                        title: "New Group",
+                        subtitle: "新分组",
+                        items: ["行业标签"],
+                      });
                     })
                   }
                 >
-                  <Grid>
-                    <Field
-                      label="英文标题"
-                      value={group.title}
-                      onChange={(value) =>
-                        update((d) => {
-                          d.clients ??= createEmptyClients();
-                          d.clients.groups[index].title = value;
-                        })
-                      }
-                    />
-                    <Field
-                      label="中文标题"
-                      value={group.subtitle}
-                      onChange={(value) =>
-                        update((d) => {
-                          d.clients ??= createEmptyClients();
-                          d.clients.groups[index].subtitle = value;
-                        })
-                      }
-                    />
-                  </Grid>
-                  <TextArea
-                    label="标签（每行一个）"
-                    value={group.items.join("\n")}
-                    onChange={(value) =>
-                      update((d) => {
-                        d.clients ??= createEmptyClients();
-                        d.clients.groups[index].items = lines(value);
-                      })
-                    }
-                  />
-                </EditableCard>
-              ))}
-              <AddButton
-                onClick={() =>
-                  update((d) => {
-                    d.clients ??= createEmptyClients();
-                    d.clients.groups.push({
-                      title: "New Group",
-                      subtitle: "新分组",
-                      items: ["行业标签"],
-                    });
-                  })
-                }
-              >
-                添加行业分组
-              </AddButton>
-            </Stack>
-          </Panel>
-        )}
+                  添加行业分组
+                </AddButton>
+              </Stack>
+            </Panel>
+          )}
 
-        {active === "contact" && (
-          <Panel title="Contact 联系方式" intro="修改联系方式和结尾视觉。">
-            <SectionFields
-              no={content.contact.no}
-              title={content.contact.title}
-              subtitle={content.contact.subtitle}
-              onChange={(field, value) =>
-                update(
-                  (d) =>
-                    void ((d.contact as unknown as Record<string, string>)[
-                      field
-                    ] = value),
-                )
-              }
-            />
-            <TextArea
-              label="主文案"
-              value={content.contact.intro ?? ""}
-              onChange={(value) =>
-                update((d) => void (d.contact.intro = value))
-              }
-            />
-            <TextArea
-              label="副文案"
-              value={content.contact.note ?? ""}
-              onChange={(value) => update((d) => void (d.contact.note = value))}
-            />
-            <Grid>
-              <Field
-                label="微信"
-                value={content.contact.wechat}
+          {active === "contact" && (
+            <Panel title="Contact 联系方式" intro="修改联系方式和结尾视觉。">
+              <SectionFields
+                no={content.contact.no}
+                title={content.contact.title}
+                subtitle={content.contact.subtitle}
+                onChange={(field, value) =>
+                  update(
+                    (d) =>
+                      void ((d.contact as unknown as Record<string, string>)[
+                        field
+                      ] = value),
+                  )
+                }
+              />
+              <TextArea
+                label="主文案"
+                value={content.contact.intro ?? ""}
                 onChange={(value) =>
-                  update((d) => void (d.contact.wechat = value))
+                  update((d) => void (d.contact.intro = value))
+                }
+              />
+              <TextArea
+                label="副文案"
+                value={content.contact.note ?? ""}
+                onChange={(value) =>
+                  update((d) => void (d.contact.note = value))
+                }
+              />
+              <Grid>
+                <Field
+                  label="微信"
+                  value={content.contact.wechat}
+                  onChange={(value) =>
+                    update((d) => void (d.contact.wechat = value))
+                  }
+                />
+                <Field
+                  label="邮箱"
+                  value={content.contact.email}
+                  onChange={(value) =>
+                    update((d) => void (d.contact.email = value))
+                  }
+                />
+              </Grid>
+              <Field
+                label="小红书"
+                value={content.contact.xiaohongshu}
+                onChange={(value) =>
+                  update((d) => void (d.contact.xiaohongshu = value))
                 }
               />
               <Field
-                label="邮箱"
-                value={content.contact.email}
+                label="所在地 / 服务方式"
+                value={content.contact.location ?? ""}
                 onChange={(value) =>
-                  update((d) => void (d.contact.email = value))
+                  update((d) => void (d.contact.location = value || undefined))
                 }
               />
-            </Grid>
-            <Field
-              label="小红书"
-              value={content.contact.xiaohongshu}
-              onChange={(value) =>
-                update((d) => void (d.contact.xiaohongshu = value))
-              }
-            />
-            <Field
-              label="所在地 / 服务方式"
-              value={content.contact.location ?? ""}
-              onChange={(value) =>
-                update((d) => void (d.contact.location = value || undefined))
-              }
-            />
-            <Field
-              label="视觉标签"
-              value={content.contact.visualLabel}
-              onChange={(value) =>
-                update((d) => void (d.contact.visualLabel = value))
-              }
-            />
-            <VisualEditor
-              block={content.contact}
-              imageGuide={imageGuides.wide}
-              onChange={(patch) =>
-                update((d) => Object.assign(d.contact, patch))
-              }
-            />
-          </Panel>
-        )}
+              <Field
+                label="视觉标签"
+                value={content.contact.visualLabel}
+                onChange={(value) =>
+                  update((d) => void (d.contact.visualLabel = value))
+                }
+              />
+              <VisualEditor
+                block={content.contact}
+                imageGuide={imageGuides.wide}
+                onChange={(patch) =>
+                  update((d) => Object.assign(d.contact, patch))
+                }
+              />
+            </Panel>
+          )}
 
-        {active === "seo" && (
-          <Panel
-            title="SEO / OpenGraph 分享"
-            intro="管理搜索引擎标题、描述、关键词和社交分享图。保存后前台 metadata 会读取这里。"
-          >
-            <Grid>
-              <Field
-                label="网站标题 title"
-                value={meta.title}
+          {active === "seo" && (
+            <Panel
+              title="SEO / OpenGraph 分享"
+              intro="管理搜索引擎标题、描述、关键词和社交分享图。保存后前台 metadata 会读取这里。"
+            >
+              <Grid>
+                <Field
+                  label="网站标题 title"
+                  value={meta.title}
+                  onChange={(value) =>
+                    update((d) => {
+                      d.meta ??= createEmptySeo();
+                      d.meta.title = value;
+                    })
+                  }
+                />
+                <Field
+                  label="OG 标题"
+                  value={meta.openGraph.title}
+                  onChange={(value) =>
+                    update((d) => {
+                      d.meta ??= createEmptySeo();
+                      d.meta.openGraph.title = value;
+                    })
+                  }
+                />
+              </Grid>
+              <TextArea
+                label="SEO 描述 description"
+                value={meta.description}
                 onChange={(value) =>
                   update((d) => {
                     d.meta ??= createEmptySeo();
-                    d.meta.title = value;
+                    d.meta.description = value;
                   })
                 }
               />
-              <Field
-                label="OG 标题"
-                value={meta.openGraph.title}
+              <TextArea
+                label="关键词 keywords（每行一个）"
+                value={meta.keywords.join("\n")}
                 onChange={(value) =>
                   update((d) => {
                     d.meta ??= createEmptySeo();
-                    d.meta.openGraph.title = value;
+                    d.meta.keywords = lines(value);
                   })
                 }
               />
-            </Grid>
-            <TextArea
-              label="SEO 描述 description"
-              value={meta.description}
-              onChange={(value) =>
-                update((d) => {
-                  d.meta ??= createEmptySeo();
-                  d.meta.description = value;
-                })
-              }
-            />
-            <TextArea
-              label="关键词 keywords（每行一个）"
-              value={meta.keywords.join("\n")}
-              onChange={(value) =>
-                update((d) => {
-                  d.meta ??= createEmptySeo();
-                  d.meta.keywords = lines(value);
-                })
-              }
-            />
-            <Grid>
-              <Field
-                label="OG 描述"
-                value={meta.openGraph.description}
-                onChange={(value) =>
+              <Grid>
+                <Field
+                  label="OG 描述"
+                  value={meta.openGraph.description}
+                  onChange={(value) =>
+                    update((d) => {
+                      d.meta ??= createEmptySeo();
+                      d.meta.openGraph.description = value;
+                    })
+                  }
+                />
+                <Field
+                  label="站点名称 siteName"
+                  value={meta.openGraph.siteName}
+                  onChange={(value) =>
+                    update((d) => {
+                      d.meta ??= createEmptySeo();
+                      d.meta.openGraph.siteName = value;
+                    })
+                  }
+                />
+              </Grid>
+              <Grid>
+                <Field
+                  label="语言 locale"
+                  value={meta.openGraph.locale}
+                  onChange={(value) =>
+                    update((d) => {
+                      d.meta ??= createEmptySeo();
+                      d.meta.openGraph.locale = value;
+                    })
+                  }
+                />
+                <SelectField
+                  label="OG 类型"
+                  value={meta.openGraph.type}
+                  options={["website"]}
+                  onChange={(value) =>
+                    update((d) => {
+                      d.meta ??= createEmptySeo();
+                      d.meta.openGraph.type =
+                        value === "website" ? value : "website";
+                    })
+                  }
+                />
+              </Grid>
+              <VisualEditor
+                block={{ image: meta.openGraph.image }}
+                imageGuide={{
+                  usage: "社交分享图 / OpenGraph",
+                  ratio: "1.91:1",
+                  size: "1200×630",
+                  note: "用于微信、社交平台和搜索分享预览，文字不要贴边。",
+                }}
+                onChange={(patch) =>
                   update((d) => {
                     d.meta ??= createEmptySeo();
-                    d.meta.openGraph.description = value;
+                    d.meta.openGraph.image =
+                      patch.image || "/images/seo/og-image.jpg";
                   })
                 }
               />
-              <Field
-                label="站点名称 siteName"
-                value={meta.openGraph.siteName}
-                onChange={(value) =>
-                  update((d) => {
-                    d.meta ??= createEmptySeo();
-                    d.meta.openGraph.siteName = value;
-                  })
-                }
-              />
-            </Grid>
-            <Grid>
-              <Field
-                label="语言 locale"
-                value={meta.openGraph.locale}
-                onChange={(value) =>
-                  update((d) => {
-                    d.meta ??= createEmptySeo();
-                    d.meta.openGraph.locale = value;
-                  })
-                }
-              />
-              <SelectField
-                label="OG 类型"
-                value={meta.openGraph.type}
-                options={["website"]}
-                onChange={(value) =>
-                  update((d) => {
-                    d.meta ??= createEmptySeo();
-                    d.meta.openGraph.type =
-                      value === "website" ? value : "website";
-                  })
-                }
-              />
-            </Grid>
-            <VisualEditor
-              block={{ image: meta.openGraph.image }}
-              imageGuide={{
-                usage: "社交分享图 / OpenGraph",
-                ratio: "1.91:1",
-                size: "1200×630",
-                note: "用于微信、社交平台和搜索分享预览，文字不要贴边。",
-              }}
-              onChange={(patch) =>
-                update((d) => {
-                  d.meta ??= createEmptySeo();
-                  d.meta.openGraph.image =
-                    patch.image || "/images/seo/og-image.jpg";
-                })
-              }
-            />
-          </Panel>
-        )}
+            </Panel>
+          )}
 
-        {active === "footer" && (
-          <Panel title="Footer 页脚" intro="修改网站底部品牌与版权信息。">
-            <Grid>
+          {active === "footer" && (
+            <Panel title="Footer 页脚" intro="修改网站底部品牌与版权信息。">
+              <Grid>
+                <Field
+                  label="品牌"
+                  value={content.footer?.brand ?? ""}
+                  onChange={(value) =>
+                    update((d) => {
+                      d.footer ??= {
+                        brand: "",
+                        subtitle: "",
+                        services: "",
+                        copyright: "",
+                        credit: "",
+                      };
+                      d.footer.brand = value;
+                    })
+                  }
+                />
+                <Field
+                  label="副标题"
+                  value={content.footer?.subtitle ?? ""}
+                  onChange={(value) =>
+                    update((d) => {
+                      d.footer ??= {
+                        brand: "",
+                        subtitle: "",
+                        services: "",
+                        copyright: "",
+                        credit: "",
+                      };
+                      d.footer.subtitle = value;
+                    })
+                  }
+                />
+              </Grid>
               <Field
-                label="品牌"
-                value={content.footer?.brand ?? ""}
+                label="服务短句"
+                value={content.footer?.services ?? ""}
                 onChange={(value) =>
                   update((d) => {
                     d.footer ??= {
@@ -1629,96 +1734,65 @@ export default function AdminPage() {
                       copyright: "",
                       credit: "",
                     };
-                    d.footer.brand = value;
+                    d.footer.services = value;
                   })
                 }
               />
-              <Field
-                label="副标题"
-                value={content.footer?.subtitle ?? ""}
-                onChange={(value) =>
-                  update((d) => {
-                    d.footer ??= {
-                      brand: "",
-                      subtitle: "",
-                      services: "",
-                      copyright: "",
-                      credit: "",
-                    };
-                    d.footer.subtitle = value;
-                  })
-                }
-              />
-            </Grid>
-            <Field
-              label="服务短句"
-              value={content.footer?.services ?? ""}
-              onChange={(value) =>
-                update((d) => {
-                  d.footer ??= {
-                    brand: "",
-                    subtitle: "",
-                    services: "",
-                    copyright: "",
-                    credit: "",
-                  };
-                  d.footer.services = value;
-                })
-              }
-            />
-            <Grid>
-              <Field
-                label="版权"
-                value={content.footer?.copyright ?? ""}
-                onChange={(value) =>
-                  update((d) => {
-                    d.footer ??= {
-                      brand: "",
-                      subtitle: "",
-                      services: "",
-                      copyright: "",
-                      credit: "",
-                    };
-                    d.footer.copyright = value;
-                  })
-                }
-              />
-              <Field
-                label="制作说明"
-                value={content.footer?.credit ?? ""}
-                onChange={(value) =>
-                  update((d) => {
-                    d.footer ??= {
-                      brand: "",
-                      subtitle: "",
-                      services: "",
-                      copyright: "",
-                      credit: "",
-                    };
-                    d.footer.credit = value;
-                  })
-                }
-              />
-            </Grid>
-          </Panel>
-        )}
+              <Grid>
+                <Field
+                  label="版权"
+                  value={content.footer?.copyright ?? ""}
+                  onChange={(value) =>
+                    update((d) => {
+                      d.footer ??= {
+                        brand: "",
+                        subtitle: "",
+                        services: "",
+                        copyright: "",
+                        credit: "",
+                      };
+                      d.footer.copyright = value;
+                    })
+                  }
+                />
+                <Field
+                  label="制作说明"
+                  value={content.footer?.credit ?? ""}
+                  onChange={(value) =>
+                    update((d) => {
+                      d.footer ??= {
+                        brand: "",
+                        subtitle: "",
+                        services: "",
+                        copyright: "",
+                        credit: "",
+                      };
+                      d.footer.credit = value;
+                    })
+                  }
+                />
+              </Grid>
+            </Panel>
+          )}
 
-        {active === "advanced" && (
-          <Panel
-            title="高级 JSON 编辑"
-            intro="适合批量复制、备份、迁移。请谨慎修改结构字段。"
-          >
-            <textarea
-              className="json-editor"
-              value={advancedJson}
-              onChange={(event) => setAdvancedJson(event.target.value)}
-            />
-            <div className="admin-actions">
-              <button onClick={applyJson}>应用 JSON 到编辑器</button>
-              <button onClick={save}>保存 JSON 内容</button>
-            </div>
-          </Panel>
-        )}
+          {active === "advanced" && (
+            <Panel
+              title="高级 JSON 编辑"
+              intro="适合批量复制、备份、迁移。请谨慎修改结构字段。"
+            >
+              <textarea
+                className="json-editor"
+                aria-label="网站内容 JSON"
+                value={advancedJson}
+                onChange={(event) => setAdvancedJson(event.target.value)}
+              />
+              <div className="admin-actions">
+                <button onClick={applyJson}>应用 JSON 到编辑器</button>
+                <button onClick={save}>保存 JSON 内容</button>
+              </div>
+            </Panel>
+          )}
+        </fieldset>
       </section>
     </main>
   );
@@ -2004,6 +2078,23 @@ function SelectField({
   options: string[];
   onChange: (value: string) => void;
 }) {
+  if (
+    options.length === 2 &&
+    options.includes("true") &&
+    options.includes("false")
+  ) {
+    return (
+      <label className="admin-toggle">
+        <input
+          type="checkbox"
+          checked={value === "true"}
+          onChange={(event) => onChange(String(event.target.checked))}
+        />
+        <span>{label}</span>
+        <small>{value === "true" ? "已开启" : "已关闭"}</small>
+      </label>
+    );
+  }
   return (
     <label className="admin-field">
       <span>{label}</span>
@@ -2115,15 +2206,22 @@ function VisualEditor({
       {uploadStatus ? <p className="upload-status">{uploadStatus}</p> : null}
       {block.image ? (
         <div className="admin-preview">
-          <ImageWithFallback
-            src={block.image}
-            alt="后台图片预览"
-            className="admin-preview-image"
-            sizes="320px"
-          />
-          <button onClick={() => onChange({ image: undefined })}>
-            移除图片
-          </button>
+          <div className="admin-preview-media">
+            <ImageWithFallback
+              src={block.image}
+              alt={`${imageGuide.usage}预览`}
+              className="admin-preview-image"
+              sizes="(max-width: 767px) 100vw, 960px"
+            />
+          </div>
+          <div className="admin-preview-toolbar">
+            <a href={block.image} target="_blank" rel="noopener noreferrer">
+              查看原图
+            </a>
+            <button onClick={() => onChange({ image: undefined })}>
+              移除图片
+            </button>
+          </div>
         </div>
       ) : null}
     </div>
@@ -2168,7 +2266,15 @@ function EditableCard({
           ) : null}
           <button onClick={onMoveUp}>上移</button>
           <button onClick={onMoveDown}>下移</button>
-          <button onClick={onRemove}>删除</button>
+          <button
+            className="admin-delete"
+            onClick={() => {
+              if (window.confirm(`确定删除“${title}”吗？保存并发布后生效。`))
+                onRemove();
+            }}
+          >
+            删除
+          </button>
         </div>
       </header>
       {children}

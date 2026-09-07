@@ -2516,10 +2516,11 @@ a {
 }
 
 .admin-shell {
+  color-scheme: light;
   min-height: 100vh;
   display: grid;
   grid-template-columns: 18rem 1fr;
-  background: #f4f4ef;
+  background: #f2f4f5;
   color: #151612;
 }
 
@@ -2555,6 +2556,9 @@ a {
 .admin-sidebar nav {
   display: grid;
   gap: 0.35rem;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .admin-sidebar button,
@@ -2606,6 +2610,7 @@ a {
 }
 
 .admin-status {
+  flex-shrink: 0;
   margin-top: auto;
   display: grid;
   gap: 0.7rem;
@@ -2675,7 +2680,7 @@ a {
 }
 
 .admin-topbar h1 {
-  font-size: clamp(2rem, 4vw, 4rem);
+  font-size: 1.75rem;
 }
 
 .admin-topbar span {
@@ -2694,9 +2699,7 @@ a {
 }
 
 .admin-panel {
-  border: 1px solid rgba(21, 22, 18, 0.12);
-  background: rgba(255, 255, 255, 0.58);
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.06);
+  background: #fff;
 }
 
 .admin-panel-heading {
@@ -2903,18 +2906,39 @@ a {
 .admin-preview {
   position: relative;
   grid-column: 1 / -1;
-  min-height: 11rem;
+  min-width: 0;
   overflow: hidden;
-  display: flex;
-  align-items: end;
-  justify-content: flex-end;
-  padding: 0.8rem;
+  display: grid;
   border: 1px solid rgba(21, 22, 18, 0.12);
-  background: #deded6;
+  background: #e7ebee;
+}
+
+.admin-preview-media {
+  position: relative;
+  width: 100%;
+  height: clamp(200px, 40vh, 440px);
+  overflow: hidden;
+}
+
+.admin-preview-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.65rem 0.8rem;
+  background: #fff;
+  border-top: 1px solid rgba(21, 22, 18, 0.12);
+}
+
+.admin-preview-toolbar a {
+  color: #315e20;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .admin-preview-image {
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .admin-preview button {
@@ -2973,6 +2997,77 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
+}
+
+.editable-card header .editable-card-title {
+  display: grid;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.admin-editing-fields {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+.admin-shell :is(button, a, input, textarea, select):focus-visible {
+  outline: 2px solid #427b22;
+  outline-offset: 3px;
+}
+
+.admin-shell button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+  transform: none;
+}
+
+.admin-toggle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+.admin-toggle input {
+  width: 18px;
+  height: 18px;
+  accent-color: #427b22;
+}
+.admin-toggle small {
+  color: #62655f;
+}
+.editable-card .admin-delete {
+  color: #a52b32;
+}
+.admin-case-preview-media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+@media (max-width: 767px) {
+  .admin-topbar,
+  .editable-card header {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .admin-sidebar nav {
+    max-height: 16rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-shell *,
+  .admin-shell *::before,
+  .admin-shell *::after {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 .editable-card button {
