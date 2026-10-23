@@ -807,6 +807,266 @@
       "featured": false,
       "homepageOrder": 9,
       "image": "/images/works/imports/junlin-brand-film/cover.jpg"
+    },
+    {
+      "no": "10",
+      "slug": "meiyun-elephant-vessel",
+      "title": "每韵美器 · 象来出圈",
+      "en": "Meiyun Elephant Brand Film",
+      "group": "AI Visual Direction",
+      "category": "品牌形象片",
+      "industry": "家居 / 文创",
+      "year": "2026",
+      "summary": "每韵美器的 IP 形象短片。白色小象穿蓝色上衣和黄色背带裤，胸前一颗红心，在蓝紫色光圈里转身；中段换成暖金色灯圈与流动的金色液体，小象在其中跃出。结尾回到徽章式的金色圆环，打出「象来出圈」和英文副标「The Elephant Comes Out Of The Circle」。",
+      "description": "每韵美器的 IP 形象短片。白色小象穿蓝色上衣和黄色背带裤，胸前一颗红心，在蓝紫色光圈里转身；中段换成暖金色灯圈与流动的金色液体，小象在其中跃出。结尾回到徽章式的金色圆环，打出「象来出圈」和英文副标「The Elephant Comes Out Of The Circle」。",
+      "tags": ["AI Video", "Mascot", "3D Animation", "Brand Film"],
+      "meta": ["品牌形象片"],
+      "cover": "/images/works/imports/meiyun-elephant-vessel/cover.jpg",
+      "image": "/images/works/imports/meiyun-elephant-vessel/cover.jpg",
+      "images": [
+        "/images/works/imports/meiyun-elephant-vessel/shot-01.jpg",
+        "/images/works/imports/meiyun-elephant-vessel/shot-02.jpg",
+        "/images/works/imports/meiyun-elephant-vessel/shot-03.jpg",
+        "/images/works/imports/meiyun-elephant-vessel/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/meiyun-elephant-vessel/shot-01.jpg",
+          "alt": "每韵美器-象来出圈"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/meiyun-elephant-vessel/shot-02.jpg",
+          "alt": "每韵美器-象来出圈"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/meiyun-elephant-vessel/shot-03.jpg",
+          "alt": "每韵美器-象来出圈"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/meiyun-elephant-vessel/shot-04.jpg",
+          "alt": "每韵美器-象来出圈"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV169n86gEjX/",
+        "title": "每韵美器-象来出圈",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 10
+    },
+    {
+      "no": "11",
+      "slug": "bamboo-fiber-cup",
+      "title": "竹纤维纸杯 产品片",
+      "en": "Bamboo Fiber Paper Cup",
+      "group": "Brand & Product Visual",
+      "category": "产品广告片",
+      "industry": "制造 / 包装",
+      "year": "2026",
+      "summary": "竹纤维纸杯产品片。画面从竹林里一只搭在竹节上的手开始，转到杯身：纸面印着「BAMBOO IS NATURAL」，字幕写「土里生的，山里长的」「不需要漂白」。结尾，穿浅色中式衣衫的女生坐在林中捧杯，阳光透过竹叶落下。",
+      "description": "竹纤维纸杯产品片。画面从竹林里一只搭在竹节上的手开始，转到杯身：纸面印着「BAMBOO IS NATURAL」，字幕写「土里生的，山里长的」「不需要漂白」。结尾，穿浅色中式衣衫的女生坐在林中捧杯，阳光透过竹叶落下。",
+      "tags": ["AI Video", "Product", "Packaging", "Eco"],
+      "meta": ["产品广告片"],
+      "cover": "/images/works/imports/bamboo-fiber-cup/cover.jpg",
+      "image": "/images/works/imports/bamboo-fiber-cup/cover.jpg",
+      "images": [
+        "/images/works/imports/bamboo-fiber-cup/shot-01.jpg",
+        "/images/works/imports/bamboo-fiber-cup/shot-02.jpg",
+        "/images/works/imports/bamboo-fiber-cup/shot-03.jpg",
+        "/images/works/imports/bamboo-fiber-cup/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/bamboo-fiber-cup/shot-01.jpg",
+          "alt": "竹纤维纸杯"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/bamboo-fiber-cup/shot-02.jpg",
+          "alt": "竹纤维纸杯"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/bamboo-fiber-cup/shot-03.jpg",
+          "alt": "竹纤维纸杯"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/bamboo-fiber-cup/shot-04.jpg",
+          "alt": "竹纤维纸杯"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1eKnh6wEMX/",
+        "title": "竹纤维纸杯",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 11
+    },
+    {
+      "no": "12",
+      "slug": "songguo-health",
+      "title": "松果健康 TVC",
+      "en": "Songguo Health TVC",
+      "group": "Brand & Product Visual",
+      "category": "TVC",
+      "industry": "医疗健康 / 可穿戴",
+      "year": "2026",
+      "summary": "松果健康 TVC。深夜办公室，男人对着文件揉手，字幕「体检指标明明显示“正常”，身体却在发出疲惫信号」；随后手腕上的方形手表掠过星空，微距扫过编织表带，字幕称它「更是一个微缩的医疗工作站」。中后段切到办公区和铁塔检修现场。",
+      "description": "松果健康 TVC。深夜办公室，男人对着文件揉手，字幕「体检指标明明显示“正常”，身体却在发出疲惫信号」；随后手腕上的方形手表掠过星空，微距扫过编织表带，字幕称它「更是一个微缩的医疗工作站」。中后段切到办公区和铁塔检修现场。",
+      "tags": ["AI Video", "Healthcare", "Wearable", "TVC"],
+      "meta": ["TVC"],
+      "cover": "/images/works/imports/songguo-health/cover.jpg",
+      "image": "/images/works/imports/songguo-health/cover.jpg",
+      "images": [
+        "/images/works/imports/songguo-health/shot-01.jpg",
+        "/images/works/imports/songguo-health/shot-02.jpg",
+        "/images/works/imports/songguo-health/shot-03.jpg",
+        "/images/works/imports/songguo-health/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/songguo-health/shot-01.jpg",
+          "alt": "松果健康-AI广告TVC商业短片"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/songguo-health/shot-02.jpg",
+          "alt": "松果健康-AI广告TVC商业短片"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/songguo-health/shot-03.jpg",
+          "alt": "松果健康-AI广告TVC商业短片"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/songguo-health/shot-04.jpg",
+          "alt": "松果健康-AI广告TVC商业短片"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1qfP7z6EhR/",
+        "title": "松果健康-AI广告TVC商业短片",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 12
+    },
+    {
+      "no": "13",
+      "slug": "guozi-scissors",
+      "title": "郭字刀剪 品牌片",
+      "en": "Guozi Scissors Brand Film",
+      "group": "AI Visual Direction",
+      "category": "品牌形象片",
+      "industry": "制造 / 五金",
+      "year": "2026",
+      "summary": "郭字刀剪品牌片。老师傅的手按住刀身，在磨石上反复推磨，锤纹刀面映着光，字幕「一刀传世」「铸传世之器」。接着是炉火前的锻造身影和刀锋特写，结尾落到红色礼盒：刀剪成排陈列，盒上印「郭字刀剪」「刀炼千遍 锋利百年」，字幕「非遗传承 · 重庆好礼」。",
+      "description": "郭字刀剪品牌片。老师傅的手按住刀身，在磨石上反复推磨，锤纹刀面映着光，字幕「一刀传世」「铸传世之器」。接着是炉火前的锻造身影和刀锋特写，结尾落到红色礼盒：刀剪成排陈列，盒上印「郭字刀剪」「刀炼千遍 锋利百年」，字幕「非遗传承 · 重庆好礼」。",
+      "tags": ["AI Video", "Manufacturing", "Heritage", "Product"],
+      "meta": ["品牌形象片"],
+      "cover": "/images/works/imports/guozi-scissors/cover.jpg",
+      "image": "/images/works/imports/guozi-scissors/cover.jpg",
+      "images": [
+        "/images/works/imports/guozi-scissors/shot-01.jpg",
+        "/images/works/imports/guozi-scissors/shot-02.jpg",
+        "/images/works/imports/guozi-scissors/shot-03.jpg",
+        "/images/works/imports/guozi-scissors/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/guozi-scissors/shot-01.jpg",
+          "alt": "郭字刀剪"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/guozi-scissors/shot-02.jpg",
+          "alt": "郭字刀剪"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/guozi-scissors/shot-03.jpg",
+          "alt": "郭字刀剪"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/guozi-scissors/shot-04.jpg",
+          "alt": "郭字刀剪"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1rDn86GE5W/",
+        "title": "郭字刀剪",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 13
+    },
+    {
+      "no": "14",
+      "slug": "junlin-tvc",
+      "title": "君临塑+ TVC",
+      "en": "Junlin Plastic+ TVC",
+      "group": "Brand & Product Visual",
+      "category": "TVC",
+      "industry": "家居",
+      "year": "2026",
+      "summary": "君临塑+ 的家居收纳 TVC。白色收纳箱和灰色面盆被拿起、擦拭，字幕写「简音系列」「远离嘈杂」「倾听生活的本来面貌」「它不喧哗，不夺目」；中段是「简曲系列」的设计稿画面，最后收在摆着洗护用品的白色收纳箱上。",
+      "description": "君临塑+ 的家居收纳 TVC。白色收纳箱和灰色面盆被拿起、擦拭，字幕写「简音系列」「远离嘈杂」「倾听生活的本来面貌」「它不喧哗，不夺目」；中段是「简曲系列」的设计稿画面，最后收在摆着洗护用品的白色收纳箱上。",
+      "tags": ["AI Video", "Homeware", "Product", "Minimal"],
+      "meta": ["TVC"],
+      "cover": "/images/works/imports/junlin-tvc/cover.jpg",
+      "image": "/images/works/imports/junlin-tvc/cover.jpg",
+      "images": [
+        "/images/works/imports/junlin-tvc/shot-01.jpg",
+        "/images/works/imports/junlin-tvc/shot-02.jpg",
+        "/images/works/imports/junlin-tvc/shot-03.jpg",
+        "/images/works/imports/junlin-tvc/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/junlin-tvc/shot-01.jpg",
+          "alt": "君临塑+TVC"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/junlin-tvc/shot-02.jpg",
+          "alt": "君临塑+TVC"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/junlin-tvc/shot-03.jpg",
+          "alt": "君临塑+TVC"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/junlin-tvc/shot-04.jpg",
+          "alt": "君临塑+TVC"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1zRn86zEbU/",
+        "title": "君临塑+TVC",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 14
     }
   ],
   "aiStudio": {

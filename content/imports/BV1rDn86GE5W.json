@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "guozi-scissors",
+  "title": "郭字刀剪 品牌片",
+  "en": "Guozi Scissors Brand Film",
+  "group": "AI Visual Direction",
+  "category": "品牌形象片",
+  "industry": "制造 / 五金",
+  "year": "2026",
+  "summary": "郭字刀剪品牌片。老师傅的手按住刀身，在磨石上反复推磨，锤纹刀面映着光，字幕「一刀传世」「铸传世之器」。接着是炉火前的锻造身影和刀锋特写，结尾落到红色礼盒：刀剪成排陈列，盒上印「郭字刀剪」「刀炼千遍 锋利百年」，字幕「非遗传承 · 重庆好礼」。",
+  "description": "郭字刀剪品牌片。老师傅的手按住刀身，在磨石上反复推磨，锤纹刀面映着光，字幕「一刀传世」「铸传世之器」。接着是炉火前的锻造身影和刀锋特写，结尾落到红色礼盒：刀剪成排陈列，盒上印「郭字刀剪」「刀炼千遍 锋利百年」，字幕「非遗传承 · 重庆好礼」。",
+  "tags": ["AI Video", "Manufacturing", "Heritage", "Product"],
+  "meta": ["品牌形象片"],
+  "cover": "/images/works/imports/guozi-scissors/cover.jpg",
+  "image": "/images/works/imports/guozi-scissors/cover.jpg",
+  "images": [
+    "/images/works/imports/guozi-scissors/shot-01.jpg",
+    "/images/works/imports/guozi-scissors/shot-02.jpg",
+    "/images/works/imports/guozi-scissors/shot-03.jpg",
+    "/images/works/imports/guozi-scissors/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/guozi-scissors/shot-01.jpg",
+      "alt": "郭字刀剪"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/guozi-scissors/shot-02.jpg",
+      "alt": "郭字刀剪"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/guozi-scissors/shot-03.jpg",
+      "alt": "郭字刀剪"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/guozi-scissors/shot-04.jpg",
+      "alt": "郭字刀剪"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1rDn86GE5W/",
+    "title": "郭字刀剪",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1rDn86GE5W",
+    "duration": 30,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1rDn86GE5W/"
+  }
+}

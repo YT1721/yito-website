@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "junlin-tvc",
+  "title": "君临塑+ TVC",
+  "en": "Junlin Plastic+ TVC",
+  "group": "Brand & Product Visual",
+  "category": "TVC",
+  "industry": "家居",
+  "year": "2026",
+  "summary": "君临塑+ 的家居收纳 TVC。白色收纳箱和灰色面盆被拿起、擦拭，字幕写「简音系列」「远离嘈杂」「倾听生活的本来面貌」「它不喧哗，不夺目」；中段是「简曲系列」的设计稿画面，最后收在摆着洗护用品的白色收纳箱上。",
+  "description": "君临塑+ 的家居收纳 TVC。白色收纳箱和灰色面盆被拿起、擦拭，字幕写「简音系列」「远离嘈杂」「倾听生活的本来面貌」「它不喧哗，不夺目」；中段是「简曲系列」的设计稿画面，最后收在摆着洗护用品的白色收纳箱上。",
+  "tags": ["AI Video", "Homeware", "Product", "Minimal"],
+  "meta": ["TVC"],
+  "cover": "/images/works/imports/junlin-tvc/cover.jpg",
+  "image": "/images/works/imports/junlin-tvc/cover.jpg",
+  "images": [
+    "/images/works/imports/junlin-tvc/shot-01.jpg",
+    "/images/works/imports/junlin-tvc/shot-02.jpg",
+    "/images/works/imports/junlin-tvc/shot-03.jpg",
+    "/images/works/imports/junlin-tvc/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/junlin-tvc/shot-01.jpg",
+      "alt": "君临塑+TVC"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/junlin-tvc/shot-02.jpg",
+      "alt": "君临塑+TVC"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/junlin-tvc/shot-03.jpg",
+      "alt": "君临塑+TVC"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/junlin-tvc/shot-04.jpg",
+      "alt": "君临塑+TVC"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1zRn86zEbU/",
+    "title": "君临塑+TVC",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1zRn86zEbU",
+    "duration": 120,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1zRn86zEbU/"
+  }
+}

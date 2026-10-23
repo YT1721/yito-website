@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "songguo-health",
+  "title": "松果健康 TVC",
+  "en": "Songguo Health TVC",
+  "group": "Brand & Product Visual",
+  "category": "TVC",
+  "industry": "医疗健康 / 可穿戴",
+  "year": "2026",
+  "summary": "松果健康 TVC。深夜办公室，男人对着文件揉手，字幕「体检指标明明显示“正常”，身体却在发出疲惫信号」；随后手腕上的方形手表掠过星空，微距扫过编织表带，字幕称它「更是一个微缩的医疗工作站」。中后段切到办公区和铁塔检修现场。",
+  "description": "松果健康 TVC。深夜办公室，男人对着文件揉手，字幕「体检指标明明显示“正常”，身体却在发出疲惫信号」；随后手腕上的方形手表掠过星空，微距扫过编织表带，字幕称它「更是一个微缩的医疗工作站」。中后段切到办公区和铁塔检修现场。",
+  "tags": ["AI Video", "Healthcare", "Wearable", "TVC"],
+  "meta": ["TVC"],
+  "cover": "/images/works/imports/songguo-health/cover.jpg",
+  "image": "/images/works/imports/songguo-health/cover.jpg",
+  "images": [
+    "/images/works/imports/songguo-health/shot-01.jpg",
+    "/images/works/imports/songguo-health/shot-02.jpg",
+    "/images/works/imports/songguo-health/shot-03.jpg",
+    "/images/works/imports/songguo-health/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/songguo-health/shot-01.jpg",
+      "alt": "松果健康-AI广告TVC商业短片"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/songguo-health/shot-02.jpg",
+      "alt": "松果健康-AI广告TVC商业短片"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/songguo-health/shot-03.jpg",
+      "alt": "松果健康-AI广告TVC商业短片"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/songguo-health/shot-04.jpg",
+      "alt": "松果健康-AI广告TVC商业短片"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1qfP7z6EhR/",
+    "title": "松果健康-AI广告TVC商业短片",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1qfP7z6EhR",
+    "duration": 156,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "松果健康-AI广告TVC商业短片",
+    "url": "https://www.bilibili.com/video/BV1qfP7z6EhR/"
+  }
+}

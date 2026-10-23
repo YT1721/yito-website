@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "bamboo-fiber-cup",
+  "title": "竹纤维纸杯 产品片",
+  "en": "Bamboo Fiber Paper Cup",
+  "group": "Brand & Product Visual",
+  "category": "产品广告片",
+  "industry": "制造 / 包装",
+  "year": "2026",
+  "summary": "竹纤维纸杯产品片。画面从竹林里一只搭在竹节上的手开始，转到杯身：纸面印着「BAMBOO IS NATURAL」，字幕写「土里生的，山里长的」「不需要漂白」。结尾，穿浅色中式衣衫的女生坐在林中捧杯，阳光透过竹叶落下。",
+  "description": "竹纤维纸杯产品片。画面从竹林里一只搭在竹节上的手开始，转到杯身：纸面印着「BAMBOO IS NATURAL」，字幕写「土里生的，山里长的」「不需要漂白」。结尾，穿浅色中式衣衫的女生坐在林中捧杯，阳光透过竹叶落下。",
+  "tags": ["AI Video", "Product", "Packaging", "Eco"],
+  "meta": ["产品广告片"],
+  "cover": "/images/works/imports/bamboo-fiber-cup/cover.jpg",
+  "image": "/images/works/imports/bamboo-fiber-cup/cover.jpg",
+  "images": [
+    "/images/works/imports/bamboo-fiber-cup/shot-01.jpg",
+    "/images/works/imports/bamboo-fiber-cup/shot-02.jpg",
+    "/images/works/imports/bamboo-fiber-cup/shot-03.jpg",
+    "/images/works/imports/bamboo-fiber-cup/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/bamboo-fiber-cup/shot-01.jpg",
+      "alt": "竹纤维纸杯"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/bamboo-fiber-cup/shot-02.jpg",
+      "alt": "竹纤维纸杯"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/bamboo-fiber-cup/shot-03.jpg",
+      "alt": "竹纤维纸杯"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/bamboo-fiber-cup/shot-04.jpg",
+      "alt": "竹纤维纸杯"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1eKnh6wEMX/",
+    "title": "竹纤维纸杯",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1eKnh6wEMX",
+    "duration": 51,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1eKnh6wEMX/"
+  }
+}

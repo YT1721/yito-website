@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "meiyun-elephant-vessel",
+  "title": "每韵美器 · 象来出圈",
+  "en": "Meiyun Elephant Brand Film",
+  "group": "AI Visual Direction",
+  "category": "品牌形象片",
+  "industry": "家居 / 文创",
+  "year": "2026",
+  "summary": "每韵美器的 IP 形象短片。白色小象穿蓝色上衣和黄色背带裤，胸前一颗红心，在蓝紫色光圈里转身；中段换成暖金色灯圈与流动的金色液体，小象在其中跃出。结尾回到徽章式的金色圆环，打出「象来出圈」和英文副标「The Elephant Comes Out Of The Circle」。",
+  "description": "每韵美器的 IP 形象短片。白色小象穿蓝色上衣和黄色背带裤，胸前一颗红心，在蓝紫色光圈里转身；中段换成暖金色灯圈与流动的金色液体，小象在其中跃出。结尾回到徽章式的金色圆环，打出「象来出圈」和英文副标「The Elephant Comes Out Of The Circle」。",
+  "tags": ["AI Video", "Mascot", "3D Animation", "Brand Film"],
+  "meta": ["品牌形象片"],
+  "cover": "/images/works/imports/meiyun-elephant-vessel/cover.jpg",
+  "image": "/images/works/imports/meiyun-elephant-vessel/cover.jpg",
+  "images": [
+    "/images/works/imports/meiyun-elephant-vessel/shot-01.jpg",
+    "/images/works/imports/meiyun-elephant-vessel/shot-02.jpg",
+    "/images/works/imports/meiyun-elephant-vessel/shot-03.jpg",
+    "/images/works/imports/meiyun-elephant-vessel/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/meiyun-elephant-vessel/shot-01.jpg",
+      "alt": "每韵美器-象来出圈"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/meiyun-elephant-vessel/shot-02.jpg",
+      "alt": "每韵美器-象来出圈"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/meiyun-elephant-vessel/shot-03.jpg",
+      "alt": "每韵美器-象来出圈"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/meiyun-elephant-vessel/shot-04.jpg",
+      "alt": "每韵美器-象来出圈"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV169n86gEjX/",
+    "title": "每韵美器-象来出圈",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV169n86gEjX",
+    "duration": 46,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV169n86gEjX/"
+  }
+}
