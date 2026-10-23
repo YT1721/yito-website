@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight, Film, Play, Tag } from "lucide-react";
-import type { WorkContent, WorkVideo } from "../../../content/works";
+import { ArrowLeft, ArrowUpRight, Film, Tag } from "lucide-react";
+import type { WorkContent } from "../../../content/works";
 import ImageWithFallback from "../../../components/ImageWithFallback";
+import WorkMediaHero from "../../../components/WorkMediaHero";
 import { readRuntimeWorks } from "../../../lib/runtime-content";
+import { resolveWorkVideo } from "../../../lib/work-media";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yito-visual.com";
 
@@ -82,7 +84,15 @@ export default async function WorkDetailPage({ params }: WorkPageParams) {
 
   if (!work) notFound();
 
-  const video = normalizeWorkVideo(work);
+  const video = resolveWorkVideo({
+    video: work.video,
+    videoUrl: work.videoUrl,
+  });
+  const isVideo = video.kind !== "image";
+  const rawVideoUrl = work.video?.url || work.videoUrl || "";
+
+  let sectionIndex = 0;
+  const nextIndex = () => String(++sectionIndex).padStart(2, "0");
 
   return (
     <main className="case-detail-shell">
@@ -119,7 +129,15 @@ export default async function WorkDetailPage({ params }: WorkPageParams) {
 
       <section className="case-detail-hero">
         <div className="case-detail-hero-media">
-          <CinematicImage src={work.cover} label={work.title} priority />
+          {isVideo && (video.embedUrl || video.directUrl) ? (
+            <WorkMediaHero
+              poster={work.cover}
+              title={work.title}
+              video={video}
+            />
+          ) : (
+            <CinematicImage src={work.cover} label={work.title} priority />
+          )}
         </div>
         <div className="case-detail-hero-copy">
           <span className="case-detail-no">
@@ -142,59 +160,56 @@ export default async function WorkDetailPage({ params }: WorkPageParams) {
 
       <section className="case-overview-section is-media-first">
         <SectionHeading
-          index="01"
+          index={nextIndex()}
           title="Project Overview"
           subtitle="项目简介"
         />
         <p>{work.description}</p>
       </section>
 
-      {video ? (
+      {video.kind === "external-video" && rawVideoUrl ? (
         <section className="case-video-section">
           <SectionHeading
-            index="02"
-            title={video.title || "Video Preview"}
-            subtitle="视频展示"
+            index={nextIndex()}
+            title={work.video?.title || "Video"}
+            subtitle="视频链接"
           />
-          {video.embedUrl ? (
-            <iframe
-              src={video.embedUrl}
-              title={video.title || work.title}
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowFullScreen
-            />
-          ) : video.type === "local" || isDirectVideoUrl(video.url) ? (
-            <video
-              src={video.url}
-              poster={work.cover}
-              controls
-              playsInline
-              preload="metadata"
-            />
-          ) : (
-            <Link href={video.url} target="_blank" rel="noreferrer">
-              <Play size={18} />
-              打开视频链接
-              <ArrowUpRight size={16} />
-            </Link>
-          )}
+          <a
+            className="case-video-card"
+            href={rawVideoUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Film size={20} />
+            <span>
+              <strong>观看作品视频</strong>
+              <small>{safeHostLabel(rawVideoUrl)}</small>
+            </span>
+            <ArrowUpRight size={16} />
+          </a>
         </section>
       ) : null}
 
-      <section className="case-gallery-section">
-        <SectionHeading index="03" title="Gallery" subtitle="图片展示" />
-        <div className="case-gallery-grid">
-          {work.images.map((image, index) => (
-            <figure key={image} className={index === 0 ? "is-featured" : ""}>
-              <CinematicImage
-                src={image}
-                label={`${work.title} ${index + 1}`}
-              />
-              <figcaption>{String(index + 1).padStart(2, "0")}</figcaption>
-            </figure>
-          ))}
-        </div>
-      </section>
+      {work.images.length ? (
+        <section className="case-gallery-section">
+          <SectionHeading
+            index={nextIndex()}
+            title={isVideo ? "Highlights" : "Gallery"}
+            subtitle={isVideo ? "精彩镜头" : "图片展示"}
+          />
+          <div className="case-gallery-grid">
+            {work.images.map((image, index) => (
+              <figure key={image} className={index === 0 ? "is-featured" : ""}>
+                <CinematicImage
+                  src={image}
+                  label={`${work.title} ${index + 1}`}
+                />
+                <figcaption>{String(index + 1).padStart(2, "0")}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <section className="case-contact-section">
         <p>Contact YITO</p>
@@ -265,17 +280,10 @@ function CinematicImage({
   );
 }
 
-function isDirectVideoUrl(url: string) {
-  return /\.(mp4|webm|mov)(\?.*)?$/i.test(url);
-}
-
-function normalizeWorkVideo(work: WorkContent): WorkVideo | undefined {
-  if (work.video?.url) return work.video;
-  if (!work.videoUrl) return undefined;
-
-  return {
-    type: isDirectVideoUrl(work.videoUrl) ? "local" : "external",
-    url: work.videoUrl,
-    title: "作品视频",
-  };
+function safeHostLabel(raw: string): string {
+  try {
+    return new URL(raw).hostname;
+  } catch {
+    return "外部链接";
+  }
 }

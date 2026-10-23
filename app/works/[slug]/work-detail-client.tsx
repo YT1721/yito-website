@@ -10,6 +10,12 @@ import type {
   VisualBlock,
 } from "../../../lib/content-types";
 import type { WorkContent } from "../../../content/works";
+import {
+  detectWorkMediaKind,
+  toBilibiliEmbedUrl,
+  toBilibiliPageUrl,
+  workMediaLabel,
+} from "../../../lib/work-media";
 import ImageWithFallback from "../../../components/ImageWithFallback";
 
 type DetailWork = CaseStudy & {
@@ -79,6 +85,9 @@ export default function WorkDetailClient({
       </main>
     );
   }
+
+  const mediaKind = detectWorkMediaKind(work);
+  const showGallery = mediaKind === "image" && work.thumbs.length > 0;
 
   return (
     <main className="work-detail-shell">
@@ -163,21 +172,23 @@ export default function WorkDetailClient({
         />
       </section>
 
-      <section className="work-gallery-section">
-        <div className="work-gallery-heading">
-          <p className="work-section-label">Gallery</p>
-          <h2>图片 / 视频画面浏览</h2>
-        </div>
-        <div className="work-gallery">
-          {work.thumbs.map((thumb, index) => (
-            <VisualTile
-              key={`${work.slug}-${index}`}
-              block={thumb}
-              index={index + 1}
-            />
-          ))}
-        </div>
-      </section>
+      {showGallery ? (
+        <section className="work-gallery-section">
+          <div className="work-gallery-heading">
+            <p className="work-section-label">Gallery</p>
+            <h2>图片 / 视频画面浏览</h2>
+          </div>
+          <div className="work-gallery">
+            {work.thumbs.map((thumb, index) => (
+              <VisualTile
+                key={`${work.slug}-${index}`}
+                block={thumb}
+                index={index + 1}
+              />
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <section className="work-fit-section">
         <div>
@@ -244,6 +255,8 @@ function mapContentWork(work: WorkContent): DetailWork {
     visual: work.slug,
     image: work.cover,
     cover: work.cover,
+    video: work.video,
+    videoUrl: work.videoUrl,
     thumbs: work.images.map((image, index) => ({
       image,
       visual: `${work.slug}-${String(index + 1).padStart(2, "0")}`,
@@ -289,10 +302,76 @@ function DetailNav() {
 }
 
 function MediaStage({ work }: { work: CaseStudy }) {
-  if (work.videoUrl && isDirectVideoUrl(work.videoUrl)) {
+  const kind = detectWorkMediaKind(work);
+  const rawVideoUrl = work.video?.url || work.videoUrl || "";
+
+  if (kind === "bilibili") {
+    const embedSrc = work.video?.embedUrl || toBilibiliEmbedUrl(rawVideoUrl);
+    const originUrl = toBilibiliPageUrl(rawVideoUrl);
+
+    if (embedSrc) {
+      return (
+        <div className="work-media-stage is-video is-bilibili">
+          <iframe
+            src={embedSrc}
+            title={work.title}
+            className="work-bilibili-frame"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+            scrolling="no"
+            frameBorder={0}
+          />
+          {originUrl ? (
+            <a
+              className="work-video-origin"
+              href={originUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Film size={14} />
+              前往 B 站查看原片
+              <ArrowUpRight size={14} />
+            </a>
+          ) : null}
+        </div>
+      );
+    }
+  }
+
+  if (kind === "local-video" && rawVideoUrl) {
     return (
-      <div className="work-media-stage">
-        <video src={work.videoUrl} controls playsInline poster={work.image} />
+      <div className="work-media-stage is-video">
+        <video src={rawVideoUrl} controls playsInline poster={work.image} />
+      </div>
+    );
+  }
+
+  if (kind === "external-video" && rawVideoUrl) {
+    let hostLabel = "外部链接";
+    try {
+      hostLabel = new URL(rawVideoUrl).hostname;
+    } catch {
+      /* ignore invalid url */
+    }
+
+    return (
+      <div
+        className={`work-media-stage ${work.visual} ${work.image ? "has-image" : ""}`}
+      >
+        <VisualImage block={work} priority />
+        <a
+          className="work-video-card"
+          href={rawVideoUrl}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Film size={18} />
+          <span>
+            <strong>观看作品视频</strong>
+            <small>{hostLabel}</small>
+          </span>
+          <ArrowUpRight size={16} />
+        </a>
       </div>
     );
   }
@@ -303,19 +382,9 @@ function MediaStage({ work }: { work: CaseStudy }) {
     >
       <VisualImage block={work} priority />
       <span className="media-badge">
-        <Film size={15} />
-        {work.videoUrl ? "Video Link" : "Visual Preview"}
+        <ImageIcon size={15} />
+        {workMediaLabel(kind)}
       </span>
-      {work.videoUrl ? (
-        <a
-          className="work-video-link"
-          href={work.videoUrl}
-          target="_blank"
-          rel="noreferrer"
-        >
-          打开视频链接 <ArrowUpRight size={14} />
-        </a>
-      ) : null}
     </div>
   );
 }
@@ -362,10 +431,6 @@ function VisualImage({
       sizes="(max-width: 820px) 100vw, 50vw"
     />
   );
-}
-
-function isDirectVideoUrl(url: string) {
-  return /\.(mp4|webm|mov)(\?.*)?$/i.test(url);
 }
 
 function publicMeta(items: string[]) {

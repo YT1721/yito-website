@@ -31,7 +31,7 @@
       {
         "id": "portal",
         "no": "01",
-        "title": "YITO Portal",
+        "title": "YITO Commercial Visual",
         "subtitle": "AI 原生商业视觉工作室",
         "body": "进入 YITO 的电影化商业视觉世界，从品牌主张到最终交付形成连续体验。",
         "poster": "/images/scroll-world/generated/01-yito-portal.png"
@@ -39,7 +39,7 @@
       {
         "id": "ai-brand-film",
         "no": "02",
-        "title": "AI 品牌广告片",
+        "title": "AI 品牌形象片",
         "subtitle": "AI Brand Film",
         "body": "为品牌发布、产品推广和社媒投放建立高质感商业影像。",
         "serviceId": "ai-brand-film",
@@ -94,7 +94,7 @@
       "电影级质感\n以导演思维处理镜头、光影、构图与节奏",
       "完整交付\n从创意到成片，不止是单张 AI 图片"
     ],
-    "statement": "AI 是工具，导演判断才是价值。",
+    "statement": "AI 是工具，专业判断才是价值。",
     "visual": "about-ai-face",
     "visualLabel": "Commercial Visual Direction",
     "image": "/images/about/about-ai-face.jpg"
@@ -107,7 +107,7 @@
     "items": [
       {
         "id": "ai-brand-film",
-        "title": "AI 品牌广告片",
+        "title": "AI 品牌形象片",
         "en": "AI Brand Film",
         "icon": "clapperboard",
         "visual": "ai-brand-film",
@@ -173,8 +173,8 @@
     ],
     "items": [
       {
-        "title": "AI 汽车品牌广告片",
-        "en": "AI Automotive Brand Film",
+        "title": "牛茶 品牌宣传片",
+        "en": "Niucha Brand Film",
         "visual": "ai-automotive-brand-film",
         "image": "/images/works/ai-car/cover.jpg",
         "caseSlug": "ai-automotive-brand-film"
@@ -220,20 +220,20 @@
     {
       "no": "01",
       "slug": "ai-automotive-brand-film",
-      "title": "AI 汽车品牌广告片",
-      "en": "AI Automotive Brand Film",
+      "title": "牛茶 品牌宣传片A",
+      "en": "Niucha Brand Film",
       "group": "AI Visual Direction",
       "category": "AI 品牌广告片",
-      "industry": "汽车 / 科技 / 高端消费",
-      "year": "2026",
-      "summary": "这是一个面向高端汽车品牌的 AI 广告片概念案例。项目以夜景城市、金属车身、速度感镜头和电影级光影为核心，探索 AI 技术在汽车品牌广告中的视觉表达可能。",
-      "description": "这是一个面向高端汽车品牌的 AI 广告片概念案例。项目以夜景城市、金属车身、速度感镜头和电影级光影为核心，探索 AI 技术在汽车品牌广告中的视觉表达可能。",
+      "industry": "餐饮 / 养生 / 茶饮 / 高端消费",
+      "year": "2025",
+      "summary": "牛茶品牌 TVC 商业短片。全片以水为线索：溪流石上的原叶茶、水中舒展的桂花、穿过林间的自然光，用微距与长焦把原料的质地放大到可触的尺度，让「汲取天地灵气」从一句广告语变成看得见的画面。克制的旁白与留白，服务于产品本身的琥珀色与清透感。",
+      "description": "牛茶品牌 TVC 商业短片。全片以水为线索：溪流石上的原叶茶、水中舒展的桂花、穿过林间的自然光，用微距与长焦把原料的质地放大到可触的尺度，让「汲取天地灵气」从一句广告语变成看得见的画面。克制的旁白与留白，服务于产品本身的琥珀色与清透感。",
       "challenge": "建立高端、未来、速度与科技感兼具的品牌视觉印象，让产品不只是交通工具，而成为一种关于力量、身份和未来生活方式的视觉符号。",
       "strategy": "我们将画面重点放在“夜景、反光、速度、低角度镜头、车身曲线、城市光影”上，用电影广告语言塑造品牌调性，而不是简单展示汽车外观。",
       "solution": "视觉方向设定 / 汽车广告镜头参考分析 / AI 静帧生成 / 关键画面筛选 / AI 视频镜头生成 / 节奏剪辑与调色",
       "result": "最终形成一组适用于品牌广告片、发布会视觉、官网首屏视频和社媒传播的汽车商业视觉方案。",
       "services": ["AI 品牌广告片", "AI 视觉生成", "视频制作"],
-      "tags": ["AI Video", "Automotive", "Brand Film", "Cinematic"],
+      "tags": ["AI Video", "Tea & Beverage", "Brand Film", "Cinematic"],
       "visualKeywords": [
         "黑色车身",
         "雨夜道路",
@@ -285,7 +285,13 @@
           "visual": "ai-automotive-brand-film-04"
         }
       ],
-      "serviceIds": ["ai-brand-film"]
+      "serviceIds": ["ai-brand-film"],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1ifP7z6Ez8/?vd_source=e3003113c643fe9372f597b05796178c",
+        "title": "",
+        "embedUrl": ""
+      }
     },
     {
       "no": "02",
@@ -357,7 +363,12 @@
           "visual": "apollo-offroad-brand-film-04"
         }
       ],
-      "serviceIds": ["ai-brand-film", "ai-commercial-short-film"]
+      "serviceIds": [
+        "ai-brand-film",
+        "ai-commercial-short-film",
+        "ai-corporate-film",
+        "social-content-visual"
+      ]
     },
     {
       "no": "03",
@@ -796,5 +807,30 @@
     "services": "AI品牌广告片｜企业宣传片｜AI商业短片｜概念视觉设计｜社媒内容视觉",
     "copyright": "© 2026 YITO Visual. All Rights Reserved.",
     "credit": "Designed with AI-native workflow."
+  },
+  "meta": {
+    "title": "YITO｜AI-Native Commercial Visual Studio",
+    "description": "YITO 是一家 AI 原生商业视觉工作室，专注 AI 品牌广告片、企业宣传片、商业短片、电影级视觉与品牌内容创作。",
+    "keywords": [
+      "AI商业视觉",
+      "AI广告片",
+      "AI品牌宣传片",
+      "AI企业宣传片",
+      "AI视频制作",
+      "AI商业短片",
+      "AI视觉工作室",
+      "品牌广告片",
+      "电影感视觉",
+      "商业视觉设计",
+      "YITO"
+    ],
+    "openGraph": {
+      "title": "YITO｜AI-Native Commercial Visual Studio",
+      "description": "用 AI 技术，为品牌低成本制作电影级商业视觉内容。",
+      "siteName": "YITO Visual",
+      "locale": "zh_CN",
+      "type": "website",
+      "image": "/images/seo/og-image.jpg"
+    }
   }
 }

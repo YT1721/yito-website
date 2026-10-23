@@ -6,8 +6,7 @@ UPLOAD_DIR="/var/www/yito/shared/uploads"
 
 cd "$APP_DIR"
 
-sudo mkdir -p "$UPLOAD_DIR"
-sudo chown -R "$USER":"$USER" "$UPLOAD_DIR"
+mkdir -p "$UPLOAD_DIR"
 
 if [ ! -f ".env.production" ]; then
   cp .env.example .env.production
@@ -25,11 +24,11 @@ pm2 start ecosystem.config.cjs || pm2 reload yito-website
 pm2 save
 
 echo "==> Configuring Nginx"
-sudo cp deploy/nginx-yito.conf /etc/nginx/sites-available/yito
 if [ ! -e /etc/nginx/sites-enabled/yito ]; then
+  sudo cp deploy/nginx-yito.conf /etc/nginx/sites-available/yito
   sudo ln -s /etc/nginx/sites-available/yito /etc/nginx/sites-enabled/yito
+  sudo nginx -t
+  sudo systemctl reload nginx
 fi
-sudo nginx -t
-sudo systemctl reload nginx
 
 echo "==> YITO is running. Test: http://8.146.236.73"

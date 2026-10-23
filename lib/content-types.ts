@@ -112,6 +112,9 @@ export type CaseStudy = VisualBlock & {
   serviceIds?: string[];
   industry: string;
   tags: string[];
+  process?: string[];
+  visualKeywords?: string[];
+  images?: string[];
   video?: WorkVideo;
   videoUrl?: string;
   featured?: boolean;
