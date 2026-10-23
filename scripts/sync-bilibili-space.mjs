@@ -62,6 +62,23 @@ async function wbiKeys() {
   return MIXIN_TAB.map((i) => raw[i]).join("").slice(0, 32);
 }
 
+async function listVideosOld() {
+  const all = [];
+  let count = Infinity;
+  for (let pn = 1; pn <= 30 && all.length < count; pn += 1) {
+    const json = await fetchJson(
+      `https://api.bilibili.com/x/space/arc/search?mid=${mid}&ps=10&pn=${pn}`,
+    );
+    if (json.code !== 0) throw new Error(`旧版投稿接口 code=${json.code} ${json.message}`);
+    const list = json.data?.list?.vlist ?? [];
+    all.push(...list);
+    count = json.data?.page?.count ?? all.length;
+    if (!list.length) break;
+    await new Promise((resolve) => setTimeout(resolve, 500));
+  }
+  return all;
+}
+
 async function listVideos(mixin) {
   const all = [];
   let count = Infinity;
@@ -104,8 +121,8 @@ async function listVideos(mixin) {
 }
 
 await initCookie();
-const mixin = await wbiKeys();
-const videos = await listVideos(mixin);
+const mixin = await wbiKeys().catch(() => "");
+const videos = mixin ? await listVideos(mixin).catch(() => listVideosOld()) : await listVideosOld();
 
 let site = { caseStudies: [] };
 try {

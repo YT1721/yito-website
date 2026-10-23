@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "niucha-ai-cut",
+  "title": "牛茶 AI 广告 TVC（另一版）",
+  "en": "Niucha AI TVC (Alternate Cut)",
+  "group": "Brand & Product Visual",
+  "category": "TVC",
+  "industry": "食品饮料",
+  "year": "2026",
+  "summary": "牛茶 AI 广告 TVC 的另一版剪辑。窗台上的易拉罐在午后阳光里透出琥珀色，冰块和光斑几乎占满画面；镜头随后切到饮用者闭眼大笑的一刻，配「不为取悦世界，只为照顾自己」的文案。108 秒，比品牌版更强调人物与情绪。",
+  "description": "牛茶 AI 广告 TVC 的另一版剪辑。窗台上的易拉罐在午后阳光里透出琥珀色，冰块和光斑几乎占满画面；镜头随后切到饮用者闭眼大笑的一刻，配「不为取悦世界，只为照顾自己」的文案。108 秒，比品牌版更强调人物与情绪。",
+  "tags": ["AI Video", "Tea & Beverage", "TVC", "Lifestyle"],
+  "meta": [""],
+  "cover": "/images/works/imports/niucha-ai-cut/cover.jpg",
+  "image": "/images/works/imports/niucha-ai-cut/cover.jpg",
+  "images": [
+    "/images/works/imports/niucha-ai-cut/shot-01.jpg",
+    "/images/works/imports/niucha-ai-cut/shot-02.jpg",
+    "/images/works/imports/niucha-ai-cut/shot-03.jpg",
+    "/images/works/imports/niucha-ai-cut/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/niucha-ai-cut/shot-01.jpg",
+      "alt": "燕窝茶饮牛茶-AI广告TVC商业短片"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/niucha-ai-cut/shot-02.jpg",
+      "alt": "燕窝茶饮牛茶-AI广告TVC商业短片"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/niucha-ai-cut/shot-03.jpg",
+      "alt": "燕窝茶饮牛茶-AI广告TVC商业短片"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/niucha-ai-cut/shot-04.jpg",
+      "alt": "燕窝茶饮牛茶-AI广告TVC商业短片"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1YTPEzNERu/",
+    "title": "燕窝茶饮牛茶-AI广告TVC商业短片",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1YTPEzNERu",
+    "duration": 108,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "为燕窝茶饮牛茶做的-AI广告TVC商业短片-3",
+    "url": "https://www.bilibili.com/video/BV1YTPEzNERu/"
+  }
+}
