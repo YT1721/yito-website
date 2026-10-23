@@ -45,6 +45,7 @@ for (const bvid of bvids) {
   const view = await getJson(`https://api.bilibili.com/x/web-interface/view?bvid=${bvid}`);
   const slug = forcedSlug || `bili-${bvid.toLowerCase()}`;
   const frameDir = path.join("public/images/works/imports", slug);
+  const frameUrl = `/images/works/imports/${slug}`;
 
   execFileSync(
     process.execPath,
@@ -65,11 +66,12 @@ for (const bvid of bvids) {
     description: "",
     tags: [],
     meta: [view.tname],
-    cover: `/${path.join(frameDir, "cover.jpg")}`,
-    images: [1, 2, 3, 4].map((i) => `/${path.join(frameDir, `shot-0${i}.jpg`)}`),
+    cover: `${frameUrl}/cover.jpg`,
+    image: `${frameUrl}/cover.jpg`,
+    images: [1, 2, 3, 4].map((i) => `${frameUrl}/shot-0${i}.jpg`),
     thumbs: [1, 2, 3, 4].map((i) => ({
       title: `精彩镜头 ${i}`,
-      image: `/${path.join(frameDir, `shot-0${i}.jpg`)}`,
+      image: `${frameUrl}/shot-0${i}.jpg`,
       alt: view.title,
     })),
     video: {

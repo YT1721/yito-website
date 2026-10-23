@@ -11,12 +11,12 @@
   "description": "惠尔康红苹果的新年开工短片。办公室、笔记本电脑和一罐红苹果构成全部场景：黑白环境里，红色易拉罐是唯一的颜色，手拉开拉环的那一刻完成「开工你最红」的祝福。15 秒，一条纯产品向的社媒短片。",
   "tags": ["AI Video", "FMCG", "Social Short", "Product"],
   "meta": [""],
-  "cover": "/public/images/works/imports/huierkang-red-apple/cover.jpg",
+  "cover": "/images/works/imports/huierkang-red-apple/cover.jpg",
   "images": [
-    "/public/images/works/imports/huierkang-red-apple/shot-01.jpg",
-    "/public/images/works/imports/huierkang-red-apple/shot-02.jpg",
-    "/public/images/works/imports/huierkang-red-apple/shot-03.jpg",
-    "/public/images/works/imports/huierkang-red-apple/shot-04.jpg"
+    "/images/works/imports/huierkang-red-apple/shot-01.jpg",
+    "/images/works/imports/huierkang-red-apple/shot-02.jpg",
+    "/images/works/imports/huierkang-red-apple/shot-03.jpg",
+    "/images/works/imports/huierkang-red-apple/shot-04.jpg"
   ],
   "thumbs": [
     {
@@ -55,5 +55,6 @@
     "partition": "",
     "desc": "",
     "url": "https://www.bilibili.com/video/BV1ZDPizZEnu/"
-  }
+  },
+  "image": "/images/works/imports/huierkang-red-apple/cover.jpg"
 }
