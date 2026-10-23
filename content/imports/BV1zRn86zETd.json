@@ -1,0 +1,59 @@
+{
+  "no": "",
+  "slug": "junlin-brand-film",
+  "title": "君临塑+_品牌片",
+  "en": "Junlin Plastic+ Brand Film",
+  "group": "Brand & Product Visual",
+  "category": "品牌形象片",
+  "industry": "制造 / 新材料",
+  "year": "2026",
+  "summary": "君临塑+ 品牌形象片。全片由竹叶、水面与倒影构成：一片叶子落进水里，实景与倒影对称，配「简」是态度、是留白、是回归的文案，把材料企业的产品语言转成东方美学的克制表达。没有工厂镜头，也没有参数罗列。",
+  "description": "君临塑+ 品牌形象片。全片由竹叶、水面与倒影构成：一片叶子落进水里，实景与倒影对称，配「简」是态度、是留白、是回归的文案，把材料企业的产品语言转成东方美学的克制表达。没有工厂镜头，也没有参数罗列。",
+  "tags": ["AI Video", "Manufacturing", "Brand Film", "Minimal"],
+  "meta": [""],
+  "cover": "/public/images/works/imports/junlin-brand-film/cover.jpg",
+  "images": [
+    "/public/images/works/imports/junlin-brand-film/shot-01.jpg",
+    "/public/images/works/imports/junlin-brand-film/shot-02.jpg",
+    "/public/images/works/imports/junlin-brand-film/shot-03.jpg",
+    "/public/images/works/imports/junlin-brand-film/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/public/images/works/imports/junlin-brand-film/shot-01.jpg",
+      "alt": "君临塑+_品牌片"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/public/images/works/imports/junlin-brand-film/shot-02.jpg",
+      "alt": "君临塑+_品牌片"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/public/images/works/imports/junlin-brand-film/shot-03.jpg",
+      "alt": "君临塑+_品牌片"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/public/images/works/imports/junlin-brand-film/shot-04.jpg",
+      "alt": "君临塑+_品牌片"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1zRn86zETd/",
+    "title": "君临塑+_品牌片",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1zRn86zETd",
+    "duration": 51,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1zRn86zETd/"
+  }
+}

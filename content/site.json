@@ -651,6 +651,159 @@
         }
       ],
       "serviceIds": ["ai-concept-visual", "social-content-visual"]
+    },
+    {
+      "no": "07",
+      "slug": "quanzhou-temple-tour",
+      "title": "小沙弥的「私访」记",
+      "en": "A Little Monk Visit to Quanzhou",
+      "group": "AI Visual Direction",
+      "category": "文旅短片",
+      "industry": "文旅 / 城市形象",
+      "year": "2026",
+      "summary": "泉州文旅短片《小沙弥的「私访」记》。主角是黏土定格质感的小沙弥，从一碗滚烫的面线糊，到香火缭绕的天后宫，用轻喜剧的方式带观众走一遍泉州的日常：神仙和人间，住在同一条街上。",
+      "description": "泉州文旅短片《小沙弥的「私访」记》。主角是黏土定格质感的小沙弥，从一碗滚烫的面线糊，到香火缭绕的天后宫，用轻喜剧的方式带观众走一遍泉州的日常：神仙和人间，住在同一条街上。",
+      "tags": ["AI Video", "Cultural Tourism", "Storytelling", "Clay"],
+      "meta": [""],
+      "cover": "/public/images/works/imports/quanzhou-temple-tour/cover.jpg",
+      "images": [
+        "/public/images/works/imports/quanzhou-temple-tour/shot-01.jpg",
+        "/public/images/works/imports/quanzhou-temple-tour/shot-02.jpg",
+        "/public/images/works/imports/quanzhou-temple-tour/shot-03.jpg",
+        "/public/images/works/imports/quanzhou-temple-tour/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/public/images/works/imports/quanzhou-temple-tour/shot-01.jpg",
+          "alt": "小沙弥的“私访”记-泉州文旅短片"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/public/images/works/imports/quanzhou-temple-tour/shot-02.jpg",
+          "alt": "小沙弥的“私访”记-泉州文旅短片"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/public/images/works/imports/quanzhou-temple-tour/shot-03.jpg",
+          "alt": "小沙弥的“私访”记-泉州文旅短片"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/public/images/works/imports/quanzhou-temple-tour/shot-04.jpg",
+          "alt": "小沙弥的“私访”记-泉州文旅短片"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1TZPjzpE7o/",
+        "title": "小沙弥的“私访”记-泉州文旅短片",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 7
+    },
+    {
+      "no": "08",
+      "slug": "huierkang-red-apple",
+      "title": "惠尔康红苹果 · 开工你最红",
+      "en": "Huierkang Red Apple New Year Short",
+      "group": "Brand & Product Visual",
+      "category": "社媒短视频",
+      "industry": "食品饮料",
+      "year": "2026",
+      "summary": "惠尔康红苹果的新年开工短片。办公室、笔记本电脑和一罐红苹果构成全部场景：黑白环境里，红色易拉罐是唯一的颜色，手拉开拉环的那一刻完成「开工你最红」的祝福。15 秒，一条纯产品向的社媒短片。",
+      "description": "惠尔康红苹果的新年开工短片。办公室、笔记本电脑和一罐红苹果构成全部场景：黑白环境里，红色易拉罐是唯一的颜色，手拉开拉环的那一刻完成「开工你最红」的祝福。15 秒，一条纯产品向的社媒短片。",
+      "tags": ["AI Video", "FMCG", "Social Short", "Product"],
+      "meta": [""],
+      "cover": "/public/images/works/imports/huierkang-red-apple/cover.jpg",
+      "images": [
+        "/public/images/works/imports/huierkang-red-apple/shot-01.jpg",
+        "/public/images/works/imports/huierkang-red-apple/shot-02.jpg",
+        "/public/images/works/imports/huierkang-red-apple/shot-03.jpg",
+        "/public/images/works/imports/huierkang-red-apple/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/public/images/works/imports/huierkang-red-apple/shot-01.jpg",
+          "alt": "惠尔康红苹果-新年开工你最红-AI视频"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/public/images/works/imports/huierkang-red-apple/shot-02.jpg",
+          "alt": "惠尔康红苹果-新年开工你最红-AI视频"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/public/images/works/imports/huierkang-red-apple/shot-03.jpg",
+          "alt": "惠尔康红苹果-新年开工你最红-AI视频"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/public/images/works/imports/huierkang-red-apple/shot-04.jpg",
+          "alt": "惠尔康红苹果-新年开工你最红-AI视频"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1ZDPizZEnu/",
+        "title": "惠尔康红苹果-新年开工你最红-AI视频",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 8
+    },
+    {
+      "no": "09",
+      "slug": "junlin-brand-film",
+      "title": "君临塑+ 品牌片",
+      "en": "Junlin Plastic+ Brand Film",
+      "group": "Brand & Product Visual",
+      "category": "品牌形象片",
+      "industry": "制造 / 新材料",
+      "year": "2026",
+      "summary": "君临塑+ 品牌形象片。全片由竹叶、水面与倒影构成：一片叶子落进水里，实景与倒影对称，配「简」是态度、是留白、是回归的文案，把材料企业的产品语言转成东方美学的克制表达。没有工厂镜头，也没有参数罗列。",
+      "description": "君临塑+ 品牌形象片。全片由竹叶、水面与倒影构成：一片叶子落进水里，实景与倒影对称，配「简」是态度、是留白、是回归的文案，把材料企业的产品语言转成东方美学的克制表达。没有工厂镜头，也没有参数罗列。",
+      "tags": ["AI Video", "Manufacturing", "Brand Film", "Minimal"],
+      "meta": [""],
+      "cover": "/public/images/works/imports/junlin-brand-film/cover.jpg",
+      "images": [
+        "/public/images/works/imports/junlin-brand-film/shot-01.jpg",
+        "/public/images/works/imports/junlin-brand-film/shot-02.jpg",
+        "/public/images/works/imports/junlin-brand-film/shot-03.jpg",
+        "/public/images/works/imports/junlin-brand-film/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/public/images/works/imports/junlin-brand-film/shot-01.jpg",
+          "alt": "君临塑+_品牌片"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/public/images/works/imports/junlin-brand-film/shot-02.jpg",
+          "alt": "君临塑+_品牌片"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/public/images/works/imports/junlin-brand-film/shot-03.jpg",
+          "alt": "君临塑+_品牌片"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/public/images/works/imports/junlin-brand-film/shot-04.jpg",
+          "alt": "君临塑+_品牌片"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1zRn86zETd/",
+        "title": "君临塑+_品牌片",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 9
     }
   ],
   "aiStudio": {

@@ -1,0 +1,59 @@
+{
+  "no": "",
+  "slug": "quanzhou-temple-tour",
+  "title": "小沙弥的“私访”记-泉州文旅短片",
+  "en": "A Little Monk Visit to Quanzhou",
+  "group": "AI Visual Direction",
+  "category": "文旅短片",
+  "industry": "文旅 / 城市形象",
+  "year": "2026",
+  "summary": "泉州文旅短片《小沙弥的「私访」记》。主角是黏土定格质感的小沙弥，从一碗滚烫的面线糊，到香火缭绕的天后宫，用轻喜剧的方式带观众走一遍泉州的日常：神仙和人间，住在同一条街上。",
+  "description": "泉州文旅短片《小沙弥的「私访」记》。主角是黏土定格质感的小沙弥，从一碗滚烫的面线糊，到香火缭绕的天后宫，用轻喜剧的方式带观众走一遍泉州的日常：神仙和人间，住在同一条街上。",
+  "tags": ["AI Video", "Cultural Tourism", "Storytelling", "Clay"],
+  "meta": [""],
+  "cover": "/public/images/works/imports/quanzhou-temple-tour/cover.jpg",
+  "images": [
+    "/public/images/works/imports/quanzhou-temple-tour/shot-01.jpg",
+    "/public/images/works/imports/quanzhou-temple-tour/shot-02.jpg",
+    "/public/images/works/imports/quanzhou-temple-tour/shot-03.jpg",
+    "/public/images/works/imports/quanzhou-temple-tour/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/public/images/works/imports/quanzhou-temple-tour/shot-01.jpg",
+      "alt": "小沙弥的“私访”记-泉州文旅短片"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/public/images/works/imports/quanzhou-temple-tour/shot-02.jpg",
+      "alt": "小沙弥的“私访”记-泉州文旅短片"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/public/images/works/imports/quanzhou-temple-tour/shot-03.jpg",
+      "alt": "小沙弥的“私访”记-泉州文旅短片"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/public/images/works/imports/quanzhou-temple-tour/shot-04.jpg",
+      "alt": "小沙弥的“私访”记-泉州文旅短片"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1TZPjzpE7o/",
+    "title": "小沙弥的“私访”记-泉州文旅短片",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1TZPjzpE7o",
+    "duration": 347,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "小沙弥的“私访”记-泉州文旅短片",
+    "url": "https://www.bilibili.com/video/BV1TZPjzpE7o/"
+  }
+}
