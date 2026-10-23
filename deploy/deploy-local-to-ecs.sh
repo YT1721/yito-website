@@ -31,7 +31,16 @@ echo "==> Syncing remote content"
 mkdir -p tmp
 scp "${SSH_OPTS[@]}" "$SERVER:$APP_DIR/content/site.json" tmp/remote-site.json
 
-if [ "$PUSH_CONTENT" -eq 0 ] && ! cmp -s content/site.json tmp/remote-site.json; then
+# 按 JSON 语义比较：后台保存过的文件会被重新排版，字节不同但内容一致
+same_content() {
+  node -e '
+    const fs = require("fs");
+    const norm = (p) => JSON.stringify(JSON.parse(fs.readFileSync(p, "utf8")));
+    process.exit(norm(process.argv[1]) === norm(process.argv[2]) ? 0 : 1);
+  ' content/site.json tmp/remote-site.json 2>/dev/null
+}
+
+if [ "$PUSH_CONTENT" -eq 0 ] && ! same_content; then
   echo "!! 本地 content/site.json 与线上不一致。"
   echo "   发布内容请加 --push-content；放弃本地改动请先执行："
   echo "   cp tmp/remote-site.json content/site.json"

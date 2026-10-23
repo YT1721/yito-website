@@ -2434,6 +2434,11 @@ a {
   min-height: 36.85rem;
 }
 
+/* 恰好 4 张图时，最后一张横跨两列，补满右下空位 */
+.case-gallery-grid figure:last-child:nth-child(4) {
+  grid-column: span 2;
+}
+
 .case-gallery-grid figcaption {
   position: absolute;
   right: 0.8rem;
