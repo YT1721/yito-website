@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "apollo",
+  "title": "APOLLO · 越野电摩品牌形象片",
+  "en": "APOLLO E-Motorbike Brand Film",
+  "group": "Brand & Product Visual",
+  "category": "品牌形象片",
+  "industry": "科技",
+  "year": "2026",
+  "summary": "为越野电摩品牌 APOLLO 制作的品牌形象片。荒野、竹林与山地之间，骑手驾驭电摩贴地穿行，低机位跟拍与扬尘特写强化速度感与机械质感；字幕「勇敢，从学会控制开始」「控制，从这里开始」点出品牌对操控的表达。",
+  "description": "为越野电摩品牌 APOLLO 制作的品牌形象片。荒野、竹林与山地之间，骑手驾驭电摩贴地穿行，低机位跟拍与扬尘特写强化速度感与机械质感；字幕「勇敢，从学会控制开始」「控制，从这里开始」点出品牌对操控的表达。",
+  "tags": ["AI Video", "Brand Film", "E-Motorbike", "Cinematic"],
+  "meta": [""],
+  "cover": "/images/works/imports/apollo/cover.jpg",
+  "image": "/images/works/imports/apollo/cover.jpg",
+  "images": [
+    "/images/works/imports/apollo/shot-01.jpg",
+    "/images/works/imports/apollo/shot-02.jpg",
+    "/images/works/imports/apollo/shot-03.jpg",
+    "/images/works/imports/apollo/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/apollo/shot-01.jpg",
+      "alt": "APOLLO"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/apollo/shot-02.jpg",
+      "alt": "APOLLO"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/apollo/shot-03.jpg",
+      "alt": "APOLLO"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/apollo/shot-04.jpg",
+      "alt": "APOLLO"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1ZwnY6kEcM/",
+    "title": "APOLLO",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1ZwnY6kEcM",
+    "duration": 190,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1ZwnY6kEcM/"
+  }
+}

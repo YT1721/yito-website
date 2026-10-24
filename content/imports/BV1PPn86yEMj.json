@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "cleaning-brush",
+  "title": "长柄锅刷 AI 创意短片",
+  "en": "Cleaning Brush Creative Short",
+  "group": "Brand & Product Visual",
+  "category": "社媒短视频",
+  "industry": "家居",
+  "year": "2026",
+  "summary": "以「妈妈喊儿子」的家庭剧情开场，随后用 AI 创意画面让长柄锅刷从天花板垂落、立在锅盖之上，配合刷毛挂着水珠的微距特写，是一支带反转节奏的创意产品短片。",
+  "description": "以「妈妈喊儿子」的家庭剧情开场，随后用 AI 创意画面让长柄锅刷从天花板垂落、立在锅盖之上，配合刷毛挂着水珠的微距特写，是一支带反转节奏的创意产品短片。",
+  "tags": ["AI Video", "Creative Short", "Cleaning Brush", "Story Hook"],
+  "meta": [""],
+  "cover": "/images/works/imports/cleaning-brush/cover.jpg",
+  "image": "/images/works/imports/cleaning-brush/cover.jpg",
+  "images": [
+    "/images/works/imports/cleaning-brush/shot-01.jpg",
+    "/images/works/imports/cleaning-brush/shot-02.jpg",
+    "/images/works/imports/cleaning-brush/shot-03.jpg",
+    "/images/works/imports/cleaning-brush/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/cleaning-brush/shot-01.jpg",
+      "alt": "刷子45s-Ai创意小视频"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/cleaning-brush/shot-02.jpg",
+      "alt": "刷子45s-Ai创意小视频"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/cleaning-brush/shot-03.jpg",
+      "alt": "刷子45s-Ai创意小视频"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/cleaning-brush/shot-04.jpg",
+      "alt": "刷子45s-Ai创意小视频"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1PPn86yEMj/",
+    "title": "刷子45s-Ai创意小视频",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1PPn86yEMj",
+    "duration": 59,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1PPn86yEMj/"
+  }
+}

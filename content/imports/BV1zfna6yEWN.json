@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "peace-elite-ai-video",
+  "title": "和平精英 AI 短片 · 热血战场",
+  "en": "Peace Elite AI Short · Battleground",
+  "group": "AI Visual Direction",
+  "category": "游戏内容",
+  "industry": "游戏",
+  "year": "2026",
+  "summary": "仿和平精英游戏对局的 AI 二创短片。从运输机跳伞开局，到室内楼梯间的近距离交火，画面完整叠加游戏 UI、键位提示与小地图，配合「欢迎来到热血战场」「狭路相逢一击制胜」的大字标语，模拟真实对局的紧张节奏。",
+  "description": "仿和平精英游戏对局的 AI 二创短片。从运输机跳伞开局，到室内楼梯间的近距离交火，画面完整叠加游戏 UI、键位提示与小地图，配合「欢迎来到热血战场」「狭路相逢一击制胜」的大字标语，模拟真实对局的紧张节奏。",
+  "tags": ["AI Video", "Peace Elite", "FPS", "Game UI"],
+  "meta": [""],
+  "cover": "/images/works/imports/peace-elite-ai-video/cover.jpg",
+  "image": "/images/works/imports/peace-elite-ai-video/cover.jpg",
+  "images": [
+    "/images/works/imports/peace-elite-ai-video/shot-01.jpg",
+    "/images/works/imports/peace-elite-ai-video/shot-02.jpg",
+    "/images/works/imports/peace-elite-ai-video/shot-03.jpg",
+    "/images/works/imports/peace-elite-ai-video/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/peace-elite-ai-video/shot-01.jpg",
+      "alt": "和平精英AI视频"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/peace-elite-ai-video/shot-02.jpg",
+      "alt": "和平精英AI视频"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/peace-elite-ai-video/shot-03.jpg",
+      "alt": "和平精英AI视频"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/peace-elite-ai-video/shot-04.jpg",
+      "alt": "和平精英AI视频"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1zfna6yEWN/",
+    "title": "和平精英AI视频",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1zfna6yEWN",
+    "duration": 35,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1zfna6yEWN/"
+  }
+}

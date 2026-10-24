@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "hardworking-salesman",
+  "title": "如此努力销售 · 创意短片",
+  "en": "The Hardworking Salesman",
+  "group": "AI Visual Direction",
+  "category": "社媒短视频",
+  "industry": "综合",
+  "year": "2026",
+  "summary": "一条 14 秒的竖屏创意短片：城市街头，一名西装销售肩扛整台挖掘机的履带底盘，一边吃力前行一边打电话谈业务。用夸张的视觉梗表现「努力销售」的日常状态。",
+  "description": "一条 14 秒的竖屏创意短片：城市街头，一名西装销售肩扛整台挖掘机的履带底盘，一边吃力前行一边打电话谈业务。用夸张的视觉梗表现「努力销售」的日常状态。",
+  "tags": ["AI Video", "Creative Ad", "Humor", "Short Video"],
+  "meta": [""],
+  "cover": "/images/works/imports/hardworking-salesman/cover.jpg",
+  "image": "/images/works/imports/hardworking-salesman/cover.jpg",
+  "images": [
+    "/images/works/imports/hardworking-salesman/shot-01.jpg",
+    "/images/works/imports/hardworking-salesman/shot-02.jpg",
+    "/images/works/imports/hardworking-salesman/shot-03.jpg",
+    "/images/works/imports/hardworking-salesman/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/hardworking-salesman/shot-01.jpg",
+      "alt": "如此努力销售"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/hardworking-salesman/shot-02.jpg",
+      "alt": "如此努力销售"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/hardworking-salesman/shot-03.jpg",
+      "alt": "如此努力销售"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/hardworking-salesman/shot-04.jpg",
+      "alt": "如此努力销售"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1zcnY65EPR/",
+    "title": "如此努力销售",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1zcnY65EPR",
+    "duration": 14,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1zcnY65EPR/"
+  }
+}

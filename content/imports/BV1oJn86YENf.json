@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "cleaning-tvc-short",
+  "title": "厨房清洁用品 TVC",
+  "en": "Kitchen Cleaning TVC",
+  "group": "Brand & Product Visual",
+  "category": "TVC",
+  "industry": "家居",
+  "year": "2026",
+  "summary": "以家庭厨房为场景的清洁用品 TVC，串联创意清洁擦、周抛纤维抹布等多款产品，呈现「不伤陶瓷釉面、不易刮花不锈钢表面」等卖点，收束于「让每个生活角落多一份洁净、安心与笑容」。",
+  "description": "以家庭厨房为场景的清洁用品 TVC，串联创意清洁擦、周抛纤维抹布等多款产品，呈现「不伤陶瓷釉面、不易刮花不锈钢表面」等卖点，收束于「让每个生活角落多一份洁净、安心与笑容」。",
+  "tags": ["AI Video", "TVC", "Home Cleaning", "Family Scene"],
+  "meta": [""],
+  "cover": "/images/works/imports/cleaning-tvc-short/cover.jpg",
+  "image": "/images/works/imports/cleaning-tvc-short/cover.jpg",
+  "images": [
+    "/images/works/imports/cleaning-tvc-short/shot-01.jpg",
+    "/images/works/imports/cleaning-tvc-short/shot-02.jpg",
+    "/images/works/imports/cleaning-tvc-short/shot-03.jpg",
+    "/images/works/imports/cleaning-tvc-short/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/cleaning-tvc-short/shot-01.jpg",
+      "alt": "品牌产品小清洁TVC-小短片"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/cleaning-tvc-short/shot-02.jpg",
+      "alt": "品牌产品小清洁TVC-小短片"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/cleaning-tvc-short/shot-03.jpg",
+      "alt": "品牌产品小清洁TVC-小短片"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/cleaning-tvc-short/shot-04.jpg",
+      "alt": "品牌产品小清洁TVC-小短片"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1oJn86YENf/",
+    "title": "品牌产品小清洁TVC-小短片",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1oJn86YENf",
+    "duration": 166,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1oJn86YENf/"
+  }
+}

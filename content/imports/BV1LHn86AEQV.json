@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "food-storage-bags",
+  "title": "抗菌海鲜保鲜袋 产品短片",
+  "en": "Antibacterial Seafood Bags",
+  "group": "Brand & Product Visual",
+  "category": "产品广告片",
+  "industry": "厨具",
+  "year": "2026",
+  "summary": "暗调背景下的产品视觉短片，展示金色与蓝色抗菌海鲜保鲜袋的袋身、封口细节与线稿鱼虾图案，并以螃蟹实拍呈现海鲜收纳场景，突出袋身「Antibacterial Seafood Bag」的产品定位。",
+  "description": "暗调背景下的产品视觉短片，展示金色与蓝色抗菌海鲜保鲜袋的袋身、封口细节与线稿鱼虾图案，并以螃蟹实拍呈现海鲜收纳场景，突出袋身「Antibacterial Seafood Bag」的产品定位。",
+  "tags": ["AI Video", "Product Film", "Food Storage Bag", "Dark Tone"],
+  "meta": [""],
+  "cover": "/images/works/imports/food-storage-bags/cover.jpg",
+  "image": "/images/works/imports/food-storage-bags/cover.jpg",
+  "images": [
+    "/images/works/imports/food-storage-bags/shot-01.jpg",
+    "/images/works/imports/food-storage-bags/shot-02.jpg",
+    "/images/works/imports/food-storage-bags/shot-03.jpg",
+    "/images/works/imports/food-storage-bags/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/food-storage-bags/shot-01.jpg",
+      "alt": "保鲜袋45s营销视频"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/food-storage-bags/shot-02.jpg",
+      "alt": "保鲜袋45s营销视频"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/food-storage-bags/shot-03.jpg",
+      "alt": "保鲜袋45s营销视频"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/food-storage-bags/shot-04.jpg",
+      "alt": "保鲜袋45s营销视频"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1LHn86AEQV/",
+    "title": "保鲜袋45s营销视频",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1LHn86AEQV",
+    "duration": 46,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1LHn86AEQV/"
+  }
+}

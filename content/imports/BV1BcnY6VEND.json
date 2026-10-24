@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "little-road-roller",
+  "title": "种下小压路机 · 创意短片",
+  "en": "Plant a Little Road Roller",
+  "group": "AI Visual Direction",
+  "category": "创意短片",
+  "industry": "综合",
+  "year": "2026",
+  "summary": "工地实拍结合创意概念的竖屏短片：工人捧着两台玩具工程车，把小压路机埋进土里「播种」，等待它自动长大、自己开工。用种庄稼的逻辑讲工程机械，节奏轻快。",
+  "description": "工地实拍结合创意概念的竖屏短片：工人捧着两台玩具工程车，把小压路机埋进土里「播种」，等待它自动长大、自己开工。用种庄稼的逻辑讲工程机械，节奏轻快。",
+  "tags": ["AI Video", "Creative", "Construction", "Short Video"],
+  "meta": [""],
+  "cover": "/images/works/imports/little-road-roller/cover.jpg",
+  "image": "/images/works/imports/little-road-roller/cover.jpg",
+  "images": [
+    "/images/works/imports/little-road-roller/shot-01.jpg",
+    "/images/works/imports/little-road-roller/shot-02.jpg",
+    "/images/works/imports/little-road-roller/shot-03.jpg",
+    "/images/works/imports/little-road-roller/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/little-road-roller/shot-01.jpg",
+      "alt": "种下小压路机，自动长大，自己上班"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/little-road-roller/shot-02.jpg",
+      "alt": "种下小压路机，自动长大，自己上班"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/little-road-roller/shot-03.jpg",
+      "alt": "种下小压路机，自动长大，自己上班"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/little-road-roller/shot-04.jpg",
+      "alt": "种下小压路机，自动长大，自己上班"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1BcnY6VEND/",
+    "title": "种下小压路机，自动长大，自己上班",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1BcnY6VEND",
+    "duration": 26,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1BcnY6VEND/"
+  }
+}

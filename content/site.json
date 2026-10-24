@@ -1639,6 +1639,1046 @@
       },
       "featured": false,
       "homepageOrder": 25
+    },
+    {
+      "no": "26",
+      "slug": "bamboo-chopsticks",
+      "title": "一次性竹筷 产品短片",
+      "en": "Disposable Bamboo Chopsticks",
+      "group": "Brand & Product Visual",
+      "category": "产品广告片",
+      "industry": "厨具",
+      "year": "2026",
+      "summary": "晚饭前一家人摆桌备餐的生活场景中，取出新鲜生活一次性竹筷分发给家人，字幕落在「一双筷子，也可以干净、自然、让人放心」，以家庭叙事带出这款餐厨用品。",
+      "description": "晚饭前一家人摆桌备餐的生活场景中，取出新鲜生活一次性竹筷分发给家人，字幕落在「一双筷子，也可以干净、自然、让人放心」，以家庭叙事带出这款餐厨用品。",
+      "tags": ["AI Video", "Product Film", "Bamboo Chopsticks", "Family Scene"],
+      "meta": [""],
+      "cover": "/images/works/imports/bamboo-chopsticks/cover.jpg",
+      "image": "/images/works/imports/bamboo-chopsticks/cover.jpg",
+      "images": [
+        "/images/works/imports/bamboo-chopsticks/shot-01.jpg",
+        "/images/works/imports/bamboo-chopsticks/shot-02.jpg",
+        "/images/works/imports/bamboo-chopsticks/shot-03.jpg",
+        "/images/works/imports/bamboo-chopsticks/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/bamboo-chopsticks/shot-01.jpg",
+          "alt": "竹筷子45s"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/bamboo-chopsticks/shot-02.jpg",
+          "alt": "竹筷子45s"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/bamboo-chopsticks/shot-03.jpg",
+          "alt": "竹筷子45s"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/bamboo-chopsticks/shot-04.jpg",
+          "alt": "竹筷子45s"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV15Hn86AERv/",
+        "title": "竹筷子45s",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 26
+    },
+    {
+      "no": "27",
+      "slug": "zhongping-antibacterial",
+      "title": "中平抗菌 · 品牌形象片",
+      "en": "Zhongping Antibacterial Brand Film",
+      "group": "Brand & Product Visual",
+      "category": "品牌形象片",
+      "industry": "家居",
+      "year": "2026",
+      "summary": "为中平抗菌制作的品牌形象片。银白色未来实验室里，头戴透明头盔、长着触角的机器人吉祥物围绕全息投影工作，保鲜盒、水杯等抗菌塑料制品悬浮展示；随后吉祥物飞入家庭冰箱，把科技感落回日常保鲜场景。",
+      "description": "为中平抗菌制作的品牌形象片。银白色未来实验室里，头戴透明头盔、长着触角的机器人吉祥物围绕全息投影工作，保鲜盒、水杯等抗菌塑料制品悬浮展示；随后吉祥物飞入家庭冰箱，把科技感落回日常保鲜场景。",
+      "tags": ["AI Video", "Brand Film", "Mascot", "Futuristic"],
+      "meta": [""],
+      "cover": "/images/works/imports/zhongping-antibacterial/cover.jpg",
+      "image": "/images/works/imports/zhongping-antibacterial/cover.jpg",
+      "images": [
+        "/images/works/imports/zhongping-antibacterial/shot-01.jpg",
+        "/images/works/imports/zhongping-antibacterial/shot-02.jpg",
+        "/images/works/imports/zhongping-antibacterial/shot-03.jpg",
+        "/images/works/imports/zhongping-antibacterial/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/zhongping-antibacterial/shot-01.jpg",
+          "alt": "中平抗菌品牌篇"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/zhongping-antibacterial/shot-02.jpg",
+          "alt": "中平抗菌品牌篇"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/zhongping-antibacterial/shot-03.jpg",
+          "alt": "中平抗菌品牌篇"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/zhongping-antibacterial/shot-04.jpg",
+          "alt": "中平抗菌品牌篇"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV17jn86iEXY/",
+        "title": "中平抗菌品牌篇",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 27
+    },
+    {
+      "no": "28",
+      "slug": "little-road-roller",
+      "title": "种下小压路机 · 创意短片",
+      "en": "Plant a Little Road Roller",
+      "group": "AI Visual Direction",
+      "category": "创意短片",
+      "industry": "综合",
+      "year": "2026",
+      "summary": "工地实拍结合创意概念的竖屏短片：工人捧着两台玩具工程车，把小压路机埋进土里「播种」，等待它自动长大、自己开工。用种庄稼的逻辑讲工程机械，节奏轻快。",
+      "description": "工地实拍结合创意概念的竖屏短片：工人捧着两台玩具工程车，把小压路机埋进土里「播种」，等待它自动长大、自己开工。用种庄稼的逻辑讲工程机械，节奏轻快。",
+      "tags": ["AI Video", "Creative", "Construction", "Short Video"],
+      "meta": [""],
+      "cover": "/images/works/imports/little-road-roller/cover.jpg",
+      "image": "/images/works/imports/little-road-roller/cover.jpg",
+      "images": [
+        "/images/works/imports/little-road-roller/shot-01.jpg",
+        "/images/works/imports/little-road-roller/shot-02.jpg",
+        "/images/works/imports/little-road-roller/shot-03.jpg",
+        "/images/works/imports/little-road-roller/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/little-road-roller/shot-01.jpg",
+          "alt": "种下小压路机，自动长大，自己上班"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/little-road-roller/shot-02.jpg",
+          "alt": "种下小压路机，自动长大，自己上班"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/little-road-roller/shot-03.jpg",
+          "alt": "种下小压路机，自动长大，自己上班"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/little-road-roller/shot-04.jpg",
+          "alt": "种下小压路机，自动长大，自己上班"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1BcnY6VEND/",
+        "title": "种下小压路机，自动长大，自己上班",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 28
+    },
+    {
+      "no": "29",
+      "slug": "kangbach-product",
+      "title": "康巴赫 · 炒锅产品广告",
+      "en": "Kangbach Wok Product Film",
+      "group": "Brand & Product Visual",
+      "category": "产品广告片",
+      "industry": "厨具",
+      "year": "2026",
+      "summary": "为康巴赫炒锅制作的产品广告片。金色金属粒子汇聚成型，穿过科幻感的圆形舱室，最终落回餐桌上的不锈钢炒锅；剖面镜头逐层展示锅体结构——仿生不沾结构层、真钛材料、316L 不锈钢、高导热纯铝与优质导磁不锈钢。",
+      "description": "为康巴赫炒锅制作的产品广告片。金色金属粒子汇聚成型，穿过科幻感的圆形舱室，最终落回餐桌上的不锈钢炒锅；剖面镜头逐层展示锅体结构——仿生不沾结构层、真钛材料、316L 不锈钢、高导热纯铝与优质导磁不锈钢。",
+      "tags": ["AI Video", "Product Film", "Cookware", "CGI"],
+      "meta": [""],
+      "cover": "/images/works/imports/kangbach-product/cover.jpg",
+      "image": "/images/works/imports/kangbach-product/cover.jpg",
+      "images": [
+        "/images/works/imports/kangbach-product/shot-01.jpg",
+        "/images/works/imports/kangbach-product/shot-02.jpg",
+        "/images/works/imports/kangbach-product/shot-03.jpg",
+        "/images/works/imports/kangbach-product/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/kangbach-product/shot-01.jpg",
+          "alt": "康巴赫产品宣传"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/kangbach-product/shot-02.jpg",
+          "alt": "康巴赫产品宣传"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/kangbach-product/shot-03.jpg",
+          "alt": "康巴赫产品宣传"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/kangbach-product/shot-04.jpg",
+          "alt": "康巴赫产品宣传"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1BcnY6VEvy/",
+        "title": "康巴赫产品宣传",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 29
+    },
+    {
+      "no": "30",
+      "slug": "bath-scrub-block",
+      "title": "搓澡块 种草短片",
+      "en": "Bath Scrub Block",
+      "group": "Brand & Product Visual",
+      "category": "社媒短视频",
+      "industry": "日化",
+      "year": "2026",
+      "summary": "自拍视角的浴室种草短片，从「夏天穿短袖短裙，胳膊腿灰灰的真的很显脏」的痛点切入，展示搓澡块的外观与上手擦拭后的顺滑肤感，呈现这款个护清洁用品的使用体验。",
+      "description": "自拍视角的浴室种草短片，从「夏天穿短袖短裙，胳膊腿灰灰的真的很显脏」的痛点切入，展示搓澡块的外观与上手擦拭后的顺滑肤感，呈现这款个护清洁用品的使用体验。",
+      "tags": ["AI Video", "UGC Style", "Body Care", "Self-shot"],
+      "meta": [""],
+      "cover": "/images/works/imports/bath-scrub-block/cover.jpg",
+      "image": "/images/works/imports/bath-scrub-block/cover.jpg",
+      "images": [
+        "/images/works/imports/bath-scrub-block/shot-01.jpg",
+        "/images/works/imports/bath-scrub-block/shot-02.jpg",
+        "/images/works/imports/bath-scrub-block/shot-03.jpg",
+        "/images/works/imports/bath-scrub-block/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/bath-scrub-block/shot-01.jpg",
+          "alt": "搓澡块45s营销视频"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/bath-scrub-block/shot-02.jpg",
+          "alt": "搓澡块45s营销视频"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/bath-scrub-block/shot-03.jpg",
+          "alt": "搓澡块45s营销视频"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/bath-scrub-block/shot-04.jpg",
+          "alt": "搓澡块45s营销视频"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1CPn86yEjR/",
+        "title": "搓澡块45s营销视频",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 30
+    },
+    {
+      "no": "31",
+      "slug": "delta-force-honglang",
+      "title": "三角洲行动 · 红狼 AI 短片",
+      "en": "Delta Force · Honglang AI Short",
+      "group": "AI Visual Direction",
+      "category": "游戏内容",
+      "industry": "游戏",
+      "year": "2026",
+      "summary": "以三角洲行动角色红狼为原型的写实风 AI 二创短片。夕阳下的废弃工厂与硝烟弥漫的战场中，士兵持枪警戒、驾驶全地形车穿行废墟，面部特写呈现汗水与装备细节，走硬核军事写实路线。",
+      "description": "以三角洲行动角色红狼为原型的写实风 AI 二创短片。夕阳下的废弃工厂与硝烟弥漫的战场中，士兵持枪警戒、驾驶全地形车穿行废墟，面部特写呈现汗水与装备细节，走硬核军事写实路线。",
+      "tags": ["AI Video", "Delta Force", "Military", "Realistic CGI"],
+      "meta": [""],
+      "cover": "/images/works/imports/delta-force-honglang/cover.jpg",
+      "image": "/images/works/imports/delta-force-honglang/cover.jpg",
+      "images": [
+        "/images/works/imports/delta-force-honglang/shot-01.jpg",
+        "/images/works/imports/delta-force-honglang/shot-02.jpg",
+        "/images/works/imports/delta-force-honglang/shot-03.jpg",
+        "/images/works/imports/delta-force-honglang/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/delta-force-honglang/shot-01.jpg",
+          "alt": "三角洲行动-红狼"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/delta-force-honglang/shot-02.jpg",
+          "alt": "三角洲行动-红狼"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/delta-force-honglang/shot-03.jpg",
+          "alt": "三角洲行动-红狼"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/delta-force-honglang/shot-04.jpg",
+          "alt": "三角洲行动-红狼"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1Jfna61E7k/",
+        "title": "三角洲行动-红狼",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 31
+    },
+    {
+      "no": "32",
+      "slug": "lazy-box",
+      "title": "小懒盒保鲜盒 产品短片",
+      "en": "Lazy Box Food Containers",
+      "group": "Brand & Product Visual",
+      "category": "产品广告片",
+      "industry": "厨具",
+      "year": "2026",
+      "summary": "从冰箱内部视角开场的产品短片，展示小懒盒保鲜盒多规格、多彩盖的组合陈列，以及果蔬食材装入后的收纳状态，呈现其在家庭保鲜与轻食分装场景中的使用方式。",
+      "description": "从冰箱内部视角开场的产品短片，展示小懒盒保鲜盒多规格、多彩盖的组合陈列，以及果蔬食材装入后的收纳状态，呈现其在家庭保鲜与轻食分装场景中的使用方式。",
+      "tags": ["AI Video", "Product Film", "Food Storage", "Kitchenware"],
+      "meta": [""],
+      "cover": "/images/works/imports/lazy-box/cover.jpg",
+      "image": "/images/works/imports/lazy-box/cover.jpg",
+      "images": [
+        "/images/works/imports/lazy-box/shot-01.jpg",
+        "/images/works/imports/lazy-box/shot-02.jpg",
+        "/images/works/imports/lazy-box/shot-03.jpg",
+        "/images/works/imports/lazy-box/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/lazy-box/shot-01.jpg",
+          "alt": "小懒盒45s"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/lazy-box/shot-02.jpg",
+          "alt": "小懒盒45s"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/lazy-box/shot-03.jpg",
+          "alt": "小懒盒45s"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/lazy-box/shot-04.jpg",
+          "alt": "小懒盒45s"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1LHn86AEHi/",
+        "title": "小懒盒45s",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 32
+    },
+    {
+      "no": "33",
+      "slug": "food-storage-bags",
+      "title": "抗菌海鲜保鲜袋 产品短片",
+      "en": "Antibacterial Seafood Bags",
+      "group": "Brand & Product Visual",
+      "category": "产品广告片",
+      "industry": "厨具",
+      "year": "2026",
+      "summary": "暗调背景下的产品视觉短片，展示金色与蓝色抗菌海鲜保鲜袋的袋身、封口细节与线稿鱼虾图案，并以螃蟹实拍呈现海鲜收纳场景，突出袋身「Antibacterial Seafood Bag」的产品定位。",
+      "description": "暗调背景下的产品视觉短片，展示金色与蓝色抗菌海鲜保鲜袋的袋身、封口细节与线稿鱼虾图案，并以螃蟹实拍呈现海鲜收纳场景，突出袋身「Antibacterial Seafood Bag」的产品定位。",
+      "tags": ["AI Video", "Product Film", "Food Storage Bag", "Dark Tone"],
+      "meta": [""],
+      "cover": "/images/works/imports/food-storage-bags/cover.jpg",
+      "image": "/images/works/imports/food-storage-bags/cover.jpg",
+      "images": [
+        "/images/works/imports/food-storage-bags/shot-01.jpg",
+        "/images/works/imports/food-storage-bags/shot-02.jpg",
+        "/images/works/imports/food-storage-bags/shot-03.jpg",
+        "/images/works/imports/food-storage-bags/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/food-storage-bags/shot-01.jpg",
+          "alt": "保鲜袋45s营销视频"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/food-storage-bags/shot-02.jpg",
+          "alt": "保鲜袋45s营销视频"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/food-storage-bags/shot-03.jpg",
+          "alt": "保鲜袋45s营销视频"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/food-storage-bags/shot-04.jpg",
+          "alt": "保鲜袋45s营销视频"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1LHn86AEQV/",
+        "title": "保鲜袋45s营销视频",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 33
+    },
+    {
+      "no": "34",
+      "slug": "cleaning-brush",
+      "title": "长柄锅刷 AI 创意短片",
+      "en": "Cleaning Brush Creative Short",
+      "group": "Brand & Product Visual",
+      "category": "社媒短视频",
+      "industry": "家居",
+      "year": "2026",
+      "summary": "以「妈妈喊儿子」的家庭剧情开场，随后用 AI 创意画面让长柄锅刷从天花板垂落、立在锅盖之上，配合刷毛挂着水珠的微距特写，是一支带反转节奏的创意产品短片。",
+      "description": "以「妈妈喊儿子」的家庭剧情开场，随后用 AI 创意画面让长柄锅刷从天花板垂落、立在锅盖之上，配合刷毛挂着水珠的微距特写，是一支带反转节奏的创意产品短片。",
+      "tags": ["AI Video", "Creative Short", "Cleaning Brush", "Story Hook"],
+      "meta": [""],
+      "cover": "/images/works/imports/cleaning-brush/cover.jpg",
+      "image": "/images/works/imports/cleaning-brush/cover.jpg",
+      "images": [
+        "/images/works/imports/cleaning-brush/shot-01.jpg",
+        "/images/works/imports/cleaning-brush/shot-02.jpg",
+        "/images/works/imports/cleaning-brush/shot-03.jpg",
+        "/images/works/imports/cleaning-brush/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/cleaning-brush/shot-01.jpg",
+          "alt": "刷子45s-Ai创意小视频"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/cleaning-brush/shot-02.jpg",
+          "alt": "刷子45s-Ai创意小视频"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/cleaning-brush/shot-03.jpg",
+          "alt": "刷子45s-Ai创意小视频"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/cleaning-brush/shot-04.jpg",
+          "alt": "刷子45s-Ai创意小视频"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1PPn86yEMj/",
+        "title": "刷子45s-Ai创意小视频",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 34
+    },
+    {
+      "no": "35",
+      "slug": "apollo",
+      "title": "APOLLO · 越野电摩品牌形象片",
+      "en": "APOLLO E-Motorbike Brand Film",
+      "group": "Brand & Product Visual",
+      "category": "品牌形象片",
+      "industry": "科技",
+      "year": "2026",
+      "summary": "为越野电摩品牌 APOLLO 制作的品牌形象片。荒野、竹林与山地之间，骑手驾驭电摩贴地穿行，低机位跟拍与扬尘特写强化速度感与机械质感；字幕「勇敢，从学会控制开始」「控制，从这里开始」点出品牌对操控的表达。",
+      "description": "为越野电摩品牌 APOLLO 制作的品牌形象片。荒野、竹林与山地之间，骑手驾驭电摩贴地穿行，低机位跟拍与扬尘特写强化速度感与机械质感；字幕「勇敢，从学会控制开始」「控制，从这里开始」点出品牌对操控的表达。",
+      "tags": ["AI Video", "Brand Film", "E-Motorbike", "Cinematic"],
+      "meta": [""],
+      "cover": "/images/works/imports/apollo/cover.jpg",
+      "image": "/images/works/imports/apollo/cover.jpg",
+      "images": [
+        "/images/works/imports/apollo/shot-01.jpg",
+        "/images/works/imports/apollo/shot-02.jpg",
+        "/images/works/imports/apollo/shot-03.jpg",
+        "/images/works/imports/apollo/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/apollo/shot-01.jpg",
+          "alt": "APOLLO"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/apollo/shot-02.jpg",
+          "alt": "APOLLO"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/apollo/shot-03.jpg",
+          "alt": "APOLLO"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/apollo/shot-04.jpg",
+          "alt": "APOLLO"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1ZwnY6kEcM/",
+        "title": "APOLLO",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 35
+    },
+    {
+      "no": "36",
+      "slug": "fruit-fork",
+      "title": "竹艺水果叉 产品短片",
+      "en": "Bamboo Fruit Forks",
+      "group": "Brand & Product Visual",
+      "category": "产品广告片",
+      "industry": "厨具",
+      "year": "2026",
+      "summary": "以木桌果盘为场景的产品短片，展示新鲜生活竹艺水果叉的卡通造型与袋装、罐装两种包装，配合「天然竹材，轻轻拿起，摸得到安心」的字幕，呈现小物件为果盘带来的趣味。",
+      "description": "以木桌果盘为场景的产品短片，展示新鲜生活竹艺水果叉的卡通造型与袋装、罐装两种包装，配合「天然竹材，轻轻拿起，摸得到安心」的字幕，呈现小物件为果盘带来的趣味。",
+      "tags": ["AI Video", "Product Film", "Bamboo Tableware", "Lifestyle"],
+      "meta": [""],
+      "cover": "/images/works/imports/fruit-fork/cover.jpg",
+      "image": "/images/works/imports/fruit-fork/cover.jpg",
+      "images": [
+        "/images/works/imports/fruit-fork/shot-01.jpg",
+        "/images/works/imports/fruit-fork/shot-02.jpg",
+        "/images/works/imports/fruit-fork/shot-03.jpg",
+        "/images/works/imports/fruit-fork/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/fruit-fork/shot-01.jpg",
+          "alt": "水果叉45s"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/fruit-fork/shot-02.jpg",
+          "alt": "水果叉45s"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/fruit-fork/shot-03.jpg",
+          "alt": "水果叉45s"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/fruit-fork/shot-04.jpg",
+          "alt": "水果叉45s"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1dHn86wE3A/",
+        "title": "水果叉45s",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 36
+    },
+    {
+      "no": "37",
+      "slug": "soda-cleaning-eraser",
+      "title": "苏打去污擦 产品短片",
+      "en": "Soda Cleaning Eraser",
+      "group": "Brand & Product Visual",
+      "category": "社媒短视频",
+      "industry": "家居",
+      "year": "2026",
+      "summary": "以厨房实景口播开场，从「看到油渍水垢就想拿洗洁精」的日常痛点切入，展示新鲜生活小苏打去污擦的抽取式盒装与紫色擦片，呈现这款清洁用品提供的另一种去污选择。",
+      "description": "以厨房实景口播开场，从「看到油渍水垢就想拿洗洁精」的日常痛点切入，展示新鲜生活小苏打去污擦的抽取式盒装与紫色擦片，呈现这款清洁用品提供的另一种去污选择。",
+      "tags": ["AI Video", "Product Demo", "Kitchen Cleaning", "Home Goods"],
+      "meta": [""],
+      "cover": "/images/works/imports/soda-cleaning-eraser/cover.jpg",
+      "image": "/images/works/imports/soda-cleaning-eraser/cover.jpg",
+      "images": [
+        "/images/works/imports/soda-cleaning-eraser/shot-01.jpg",
+        "/images/works/imports/soda-cleaning-eraser/shot-02.jpg",
+        "/images/works/imports/soda-cleaning-eraser/shot-03.jpg",
+        "/images/works/imports/soda-cleaning-eraser/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/soda-cleaning-eraser/shot-01.jpg",
+          "alt": "苏打去污擦30s"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/soda-cleaning-eraser/shot-02.jpg",
+          "alt": "苏打去污擦30s"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/soda-cleaning-eraser/shot-03.jpg",
+          "alt": "苏打去污擦30s"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/soda-cleaning-eraser/shot-04.jpg",
+          "alt": "苏打去污擦30s"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1dJn86YE6M/",
+        "title": "苏打去污擦30s",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 37
+    },
+    {
+      "no": "38",
+      "slug": "wzry-dasiming",
+      "title": "王者荣耀 · 大司命 AI 短片",
+      "en": "Honor of Kings · Da Siming AI Short",
+      "group": "AI Visual Direction",
+      "category": "游戏内容",
+      "industry": "游戏",
+      "year": "2026",
+      "summary": "以王者荣耀角色大司命为主角的 AI 二创短片。水墨晕染的峡谷场景中，大司命挥动巨镰与喷火的机关造物交锋，蓝色技能光效与笔墨质感结合，字幕「往生途」呼应角色设定。",
+      "description": "以王者荣耀角色大司命为主角的 AI 二创短片。水墨晕染的峡谷场景中，大司命挥动巨镰与喷火的机关造物交锋，蓝色技能光效与笔墨质感结合，字幕「往生途」呼应角色设定。",
+      "tags": ["AI Video", "Honor of Kings", "Game Fan Film", "Ink Style"],
+      "meta": [""],
+      "cover": "/images/works/imports/wzry-dasiming/cover.jpg",
+      "image": "/images/works/imports/wzry-dasiming/cover.jpg",
+      "images": [
+        "/images/works/imports/wzry-dasiming/shot-01.jpg",
+        "/images/works/imports/wzry-dasiming/shot-02.jpg",
+        "/images/works/imports/wzry-dasiming/shot-03.jpg",
+        "/images/works/imports/wzry-dasiming/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/wzry-dasiming/shot-01.jpg",
+          "alt": "王者荣耀-大司命"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/wzry-dasiming/shot-02.jpg",
+          "alt": "王者荣耀-大司命"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/wzry-dasiming/shot-03.jpg",
+          "alt": "王者荣耀-大司命"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/wzry-dasiming/shot-04.jpg",
+          "alt": "王者荣耀-大司命"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1iPnY63EE2/",
+        "title": "王者荣耀-大司命",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 38
+    },
+    {
+      "no": "39",
+      "slug": "meme-comedy",
+      "title": "当古人遇上现代物件 · 古装玩梗短片",
+      "en": "Ancient Meme Comedy Short",
+      "group": "AI Visual Direction",
+      "category": "社媒短视频",
+      "industry": "综合",
+      "year": "2026",
+      "summary": "一条 53 秒的竖屏古装玩梗短片：男子在雪山前举着大哥大打电话，女子倚着院门、举起印有数字「95152」的华丽盾牌与他对峙。把现代物件硬塞进古代场景制造反差笑点，布景与造型模仿老港片质感。",
+      "description": "一条 53 秒的竖屏古装玩梗短片：男子在雪山前举着大哥大打电话，女子倚着院门、举起印有数字「95152」的华丽盾牌与他对峙。把现代物件硬塞进古代场景制造反差笑点，布景与造型模仿老港片质感。",
+      "tags": ["AI Video", "Comedy", "Costume Drama", "Short Video"],
+      "meta": [""],
+      "cover": "/images/works/imports/meme-comedy/cover.jpg",
+      "image": "/images/works/imports/meme-comedy/cover.jpg",
+      "images": [
+        "/images/works/imports/meme-comedy/shot-01.jpg",
+        "/images/works/imports/meme-comedy/shot-02.jpg",
+        "/images/works/imports/meme-comedy/shot-03.jpg",
+        "/images/works/imports/meme-comedy/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/meme-comedy/shot-01.jpg",
+          "alt": "玩梗、搞笑"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/meme-comedy/shot-02.jpg",
+          "alt": "玩梗、搞笑"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/meme-comedy/shot-03.jpg",
+          "alt": "玩梗、搞笑"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/meme-comedy/shot-04.jpg",
+          "alt": "玩梗、搞笑"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1iPnY63ELZ/",
+        "title": "玩梗、搞笑",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 39
+    },
+    {
+      "no": "40",
+      "slug": "magic-cleaning-ball",
+      "title": "魔术清洁球 产品短片",
+      "en": "Magic Cleaning Ball",
+      "group": "Brand & Product Visual",
+      "category": "社媒短视频",
+      "industry": "家居",
+      "year": "2026",
+      "summary": "水槽前的实景演示短片，人物手持新鲜生活魔术清洁球面向镜头介绍，近景呈现其蓬松的高韧纤维质感，是一支节奏轻快的厨房清洁用品种草视频。",
+      "description": "水槽前的实景演示短片，人物手持新鲜生活魔术清洁球面向镜头介绍，近景呈现其蓬松的高韧纤维质感，是一支节奏轻快的厨房清洁用品种草视频。",
+      "tags": ["AI Video", "Product Demo", "Kitchen Cleaning", "UGC Style"],
+      "meta": [""],
+      "cover": "/images/works/imports/magic-cleaning-ball/cover.jpg",
+      "image": "/images/works/imports/magic-cleaning-ball/cover.jpg",
+      "images": [
+        "/images/works/imports/magic-cleaning-ball/shot-01.jpg",
+        "/images/works/imports/magic-cleaning-ball/shot-02.jpg",
+        "/images/works/imports/magic-cleaning-ball/shot-03.jpg",
+        "/images/works/imports/magic-cleaning-ball/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/magic-cleaning-ball/shot-01.jpg",
+          "alt": "魔术清洁球30s"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/magic-cleaning-ball/shot-02.jpg",
+          "alt": "魔术清洁球30s"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/magic-cleaning-ball/shot-03.jpg",
+          "alt": "魔术清洁球30s"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/magic-cleaning-ball/shot-04.jpg",
+          "alt": "魔术清洁球30s"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1jJn86eEbe/",
+        "title": "魔术清洁球30s",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 40
+    },
+    {
+      "no": "41",
+      "slug": "cleaning-tvc-short",
+      "title": "厨房清洁用品 TVC",
+      "en": "Kitchen Cleaning TVC",
+      "group": "Brand & Product Visual",
+      "category": "TVC",
+      "industry": "家居",
+      "year": "2026",
+      "summary": "以家庭厨房为场景的清洁用品 TVC，串联创意清洁擦、周抛纤维抹布等多款产品，呈现「不伤陶瓷釉面、不易刮花不锈钢表面」等卖点，收束于「让每个生活角落多一份洁净、安心与笑容」。",
+      "description": "以家庭厨房为场景的清洁用品 TVC，串联创意清洁擦、周抛纤维抹布等多款产品，呈现「不伤陶瓷釉面、不易刮花不锈钢表面」等卖点，收束于「让每个生活角落多一份洁净、安心与笑容」。",
+      "tags": ["AI Video", "TVC", "Home Cleaning", "Family Scene"],
+      "meta": [""],
+      "cover": "/images/works/imports/cleaning-tvc-short/cover.jpg",
+      "image": "/images/works/imports/cleaning-tvc-short/cover.jpg",
+      "images": [
+        "/images/works/imports/cleaning-tvc-short/shot-01.jpg",
+        "/images/works/imports/cleaning-tvc-short/shot-02.jpg",
+        "/images/works/imports/cleaning-tvc-short/shot-03.jpg",
+        "/images/works/imports/cleaning-tvc-short/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/cleaning-tvc-short/shot-01.jpg",
+          "alt": "品牌产品小清洁TVC-小短片"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/cleaning-tvc-short/shot-02.jpg",
+          "alt": "品牌产品小清洁TVC-小短片"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/cleaning-tvc-short/shot-03.jpg",
+          "alt": "品牌产品小清洁TVC-小短片"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/cleaning-tvc-short/shot-04.jpg",
+          "alt": "品牌产品小清洁TVC-小短片"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1oJn86YENf/",
+        "title": "品牌产品小清洁TVC-小短片",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 41
+    },
+    {
+      "no": "42",
+      "slug": "product-tvc-short",
+      "title": "餐厨日用品系列 TVC",
+      "en": "Kitchenware Collection TVC",
+      "group": "Brand & Product Visual",
+      "category": "TVC",
+      "industry": "家居",
+      "year": "2026",
+      "summary": "以「一盒、一杯、一筷、一签」为线索的餐厨日用品 TVC，依次展示小懒盒保鲜盒、食品用原纸纸杯、竹筷与竹签，覆盖轻食分装、果蔬收纳与便捷外带场景，强调自然材质与实用设计。",
+      "description": "以「一盒、一杯、一筷、一签」为线索的餐厨日用品 TVC，依次展示小懒盒保鲜盒、食品用原纸纸杯、竹筷与竹签，覆盖轻食分装、果蔬收纳与便捷外带场景，强调自然材质与实用设计。",
+      "tags": ["AI Video", "TVC", "Kitchenware", "Product Line"],
+      "meta": [""],
+      "cover": "/images/works/imports/product-tvc-short/cover.jpg",
+      "image": "/images/works/imports/product-tvc-short/cover.jpg",
+      "images": [
+        "/images/works/imports/product-tvc-short/shot-01.jpg",
+        "/images/works/imports/product-tvc-short/shot-02.jpg",
+        "/images/works/imports/product-tvc-short/shot-03.jpg",
+        "/images/works/imports/product-tvc-short/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/product-tvc-short/shot-01.jpg",
+          "alt": "品牌TVC-产品小短片"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/product-tvc-short/shot-02.jpg",
+          "alt": "品牌TVC-产品小短片"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/product-tvc-short/shot-03.jpg",
+          "alt": "品牌TVC-产品小短片"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/product-tvc-short/shot-04.jpg",
+          "alt": "品牌TVC-产品小短片"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1oJn86YENk/",
+        "title": "品牌TVC-产品小短片",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 42
+    },
+    {
+      "no": "43",
+      "slug": "hardworking-salesman",
+      "title": "如此努力销售 · 创意短片",
+      "en": "The Hardworking Salesman",
+      "group": "AI Visual Direction",
+      "category": "社媒短视频",
+      "industry": "综合",
+      "year": "2026",
+      "summary": "一条 14 秒的竖屏创意短片：城市街头，一名西装销售肩扛整台挖掘机的履带底盘，一边吃力前行一边打电话谈业务。用夸张的视觉梗表现「努力销售」的日常状态。",
+      "description": "一条 14 秒的竖屏创意短片：城市街头，一名西装销售肩扛整台挖掘机的履带底盘，一边吃力前行一边打电话谈业务。用夸张的视觉梗表现「努力销售」的日常状态。",
+      "tags": ["AI Video", "Creative Ad", "Humor", "Short Video"],
+      "meta": [""],
+      "cover": "/images/works/imports/hardworking-salesman/cover.jpg",
+      "image": "/images/works/imports/hardworking-salesman/cover.jpg",
+      "images": [
+        "/images/works/imports/hardworking-salesman/shot-01.jpg",
+        "/images/works/imports/hardworking-salesman/shot-02.jpg",
+        "/images/works/imports/hardworking-salesman/shot-03.jpg",
+        "/images/works/imports/hardworking-salesman/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/hardworking-salesman/shot-01.jpg",
+          "alt": "如此努力销售"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/hardworking-salesman/shot-02.jpg",
+          "alt": "如此努力销售"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/hardworking-salesman/shot-03.jpg",
+          "alt": "如此努力销售"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/hardworking-salesman/shot-04.jpg",
+          "alt": "如此努力销售"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1zcnY65EPR/",
+        "title": "如此努力销售",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 43
+    },
+    {
+      "no": "44",
+      "slug": "wzry-ai-video",
+      "title": "王者荣耀 AI 短片 · 峡谷遭遇",
+      "en": "Honor of Kings AI Short · Rift Encounter",
+      "group": "AI Visual Direction",
+      "category": "游戏内容",
+      "industry": "游戏",
+      "year": "2026",
+      "summary": "王者荣耀主题的 AI 二创短片。还原峡谷草丛、石板小径等经典场景：安琪拉抱着魔法书藏身草丛，鲁班七号在粉色技能光效中登场，呈现英雄们在峡谷中的一次遭遇。",
+      "description": "王者荣耀主题的 AI 二创短片。还原峡谷草丛、石板小径等经典场景：安琪拉抱着魔法书藏身草丛，鲁班七号在粉色技能光效中登场，呈现英雄们在峡谷中的一次遭遇。",
+      "tags": ["AI Video", "Honor of Kings", "3D Animation", "Game Fan Film"],
+      "meta": [""],
+      "cover": "/images/works/imports/wzry-ai-video/cover.jpg",
+      "image": "/images/works/imports/wzry-ai-video/cover.jpg",
+      "images": [
+        "/images/works/imports/wzry-ai-video/shot-01.jpg",
+        "/images/works/imports/wzry-ai-video/shot-02.jpg",
+        "/images/works/imports/wzry-ai-video/shot-03.jpg",
+        "/images/works/imports/wzry-ai-video/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/wzry-ai-video/shot-01.jpg",
+          "alt": "王者荣耀AI视频"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/wzry-ai-video/shot-02.jpg",
+          "alt": "王者荣耀AI视频"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/wzry-ai-video/shot-03.jpg",
+          "alt": "王者荣耀AI视频"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/wzry-ai-video/shot-04.jpg",
+          "alt": "王者荣耀AI视频"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1zfna6yE3A/",
+        "title": "王者荣耀AI视频",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 44
+    },
+    {
+      "no": "45",
+      "slug": "peace-elite-ai-video",
+      "title": "和平精英 AI 短片 · 热血战场",
+      "en": "Peace Elite AI Short · Battleground",
+      "group": "AI Visual Direction",
+      "category": "游戏内容",
+      "industry": "游戏",
+      "year": "2026",
+      "summary": "仿和平精英游戏对局的 AI 二创短片。从运输机跳伞开局，到室内楼梯间的近距离交火，画面完整叠加游戏 UI、键位提示与小地图，配合「欢迎来到热血战场」「狭路相逢一击制胜」的大字标语，模拟真实对局的紧张节奏。",
+      "description": "仿和平精英游戏对局的 AI 二创短片。从运输机跳伞开局，到室内楼梯间的近距离交火，画面完整叠加游戏 UI、键位提示与小地图，配合「欢迎来到热血战场」「狭路相逢一击制胜」的大字标语，模拟真实对局的紧张节奏。",
+      "tags": ["AI Video", "Peace Elite", "FPS", "Game UI"],
+      "meta": [""],
+      "cover": "/images/works/imports/peace-elite-ai-video/cover.jpg",
+      "image": "/images/works/imports/peace-elite-ai-video/cover.jpg",
+      "images": [
+        "/images/works/imports/peace-elite-ai-video/shot-01.jpg",
+        "/images/works/imports/peace-elite-ai-video/shot-02.jpg",
+        "/images/works/imports/peace-elite-ai-video/shot-03.jpg",
+        "/images/works/imports/peace-elite-ai-video/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/peace-elite-ai-video/shot-01.jpg",
+          "alt": "和平精英AI视频"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/peace-elite-ai-video/shot-02.jpg",
+          "alt": "和平精英AI视频"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/peace-elite-ai-video/shot-03.jpg",
+          "alt": "和平精英AI视频"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/peace-elite-ai-video/shot-04.jpg",
+          "alt": "和平精英AI视频"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1zfna6yEWN/",
+        "title": "和平精英AI视频",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 45
     }
   ],
   "aiStudio": {

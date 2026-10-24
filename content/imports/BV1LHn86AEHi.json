@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "lazy-box",
+  "title": "小懒盒保鲜盒 产品短片",
+  "en": "Lazy Box Food Containers",
+  "group": "Brand & Product Visual",
+  "category": "产品广告片",
+  "industry": "厨具",
+  "year": "2026",
+  "summary": "从冰箱内部视角开场的产品短片，展示小懒盒保鲜盒多规格、多彩盖的组合陈列，以及果蔬食材装入后的收纳状态，呈现其在家庭保鲜与轻食分装场景中的使用方式。",
+  "description": "从冰箱内部视角开场的产品短片，展示小懒盒保鲜盒多规格、多彩盖的组合陈列，以及果蔬食材装入后的收纳状态，呈现其在家庭保鲜与轻食分装场景中的使用方式。",
+  "tags": ["AI Video", "Product Film", "Food Storage", "Kitchenware"],
+  "meta": [""],
+  "cover": "/images/works/imports/lazy-box/cover.jpg",
+  "image": "/images/works/imports/lazy-box/cover.jpg",
+  "images": [
+    "/images/works/imports/lazy-box/shot-01.jpg",
+    "/images/works/imports/lazy-box/shot-02.jpg",
+    "/images/works/imports/lazy-box/shot-03.jpg",
+    "/images/works/imports/lazy-box/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/lazy-box/shot-01.jpg",
+      "alt": "小懒盒45s"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/lazy-box/shot-02.jpg",
+      "alt": "小懒盒45s"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/lazy-box/shot-03.jpg",
+      "alt": "小懒盒45s"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/lazy-box/shot-04.jpg",
+      "alt": "小懒盒45s"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1LHn86AEHi/",
+    "title": "小懒盒45s",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1LHn86AEHi",
+    "duration": 57,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1LHn86AEHi/"
+  }
+}

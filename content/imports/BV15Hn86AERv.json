@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "bamboo-chopsticks",
+  "title": "一次性竹筷 产品短片",
+  "en": "Disposable Bamboo Chopsticks",
+  "group": "Brand & Product Visual",
+  "category": "产品广告片",
+  "industry": "厨具",
+  "year": "2026",
+  "summary": "晚饭前一家人摆桌备餐的生活场景中，取出新鲜生活一次性竹筷分发给家人，字幕落在「一双筷子，也可以干净、自然、让人放心」，以家庭叙事带出这款餐厨用品。",
+  "description": "晚饭前一家人摆桌备餐的生活场景中，取出新鲜生活一次性竹筷分发给家人，字幕落在「一双筷子，也可以干净、自然、让人放心」，以家庭叙事带出这款餐厨用品。",
+  "tags": ["AI Video", "Product Film", "Bamboo Chopsticks", "Family Scene"],
+  "meta": [""],
+  "cover": "/images/works/imports/bamboo-chopsticks/cover.jpg",
+  "image": "/images/works/imports/bamboo-chopsticks/cover.jpg",
+  "images": [
+    "/images/works/imports/bamboo-chopsticks/shot-01.jpg",
+    "/images/works/imports/bamboo-chopsticks/shot-02.jpg",
+    "/images/works/imports/bamboo-chopsticks/shot-03.jpg",
+    "/images/works/imports/bamboo-chopsticks/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/bamboo-chopsticks/shot-01.jpg",
+      "alt": "竹筷子45s"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/bamboo-chopsticks/shot-02.jpg",
+      "alt": "竹筷子45s"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/bamboo-chopsticks/shot-03.jpg",
+      "alt": "竹筷子45s"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/bamboo-chopsticks/shot-04.jpg",
+      "alt": "竹筷子45s"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV15Hn86AERv/",
+    "title": "竹筷子45s",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV15Hn86AERv",
+    "duration": 53,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV15Hn86AERv/"
+  }
+}

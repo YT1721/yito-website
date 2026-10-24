@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "meme-comedy",
+  "title": "当古人遇上现代物件 · 古装玩梗短片",
+  "en": "Ancient Meme Comedy Short",
+  "group": "AI Visual Direction",
+  "category": "社媒短视频",
+  "industry": "综合",
+  "year": "2026",
+  "summary": "一条 53 秒的竖屏古装玩梗短片：男子在雪山前举着大哥大打电话，女子倚着院门、举起印有数字「95152」的华丽盾牌与他对峙。把现代物件硬塞进古代场景制造反差笑点，布景与造型模仿老港片质感。",
+  "description": "一条 53 秒的竖屏古装玩梗短片：男子在雪山前举着大哥大打电话，女子倚着院门、举起印有数字「95152」的华丽盾牌与他对峙。把现代物件硬塞进古代场景制造反差笑点，布景与造型模仿老港片质感。",
+  "tags": ["AI Video", "Comedy", "Costume Drama", "Short Video"],
+  "meta": [""],
+  "cover": "/images/works/imports/meme-comedy/cover.jpg",
+  "image": "/images/works/imports/meme-comedy/cover.jpg",
+  "images": [
+    "/images/works/imports/meme-comedy/shot-01.jpg",
+    "/images/works/imports/meme-comedy/shot-02.jpg",
+    "/images/works/imports/meme-comedy/shot-03.jpg",
+    "/images/works/imports/meme-comedy/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/meme-comedy/shot-01.jpg",
+      "alt": "玩梗、搞笑"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/meme-comedy/shot-02.jpg",
+      "alt": "玩梗、搞笑"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/meme-comedy/shot-03.jpg",
+      "alt": "玩梗、搞笑"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/meme-comedy/shot-04.jpg",
+      "alt": "玩梗、搞笑"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1iPnY63ELZ/",
+    "title": "玩梗、搞笑",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1iPnY63ELZ",
+    "duration": 53,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1iPnY63ELZ/"
+  }
+}

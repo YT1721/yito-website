@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "product-tvc-short",
+  "title": "餐厨日用品系列 TVC",
+  "en": "Kitchenware Collection TVC",
+  "group": "Brand & Product Visual",
+  "category": "TVC",
+  "industry": "家居",
+  "year": "2026",
+  "summary": "以「一盒、一杯、一筷、一签」为线索的餐厨日用品 TVC，依次展示小懒盒保鲜盒、食品用原纸纸杯、竹筷与竹签，覆盖轻食分装、果蔬收纳与便捷外带场景，强调自然材质与实用设计。",
+  "description": "以「一盒、一杯、一筷、一签」为线索的餐厨日用品 TVC，依次展示小懒盒保鲜盒、食品用原纸纸杯、竹筷与竹签，覆盖轻食分装、果蔬收纳与便捷外带场景，强调自然材质与实用设计。",
+  "tags": ["AI Video", "TVC", "Kitchenware", "Product Line"],
+  "meta": [""],
+  "cover": "/images/works/imports/product-tvc-short/cover.jpg",
+  "image": "/images/works/imports/product-tvc-short/cover.jpg",
+  "images": [
+    "/images/works/imports/product-tvc-short/shot-01.jpg",
+    "/images/works/imports/product-tvc-short/shot-02.jpg",
+    "/images/works/imports/product-tvc-short/shot-03.jpg",
+    "/images/works/imports/product-tvc-short/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/product-tvc-short/shot-01.jpg",
+      "alt": "品牌TVC-产品小短片"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/product-tvc-short/shot-02.jpg",
+      "alt": "品牌TVC-产品小短片"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/product-tvc-short/shot-03.jpg",
+      "alt": "品牌TVC-产品小短片"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/product-tvc-short/shot-04.jpg",
+      "alt": "品牌TVC-产品小短片"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1oJn86YENk/",
+    "title": "品牌TVC-产品小短片",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1oJn86YENk",
+    "duration": 140,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1oJn86YENk/"
+  }
+}

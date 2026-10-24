@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "wzry-dasiming",
+  "title": "王者荣耀 · 大司命 AI 短片",
+  "en": "Honor of Kings · Da Siming AI Short",
+  "group": "AI Visual Direction",
+  "category": "游戏内容",
+  "industry": "游戏",
+  "year": "2026",
+  "summary": "以王者荣耀角色大司命为主角的 AI 二创短片。水墨晕染的峡谷场景中，大司命挥动巨镰与喷火的机关造物交锋，蓝色技能光效与笔墨质感结合，字幕「往生途」呼应角色设定。",
+  "description": "以王者荣耀角色大司命为主角的 AI 二创短片。水墨晕染的峡谷场景中，大司命挥动巨镰与喷火的机关造物交锋，蓝色技能光效与笔墨质感结合，字幕「往生途」呼应角色设定。",
+  "tags": ["AI Video", "Honor of Kings", "Game Fan Film", "Ink Style"],
+  "meta": [""],
+  "cover": "/images/works/imports/wzry-dasiming/cover.jpg",
+  "image": "/images/works/imports/wzry-dasiming/cover.jpg",
+  "images": [
+    "/images/works/imports/wzry-dasiming/shot-01.jpg",
+    "/images/works/imports/wzry-dasiming/shot-02.jpg",
+    "/images/works/imports/wzry-dasiming/shot-03.jpg",
+    "/images/works/imports/wzry-dasiming/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/wzry-dasiming/shot-01.jpg",
+      "alt": "王者荣耀-大司命"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/wzry-dasiming/shot-02.jpg",
+      "alt": "王者荣耀-大司命"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/wzry-dasiming/shot-03.jpg",
+      "alt": "王者荣耀-大司命"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/wzry-dasiming/shot-04.jpg",
+      "alt": "王者荣耀-大司命"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1iPnY63EE2/",
+    "title": "王者荣耀-大司命",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1iPnY63EE2",
+    "duration": 29,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1iPnY63EE2/"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "soda-cleaning-eraser",
+  "title": "苏打去污擦 产品短片",
+  "en": "Soda Cleaning Eraser",
+  "group": "Brand & Product Visual",
+  "category": "社媒短视频",
+  "industry": "家居",
+  "year": "2026",
+  "summary": "以厨房实景口播开场，从「看到油渍水垢就想拿洗洁精」的日常痛点切入，展示新鲜生活小苏打去污擦的抽取式盒装与紫色擦片，呈现这款清洁用品提供的另一种去污选择。",
+  "description": "以厨房实景口播开场，从「看到油渍水垢就想拿洗洁精」的日常痛点切入，展示新鲜生活小苏打去污擦的抽取式盒装与紫色擦片，呈现这款清洁用品提供的另一种去污选择。",
+  "tags": ["AI Video", "Product Demo", "Kitchen Cleaning", "Home Goods"],
+  "meta": [""],
+  "cover": "/images/works/imports/soda-cleaning-eraser/cover.jpg",
+  "image": "/images/works/imports/soda-cleaning-eraser/cover.jpg",
+  "images": [
+    "/images/works/imports/soda-cleaning-eraser/shot-01.jpg",
+    "/images/works/imports/soda-cleaning-eraser/shot-02.jpg",
+    "/images/works/imports/soda-cleaning-eraser/shot-03.jpg",
+    "/images/works/imports/soda-cleaning-eraser/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/soda-cleaning-eraser/shot-01.jpg",
+      "alt": "苏打去污擦30s"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/soda-cleaning-eraser/shot-02.jpg",
+      "alt": "苏打去污擦30s"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/soda-cleaning-eraser/shot-03.jpg",
+      "alt": "苏打去污擦30s"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/soda-cleaning-eraser/shot-04.jpg",
+      "alt": "苏打去污擦30s"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1dJn86YE6M/",
+    "title": "苏打去污擦30s",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1dJn86YE6M",
+    "duration": 45,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1dJn86YE6M/"
+  }
+}

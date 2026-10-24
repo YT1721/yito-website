@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "fruit-fork",
+  "title": "竹艺水果叉 产品短片",
+  "en": "Bamboo Fruit Forks",
+  "group": "Brand & Product Visual",
+  "category": "产品广告片",
+  "industry": "厨具",
+  "year": "2026",
+  "summary": "以木桌果盘为场景的产品短片，展示新鲜生活竹艺水果叉的卡通造型与袋装、罐装两种包装，配合「天然竹材，轻轻拿起，摸得到安心」的字幕，呈现小物件为果盘带来的趣味。",
+  "description": "以木桌果盘为场景的产品短片，展示新鲜生活竹艺水果叉的卡通造型与袋装、罐装两种包装，配合「天然竹材，轻轻拿起，摸得到安心」的字幕，呈现小物件为果盘带来的趣味。",
+  "tags": ["AI Video", "Product Film", "Bamboo Tableware", "Lifestyle"],
+  "meta": [""],
+  "cover": "/images/works/imports/fruit-fork/cover.jpg",
+  "image": "/images/works/imports/fruit-fork/cover.jpg",
+  "images": [
+    "/images/works/imports/fruit-fork/shot-01.jpg",
+    "/images/works/imports/fruit-fork/shot-02.jpg",
+    "/images/works/imports/fruit-fork/shot-03.jpg",
+    "/images/works/imports/fruit-fork/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/fruit-fork/shot-01.jpg",
+      "alt": "水果叉45s"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/fruit-fork/shot-02.jpg",
+      "alt": "水果叉45s"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/fruit-fork/shot-03.jpg",
+      "alt": "水果叉45s"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/fruit-fork/shot-04.jpg",
+      "alt": "水果叉45s"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1dHn86wE3A/",
+    "title": "水果叉45s",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1dHn86wE3A",
+    "duration": 48,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1dHn86wE3A/"
+  }
+}

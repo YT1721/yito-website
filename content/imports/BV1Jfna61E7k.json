@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "delta-force-honglang",
+  "title": "三角洲行动 · 红狼 AI 短片",
+  "en": "Delta Force · Honglang AI Short",
+  "group": "AI Visual Direction",
+  "category": "游戏内容",
+  "industry": "游戏",
+  "year": "2026",
+  "summary": "以三角洲行动角色红狼为原型的写实风 AI 二创短片。夕阳下的废弃工厂与硝烟弥漫的战场中，士兵持枪警戒、驾驶全地形车穿行废墟，面部特写呈现汗水与装备细节，走硬核军事写实路线。",
+  "description": "以三角洲行动角色红狼为原型的写实风 AI 二创短片。夕阳下的废弃工厂与硝烟弥漫的战场中，士兵持枪警戒、驾驶全地形车穿行废墟，面部特写呈现汗水与装备细节，走硬核军事写实路线。",
+  "tags": ["AI Video", "Delta Force", "Military", "Realistic CGI"],
+  "meta": [""],
+  "cover": "/images/works/imports/delta-force-honglang/cover.jpg",
+  "image": "/images/works/imports/delta-force-honglang/cover.jpg",
+  "images": [
+    "/images/works/imports/delta-force-honglang/shot-01.jpg",
+    "/images/works/imports/delta-force-honglang/shot-02.jpg",
+    "/images/works/imports/delta-force-honglang/shot-03.jpg",
+    "/images/works/imports/delta-force-honglang/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/delta-force-honglang/shot-01.jpg",
+      "alt": "三角洲行动-红狼"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/delta-force-honglang/shot-02.jpg",
+      "alt": "三角洲行动-红狼"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/delta-force-honglang/shot-03.jpg",
+      "alt": "三角洲行动-红狼"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/delta-force-honglang/shot-04.jpg",
+      "alt": "三角洲行动-红狼"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1Jfna61E7k/",
+    "title": "三角洲行动-红狼",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1Jfna61E7k",
+    "duration": 32,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1Jfna61E7k/"
+  }
+}

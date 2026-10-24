@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "bath-scrub-block",
+  "title": "搓澡块 种草短片",
+  "en": "Bath Scrub Block",
+  "group": "Brand & Product Visual",
+  "category": "社媒短视频",
+  "industry": "日化",
+  "year": "2026",
+  "summary": "自拍视角的浴室种草短片，从「夏天穿短袖短裙，胳膊腿灰灰的真的很显脏」的痛点切入，展示搓澡块的外观与上手擦拭后的顺滑肤感，呈现这款个护清洁用品的使用体验。",
+  "description": "自拍视角的浴室种草短片，从「夏天穿短袖短裙，胳膊腿灰灰的真的很显脏」的痛点切入，展示搓澡块的外观与上手擦拭后的顺滑肤感，呈现这款个护清洁用品的使用体验。",
+  "tags": ["AI Video", "UGC Style", "Body Care", "Self-shot"],
+  "meta": [""],
+  "cover": "/images/works/imports/bath-scrub-block/cover.jpg",
+  "image": "/images/works/imports/bath-scrub-block/cover.jpg",
+  "images": [
+    "/images/works/imports/bath-scrub-block/shot-01.jpg",
+    "/images/works/imports/bath-scrub-block/shot-02.jpg",
+    "/images/works/imports/bath-scrub-block/shot-03.jpg",
+    "/images/works/imports/bath-scrub-block/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/bath-scrub-block/shot-01.jpg",
+      "alt": "搓澡块45s营销视频"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/bath-scrub-block/shot-02.jpg",
+      "alt": "搓澡块45s营销视频"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/bath-scrub-block/shot-03.jpg",
+      "alt": "搓澡块45s营销视频"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/bath-scrub-block/shot-04.jpg",
+      "alt": "搓澡块45s营销视频"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1CPn86yEjR/",
+    "title": "搓澡块45s营销视频",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1CPn86yEjR",
+    "duration": 48,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1CPn86yEjR/"
+  }
+}

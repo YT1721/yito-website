@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "wzry-ai-video",
+  "title": "王者荣耀 AI 短片 · 峡谷遭遇",
+  "en": "Honor of Kings AI Short · Rift Encounter",
+  "group": "AI Visual Direction",
+  "category": "游戏内容",
+  "industry": "游戏",
+  "year": "2026",
+  "summary": "王者荣耀主题的 AI 二创短片。还原峡谷草丛、石板小径等经典场景：安琪拉抱着魔法书藏身草丛，鲁班七号在粉色技能光效中登场，呈现英雄们在峡谷中的一次遭遇。",
+  "description": "王者荣耀主题的 AI 二创短片。还原峡谷草丛、石板小径等经典场景：安琪拉抱着魔法书藏身草丛，鲁班七号在粉色技能光效中登场，呈现英雄们在峡谷中的一次遭遇。",
+  "tags": ["AI Video", "Honor of Kings", "3D Animation", "Game Fan Film"],
+  "meta": [""],
+  "cover": "/images/works/imports/wzry-ai-video/cover.jpg",
+  "image": "/images/works/imports/wzry-ai-video/cover.jpg",
+  "images": [
+    "/images/works/imports/wzry-ai-video/shot-01.jpg",
+    "/images/works/imports/wzry-ai-video/shot-02.jpg",
+    "/images/works/imports/wzry-ai-video/shot-03.jpg",
+    "/images/works/imports/wzry-ai-video/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/wzry-ai-video/shot-01.jpg",
+      "alt": "王者荣耀AI视频"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/wzry-ai-video/shot-02.jpg",
+      "alt": "王者荣耀AI视频"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/wzry-ai-video/shot-03.jpg",
+      "alt": "王者荣耀AI视频"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/wzry-ai-video/shot-04.jpg",
+      "alt": "王者荣耀AI视频"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1zfna6yE3A/",
+    "title": "王者荣耀AI视频",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1zfna6yE3A",
+    "duration": 28,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1zfna6yE3A/"
+  }
+}

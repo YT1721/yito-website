@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "magic-cleaning-ball",
+  "title": "魔术清洁球 产品短片",
+  "en": "Magic Cleaning Ball",
+  "group": "Brand & Product Visual",
+  "category": "社媒短视频",
+  "industry": "家居",
+  "year": "2026",
+  "summary": "水槽前的实景演示短片，人物手持新鲜生活魔术清洁球面向镜头介绍，近景呈现其蓬松的高韧纤维质感，是一支节奏轻快的厨房清洁用品种草视频。",
+  "description": "水槽前的实景演示短片，人物手持新鲜生活魔术清洁球面向镜头介绍，近景呈现其蓬松的高韧纤维质感，是一支节奏轻快的厨房清洁用品种草视频。",
+  "tags": ["AI Video", "Product Demo", "Kitchen Cleaning", "UGC Style"],
+  "meta": [""],
+  "cover": "/images/works/imports/magic-cleaning-ball/cover.jpg",
+  "image": "/images/works/imports/magic-cleaning-ball/cover.jpg",
+  "images": [
+    "/images/works/imports/magic-cleaning-ball/shot-01.jpg",
+    "/images/works/imports/magic-cleaning-ball/shot-02.jpg",
+    "/images/works/imports/magic-cleaning-ball/shot-03.jpg",
+    "/images/works/imports/magic-cleaning-ball/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/magic-cleaning-ball/shot-01.jpg",
+      "alt": "魔术清洁球30s"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/magic-cleaning-ball/shot-02.jpg",
+      "alt": "魔术清洁球30s"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/magic-cleaning-ball/shot-03.jpg",
+      "alt": "魔术清洁球30s"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/magic-cleaning-ball/shot-04.jpg",
+      "alt": "魔术清洁球30s"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1jJn86eEbe/",
+    "title": "魔术清洁球30s",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1jJn86eEbe",
+    "duration": 36,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1jJn86eEbe/"
+  }
+}

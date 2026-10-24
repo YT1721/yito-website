@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "kangbach-product",
+  "title": "康巴赫 · 炒锅产品广告",
+  "en": "Kangbach Wok Product Film",
+  "group": "Brand & Product Visual",
+  "category": "产品广告片",
+  "industry": "厨具",
+  "year": "2026",
+  "summary": "为康巴赫炒锅制作的产品广告片。金色金属粒子汇聚成型，穿过科幻感的圆形舱室，最终落回餐桌上的不锈钢炒锅；剖面镜头逐层展示锅体结构——仿生不沾结构层、真钛材料、316L 不锈钢、高导热纯铝与优质导磁不锈钢。",
+  "description": "为康巴赫炒锅制作的产品广告片。金色金属粒子汇聚成型，穿过科幻感的圆形舱室，最终落回餐桌上的不锈钢炒锅；剖面镜头逐层展示锅体结构——仿生不沾结构层、真钛材料、316L 不锈钢、高导热纯铝与优质导磁不锈钢。",
+  "tags": ["AI Video", "Product Film", "Cookware", "CGI"],
+  "meta": [""],
+  "cover": "/images/works/imports/kangbach-product/cover.jpg",
+  "image": "/images/works/imports/kangbach-product/cover.jpg",
+  "images": [
+    "/images/works/imports/kangbach-product/shot-01.jpg",
+    "/images/works/imports/kangbach-product/shot-02.jpg",
+    "/images/works/imports/kangbach-product/shot-03.jpg",
+    "/images/works/imports/kangbach-product/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/kangbach-product/shot-01.jpg",
+      "alt": "康巴赫产品宣传"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/kangbach-product/shot-02.jpg",
+      "alt": "康巴赫产品宣传"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/kangbach-product/shot-03.jpg",
+      "alt": "康巴赫产品宣传"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/kangbach-product/shot-04.jpg",
+      "alt": "康巴赫产品宣传"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1BcnY6VEvy/",
+    "title": "康巴赫产品宣传",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1BcnY6VEvy",
+    "duration": 61,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1BcnY6VEvy/"
+  }
+}

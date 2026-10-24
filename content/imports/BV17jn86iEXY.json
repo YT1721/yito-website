@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "zhongping-antibacterial",
+  "title": "中平抗菌 · 品牌形象片",
+  "en": "Zhongping Antibacterial Brand Film",
+  "group": "Brand & Product Visual",
+  "category": "品牌形象片",
+  "industry": "家居",
+  "year": "2026",
+  "summary": "为中平抗菌制作的品牌形象片。银白色未来实验室里，头戴透明头盔、长着触角的机器人吉祥物围绕全息投影工作，保鲜盒、水杯等抗菌塑料制品悬浮展示；随后吉祥物飞入家庭冰箱，把科技感落回日常保鲜场景。",
+  "description": "为中平抗菌制作的品牌形象片。银白色未来实验室里，头戴透明头盔、长着触角的机器人吉祥物围绕全息投影工作，保鲜盒、水杯等抗菌塑料制品悬浮展示；随后吉祥物飞入家庭冰箱，把科技感落回日常保鲜场景。",
+  "tags": ["AI Video", "Brand Film", "Mascot", "Futuristic"],
+  "meta": [""],
+  "cover": "/images/works/imports/zhongping-antibacterial/cover.jpg",
+  "image": "/images/works/imports/zhongping-antibacterial/cover.jpg",
+  "images": [
+    "/images/works/imports/zhongping-antibacterial/shot-01.jpg",
+    "/images/works/imports/zhongping-antibacterial/shot-02.jpg",
+    "/images/works/imports/zhongping-antibacterial/shot-03.jpg",
+    "/images/works/imports/zhongping-antibacterial/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/zhongping-antibacterial/shot-01.jpg",
+      "alt": "中平抗菌品牌篇"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/zhongping-antibacterial/shot-02.jpg",
+      "alt": "中平抗菌品牌篇"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/zhongping-antibacterial/shot-03.jpg",
+      "alt": "中平抗菌品牌篇"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/zhongping-antibacterial/shot-04.jpg",
+      "alt": "中平抗菌品牌篇"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV17jn86iEXY/",
+    "title": "中平抗菌品牌篇",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV17jn86iEXY",
+    "duration": 67,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV17jn86iEXY/"
+  }
+}
