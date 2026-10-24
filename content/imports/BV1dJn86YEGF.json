@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "degreasing-dish-cloth",
+  "title": "去油洗碗布 种草短片",
+  "en": "Degreasing Dish Cloth Short",
+  "group": "Brand & Product Visual",
+  "category": "社媒短视频",
+  "industry": "家居",
+  "year": "2026",
+  "summary": "去油洗碗布种草短片。画面以产品特写为主：女主用白色洗碗布擦拭带油渍的盘子，对比「以前擦油盘总要挤好多洗洁精」；布可直接擦净油污，不用时挂起来「干的也快」。除了碗盘，还顺手擦水槽、台面和灶台，包装上印有「新鲜生活」字样。",
+  "description": "去油洗碗布种草短片。画面以产品特写为主：女主用白色洗碗布擦拭带油渍的盘子，对比「以前擦油盘总要挤好多洗洁精」；布可直接擦净油污，不用时挂起来「干的也快」。除了碗盘，还顺手擦水槽、台面和灶台，包装上印有「新鲜生活」字样。",
+  "tags": ["AI Video", "Homecare", "Product", "Lifestyle"],
+  "meta": [""],
+  "cover": "/images/works/imports/degreasing-dish-cloth/cover.jpg",
+  "image": "/images/works/imports/degreasing-dish-cloth/cover.jpg",
+  "images": [
+    "/images/works/imports/degreasing-dish-cloth/shot-01.jpg",
+    "/images/works/imports/degreasing-dish-cloth/shot-02.jpg",
+    "/images/works/imports/degreasing-dish-cloth/shot-03.jpg",
+    "/images/works/imports/degreasing-dish-cloth/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/degreasing-dish-cloth/shot-01.jpg",
+      "alt": "去油洗碗布30s"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/degreasing-dish-cloth/shot-02.jpg",
+      "alt": "去油洗碗布30s"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/degreasing-dish-cloth/shot-03.jpg",
+      "alt": "去油洗碗布30s"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/degreasing-dish-cloth/shot-04.jpg",
+      "alt": "去油洗碗布30s"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1dJn86YEGF/",
+    "title": "去油洗碗布30s",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1dJn86YEGF",
+    "duration": 37,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1dJn86YEGF/"
+  }
+}

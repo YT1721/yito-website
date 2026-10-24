@@ -1119,6 +1119,526 @@
       },
       "featured": false,
       "homepageOrder": 15
+    },
+    {
+      "no": "16",
+      "slug": "kuaixi-laundry-detergent",
+      "title": "今卫快洗洗衣液 种草短片",
+      "en": "Jinwei Kuaixi Laundry Detergent Short",
+      "group": "Brand & Product Visual",
+      "category": "社媒短视频",
+      "industry": "日化",
+      "year": "2026",
+      "summary": "今卫快洗洗衣液种草短片。女主在手洗毛衣时泡沫冲不净、水一直流，手机弹出「9:00 会议提醒」，眼看要迟到；换用今卫快洗洗衣液后「一遍就漂得干净」，最后在阳台端着咖啡悠闲晒太阳，字幕点明产品名「今卫快洗洗衣液」。",
+      "description": "今卫快洗洗衣液种草短片。女主在手洗毛衣时泡沫冲不净、水一直流，手机弹出「9:00 会议提醒」，眼看要迟到；换用今卫快洗洗衣液后「一遍就漂得干净」，最后在阳台端着咖啡悠闲晒太阳，字幕点明产品名「今卫快洗洗衣液」。",
+      "tags": ["AI Video", "FMCG", "Homecare", "Lifestyle"],
+      "meta": [""],
+      "cover": "/images/works/imports/kuaixi-laundry-detergent/cover.jpg",
+      "image": "/images/works/imports/kuaixi-laundry-detergent/cover.jpg",
+      "images": [
+        "/images/works/imports/kuaixi-laundry-detergent/shot-01.jpg",
+        "/images/works/imports/kuaixi-laundry-detergent/shot-02.jpg",
+        "/images/works/imports/kuaixi-laundry-detergent/shot-03.jpg",
+        "/images/works/imports/kuaixi-laundry-detergent/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/kuaixi-laundry-detergent/shot-01.jpg",
+          "alt": "快洗洗衣液45s-种草小视频"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/kuaixi-laundry-detergent/shot-02.jpg",
+          "alt": "快洗洗衣液45s-种草小视频"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/kuaixi-laundry-detergent/shot-03.jpg",
+          "alt": "快洗洗衣液45s-种草小视频"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/kuaixi-laundry-detergent/shot-04.jpg",
+          "alt": "快洗洗衣液45s-种草小视频"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV19pn86hE2R/",
+        "title": "快洗洗衣液45s-种草小视频",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 16
+    },
+    {
+      "no": "17",
+      "slug": "bread-sponge",
+      "title": "吐司造型海绵 种草短片",
+      "en": "Toast-Shaped Sponge Short",
+      "group": "Brand & Product Visual",
+      "category": "社媒短视频",
+      "industry": "家居",
+      "year": "2026",
+      "summary": "吐司造型海绵种草短片。画面以产品特写为主：一块吐司切片造型的海绵在水龙头下沾水，「泡沫还挺细的」「手感是软软绵绵的」，可用来擦水池边的金属位置。女主强调「最戳我的是这个吐司造型」，叠起来像一排面包片，「是真的会顺手拿起来用」。",
+      "description": "吐司造型海绵种草短片。画面以产品特写为主：一块吐司切片造型的海绵在水龙头下沾水，「泡沫还挺细的」「手感是软软绵绵的」，可用来擦水池边的金属位置。女主强调「最戳我的是这个吐司造型」，叠起来像一排面包片，「是真的会顺手拿起来用」。",
+      "tags": ["AI Video", "Homecare", "Product", "Lifestyle"],
+      "meta": [""],
+      "cover": "/images/works/imports/bread-sponge/cover.jpg",
+      "image": "/images/works/imports/bread-sponge/cover.jpg",
+      "images": [
+        "/images/works/imports/bread-sponge/shot-01.jpg",
+        "/images/works/imports/bread-sponge/shot-02.jpg",
+        "/images/works/imports/bread-sponge/shot-03.jpg",
+        "/images/works/imports/bread-sponge/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/bread-sponge/shot-01.jpg",
+          "alt": "面包海绵块30s"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/bread-sponge/shot-02.jpg",
+          "alt": "面包海绵块30s"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/bread-sponge/shot-03.jpg",
+          "alt": "面包海绵块30s"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/bread-sponge/shot-04.jpg",
+          "alt": "面包海绵块30s"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV19sn86FE1d/",
+        "title": "面包海绵块30s",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 17
+    },
+    {
+      "no": "18",
+      "slug": "yijiayayun-tvc",
+      "title": "怡家雅韵 TVC",
+      "en": "Yijiayayun Home TVC",
+      "group": "Brand & Product Visual",
+      "category": "TVC",
+      "industry": "家居",
+      "year": "2026",
+      "summary": "怡家雅韵家居 TVC。以一只熊形卡通吉祥物串联全片：沙地玩玩具车，老房子前大步走来；现代厨房里站在餐桌旁，浴室里推着置物架。字幕出现「以初心，探索日常需要」「浴室，有清爽的舒适」，片尾从太空俯瞰地球，配「心向蓝天，无畏前行」。",
+      "description": "怡家雅韵家居 TVC。以一只熊形卡通吉祥物串联全片：沙地玩玩具车，老房子前大步走来；现代厨房里站在餐桌旁，浴室里推着置物架。字幕出现「以初心，探索日常需要」「浴室，有清爽的舒适」，片尾从太空俯瞰地球，配「心向蓝天，无畏前行」。",
+      "tags": ["AI Video", "Homecare", "Product", "Lifestyle"],
+      "meta": [""],
+      "cover": "/images/works/imports/yijiayayun-tvc/cover.jpg",
+      "image": "/images/works/imports/yijiayayun-tvc/cover.jpg",
+      "images": [
+        "/images/works/imports/yijiayayun-tvc/shot-01.jpg",
+        "/images/works/imports/yijiayayun-tvc/shot-02.jpg",
+        "/images/works/imports/yijiayayun-tvc/shot-03.jpg",
+        "/images/works/imports/yijiayayun-tvc/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/yijiayayun-tvc/shot-01.jpg",
+          "alt": "怡家雅韵50sTVC"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/yijiayayun-tvc/shot-02.jpg",
+          "alt": "怡家雅韵50sTVC"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/yijiayayun-tvc/shot-03.jpg",
+          "alt": "怡家雅韵50sTVC"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/yijiayayun-tvc/shot-04.jpg",
+          "alt": "怡家雅韵50sTVC"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1JVn86BEHb/",
+        "title": "怡家雅韵50sTVC",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 18
+    },
+    {
+      "no": "19",
+      "slug": "dish-soap-tvc",
+      "title": "洗洁精 TVC",
+      "en": "Dish Soap TVC",
+      "group": "Brand & Product Visual",
+      "category": "TVC",
+      "industry": "日化",
+      "year": "2026",
+      "summary": "洗洁精 TVC。一位妈妈在厨房发愁：孩子吃的果蔬怕洗不干净、碗又油，手也越洗越干。用这款洗洁精后「重油锅不用较劲」，字幕标注「它没有色素、磷酸盐和荧光剂」，同时可清洗果蔬。片尾妈妈靠在沙发上，配「当妈的也别忘对自己好一点」。",
+      "description": "洗洁精 TVC。一位妈妈在厨房发愁：孩子吃的果蔬怕洗不干净、碗又油，手也越洗越干。用这款洗洁精后「重油锅不用较劲」，字幕标注「它没有色素、磷酸盐和荧光剂」，同时可清洗果蔬。片尾妈妈靠在沙发上，配「当妈的也别忘对自己好一点」。",
+      "tags": ["AI Video", "FMCG", "Homecare", "Lifestyle"],
+      "meta": [""],
+      "cover": "/images/works/imports/dish-soap-tvc/cover.jpg",
+      "image": "/images/works/imports/dish-soap-tvc/cover.jpg",
+      "images": [
+        "/images/works/imports/dish-soap-tvc/shot-01.jpg",
+        "/images/works/imports/dish-soap-tvc/shot-02.jpg",
+        "/images/works/imports/dish-soap-tvc/shot-03.jpg",
+        "/images/works/imports/dish-soap-tvc/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/dish-soap-tvc/shot-01.jpg",
+          "alt": "洗洁精45s-TVC"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/dish-soap-tvc/shot-02.jpg",
+          "alt": "洗洁精45s-TVC"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/dish-soap-tvc/shot-03.jpg",
+          "alt": "洗洁精45s-TVC"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/dish-soap-tvc/shot-04.jpg",
+          "alt": "洗洁精45s-TVC"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1Rpn86hE3d/",
+        "title": "洗洁精45s-TVC",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 19
+    },
+    {
+      "no": "20",
+      "slug": "jinwei-drain-cleaner",
+      "title": "今卫啫喱管道疏通剂 TVC",
+      "en": "Jinwei Gel Drain Cleaner TVC",
+      "group": "Brand & Product Visual",
+      "category": "TVC",
+      "industry": "日化",
+      "year": "2026",
+      "summary": "今卫啫喱管道疏通剂 TVC。女主发现浴室下水道堵了，「洗个澡像泡脚」，还回忆起上次堵到水漫出来。她从柜下取出今卫啫喱管道疏通剂，啫喱状液体倒入地漏「会挂在管壁上」，随后水流顺利下排，女主蹲在旁边说「听这个声音」。",
+      "description": "今卫啫喱管道疏通剂 TVC。女主发现浴室下水道堵了，「洗个澡像泡脚」，还回忆起上次堵到水漫出来。她从柜下取出今卫啫喱管道疏通剂，啫喱状液体倒入地漏「会挂在管壁上」，随后水流顺利下排，女主蹲在旁边说「听这个声音」。",
+      "tags": ["AI Video", "FMCG", "Homecare", "Product"],
+      "meta": [""],
+      "cover": "/images/works/imports/jinwei-drain-cleaner/cover.jpg",
+      "image": "/images/works/imports/jinwei-drain-cleaner/cover.jpg",
+      "images": [
+        "/images/works/imports/jinwei-drain-cleaner/shot-01.jpg",
+        "/images/works/imports/jinwei-drain-cleaner/shot-02.jpg",
+        "/images/works/imports/jinwei-drain-cleaner/shot-03.jpg",
+        "/images/works/imports/jinwei-drain-cleaner/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/jinwei-drain-cleaner/shot-01.jpg",
+          "alt": "今卫啫喱管道疏通剂45s"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/jinwei-drain-cleaner/shot-02.jpg",
+          "alt": "今卫啫喱管道疏通剂45s"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/jinwei-drain-cleaner/shot-03.jpg",
+          "alt": "今卫啫喱管道疏通剂45s"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/jinwei-drain-cleaner/shot-04.jpg",
+          "alt": "今卫啫喱管道疏通剂45s"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1Vsn86cEQc/",
+        "title": "今卫啫喱管道疏通剂45s",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 20
+    },
+    {
+      "no": "21",
+      "slug": "yufa-corporate-tvc",
+      "title": "渝发 企业宣传片",
+      "en": "Yufa Technology Corporate Film",
+      "group": "AI Visual Direction",
+      "category": "企业宣传片",
+      "industry": "制造",
+      "year": "2026",
+      "summary": "渝发科技企业宣传片。先展示旗下「一阳尚家」高端家居展厅与「一阳壹品」商超陈列，再切入「渝发科技 超级工厂」，出现自动化生产线与「四大智能化生产基地，是超级工厂的坚实底盘」字幕。片尾商务人士在长江边举杯，配「游长江、话未来，让合作不止于生意」。",
+      "description": "渝发科技企业宣传片。先展示旗下「一阳尚家」高端家居展厅与「一阳壹品」商超陈列，再切入「渝发科技 超级工厂」，出现自动化生产线与「四大智能化生产基地，是超级工厂的坚实底盘」字幕。片尾商务人士在长江边举杯，配「游长江、话未来，让合作不止于生意」。",
+      "tags": ["AI Video", "Corporate", "Manufacturing", "Product"],
+      "meta": [""],
+      "cover": "/images/works/imports/yufa-corporate-tvc/cover.jpg",
+      "image": "/images/works/imports/yufa-corporate-tvc/cover.jpg",
+      "images": [
+        "/images/works/imports/yufa-corporate-tvc/shot-01.jpg",
+        "/images/works/imports/yufa-corporate-tvc/shot-02.jpg",
+        "/images/works/imports/yufa-corporate-tvc/shot-03.jpg",
+        "/images/works/imports/yufa-corporate-tvc/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/yufa-corporate-tvc/shot-01.jpg",
+          "alt": "渝发企业宣传TVC"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/yufa-corporate-tvc/shot-02.jpg",
+          "alt": "渝发企业宣传TVC"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/yufa-corporate-tvc/shot-03.jpg",
+          "alt": "渝发企业宣传TVC"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/yufa-corporate-tvc/shot-04.jpg",
+          "alt": "渝发企业宣传TVC"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1ZLn86KE25/",
+        "title": "渝发企业宣传TVC",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 21
+    },
+    {
+      "no": "22",
+      "slug": "corporate-logo-image",
+      "title": "渝发科技 LOGO 形象片",
+      "en": "Yufa Technology Logo Reveal",
+      "group": "AI Visual Direction",
+      "category": "品牌形象片",
+      "industry": "制造",
+      "year": "2026",
+      "summary": "渝发科技 LOGO 形象片。全片以银色锦鲤游动为视觉主线：鱼群在水中盘旋成螺旋，游过银色山峦与水流，最后汇聚成由水滴组成的花瓣形 LOGO，浮现「YUFAKEJI 渝发科技」与「塑万物 渝未来」品牌字样。",
+      "description": "渝发科技 LOGO 形象片。全片以银色锦鲤游动为视觉主线：鱼群在水中盘旋成螺旋，游过银色山峦与水流，最后汇聚成由水滴组成的花瓣形 LOGO，浮现「YUFAKEJI 渝发科技」与「塑万物 渝未来」品牌字样。",
+      "tags": ["AI Video", "Corporate", "Brand Film", "Logo"],
+      "meta": [""],
+      "cover": "/images/works/imports/corporate-logo-image/cover.jpg",
+      "image": "/images/works/imports/corporate-logo-image/cover.jpg",
+      "images": [
+        "/images/works/imports/corporate-logo-image/shot-01.jpg",
+        "/images/works/imports/corporate-logo-image/shot-02.jpg",
+        "/images/works/imports/corporate-logo-image/shot-03.jpg",
+        "/images/works/imports/corporate-logo-image/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/corporate-logo-image/shot-01.jpg",
+          "alt": "企业LOGO形象"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/corporate-logo-image/shot-02.jpg",
+          "alt": "企业LOGO形象"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/corporate-logo-image/shot-03.jpg",
+          "alt": "企业LOGO形象"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/corporate-logo-image/shot-04.jpg",
+          "alt": "企业LOGO形象"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1ZLn86KEUA/",
+        "title": "企业LOGO形象",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 22
+    },
+    {
+      "no": "23",
+      "slug": "jielijia-tvc",
+      "title": "杰利佳 TVC",
+      "en": "Jielijia TVC",
+      "group": "Brand & Product Visual",
+      "category": "TVC",
+      "industry": "家居",
+      "year": "2026",
+      "summary": "杰利佳家居 TVC。全片围绕家用好物展开：阳台晾衣架上挂着大衣与吊带裙，Hello Kitty 形象的角色望向城市天际线；拖把清洁木地板，厨房台面上摆着水果盘。多处出现漂浮的爱心特效，片尾夜幕城市配字幕「做极致产品，让家更舒适」。",
+      "description": "杰利佳家居 TVC。全片围绕家用好物展开：阳台晾衣架上挂着大衣与吊带裙，Hello Kitty 形象的角色望向城市天际线；拖把清洁木地板，厨房台面上摆着水果盘。多处出现漂浮的爱心特效，片尾夜幕城市配字幕「做极致产品，让家更舒适」。",
+      "tags": ["AI Video", "Homecare", "Product", "Lifestyle"],
+      "meta": [""],
+      "cover": "/images/works/imports/jielijia-tvc/cover.jpg",
+      "image": "/images/works/imports/jielijia-tvc/cover.jpg",
+      "images": [
+        "/images/works/imports/jielijia-tvc/shot-01.jpg",
+        "/images/works/imports/jielijia-tvc/shot-02.jpg",
+        "/images/works/imports/jielijia-tvc/shot-03.jpg",
+        "/images/works/imports/jielijia-tvc/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/jielijia-tvc/shot-01.jpg",
+          "alt": "杰利佳TVC"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/jielijia-tvc/shot-02.jpg",
+          "alt": "杰利佳TVC"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/jielijia-tvc/shot-03.jpg",
+          "alt": "杰利佳TVC"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/jielijia-tvc/shot-04.jpg",
+          "alt": "杰利佳TVC"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1Zjn86iESb/",
+        "title": "杰利佳TVC",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 23
+    },
+    {
+      "no": "24",
+      "slug": "jianda-tvc",
+      "title": "简搭加 TVC",
+      "en": "Jianda Modular Display TVC",
+      "group": "Brand & Product Visual",
+      "category": "TVC",
+      "industry": "制造",
+      "year": "2026",
+      "summary": "简搭加模块化展示装置 TVC。全片以纸材结构特写开场，展示由 FSC 认证环保纸材搭建的货架、展柜与展台；字幕标注「垂直承重100kg/㎡，重压不变形」「首搭成本省30%，复用再省70%」。片尾以纸盒城市模型收尾，点明覆盖展会、商超、展厅、快闪等商业场景。",
+      "description": "简搭加模块化展示装置 TVC。全片以纸材结构特写开场，展示由 FSC 认证环保纸材搭建的货架、展柜与展台；字幕标注「垂直承重100kg/㎡，重压不变形」「首搭成本省30%，复用再省70%」。片尾以纸盒城市模型收尾，点明覆盖展会、商超、展厅、快闪等商业场景。",
+      "tags": ["AI Video", "Product", "Corporate", "E-commerce"],
+      "meta": [""],
+      "cover": "/images/works/imports/jianda-tvc/cover.jpg",
+      "image": "/images/works/imports/jianda-tvc/cover.jpg",
+      "images": [
+        "/images/works/imports/jianda-tvc/shot-01.jpg",
+        "/images/works/imports/jianda-tvc/shot-02.jpg",
+        "/images/works/imports/jianda-tvc/shot-03.jpg",
+        "/images/works/imports/jianda-tvc/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/jianda-tvc/shot-01.jpg",
+          "alt": "简搭TVC-1"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/jianda-tvc/shot-02.jpg",
+          "alt": "简搭TVC-1"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/jianda-tvc/shot-03.jpg",
+          "alt": "简搭TVC-1"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/jianda-tvc/shot-04.jpg",
+          "alt": "简搭TVC-1"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1dEn86PEdK/",
+        "title": "简搭TVC-1",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 24
+    },
+    {
+      "no": "25",
+      "slug": "degreasing-dish-cloth",
+      "title": "去油洗碗布 种草短片",
+      "en": "Degreasing Dish Cloth Short",
+      "group": "Brand & Product Visual",
+      "category": "社媒短视频",
+      "industry": "家居",
+      "year": "2026",
+      "summary": "去油洗碗布种草短片。画面以产品特写为主：女主用白色洗碗布擦拭带油渍的盘子，对比「以前擦油盘总要挤好多洗洁精」；布可直接擦净油污，不用时挂起来「干的也快」。除了碗盘，还顺手擦水槽、台面和灶台，包装上印有「新鲜生活」字样。",
+      "description": "去油洗碗布种草短片。画面以产品特写为主：女主用白色洗碗布擦拭带油渍的盘子，对比「以前擦油盘总要挤好多洗洁精」；布可直接擦净油污，不用时挂起来「干的也快」。除了碗盘，还顺手擦水槽、台面和灶台，包装上印有「新鲜生活」字样。",
+      "tags": ["AI Video", "Homecare", "Product", "Lifestyle"],
+      "meta": [""],
+      "cover": "/images/works/imports/degreasing-dish-cloth/cover.jpg",
+      "image": "/images/works/imports/degreasing-dish-cloth/cover.jpg",
+      "images": [
+        "/images/works/imports/degreasing-dish-cloth/shot-01.jpg",
+        "/images/works/imports/degreasing-dish-cloth/shot-02.jpg",
+        "/images/works/imports/degreasing-dish-cloth/shot-03.jpg",
+        "/images/works/imports/degreasing-dish-cloth/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/degreasing-dish-cloth/shot-01.jpg",
+          "alt": "去油洗碗布30s"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/degreasing-dish-cloth/shot-02.jpg",
+          "alt": "去油洗碗布30s"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/degreasing-dish-cloth/shot-03.jpg",
+          "alt": "去油洗碗布30s"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/degreasing-dish-cloth/shot-04.jpg",
+          "alt": "去油洗碗布30s"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1dJn86YEGF/",
+        "title": "去油洗碗布30s",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 25
     }
   ],
   "aiStudio": {

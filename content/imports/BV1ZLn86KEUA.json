@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "corporate-logo-image",
+  "title": "渝发科技 LOGO 形象片",
+  "en": "Yufa Technology Logo Reveal",
+  "group": "AI Visual Direction",
+  "category": "品牌形象片",
+  "industry": "制造",
+  "year": "2026",
+  "summary": "渝发科技 LOGO 形象片。全片以银色锦鲤游动为视觉主线：鱼群在水中盘旋成螺旋，游过银色山峦与水流，最后汇聚成由水滴组成的花瓣形 LOGO，浮现「YUFAKEJI 渝发科技」与「塑万物 渝未来」品牌字样。",
+  "description": "渝发科技 LOGO 形象片。全片以银色锦鲤游动为视觉主线：鱼群在水中盘旋成螺旋，游过银色山峦与水流，最后汇聚成由水滴组成的花瓣形 LOGO，浮现「YUFAKEJI 渝发科技」与「塑万物 渝未来」品牌字样。",
+  "tags": ["AI Video", "Corporate", "Brand Film", "Logo"],
+  "meta": [""],
+  "cover": "/images/works/imports/corporate-logo-image/cover.jpg",
+  "image": "/images/works/imports/corporate-logo-image/cover.jpg",
+  "images": [
+    "/images/works/imports/corporate-logo-image/shot-01.jpg",
+    "/images/works/imports/corporate-logo-image/shot-02.jpg",
+    "/images/works/imports/corporate-logo-image/shot-03.jpg",
+    "/images/works/imports/corporate-logo-image/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/corporate-logo-image/shot-01.jpg",
+      "alt": "企业LOGO形象"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/corporate-logo-image/shot-02.jpg",
+      "alt": "企业LOGO形象"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/corporate-logo-image/shot-03.jpg",
+      "alt": "企业LOGO形象"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/corporate-logo-image/shot-04.jpg",
+      "alt": "企业LOGO形象"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1ZLn86KEUA/",
+    "title": "企业LOGO形象",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1ZLn86KEUA",
+    "duration": 36,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1ZLn86KEUA/"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "dish-soap-tvc",
+  "title": "洗洁精 TVC",
+  "en": "Dish Soap TVC",
+  "group": "Brand & Product Visual",
+  "category": "TVC",
+  "industry": "日化",
+  "year": "2026",
+  "summary": "洗洁精 TVC。一位妈妈在厨房发愁：孩子吃的果蔬怕洗不干净、碗又油，手也越洗越干。用这款洗洁精后「重油锅不用较劲」，字幕标注「它没有色素、磷酸盐和荧光剂」，同时可清洗果蔬。片尾妈妈靠在沙发上，配「当妈的也别忘对自己好一点」。",
+  "description": "洗洁精 TVC。一位妈妈在厨房发愁：孩子吃的果蔬怕洗不干净、碗又油，手也越洗越干。用这款洗洁精后「重油锅不用较劲」，字幕标注「它没有色素、磷酸盐和荧光剂」，同时可清洗果蔬。片尾妈妈靠在沙发上，配「当妈的也别忘对自己好一点」。",
+  "tags": ["AI Video", "FMCG", "Homecare", "Lifestyle"],
+  "meta": [""],
+  "cover": "/images/works/imports/dish-soap-tvc/cover.jpg",
+  "image": "/images/works/imports/dish-soap-tvc/cover.jpg",
+  "images": [
+    "/images/works/imports/dish-soap-tvc/shot-01.jpg",
+    "/images/works/imports/dish-soap-tvc/shot-02.jpg",
+    "/images/works/imports/dish-soap-tvc/shot-03.jpg",
+    "/images/works/imports/dish-soap-tvc/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/dish-soap-tvc/shot-01.jpg",
+      "alt": "洗洁精45s-TVC"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/dish-soap-tvc/shot-02.jpg",
+      "alt": "洗洁精45s-TVC"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/dish-soap-tvc/shot-03.jpg",
+      "alt": "洗洁精45s-TVC"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/dish-soap-tvc/shot-04.jpg",
+      "alt": "洗洁精45s-TVC"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1Rpn86hE3d/",
+    "title": "洗洁精45s-TVC",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1Rpn86hE3d",
+    "duration": 46,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1Rpn86hE3d/"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "yufa-corporate-tvc",
+  "title": "渝发 企业宣传片",
+  "en": "Yufa Technology Corporate Film",
+  "group": "AI Visual Direction",
+  "category": "企业宣传片",
+  "industry": "制造",
+  "year": "2026",
+  "summary": "渝发科技企业宣传片。先展示旗下「一阳尚家」高端家居展厅与「一阳壹品」商超陈列，再切入「渝发科技 超级工厂」，出现自动化生产线与「四大智能化生产基地，是超级工厂的坚实底盘」字幕。片尾商务人士在长江边举杯，配「游长江、话未来，让合作不止于生意」。",
+  "description": "渝发科技企业宣传片。先展示旗下「一阳尚家」高端家居展厅与「一阳壹品」商超陈列，再切入「渝发科技 超级工厂」，出现自动化生产线与「四大智能化生产基地，是超级工厂的坚实底盘」字幕。片尾商务人士在长江边举杯，配「游长江、话未来，让合作不止于生意」。",
+  "tags": ["AI Video", "Corporate", "Manufacturing", "Product"],
+  "meta": [""],
+  "cover": "/images/works/imports/yufa-corporate-tvc/cover.jpg",
+  "image": "/images/works/imports/yufa-corporate-tvc/cover.jpg",
+  "images": [
+    "/images/works/imports/yufa-corporate-tvc/shot-01.jpg",
+    "/images/works/imports/yufa-corporate-tvc/shot-02.jpg",
+    "/images/works/imports/yufa-corporate-tvc/shot-03.jpg",
+    "/images/works/imports/yufa-corporate-tvc/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/yufa-corporate-tvc/shot-01.jpg",
+      "alt": "渝发企业宣传TVC"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/yufa-corporate-tvc/shot-02.jpg",
+      "alt": "渝发企业宣传TVC"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/yufa-corporate-tvc/shot-03.jpg",
+      "alt": "渝发企业宣传TVC"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/yufa-corporate-tvc/shot-04.jpg",
+      "alt": "渝发企业宣传TVC"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1ZLn86KE25/",
+    "title": "渝发企业宣传TVC",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1ZLn86KE25",
+    "duration": 243,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1ZLn86KE25/"
+  }
+}

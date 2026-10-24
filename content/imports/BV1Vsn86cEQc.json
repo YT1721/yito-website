@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "jinwei-drain-cleaner",
+  "title": "今卫啫喱管道疏通剂 TVC",
+  "en": "Jinwei Gel Drain Cleaner TVC",
+  "group": "Brand & Product Visual",
+  "category": "TVC",
+  "industry": "日化",
+  "year": "2026",
+  "summary": "今卫啫喱管道疏通剂 TVC。女主发现浴室下水道堵了，「洗个澡像泡脚」，还回忆起上次堵到水漫出来。她从柜下取出今卫啫喱管道疏通剂，啫喱状液体倒入地漏「会挂在管壁上」，随后水流顺利下排，女主蹲在旁边说「听这个声音」。",
+  "description": "今卫啫喱管道疏通剂 TVC。女主发现浴室下水道堵了，「洗个澡像泡脚」，还回忆起上次堵到水漫出来。她从柜下取出今卫啫喱管道疏通剂，啫喱状液体倒入地漏「会挂在管壁上」，随后水流顺利下排，女主蹲在旁边说「听这个声音」。",
+  "tags": ["AI Video", "FMCG", "Homecare", "Product"],
+  "meta": [""],
+  "cover": "/images/works/imports/jinwei-drain-cleaner/cover.jpg",
+  "image": "/images/works/imports/jinwei-drain-cleaner/cover.jpg",
+  "images": [
+    "/images/works/imports/jinwei-drain-cleaner/shot-01.jpg",
+    "/images/works/imports/jinwei-drain-cleaner/shot-02.jpg",
+    "/images/works/imports/jinwei-drain-cleaner/shot-03.jpg",
+    "/images/works/imports/jinwei-drain-cleaner/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/jinwei-drain-cleaner/shot-01.jpg",
+      "alt": "今卫啫喱管道疏通剂45s"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/jinwei-drain-cleaner/shot-02.jpg",
+      "alt": "今卫啫喱管道疏通剂45s"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/jinwei-drain-cleaner/shot-03.jpg",
+      "alt": "今卫啫喱管道疏通剂45s"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/jinwei-drain-cleaner/shot-04.jpg",
+      "alt": "今卫啫喱管道疏通剂45s"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1Vsn86cEQc/",
+    "title": "今卫啫喱管道疏通剂45s",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1Vsn86cEQc",
+    "duration": 47,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1Vsn86cEQc/"
+  }
+}

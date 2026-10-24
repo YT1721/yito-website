@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "kuaixi-laundry-detergent",
+  "title": "今卫快洗洗衣液 种草短片",
+  "en": "Jinwei Kuaixi Laundry Detergent Short",
+  "group": "Brand & Product Visual",
+  "category": "社媒短视频",
+  "industry": "日化",
+  "year": "2026",
+  "summary": "今卫快洗洗衣液种草短片。女主在手洗毛衣时泡沫冲不净、水一直流，手机弹出「9:00 会议提醒」，眼看要迟到；换用今卫快洗洗衣液后「一遍就漂得干净」，最后在阳台端着咖啡悠闲晒太阳，字幕点明产品名「今卫快洗洗衣液」。",
+  "description": "今卫快洗洗衣液种草短片。女主在手洗毛衣时泡沫冲不净、水一直流，手机弹出「9:00 会议提醒」，眼看要迟到；换用今卫快洗洗衣液后「一遍就漂得干净」，最后在阳台端着咖啡悠闲晒太阳，字幕点明产品名「今卫快洗洗衣液」。",
+  "tags": ["AI Video", "FMCG", "Homecare", "Lifestyle"],
+  "meta": [""],
+  "cover": "/images/works/imports/kuaixi-laundry-detergent/cover.jpg",
+  "image": "/images/works/imports/kuaixi-laundry-detergent/cover.jpg",
+  "images": [
+    "/images/works/imports/kuaixi-laundry-detergent/shot-01.jpg",
+    "/images/works/imports/kuaixi-laundry-detergent/shot-02.jpg",
+    "/images/works/imports/kuaixi-laundry-detergent/shot-03.jpg",
+    "/images/works/imports/kuaixi-laundry-detergent/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/kuaixi-laundry-detergent/shot-01.jpg",
+      "alt": "快洗洗衣液45s-种草小视频"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/kuaixi-laundry-detergent/shot-02.jpg",
+      "alt": "快洗洗衣液45s-种草小视频"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/kuaixi-laundry-detergent/shot-03.jpg",
+      "alt": "快洗洗衣液45s-种草小视频"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/kuaixi-laundry-detergent/shot-04.jpg",
+      "alt": "快洗洗衣液45s-种草小视频"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV19pn86hE2R/",
+    "title": "快洗洗衣液45s-种草小视频",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV19pn86hE2R",
+    "duration": 46,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV19pn86hE2R/"
+  }
+}

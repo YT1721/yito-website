@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "jielijia-tvc",
+  "title": "杰利佳 TVC",
+  "en": "Jielijia TVC",
+  "group": "Brand & Product Visual",
+  "category": "TVC",
+  "industry": "家居",
+  "year": "2026",
+  "summary": "杰利佳家居 TVC。全片围绕家用好物展开：阳台晾衣架上挂着大衣与吊带裙，Hello Kitty 形象的角色望向城市天际线；拖把清洁木地板，厨房台面上摆着水果盘。多处出现漂浮的爱心特效，片尾夜幕城市配字幕「做极致产品，让家更舒适」。",
+  "description": "杰利佳家居 TVC。全片围绕家用好物展开：阳台晾衣架上挂着大衣与吊带裙，Hello Kitty 形象的角色望向城市天际线；拖把清洁木地板，厨房台面上摆着水果盘。多处出现漂浮的爱心特效，片尾夜幕城市配字幕「做极致产品，让家更舒适」。",
+  "tags": ["AI Video", "Homecare", "Product", "Lifestyle"],
+  "meta": [""],
+  "cover": "/images/works/imports/jielijia-tvc/cover.jpg",
+  "image": "/images/works/imports/jielijia-tvc/cover.jpg",
+  "images": [
+    "/images/works/imports/jielijia-tvc/shot-01.jpg",
+    "/images/works/imports/jielijia-tvc/shot-02.jpg",
+    "/images/works/imports/jielijia-tvc/shot-03.jpg",
+    "/images/works/imports/jielijia-tvc/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/jielijia-tvc/shot-01.jpg",
+      "alt": "杰利佳TVC"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/jielijia-tvc/shot-02.jpg",
+      "alt": "杰利佳TVC"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/jielijia-tvc/shot-03.jpg",
+      "alt": "杰利佳TVC"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/jielijia-tvc/shot-04.jpg",
+      "alt": "杰利佳TVC"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1Zjn86iESb/",
+    "title": "杰利佳TVC",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1Zjn86iESb",
+    "duration": 92,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1Zjn86iESb/"
+  }
+}

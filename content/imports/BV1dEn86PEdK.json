@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "jianda-tvc",
+  "title": "简搭加 TVC",
+  "en": "Jianda Modular Display TVC",
+  "group": "Brand & Product Visual",
+  "category": "TVC",
+  "industry": "制造",
+  "year": "2026",
+  "summary": "简搭加模块化展示装置 TVC。全片以纸材结构特写开场，展示由 FSC 认证环保纸材搭建的货架、展柜与展台；字幕标注「垂直承重100kg/㎡，重压不变形」「首搭成本省30%，复用再省70%」。片尾以纸盒城市模型收尾，点明覆盖展会、商超、展厅、快闪等商业场景。",
+  "description": "简搭加模块化展示装置 TVC。全片以纸材结构特写开场，展示由 FSC 认证环保纸材搭建的货架、展柜与展台；字幕标注「垂直承重100kg/㎡，重压不变形」「首搭成本省30%，复用再省70%」。片尾以纸盒城市模型收尾，点明覆盖展会、商超、展厅、快闪等商业场景。",
+  "tags": ["AI Video", "Product", "Corporate", "E-commerce"],
+  "meta": [""],
+  "cover": "/images/works/imports/jianda-tvc/cover.jpg",
+  "image": "/images/works/imports/jianda-tvc/cover.jpg",
+  "images": [
+    "/images/works/imports/jianda-tvc/shot-01.jpg",
+    "/images/works/imports/jianda-tvc/shot-02.jpg",
+    "/images/works/imports/jianda-tvc/shot-03.jpg",
+    "/images/works/imports/jianda-tvc/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/jianda-tvc/shot-01.jpg",
+      "alt": "简搭TVC-1"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/jianda-tvc/shot-02.jpg",
+      "alt": "简搭TVC-1"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/jianda-tvc/shot-03.jpg",
+      "alt": "简搭TVC-1"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/jianda-tvc/shot-04.jpg",
+      "alt": "简搭TVC-1"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1dEn86PEdK/",
+    "title": "简搭TVC-1",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1dEn86PEdK",
+    "duration": 57,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1dEn86PEdK/"
+  }
+}

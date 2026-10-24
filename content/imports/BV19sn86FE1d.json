@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "bread-sponge",
+  "title": "吐司造型海绵 种草短片",
+  "en": "Toast-Shaped Sponge Short",
+  "group": "Brand & Product Visual",
+  "category": "社媒短视频",
+  "industry": "家居",
+  "year": "2026",
+  "summary": "吐司造型海绵种草短片。画面以产品特写为主：一块吐司切片造型的海绵在水龙头下沾水，「泡沫还挺细的」「手感是软软绵绵的」，可用来擦水池边的金属位置。女主强调「最戳我的是这个吐司造型」，叠起来像一排面包片，「是真的会顺手拿起来用」。",
+  "description": "吐司造型海绵种草短片。画面以产品特写为主：一块吐司切片造型的海绵在水龙头下沾水，「泡沫还挺细的」「手感是软软绵绵的」，可用来擦水池边的金属位置。女主强调「最戳我的是这个吐司造型」，叠起来像一排面包片，「是真的会顺手拿起来用」。",
+  "tags": ["AI Video", "Homecare", "Product", "Lifestyle"],
+  "meta": [""],
+  "cover": "/images/works/imports/bread-sponge/cover.jpg",
+  "image": "/images/works/imports/bread-sponge/cover.jpg",
+  "images": [
+    "/images/works/imports/bread-sponge/shot-01.jpg",
+    "/images/works/imports/bread-sponge/shot-02.jpg",
+    "/images/works/imports/bread-sponge/shot-03.jpg",
+    "/images/works/imports/bread-sponge/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/bread-sponge/shot-01.jpg",
+      "alt": "面包海绵块30s"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/bread-sponge/shot-02.jpg",
+      "alt": "面包海绵块30s"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/bread-sponge/shot-03.jpg",
+      "alt": "面包海绵块30s"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/bread-sponge/shot-04.jpg",
+      "alt": "面包海绵块30s"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV19sn86FE1d/",
+    "title": "面包海绵块30s",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV19sn86FE1d",
+    "duration": 36,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV19sn86FE1d/"
+  }
+}

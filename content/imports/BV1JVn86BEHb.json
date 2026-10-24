@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "yijiayayun-tvc",
+  "title": "怡家雅韵 TVC",
+  "en": "Yijiayayun Home TVC",
+  "group": "Brand & Product Visual",
+  "category": "TVC",
+  "industry": "家居",
+  "year": "2026",
+  "summary": "怡家雅韵家居 TVC。以一只熊形卡通吉祥物串联全片：沙地玩玩具车，老房子前大步走来；现代厨房里站在餐桌旁，浴室里推着置物架。字幕出现「以初心，探索日常需要」「浴室，有清爽的舒适」，片尾从太空俯瞰地球，配「心向蓝天，无畏前行」。",
+  "description": "怡家雅韵家居 TVC。以一只熊形卡通吉祥物串联全片：沙地玩玩具车，老房子前大步走来；现代厨房里站在餐桌旁，浴室里推着置物架。字幕出现「以初心，探索日常需要」「浴室，有清爽的舒适」，片尾从太空俯瞰地球，配「心向蓝天，无畏前行」。",
+  "tags": ["AI Video", "Homecare", "Product", "Lifestyle"],
+  "meta": [""],
+  "cover": "/images/works/imports/yijiayayun-tvc/cover.jpg",
+  "image": "/images/works/imports/yijiayayun-tvc/cover.jpg",
+  "images": [
+    "/images/works/imports/yijiayayun-tvc/shot-01.jpg",
+    "/images/works/imports/yijiayayun-tvc/shot-02.jpg",
+    "/images/works/imports/yijiayayun-tvc/shot-03.jpg",
+    "/images/works/imports/yijiayayun-tvc/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/yijiayayun-tvc/shot-01.jpg",
+      "alt": "怡家雅韵50sTVC"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/yijiayayun-tvc/shot-02.jpg",
+      "alt": "怡家雅韵50sTVC"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/yijiayayun-tvc/shot-03.jpg",
+      "alt": "怡家雅韵50sTVC"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/yijiayayun-tvc/shot-04.jpg",
+      "alt": "怡家雅韵50sTVC"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1JVn86BEHb/",
+    "title": "怡家雅韵50sTVC",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1JVn86BEHb",
+    "duration": 59,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1JVn86BEHb/"
+  }
+}
