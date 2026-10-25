@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "super-absorbent-cloth",
+  "title": "强力吸水擦拭布 · 产品短片",
+  "en": "Super Absorbent Cleaning Cloth",
+  "group": "AI Visual Direction",
+  "category": "产品广告片",
+  "industry": "家居清洁 / 汽车护理",
+  "year": "2026",
+  "summary": "强力吸水擦拭布的产品短片。前半段在溪边实拍：男生蹲在卵石上从背包里取出米色格纹布，手掌按着布浸进小溪吸水，同行伙伴在岸边笑，字幕「你这把小溪都吸进布里了吗」；后半段切到黑色车头，手掌按布从引擎盖擦过，留下一道干净的反光。用两个极端场景说明吸水与擦拭表现。",
+  "description": "强力吸水擦拭布的产品短片。前半段在溪边实拍：男生蹲在卵石上从背包里取出米色格纹布，手掌按着布浸进小溪吸水，同行伙伴在岸边笑，字幕「你这把小溪都吸进布里了吗」；后半段切到黑色车头，手掌按布从引擎盖擦过，留下一道干净的反光。用两个极端场景说明吸水与擦拭表现。",
+  "tags": ["AI Video", "Product", "Home Cleaning", "Outdoor", "Product Demo"],
+  "meta": ["产品广告片"],
+  "cover": "/images/works/imports/super-absorbent-cloth/cover.jpg",
+  "image": "/images/works/imports/super-absorbent-cloth/cover.jpg",
+  "images": [
+    "/images/works/imports/super-absorbent-cloth/shot-01.jpg",
+    "/images/works/imports/super-absorbent-cloth/shot-02.jpg",
+    "/images/works/imports/super-absorbent-cloth/shot-03.jpg",
+    "/images/works/imports/super-absorbent-cloth/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/super-absorbent-cloth/shot-01.jpg",
+      "alt": "强力吸水擦拭布"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/super-absorbent-cloth/shot-02.jpg",
+      "alt": "强力吸水擦拭布"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/super-absorbent-cloth/shot-03.jpg",
+      "alt": "强力吸水擦拭布"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/super-absorbent-cloth/shot-04.jpg",
+      "alt": "强力吸水擦拭布"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1APn86yExW/",
+    "title": "强力吸水擦拭布",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1APn86yExW",
+    "duration": 50,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1APn86yExW/"
+  }
+}

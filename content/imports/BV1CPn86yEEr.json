@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "magic-ball-tvc",
+  "title": "魔术球 45s 种草短片",
+  "en": "Magic Cleaning Ball 45s Short",
+  "group": "AI Visual Direction",
+  "category": "社媒短视频",
+  "industry": "家居清洁 / 日用品",
+  "year": "2026",
+  "summary": "家居清洁用品的 45 秒种草短片。女生在家自拍口播，先点出日常痛点：台面「使劲擦两下就花」，普通钢丝球是「硬刮路线」；随后举起米白色蓬松纤维球（蓝色提手），字幕「我比较喜欢它的一点是纤维是软的」。镜头切到厨房橱柜、洗手台与水龙头，说明每天要碰餐具、台面和龙头。全片以第一人称生活场景完成产品种草。",
+  "description": "家居清洁用品的 45 秒种草短片。女生在家自拍口播，先点出日常痛点：台面「使劲擦两下就花」，普通钢丝球是「硬刮路线」；随后举起米白色蓬松纤维球（蓝色提手），字幕「我比较喜欢它的一点是纤维是软的」。镜头切到厨房橱柜、洗手台与水龙头，说明每天要碰餐具、台面和龙头。全片以第一人称生活场景完成产品种草。",
+  "tags": ["AI Video", "Home Cleaning", "UGC Style", "Self-shot", "Product"],
+  "meta": ["社媒短视频"],
+  "cover": "/images/works/imports/magic-ball-tvc/cover.jpg",
+  "image": "/images/works/imports/magic-ball-tvc/cover.jpg",
+  "images": [
+    "/images/works/imports/magic-ball-tvc/shot-01.jpg",
+    "/images/works/imports/magic-ball-tvc/shot-02.jpg",
+    "/images/works/imports/magic-ball-tvc/shot-03.jpg",
+    "/images/works/imports/magic-ball-tvc/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/magic-ball-tvc/shot-01.jpg",
+      "alt": "魔术球45s营销种草视频"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/magic-ball-tvc/shot-02.jpg",
+      "alt": "魔术球45s营销种草视频"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/magic-ball-tvc/shot-03.jpg",
+      "alt": "魔术球45s营销种草视频"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/magic-ball-tvc/shot-04.jpg",
+      "alt": "魔术球45s营销种草视频"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1CPn86yEEr/",
+    "title": "魔术球45s营销种草视频",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1CPn86yEEr",
+    "duration": 57,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "",
+    "url": "https://www.bilibili.com/video/BV1CPn86yEEr/"
+  }
+}
