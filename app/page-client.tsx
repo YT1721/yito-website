@@ -476,7 +476,11 @@ function getRelatedWorks(
         serviceText.includes(serviceTitle)
       );
     })
-    .sort((a, b) => a.homepageOrder - b.homepageOrder);
+    .sort((a, b) => {
+      const rankA = a.serviceRanks?.[serviceId] ?? Number.MAX_SAFE_INTEGER;
+      const rankB = b.serviceRanks?.[serviceId] ?? Number.MAX_SAFE_INTEGER;
+      return rankA - rankB || a.homepageOrder - b.homepageOrder;
+    });
 }
 
 function HoverNavLink({

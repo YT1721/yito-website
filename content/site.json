@@ -288,7 +288,8 @@
           "visual": "brand-visual-selected-works-04"
         }
       ],
-      "serviceIds": []
+      "serviceIds": [],
+      "serviceRanks": {}
     },
     {
       "no": "02",
@@ -341,7 +342,10 @@
       "featured": true,
       "homepageOrder": 2,
       "image": "/images/works/imports/quanzhou-temple-tour/cover.jpg",
-      "serviceIds": ["ai-brand-film"]
+      "serviceIds": ["ai-brand-film"],
+      "serviceRanks": {
+        "ai-brand-film": 4
+      }
     },
     {
       "no": "03",
@@ -394,7 +398,8 @@
       "featured": false,
       "homepageOrder": 3,
       "image": "/images/works/imports/huierkang-red-apple/cover.jpg",
-      "serviceIds": []
+      "serviceIds": [],
+      "serviceRanks": {}
     },
     {
       "no": "04",
@@ -447,7 +452,10 @@
       "featured": true,
       "homepageOrder": 4,
       "image": "/images/works/imports/junlin-brand-film/cover.jpg",
-      "serviceIds": ["ai-concept-visual"]
+      "serviceIds": ["ai-concept-visual"],
+      "serviceRanks": {
+        "ai-concept-visual": 1
+      }
     },
     {
       "no": "05",
@@ -500,7 +508,10 @@
       },
       "featured": false,
       "homepageOrder": 5,
-      "serviceIds": ["ai-concept-visual"]
+      "serviceIds": ["ai-concept-visual"],
+      "serviceRanks": {
+        "ai-concept-visual": 3
+      }
     },
     {
       "no": "06",
@@ -553,7 +564,10 @@
       },
       "featured": false,
       "homepageOrder": 6,
-      "serviceIds": ["ai-concept-visual"]
+      "serviceIds": ["ai-concept-visual"],
+      "serviceRanks": {
+        "ai-concept-visual": 2
+      }
     },
     {
       "no": "07",
@@ -606,7 +620,10 @@
       },
       "featured": true,
       "homepageOrder": 7,
-      "serviceIds": ["ai-commercial-short-film"]
+      "serviceIds": ["ai-commercial-short-film"],
+      "serviceRanks": {
+        "ai-commercial-short-film": 1
+      }
     },
     {
       "no": "08",
@@ -659,7 +676,10 @@
       },
       "featured": false,
       "homepageOrder": 8,
-      "serviceIds": ["ai-corporate-film"]
+      "serviceIds": ["ai-corporate-film"],
+      "serviceRanks": {
+        "ai-corporate-film": 4
+      }
     },
     {
       "no": "09",
@@ -712,7 +732,8 @@
       },
       "featured": false,
       "homepageOrder": 9,
-      "serviceIds": []
+      "serviceIds": [],
+      "serviceRanks": {}
     },
     {
       "no": "10",
@@ -765,7 +786,10 @@
       },
       "featured": true,
       "homepageOrder": 10,
-      "serviceIds": ["ai-brand-film"]
+      "serviceIds": ["ai-brand-film"],
+      "serviceRanks": {
+        "ai-brand-film": 1
+      }
     },
     {
       "no": "11",
@@ -818,7 +842,8 @@
       },
       "featured": false,
       "homepageOrder": 11,
-      "serviceIds": []
+      "serviceIds": [],
+      "serviceRanks": {}
     },
     {
       "no": "12",
@@ -871,7 +896,8 @@
       },
       "featured": false,
       "homepageOrder": 12,
-      "serviceIds": []
+      "serviceIds": [],
+      "serviceRanks": {}
     },
     {
       "no": "13",
@@ -924,7 +950,8 @@
       },
       "featured": false,
       "homepageOrder": 13,
-      "serviceIds": []
+      "serviceIds": [],
+      "serviceRanks": {}
     },
     {
       "no": "14",
@@ -977,7 +1004,8 @@
       },
       "featured": false,
       "homepageOrder": 14,
-      "serviceIds": []
+      "serviceIds": [],
+      "serviceRanks": {}
     },
     {
       "no": "15",
@@ -1030,7 +1058,8 @@
       },
       "featured": false,
       "homepageOrder": 15,
-      "serviceIds": []
+      "serviceIds": [],
+      "serviceRanks": {}
     },
     {
       "no": "16",
@@ -1083,7 +1112,11 @@
       },
       "featured": false,
       "homepageOrder": 16,
-      "serviceIds": ["ai-brand-film", "ai-corporate-film"]
+      "serviceIds": ["ai-brand-film", "ai-corporate-film"],
+      "serviceRanks": {
+        "ai-brand-film": 2,
+        "ai-corporate-film": 2
+      }
     },
     {
       "no": "17",
@@ -1136,7 +1169,8 @@
       },
       "featured": false,
       "homepageOrder": 17,
-      "serviceIds": []
+      "serviceIds": [],
+      "serviceRanks": {}
     },
     {
       "no": "18",
@@ -1189,7 +1223,8 @@
       },
       "featured": false,
       "homepageOrder": 18,
-      "serviceIds": []
+      "serviceIds": [],
+      "serviceRanks": {}
     },
     {
       "no": "19",
@@ -1242,7 +1277,8 @@
       },
       "featured": false,
       "homepageOrder": 19,
-      "serviceIds": []
+      "serviceIds": [],
+      "serviceRanks": {}
     },
     {
       "no": "20",
@@ -1295,7 +1331,8 @@
       },
       "featured": false,
       "homepageOrder": 20,
-      "serviceIds": []
+      "serviceIds": [],
+      "serviceRanks": {}
     },
     {
       "no": "21",
@@ -1348,7 +1385,8 @@
       },
       "featured": false,
       "homepageOrder": 21,
-      "serviceIds": []
+      "serviceIds": [],
+      "serviceRanks": {}
     },
     {
       "no": "22",
@@ -1401,7 +1439,10 @@
       },
       "featured": false,
       "homepageOrder": 22,
-      "serviceIds": ["ai-corporate-film"]
+      "serviceIds": ["ai-corporate-film"],
+      "serviceRanks": {
+        "ai-corporate-film": 3
+      }
     },
     {
       "no": "23",
@@ -1454,7 +1495,8 @@
       },
       "featured": false,
       "homepageOrder": 23,
-      "serviceIds": []
+      "serviceIds": [],
+      "serviceRanks": {}
     },
     {
       "no": "24",
@@ -1507,7 +1549,10 @@
       },
       "featured": false,
       "homepageOrder": 24,
-      "serviceIds": ["ai-concept-visual"]
+      "serviceIds": ["ai-concept-visual"],
+      "serviceRanks": {
+        "ai-concept-visual": 4
+      }
     },
     {
       "no": "25",
@@ -1560,7 +1605,10 @@
       },
       "featured": false,
       "homepageOrder": 25,
-      "serviceIds": ["social-content-visual"]
+      "serviceIds": ["social-content-visual"],
+      "serviceRanks": {
+        "social-content-visual": 2
+      }
     },
     {
       "no": "26",
@@ -1613,7 +1661,10 @@
       },
       "featured": false,
       "homepageOrder": 26,
-      "serviceIds": ["ai-commercial-short-film"]
+      "serviceIds": ["ai-commercial-short-film"],
+      "serviceRanks": {
+        "ai-commercial-short-film": 2
+      }
     },
     {
       "no": "27",
@@ -1666,7 +1717,8 @@
       },
       "featured": false,
       "homepageOrder": 27,
-      "serviceIds": []
+      "serviceIds": [],
+      "serviceRanks": {}
     },
     {
       "no": "28",
@@ -1719,7 +1771,10 @@
       },
       "featured": false,
       "homepageOrder": 28,
-      "serviceIds": ["social-content-visual"]
+      "serviceIds": ["social-content-visual"],
+      "serviceRanks": {
+        "social-content-visual": 1
+      }
     },
     {
       "no": "29",
@@ -1772,7 +1827,10 @@
       },
       "featured": false,
       "homepageOrder": 29,
-      "serviceIds": ["ai-commercial-short-film"]
+      "serviceIds": ["ai-commercial-short-film"],
+      "serviceRanks": {
+        "ai-commercial-short-film": 5
+      }
     },
     {
       "no": "30",
@@ -1825,7 +1883,10 @@
       },
       "featured": true,
       "homepageOrder": 30,
-      "serviceIds": ["ai-brand-film"]
+      "serviceIds": ["ai-brand-film"],
+      "serviceRanks": {
+        "ai-brand-film": 3
+      }
     },
     {
       "no": "31",
@@ -1878,7 +1939,8 @@
       },
       "featured": false,
       "homepageOrder": 31,
-      "serviceIds": []
+      "serviceIds": [],
+      "serviceRanks": {}
     },
     {
       "no": "32",
@@ -1931,7 +1993,10 @@
       },
       "featured": false,
       "homepageOrder": 32,
-      "serviceIds": ["social-content-visual"]
+      "serviceIds": ["social-content-visual"],
+      "serviceRanks": {
+        "social-content-visual": 5
+      }
     },
     {
       "no": "33",
@@ -1984,7 +2049,8 @@
       },
       "featured": false,
       "homepageOrder": 33,
-      "serviceIds": []
+      "serviceIds": [],
+      "serviceRanks": {}
     },
     {
       "no": "34",
@@ -2037,7 +2103,8 @@
       },
       "featured": false,
       "homepageOrder": 34,
-      "serviceIds": []
+      "serviceIds": [],
+      "serviceRanks": {}
     },
     {
       "no": "35",
@@ -2090,7 +2157,8 @@
       },
       "featured": false,
       "homepageOrder": 35,
-      "serviceIds": []
+      "serviceIds": [],
+      "serviceRanks": {}
     },
     {
       "no": "36",
@@ -2143,7 +2211,10 @@
       },
       "featured": false,
       "homepageOrder": 36,
-      "serviceIds": ["ai-commercial-short-film"]
+      "serviceIds": ["ai-commercial-short-film"],
+      "serviceRanks": {
+        "ai-commercial-short-film": 4
+      }
     },
     {
       "no": "37",
@@ -2196,7 +2267,8 @@
       },
       "featured": false,
       "homepageOrder": 37,
-      "serviceIds": []
+      "serviceIds": [],
+      "serviceRanks": {}
     },
     {
       "no": "38",
@@ -2249,7 +2321,10 @@
       },
       "featured": false,
       "homepageOrder": 38,
-      "serviceIds": ["social-content-visual"]
+      "serviceIds": ["social-content-visual"],
+      "serviceRanks": {
+        "social-content-visual": 3
+      }
     },
     {
       "no": "39",
@@ -2302,7 +2377,8 @@
       },
       "featured": false,
       "homepageOrder": 39,
-      "serviceIds": []
+      "serviceIds": [],
+      "serviceRanks": {}
     },
     {
       "no": "40",
@@ -2355,7 +2431,10 @@
       },
       "featured": false,
       "homepageOrder": 40,
-      "serviceIds": ["ai-commercial-short-film"]
+      "serviceIds": ["ai-commercial-short-film"],
+      "serviceRanks": {
+        "ai-commercial-short-film": 3
+      }
     },
     {
       "no": "41",
@@ -2414,7 +2493,10 @@
       },
       "featured": false,
       "homepageOrder": 41,
-      "serviceIds": ["social-content-visual"]
+      "serviceIds": ["social-content-visual"],
+      "serviceRanks": {
+        "social-content-visual": 4
+      }
     },
     {
       "no": "42",
@@ -2473,7 +2555,8 @@
       },
       "featured": false,
       "homepageOrder": 42,
-      "serviceIds": []
+      "serviceIds": [],
+      "serviceRanks": {}
     },
     {
       "no": "43",
@@ -2526,7 +2609,10 @@
       },
       "featured": false,
       "homepageOrder": 43,
-      "serviceIds": ["ai-corporate-film"]
+      "serviceIds": ["ai-corporate-film"],
+      "serviceRanks": {
+        "ai-corporate-film": 1
+      }
     },
     {
       "no": "44",
@@ -2579,7 +2665,10 @@
       },
       "featured": false,
       "homepageOrder": 44,
-      "serviceIds": ["ai-commercial-short-film"]
+      "serviceIds": ["ai-commercial-short-film"],
+      "serviceRanks": {
+        "ai-commercial-short-film": 6
+      }
     }
   ],
   "aiStudio": {

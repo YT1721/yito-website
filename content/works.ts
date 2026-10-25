@@ -17,6 +17,7 @@ export type WorkContent = {
   result: string;
   services: string[];
   serviceIds: string[];
+  serviceRanks?: Partial<Record<string, number>>;
   tags: string[];
   images: string[];
   featured: boolean;
