@@ -387,7 +387,10 @@ function WorkCard({ work, index }: { work: WorkContent; index: number }) {
       className="selected-card"
     >
       <Link href={`/works/${work.slug}`} className="work-card-link">
-        <VisualSurface image={work.cover} className="selected-visual" />
+        <VisualSurface
+          image={work.homeBackground || work.cover}
+          className="selected-visual"
+        />
         <div className="selected-card-body">
           <span className="work-category">{work.category}</span>
           <h3>{work.title}</h3>
