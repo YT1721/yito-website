@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "niucha-oriental-tvc",
+  "title": "牛茶 · 滋养你的东方气韵",
+  "en": "Niucha Oriental Aura TVC",
+  "group": "Brand & Product Visual",
+  "category": "TVC",
+  "industry": "茶饮 / 燕窝饮品",
+  "year": "2026",
+  "summary": "牛茶「滋养你的东方气韵」主题 TVC。金色吸管与红唇的饮用特写开场，字幕「这一刻，感官穿越山林」；随即进入粉色梦幻森林，裙装女性溯游其中，字幕「东南亚溯源」点出燕窝产地；粉紫色云海间茶叶漂浮，「是前调的清雅，也是后调的绵长」把茶饮口感写成香调；结尾落到产品全家福，奶白、桃粉、芒果黄、抹茶绿层层叠加，「只为这一杯的极致口感」。",
+  "description": "牛茶「滋养你的东方气韵」主题 TVC。金色吸管与红唇的饮用特写开场，字幕「这一刻，感官穿越山林」；随即进入粉色梦幻森林，裙装女性溯游其中，字幕「东南亚溯源」点出燕窝产地；粉紫色云海间茶叶漂浮，「是前调的清雅，也是后调的绵长」把茶饮口感写成香调；结尾落到产品全家福，奶白、桃粉、芒果黄、抹茶绿层层叠加，「只为这一杯的极致口感」。",
+  "tags": ["AI Video", "Tea & Beverage", "TVC", "Cinematic"],
+  "meta": ["TVC"],
+  "cover": "/images/works/imports/niucha-oriental-tvc/cover.jpg",
+  "image": "/images/works/imports/niucha-oriental-tvc/cover.jpg",
+  "images": [
+    "/images/works/imports/niucha-oriental-tvc/shot-01.jpg",
+    "/images/works/imports/niucha-oriental-tvc/shot-02.jpg",
+    "/images/works/imports/niucha-oriental-tvc/shot-03.jpg",
+    "/images/works/imports/niucha-oriental-tvc/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/niucha-oriental-tvc/shot-01.jpg",
+      "alt": "牛茶-滋养你的东方气韵-AI广告TVC"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/niucha-oriental-tvc/shot-02.jpg",
+      "alt": "牛茶-滋养你的东方气韵-AI广告TVC"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/niucha-oriental-tvc/shot-03.jpg",
+      "alt": "牛茶-滋养你的东方气韵-AI广告TVC"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/niucha-oriental-tvc/shot-04.jpg",
+      "alt": "牛茶-滋养你的东方气韵-AI广告TVC"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1QMPEzeEmT/",
+    "title": "牛茶-滋养你的东方气韵-AI广告TVC",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1QMPEzeEmT",
+    "duration": 96,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "为燕窝茶饮牛茶做的-AI广告TVC商业短片-1",
+    "url": "https://www.bilibili.com/video/BV1QMPEzeEmT/"
+  }
+}

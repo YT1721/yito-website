@@ -1,0 +1,60 @@
+{
+  "no": "",
+  "slug": "niucha-low-sugar-tvc",
+  "title": "牛茶 · 低糖 TVC",
+  "en": "Niucha Low Sugar TVC",
+  "group": "Brand & Product Visual",
+  "category": "TVC",
+  "industry": "茶饮 / 燕窝饮品",
+  "year": "2026",
+  "summary": "牛茶低糖卖点 TVC，用三个日常场景讲「好喝不升糖」。办公室里手持燕窝桃胶茶饮，字幕「吸收更缓慢，能有效减少血糖骤升骤降的反应」；厨房场景从冰箱取出饮品，「芒果和西柚的清甜，搭配鲜奶和天然燕窝」；睡前敷面膜小酌一杯，「原味的纯粹、燕窝和桃胶的温润、鲜奶的清爽」。办公、居家、睡前三段场景覆盖一天的饮用时刻。",
+  "description": "牛茶低糖卖点 TVC，用三个日常场景讲「好喝不升糖」。办公室里手持燕窝桃胶茶饮，字幕「吸收更缓慢，能有效减少血糖骤升骤降的反应」；厨房场景从冰箱取出饮品，「芒果和西柚的清甜，搭配鲜奶和天然燕窝」；睡前敷面膜小酌一杯，「原味的纯粹、燕窝和桃胶的温润、鲜奶的清爽」。办公、居家、睡前三段场景覆盖一天的饮用时刻。",
+  "tags": ["AI Video", "Tea & Beverage", "TVC", "Lifestyle"],
+  "meta": ["TVC"],
+  "cover": "/images/works/imports/niucha-low-sugar-tvc/cover.jpg",
+  "image": "/images/works/imports/niucha-low-sugar-tvc/cover.jpg",
+  "images": [
+    "/images/works/imports/niucha-low-sugar-tvc/shot-01.jpg",
+    "/images/works/imports/niucha-low-sugar-tvc/shot-02.jpg",
+    "/images/works/imports/niucha-low-sugar-tvc/shot-03.jpg",
+    "/images/works/imports/niucha-low-sugar-tvc/shot-04.jpg"
+  ],
+  "thumbs": [
+    {
+      "title": "精彩镜头 1",
+      "image": "/images/works/imports/niucha-low-sugar-tvc/shot-01.jpg",
+      "alt": "牛茶TVC-低糖-TVC商业短片"
+    },
+    {
+      "title": "精彩镜头 2",
+      "image": "/images/works/imports/niucha-low-sugar-tvc/shot-02.jpg",
+      "alt": "牛茶TVC-低糖-TVC商业短片"
+    },
+    {
+      "title": "精彩镜头 3",
+      "image": "/images/works/imports/niucha-low-sugar-tvc/shot-03.jpg",
+      "alt": "牛茶TVC-低糖-TVC商业短片"
+    },
+    {
+      "title": "精彩镜头 4",
+      "image": "/images/works/imports/niucha-low-sugar-tvc/shot-04.jpg",
+      "alt": "牛茶TVC-低糖-TVC商业短片"
+    }
+  ],
+  "video": {
+    "type": "bilibili",
+    "url": "https://www.bilibili.com/video/BV1YTPEzNEfA/",
+    "title": "牛茶TVC-低糖-TVC商业短片",
+    "embedUrl": ""
+  },
+  "featured": false,
+  "homepageOrder": 99,
+  "_source": {
+    "bvid": "BV1YTPEzNEfA",
+    "duration": 121,
+    "owner": "Osman厉害了",
+    "partition": "",
+    "desc": "为燕窝茶饮牛茶做的-AI广告TVC商业短片-2",
+    "url": "https://www.bilibili.com/video/BV1YTPEzNEfA/"
+  }
+}
