@@ -2792,7 +2792,7 @@
     "no": "09",
     "title": "Contact Us",
     "subtitle": "联系合作",
-    "wechat": "yito-visual",
+    "wechat": "yt1721",
     "email": "yt1721@126.com",
     "xiaohongshu": "YITO Visual",
     "location": "Beijing / Remote",
@@ -2800,7 +2800,8 @@
     "note": "我们可以一起讨论你的品牌、产品、项目需求，以及适合 AI 商业视觉的制作方案。",
     "visual": "contact",
     "visualLabel": "START A PROJECT",
-    "image": "/images/contact/contact-light-door.jpg"
+    "image": "/images/contact/contact-light-door.jpg",
+    "phone": "13691106911"
   },
   "aiCapability": {
     "no": "05",

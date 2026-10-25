@@ -162,6 +162,7 @@ export type ContactContent = {
   note?: string;
   wechat: string;
   email: string;
+  phone?: string;
   xiaohongshu: string;
   location?: string;
   visual?: string;

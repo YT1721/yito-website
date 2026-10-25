@@ -183,6 +183,7 @@ export function adaptEditableContent(content: SiteContent): SiteContentData {
       note: content.contact?.note || defaultSiteContent.contact.note,
       email: content.contact?.email || defaultSiteContent.contact.email,
       wechat: content.contact?.wechat || defaultSiteContent.contact.wechat,
+      phone: content.contact?.phone || defaultSiteContent.contact.phone,
       xiaohongshu:
         content.contact?.xiaohongshu || defaultSiteContent.contact.xiaohongshu,
       location:

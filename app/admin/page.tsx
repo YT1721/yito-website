@@ -1206,6 +1206,13 @@ export default function AdminPage() {
                 />
               </Grid>
               <Field
+                label="联系电话"
+                value={content.contact.phone ?? ""}
+                onChange={(value) =>
+                  update((d) => void (d.contact.phone = value))
+                }
+              />
+              <Field
                 label="小红书"
                 value={content.contact.xiaohongshu}
                 onChange={(value) =>

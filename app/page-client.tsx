@@ -17,6 +17,7 @@ import {
   Mail,
   MessageCircle,
   PenTool,
+  Phone,
   ScanFace,
   Sparkles,
   Video,
@@ -301,6 +302,12 @@ export default function HomeClient({ content }: { content: SiteContentData }) {
             <Mail size={15} />
             {content.contact.email}
           </a>
+          {content.contact.phone ? (
+            <a href={`tel:${content.contact.phone}`}>
+              <Phone size={15} />
+              {content.contact.phone}
+            </a>
+          ) : null}
           <a href="#work">
             <ArrowUpRight size={15} />
             {content.selectedWorks.linkLabel}

@@ -49,6 +49,7 @@ export type ContactContentData = {
   note: string;
   email: string;
   wechat: string;
+  phone: string;
   xiaohongshu: string;
   location: string;
   cover: string;
@@ -264,7 +265,8 @@ export const siteContent = {
       "如果你正在寻找一种更高效、更灵活、更具视觉质感的商业内容制作方式，欢迎与 YITO 联系。",
     note: "我们可以一起讨论你的品牌、产品、项目需求，以及适合 AI 商业视觉的制作方案。",
     email: "yt1721@126.com",
-    wechat: "yito-visual",
+    wechat: "yt1721",
+    phone: "13691106911",
     xiaohongshu: "YITO Visual",
     location: "Beijing / Remote",
     cover: "/images/contact/contact-light-door.jpg",
