@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowUpRight,
@@ -427,6 +427,7 @@ function ServiceWorldChapter({
   const [activeWorkSlug, setActiveWorkSlug] = useState(
     visibleWorks[0]?.slug ?? "service-cover",
   );
+  const isMobile = useIsMobile();
   const backgroundLayers = [
     { key: "service-cover", image: service.cover },
     ...visibleWorks.map((work) => ({
@@ -444,16 +445,18 @@ function ServiceWorldChapter({
       className={`service-world-chapter ${isReversed ? "is-reversed" : ""}`}
     >
       <div className="service-world-background" aria-hidden="true">
-        {backgroundLayers.map((layer) => (
-          <div
-            className={`service-bg-layer ${
-              activeWorkSlug === layer.key ? "is-active" : ""
-            }`}
-            key={layer.key}
-          >
-            <VisualImage image={layer.image} />
-          </div>
-        ))}
+        {backgroundLayers
+          .filter((layer) => !isMobile || layer.key === activeWorkSlug)
+          .map((layer) => (
+            <div
+              className={`service-bg-layer ${
+                activeWorkSlug === layer.key ? "is-active" : ""
+              }`}
+              key={layer.key}
+            >
+              <VisualImage image={layer.image} />
+            </div>
+          ))}
       </div>
       <div className="service-world-copy">
         <Icon size={22} />
@@ -625,4 +628,18 @@ function VisualImage({
 
 function sectionNo(value: number) {
   return String(value).padStart(2, "0");
+}
+
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 820px)");
+    const update = () => setIsMobile(media.matches);
+    update();
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
+
+  return isMobile;
 }
