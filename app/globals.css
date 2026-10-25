@@ -591,9 +591,38 @@ a {
   grid-column: 1;
 }
 
-.about-chapter .cinematic-visual {
-  grid-column: 2;
-  grid-row: 1 / 4;
+.about-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.about-background::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 4, 3, 0.94) 0%,
+      rgba(3, 4, 3, 0.78) 38%,
+      rgba(3, 4, 3, 0.28) 68%,
+      rgba(3, 4, 3, 0.45) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(3, 4, 3, 0.55),
+      transparent 30%,
+      transparent 72%,
+      rgba(3, 4, 3, 0.82)
+    );
+}
+
+.about-chapter .chapter-heading,
+.about-chapter .chapter-text {
+  position: relative;
+  z-index: 1;
 }
 
 .chapter-text {
@@ -1307,12 +1336,12 @@ a {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.28;
+  opacity: 0.5;
 }
 
 .why-background .visual-media {
   object-position: 68% 48%;
-  filter: grayscale(0.2) contrast(1.2) brightness(0.48);
+  filter: grayscale(0.2) contrast(1.1) brightness(0.72);
   transform: scale(1.05);
 }
 
@@ -1323,15 +1352,15 @@ a {
   background:
     linear-gradient(
       90deg,
-      rgba(3, 4, 3, 0.96) 0%,
-      rgba(3, 4, 3, 0.8) 40%,
-      rgba(3, 4, 3, 0.92) 100%
+      rgba(3, 4, 3, 0.92) 0%,
+      rgba(3, 4, 3, 0.55) 40%,
+      rgba(3, 4, 3, 0.75) 100%
     ),
     linear-gradient(
       180deg,
-      rgba(3, 4, 3, 0.28),
-      rgba(3, 4, 3, 0.5) 48%,
-      rgba(3, 4, 3, 0.98)
+      rgba(3, 4, 3, 0.22),
+      rgba(3, 4, 3, 0.4) 48%,
+      rgba(3, 4, 3, 0.92)
     );
 }
 
@@ -3862,6 +3891,15 @@ a {
   .clients-chapter,
   .contact-chapter {
     grid-template-columns: 1fr;
+  }
+
+  .about-background::after {
+    background: linear-gradient(
+      180deg,
+      rgba(3, 4, 3, 0.86) 0%,
+      rgba(3, 4, 3, 0.62) 45%,
+      rgba(3, 4, 3, 0.85) 100%
+    );
   }
 
   .chapter {

@@ -159,6 +159,9 @@ export default function HomeClient({
         subtitle={content.about.subtitle}
         className="about-chapter"
       >
+        <div className="about-background" aria-hidden="true">
+          <VisualImage image={content.about.cover} />
+        </div>
         <div className="chapter-text">
           {content.about.body.map((line) => (
             <p key={line}>{line}</p>
@@ -174,7 +177,6 @@ export default function HomeClient({
           </div>
           <p className="statement">{content.about.statement}</p>
         </div>
-        <CinematicVisual image={content.about.cover} />
       </Chapter>
 
       {serviceChapters.map((service, index) => (
