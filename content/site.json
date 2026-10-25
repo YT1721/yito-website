@@ -173,13 +173,6 @@
     ],
     "items": [
       {
-        "title": "品牌视觉设计精选",
-        "en": "Brand Visual Selected Works",
-        "visual": "brand-visual-selected-works",
-        "image": "/images/works/brand-selected/cover.jpg",
-        "caseSlug": "brand-visual-selected-works"
-      },
-      {
         "title": "小沙弥的「私访」记",
         "en": "A Little Monk Visit to Quanzhou",
         "visual": "quanzhou-temple-tour",
@@ -213,84 +206,17 @@
         "visual": "apollo",
         "image": "/images/works/home-bg/apollo.jpg",
         "caseSlug": "apollo"
+      },
+      {
+        "title": "牛茶 产品营销视觉",
+        "en": "Niucha Product Marketing Visual",
+        "visual": "niucha-product-marketing",
+        "image": "/images/works/imports/niucha-product-marketing/cover.jpg",
+        "caseSlug": "niucha-product-marketing"
       }
     ]
   },
   "caseStudies": [
-    {
-      "no": "01",
-      "slug": "brand-visual-selected-works",
-      "title": "品牌视觉设计精选",
-      "en": "Brand Visual Selected Works",
-      "group": "Design Foundation",
-      "category": "品牌设计 / 包装设计 / 商业视觉",
-      "industry": "金融 / 科技 / 医疗 / 消费品牌",
-      "year": "2026",
-      "summary": "YITO 起步于商业视觉设计，过往项目覆盖金融、科技、医疗、文化、消费品牌等方向。这些项目经验构成了今天 YITO 转向 AI 商业视觉的审美、策略和交付基础。",
-      "description": "YITO 起步于商业视觉设计，过往项目覆盖金融、科技、医疗、文化、消费品牌等方向。这些项目经验构成了今天 YITO 转向 AI 商业视觉的审美、策略和交付基础。",
-      "challenge": "展示 YITO 在传统商业设计领域的积累，让客户理解：YITO 并不是单纯 AI 工具使用者，而是有设计判断和商业项目经验的视觉工作室。",
-      "strategy": "本案例不作为单一项目展示，而作为历史能力合集。重点呈现品牌识别、应用系统、行业适配能力和商业审美基础。",
-      "solution": "品牌识别 / 应用系统 / 包装设计 / 营销视觉 / 跨行业视觉沉淀",
-      "result": "这些历史项目证明 YITO 具备品牌识别、商业设计和跨行业视觉表达经验，可为 AI 商业视觉项目提供更稳定的审美与策略支撑。",
-      "services": ["品牌视觉设计", "包装设计", "商业视觉", "AI 视觉策略"],
-      "tags": ["Brand Identity", "Packaging", "Visual System", "Design"],
-      "visualKeywords": [
-        "品牌识别",
-        "应用系统",
-        "行业适配",
-        "商业审美",
-        "跨行业视觉表达"
-      ],
-      "process": [
-        "品牌识别",
-        "应用系统",
-        "包装设计",
-        "营销视觉",
-        "跨行业视觉沉淀"
-      ],
-      "representativeProjects": [
-        "丰收证券",
-        "奥陶世卫星",
-        "松果健康",
-        "孔子学院总部"
-      ],
-      "featured": true,
-      "homepageOrder": 1,
-      "meta": [
-        "类型  品牌设计 / 包装设计 / 商业视觉",
-        "行业  金融 / 科技 / 医疗 / 消费品牌",
-        "服务  品牌视觉设计 / 包装设计 / 商业视觉 / AI 视觉策略"
-      ],
-      "visual": "brand-visual-selected-works",
-      "image": "/images/works/brand-selected/cover.jpg",
-      "cover": "/images/works/brand-selected/cover.jpg",
-      "images": [
-        "/images/works/brand-selected/foison-01.jpg",
-        "/images/works/brand-selected/ordovician-01.jpg",
-        "/images/works/brand-selected/sungo-01.jpg",
-        "/images/works/brand-selected/confucius-01.jpg"
-      ],
-      "thumbs": [
-        {
-          "image": "/images/works/brand-selected/foison-01.jpg",
-          "visual": "brand-visual-selected-works-01"
-        },
-        {
-          "image": "/images/works/brand-selected/ordovician-01.jpg",
-          "visual": "brand-visual-selected-works-02"
-        },
-        {
-          "image": "/images/works/brand-selected/sungo-01.jpg",
-          "visual": "brand-visual-selected-works-03"
-        },
-        {
-          "image": "/images/works/brand-selected/confucius-01.jpg",
-          "visual": "brand-visual-selected-works-04"
-        }
-      ],
-      "serviceIds": [],
-      "serviceRanks": {}
-    },
     {
       "no": "02",
       "slug": "quanzhou-temple-tour",
@@ -2691,6 +2617,159 @@
         "ai-commercial-short-film": 6
       },
       "homeBackground": "/images/works/home-bg/niucha-low-sugar-tvc.jpg"
+    },
+    {
+      "no": "45",
+      "slug": "abb-product-marketing",
+      "title": "ABB 产品营销视觉",
+      "en": "ABB Product Marketing Visual",
+      "group": "Brand & Product Visual",
+      "category": "产品营销视觉 / 家居场景",
+      "industry": "家居电气",
+      "year": "2026",
+      "summary": "ABB 开关面板与插座的产品营销视觉：把工业感很强的电气产品，放进客厅、卧室、书房等真实家居场景，用光影和空间质感代替参数堆叠。",
+      "description": "以高端住宅为舞台，用大面积自然光、石材、木质与软装衬托白色面板的极简轮廓；文案走「空间向前，电力向后」的克制语气，让产品成为空间的一部分，而不是被硬推到镜头前。",
+      "tags": [
+        "Product Poster",
+        "Home Appliance",
+        "Art Direction",
+        "AI Visual"
+      ],
+      "meta": [
+        "类型  产品营销视觉",
+        "行业  家居电气",
+        "服务  视觉概念 / 场景生成 / 海报设计"
+      ],
+      "cover": "/images/works/imports/abb-product-marketing/cover.jpg",
+      "image": "/images/works/imports/abb-product-marketing/cover.jpg",
+      "images": [
+        "/images/works/imports/abb-product-marketing/shot-01.jpg",
+        "/images/works/imports/abb-product-marketing/shot-02.jpg",
+        "/images/works/imports/abb-product-marketing/shot-03.jpg",
+        "/images/works/imports/abb-product-marketing/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "image": "/images/works/imports/abb-product-marketing/shot-01.jpg",
+          "visual": "abb-product-marketing-01"
+        },
+        {
+          "image": "/images/works/imports/abb-product-marketing/shot-02.jpg",
+          "visual": "abb-product-marketing-02"
+        },
+        {
+          "image": "/images/works/imports/abb-product-marketing/shot-03.jpg",
+          "visual": "abb-product-marketing-03"
+        },
+        {
+          "image": "/images/works/imports/abb-product-marketing/shot-04.jpg",
+          "visual": "abb-product-marketing-04"
+        }
+      ],
+      "video": null,
+      "featured": false,
+      "homepageOrder": 45,
+      "serviceIds": [],
+      "serviceRanks": {}
+    },
+    {
+      "no": "46",
+      "slug": "niucha-product-marketing",
+      "title": "牛茶 产品营销视觉",
+      "en": "Niucha Product Marketing Visual",
+      "group": "Brand & Product Visual",
+      "category": "品牌视觉 / 海报与包装",
+      "industry": "茶饮",
+      "year": "2026",
+      "summary": "牛茶的产品营销视觉体系：新品海报、店内灯箱、燕窝礼盒、保温打包袋与菜单价目设计，覆盖从门店到线上的完整物料。",
+      "description": "以「茶山青绿 + 暖金」为基调，产品特写讲口感，礼盒与包装讲送礼场景；同一套视觉语言延伸到竖版海报、横版灯箱和菜单，保证门店、外卖与线上传播看起来是同一个品牌。",
+      "tags": ["Product Poster", "Packaging", "Store KV", "Menu Design"],
+      "meta": [
+        "类型  品牌视觉 / 海报与包装",
+        "行业  茶饮",
+        "服务  海报设计 / 包装设计 / 门店物料"
+      ],
+      "cover": "/images/works/imports/niucha-product-marketing/cover.jpg",
+      "image": "/images/works/imports/niucha-product-marketing/cover.jpg",
+      "images": [
+        "/images/works/imports/niucha-product-marketing/shot-01.jpg",
+        "/images/works/imports/niucha-product-marketing/shot-02.jpg",
+        "/images/works/imports/niucha-product-marketing/shot-03.jpg",
+        "/images/works/imports/niucha-product-marketing/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "image": "/images/works/imports/niucha-product-marketing/shot-01.jpg",
+          "visual": "niucha-product-marketing-01"
+        },
+        {
+          "image": "/images/works/imports/niucha-product-marketing/shot-02.jpg",
+          "visual": "niucha-product-marketing-02"
+        },
+        {
+          "image": "/images/works/imports/niucha-product-marketing/shot-03.jpg",
+          "visual": "niucha-product-marketing-03"
+        },
+        {
+          "image": "/images/works/imports/niucha-product-marketing/shot-04.jpg",
+          "visual": "niucha-product-marketing-04"
+        }
+      ],
+      "video": null,
+      "featured": false,
+      "homepageOrder": 46,
+      "serviceIds": [],
+      "serviceRanks": {}
+    },
+    {
+      "no": "47",
+      "slug": "joybing-product-marketing",
+      "title": "甲乙饼 产品营销视觉",
+      "en": "Joybing Product Marketing Visual",
+      "group": "Brand & Product Visual",
+      "category": "产品营销视觉 / 季节新品",
+      "industry": "餐饮",
+      "year": "2026",
+      "summary": "甲乙饼「黄杏美式」季节新品的营销视觉：用冰感、果肉质感与撞色背景，把一杯咖啡做成夏天的主角。",
+      "description": "同一支新品拆成多种版式：深色背景突出杯身和咖啡层次，亮蓝背景强调清凉感，竖版裁切适配外卖与社交平台；文案集中在「黄杏美式，醒神一夏」。",
+      "tags": [
+        "Seasonal Campaign",
+        "Food Poster",
+        "Social Creative",
+        "AI Visual"
+      ],
+      "meta": ["类型  产品营销视觉", "行业  餐饮", "服务  视觉概念 / 海报设计"],
+      "cover": "/images/works/imports/joybing-product-marketing/cover.jpg",
+      "image": "/images/works/imports/joybing-product-marketing/cover.jpg",
+      "images": [
+        "/images/works/imports/joybing-product-marketing/shot-01.jpg",
+        "/images/works/imports/joybing-product-marketing/shot-02.jpg",
+        "/images/works/imports/joybing-product-marketing/shot-03.jpg",
+        "/images/works/imports/joybing-product-marketing/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "image": "/images/works/imports/joybing-product-marketing/shot-01.jpg",
+          "visual": "joybing-product-marketing-01"
+        },
+        {
+          "image": "/images/works/imports/joybing-product-marketing/shot-02.jpg",
+          "visual": "joybing-product-marketing-02"
+        },
+        {
+          "image": "/images/works/imports/joybing-product-marketing/shot-03.jpg",
+          "visual": "joybing-product-marketing-03"
+        },
+        {
+          "image": "/images/works/imports/joybing-product-marketing/shot-04.jpg",
+          "visual": "joybing-product-marketing-04"
+        }
+      ],
+      "video": null,
+      "featured": false,
+      "homepageOrder": 47,
+      "serviceIds": [],
+      "serviceRanks": {}
     }
   ],
   "aiStudio": {
