@@ -384,7 +384,7 @@ function ServiceWorldChapter({
   isReversed: boolean;
 }) {
   const Icon = iconMap[service.icon] ?? Sparkles;
-  const visibleWorks = works.slice(0, 3);
+  const visibleWorks = works.slice(0, 6);
   const hasMore = works.length > visibleWorks.length;
   const [activeWorkSlug, setActiveWorkSlug] = useState(
     visibleWorks[0]?.slug ?? "service-cover",

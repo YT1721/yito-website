@@ -288,7 +288,7 @@
           "visual": "brand-visual-selected-works-04"
         }
       ],
-      "serviceIds": ["ai-concept-visual", "social-content-visual"]
+      "serviceIds": []
     },
     {
       "no": "02",
@@ -340,7 +340,8 @@
       },
       "featured": true,
       "homepageOrder": 2,
-      "image": "/images/works/imports/quanzhou-temple-tour/cover.jpg"
+      "image": "/images/works/imports/quanzhou-temple-tour/cover.jpg",
+      "serviceIds": ["ai-brand-film"]
     },
     {
       "no": "03",
@@ -392,7 +393,8 @@
       },
       "featured": false,
       "homepageOrder": 3,
-      "image": "/images/works/imports/huierkang-red-apple/cover.jpg"
+      "image": "/images/works/imports/huierkang-red-apple/cover.jpg",
+      "serviceIds": []
     },
     {
       "no": "04",
@@ -444,7 +446,8 @@
       },
       "featured": true,
       "homepageOrder": 4,
-      "image": "/images/works/imports/junlin-brand-film/cover.jpg"
+      "image": "/images/works/imports/junlin-brand-film/cover.jpg",
+      "serviceIds": ["ai-concept-visual"]
     },
     {
       "no": "05",
@@ -496,7 +499,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 5
+      "homepageOrder": 5,
+      "serviceIds": ["ai-concept-visual"]
     },
     {
       "no": "06",
@@ -548,7 +552,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 6
+      "homepageOrder": 6,
+      "serviceIds": ["ai-concept-visual"]
     },
     {
       "no": "07",
@@ -600,7 +605,8 @@
         "embedUrl": ""
       },
       "featured": true,
-      "homepageOrder": 7
+      "homepageOrder": 7,
+      "serviceIds": ["ai-commercial-short-film"]
     },
     {
       "no": "08",
@@ -652,7 +658,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 8
+      "homepageOrder": 8,
+      "serviceIds": ["ai-corporate-film"]
     },
     {
       "no": "09",
@@ -704,7 +711,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 9
+      "homepageOrder": 9,
+      "serviceIds": []
     },
     {
       "no": "10",
@@ -756,7 +764,8 @@
         "embedUrl": ""
       },
       "featured": true,
-      "homepageOrder": 10
+      "homepageOrder": 10,
+      "serviceIds": ["ai-brand-film"]
     },
     {
       "no": "11",
@@ -808,7 +817,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 11
+      "homepageOrder": 11,
+      "serviceIds": []
     },
     {
       "no": "12",
@@ -860,7 +870,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 12
+      "homepageOrder": 12,
+      "serviceIds": []
     },
     {
       "no": "13",
@@ -912,7 +923,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 13
+      "homepageOrder": 13,
+      "serviceIds": []
     },
     {
       "no": "14",
@@ -964,7 +976,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 14
+      "homepageOrder": 14,
+      "serviceIds": []
     },
     {
       "no": "15",
@@ -1016,7 +1029,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 15
+      "homepageOrder": 15,
+      "serviceIds": []
     },
     {
       "no": "16",
@@ -1068,7 +1082,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 16
+      "homepageOrder": 16,
+      "serviceIds": ["ai-brand-film", "ai-corporate-film"]
     },
     {
       "no": "17",
@@ -1120,7 +1135,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 17
+      "homepageOrder": 17,
+      "serviceIds": []
     },
     {
       "no": "18",
@@ -1172,7 +1188,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 18
+      "homepageOrder": 18,
+      "serviceIds": []
     },
     {
       "no": "19",
@@ -1224,7 +1241,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 19
+      "homepageOrder": 19,
+      "serviceIds": []
     },
     {
       "no": "20",
@@ -1276,7 +1294,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 20
+      "homepageOrder": 20,
+      "serviceIds": []
     },
     {
       "no": "21",
@@ -1328,7 +1347,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 21
+      "homepageOrder": 21,
+      "serviceIds": []
     },
     {
       "no": "22",
@@ -1380,7 +1400,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 22
+      "homepageOrder": 22,
+      "serviceIds": ["ai-corporate-film"]
     },
     {
       "no": "23",
@@ -1432,7 +1453,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 23
+      "homepageOrder": 23,
+      "serviceIds": []
     },
     {
       "no": "24",
@@ -1484,7 +1506,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 24
+      "homepageOrder": 24,
+      "serviceIds": ["ai-concept-visual"]
     },
     {
       "no": "25",
@@ -1536,7 +1559,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 25
+      "homepageOrder": 25,
+      "serviceIds": ["social-content-visual"]
     },
     {
       "no": "26",
@@ -1588,7 +1612,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 26
+      "homepageOrder": 26,
+      "serviceIds": ["ai-commercial-short-film"]
     },
     {
       "no": "27",
@@ -1640,7 +1665,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 27
+      "homepageOrder": 27,
+      "serviceIds": []
     },
     {
       "no": "28",
@@ -1692,7 +1718,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 28
+      "homepageOrder": 28,
+      "serviceIds": ["social-content-visual"]
     },
     {
       "no": "29",
@@ -1744,7 +1771,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 29
+      "homepageOrder": 29,
+      "serviceIds": ["ai-commercial-short-film"]
     },
     {
       "no": "30",
@@ -1796,7 +1824,8 @@
         "embedUrl": ""
       },
       "featured": true,
-      "homepageOrder": 30
+      "homepageOrder": 30,
+      "serviceIds": ["ai-brand-film"]
     },
     {
       "no": "31",
@@ -1848,7 +1877,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 31
+      "homepageOrder": 31,
+      "serviceIds": []
     },
     {
       "no": "32",
@@ -1900,7 +1930,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 32
+      "homepageOrder": 32,
+      "serviceIds": ["social-content-visual"]
     },
     {
       "no": "33",
@@ -1952,7 +1983,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 33
+      "homepageOrder": 33,
+      "serviceIds": []
     },
     {
       "no": "34",
@@ -2004,7 +2036,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 34
+      "homepageOrder": 34,
+      "serviceIds": []
     },
     {
       "no": "35",
@@ -2056,7 +2089,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 35
+      "homepageOrder": 35,
+      "serviceIds": []
     },
     {
       "no": "36",
@@ -2108,7 +2142,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 36
+      "homepageOrder": 36,
+      "serviceIds": ["ai-commercial-short-film"]
     },
     {
       "no": "37",
@@ -2160,7 +2195,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 37
+      "homepageOrder": 37,
+      "serviceIds": []
     },
     {
       "no": "38",
@@ -2212,7 +2248,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 38
+      "homepageOrder": 38,
+      "serviceIds": ["social-content-visual"]
     },
     {
       "no": "39",
@@ -2264,7 +2301,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 39
+      "homepageOrder": 39,
+      "serviceIds": []
     },
     {
       "no": "40",
@@ -2316,7 +2354,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 40
+      "homepageOrder": 40,
+      "serviceIds": ["ai-commercial-short-film"]
     },
     {
       "no": "41",
@@ -2374,7 +2413,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 41
+      "homepageOrder": 41,
+      "serviceIds": ["social-content-visual"]
     },
     {
       "no": "42",
@@ -2432,7 +2472,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 42
+      "homepageOrder": 42,
+      "serviceIds": []
     },
     {
       "no": "43",
@@ -2484,7 +2525,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 43
+      "homepageOrder": 43,
+      "serviceIds": ["ai-corporate-film"]
     },
     {
       "no": "44",
@@ -2536,7 +2578,8 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 44
+      "homepageOrder": 44,
+      "serviceIds": ["ai-commercial-short-film"]
     }
   ],
   "aiStudio": {

@@ -930,6 +930,13 @@ a {
     color 180ms ease;
 }
 
+/* 关联案例达到 5 个及以上时压缩行高，避免区块被撑得过高 */
+.service-related-works:has(.service-related-card:nth-child(6))
+  .service-related-card {
+  min-height: 4.8rem;
+  padding: 0.6rem 1rem;
+}
+
 .service-related-card::after {
   position: absolute;
   inset: 0;
