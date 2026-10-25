@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowUpRight, Film, Tag } from "lucide-react";
 import type { WorkContent } from "../../../content/works";
 import ImageWithFallback from "../../../components/ImageWithFallback";
 import WorkMediaHero from "../../../components/WorkMediaHero";
+import CaseGalleryCarousel from "../../../components/CaseGalleryCarousel";
 import { readRuntimeWorks } from "../../../lib/runtime-content";
 import { resolveWorkVideo } from "../../../lib/work-media";
 
@@ -197,17 +198,24 @@ export default async function WorkDetailPage({ params }: WorkPageParams) {
             title={isVideo ? "Highlights" : "Gallery"}
             subtitle={isVideo ? "精彩镜头" : "图片展示"}
           />
-          <div className="case-gallery-grid">
-            {work.images.map((image, index) => (
-              <figure key={image} className={index === 0 ? "is-featured" : ""}>
-                <CinematicImage
-                  src={image}
-                  label={`${work.title} ${index + 1}`}
-                />
-                <figcaption>{String(index + 1).padStart(2, "0")}</figcaption>
-              </figure>
-            ))}
-          </div>
+          {work.galleryLayout === "carousel" ? (
+            <CaseGalleryCarousel images={work.images} title={work.title} />
+          ) : (
+            <div className="case-gallery-grid">
+              {work.images.map((image, index) => (
+                <figure
+                  key={image}
+                  className={index === 0 ? "is-featured" : ""}
+                >
+                  <CinematicImage
+                    src={image}
+                    label={`${work.title} ${index + 1}`}
+                  />
+                  <figcaption>{String(index + 1).padStart(2, "0")}</figcaption>
+                </figure>
+              ))}
+            </div>
+          )}
         </section>
       ) : null}
 

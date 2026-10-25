@@ -123,6 +123,7 @@ export type CaseStudy = VisualBlock & {
   visualKeywords?: string[];
   images?: string[];
   longImages?: LongImage[];
+  galleryLayout?: "grid" | "carousel";
   video?: WorkVideo;
   videoUrl?: string;
   featured?: boolean;

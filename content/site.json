@@ -2763,7 +2763,8 @@
       "featured": false,
       "homepageOrder": 46,
       "serviceIds": [],
-      "serviceRanks": {}
+      "serviceRanks": {},
+      "galleryLayout": "carousel"
     },
     {
       "no": "47",

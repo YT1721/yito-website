@@ -27,6 +27,7 @@ export type WorkContent = {
   tags: string[];
   images: string[];
   longImages?: WorkLongImage[];
+  galleryLayout?: "grid" | "carousel";
   featured: boolean;
   homepageOrder: number;
 };

@@ -260,6 +260,7 @@ function mapWork(item: EditableCaseStudy, index: number): WorkContent {
     tags: item.tags || [],
     images,
     longImages: item.longImages?.filter((entry) => entry.image) ?? [],
+    galleryLayout: item.galleryLayout,
     featured: item.featured ?? index < 6,
     homepageOrder: (item.homepageOrder ?? Number(item.no)) || index + 1,
   };
