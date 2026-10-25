@@ -325,10 +325,8 @@
       "featured": false,
       "homepageOrder": 3,
       "image": "/images/works/imports/huierkang-red-apple/cover.jpg",
-      "serviceIds": ["ai-brand-film"],
-      "serviceRanks": {
-        "ai-brand-film": 2
-      }
+      "serviceIds": [],
+      "serviceRanks": {}
     },
     {
       "no": "04",
@@ -666,8 +664,11 @@
       },
       "featured": false,
       "homepageOrder": 9,
-      "serviceIds": [],
-      "serviceRanks": {}
+      "serviceIds": ["ai-brand-film"],
+      "serviceRanks": {
+        "ai-brand-film": 2
+      },
+      "homeBackground": "/images/works/home-bg/junlin-tvc.jpg"
     },
     {
       "no": "10",
