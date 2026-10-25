@@ -190,7 +190,7 @@
   },
   "caseStudies": [
     {
-      "no": "02",
+      "no": "01",
       "slug": "apollo-offroad-brand-film",
       "title": "Apollo 越野启蒙师品牌片",
       "en": "Apollo Off-road Education Brand Film",
@@ -226,7 +226,7 @@
         "后续内容规划"
       ],
       "featured": true,
-      "homepageOrder": 2,
+      "homepageOrder": 1,
       "meta": [
         "类型  AI 品牌广告片",
         "行业  汽车教育 / 户外 / 亲子消费",
@@ -267,7 +267,7 @@
       ]
     },
     {
-      "no": "06",
+      "no": "02",
       "slug": "brand-visual-selected-works",
       "title": "品牌视觉设计精选",
       "en": "Brand Visual Selected Works",
@@ -304,7 +304,7 @@
         "孔子学院总部"
       ],
       "featured": true,
-      "homepageOrder": 6,
+      "homepageOrder": 2,
       "meta": [
         "类型  品牌设计 / 包装设计 / 商业视觉",
         "行业  金融 / 科技 / 医疗 / 消费品牌",
@@ -340,7 +340,7 @@
       "serviceIds": ["ai-concept-visual", "social-content-visual"]
     },
     {
-      "no": "07",
+      "no": "03",
       "slug": "quanzhou-temple-tour",
       "title": "小沙弥的「私访」记",
       "en": "A Little Monk Visit to Quanzhou",
@@ -388,11 +388,11 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 7,
+      "homepageOrder": 3,
       "image": "/images/works/imports/quanzhou-temple-tour/cover.jpg"
     },
     {
-      "no": "08",
+      "no": "04",
       "slug": "huierkang-red-apple",
       "title": "惠尔康红苹果 · 开工你最红",
       "en": "Huierkang Red Apple New Year Short",
@@ -440,11 +440,11 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 8,
+      "homepageOrder": 4,
       "image": "/images/works/imports/huierkang-red-apple/cover.jpg"
     },
     {
-      "no": "09",
+      "no": "05",
       "slug": "junlin-brand-film",
       "title": "君临塑+ 品牌片",
       "en": "Junlin Plastic+ Brand Film",
@@ -492,11 +492,11 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 9,
+      "homepageOrder": 5,
       "image": "/images/works/imports/junlin-brand-film/cover.jpg"
     },
     {
-      "no": "10",
+      "no": "06",
       "slug": "meiyun-elephant-vessel",
       "title": "每韵美器 · 象来出圈",
       "en": "Meiyun Elephant Brand Film",
@@ -545,10 +545,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 10
+      "homepageOrder": 6
     },
     {
-      "no": "11",
+      "no": "07",
       "slug": "bamboo-fiber-cup",
       "title": "竹纤维纸杯 产品片",
       "en": "Bamboo Fiber Paper Cup",
@@ -597,10 +597,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 11
+      "homepageOrder": 7
     },
     {
-      "no": "12",
+      "no": "08",
       "slug": "songguo-health",
       "title": "松果健康 TVC",
       "en": "Songguo Health TVC",
@@ -649,10 +649,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 12
+      "homepageOrder": 8
     },
     {
-      "no": "13",
+      "no": "09",
       "slug": "guozi-scissors",
       "title": "郭字刀剪 品牌片",
       "en": "Guozi Scissors Brand Film",
@@ -701,10 +701,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 13
+      "homepageOrder": 9
     },
     {
-      "no": "14",
+      "no": "10",
       "slug": "junlin-tvc",
       "title": "君临塑+ TVC",
       "en": "Junlin Plastic+ TVC",
@@ -753,10 +753,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 14
+      "homepageOrder": 10
     },
     {
-      "no": "15",
+      "no": "11",
       "slug": "niucha-ai-cut",
       "title": "牛茶 AI 广告 TVC",
       "en": "Niucha AI TVC (Alternate Cut)",
@@ -805,10 +805,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 15
+      "homepageOrder": 11
     },
     {
-      "no": "16",
+      "no": "12",
       "slug": "kuaixi-laundry-detergent",
       "title": "今卫快洗洗衣液 种草短片",
       "en": "Jinwei Kuaixi Laundry Detergent Short",
@@ -857,10 +857,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 16
+      "homepageOrder": 12
     },
     {
-      "no": "17",
+      "no": "13",
       "slug": "bread-sponge",
       "title": "吐司造型海绵 种草短片",
       "en": "Toast-Shaped Sponge Short",
@@ -909,10 +909,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 17
+      "homepageOrder": 13
     },
     {
-      "no": "18",
+      "no": "14",
       "slug": "yijiayayun-tvc",
       "title": "怡家雅韵 TVC",
       "en": "Yijiayayun Home TVC",
@@ -961,10 +961,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 18
+      "homepageOrder": 14
     },
     {
-      "no": "19",
+      "no": "15",
       "slug": "dish-soap-tvc",
       "title": "洗洁精 TVC",
       "en": "Dish Soap TVC",
@@ -1013,10 +1013,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 19
+      "homepageOrder": 15
     },
     {
-      "no": "20",
+      "no": "16",
       "slug": "jinwei-drain-cleaner",
       "title": "今卫啫喱管道疏通剂 TVC",
       "en": "Jinwei Gel Drain Cleaner TVC",
@@ -1065,10 +1065,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 20
+      "homepageOrder": 16
     },
     {
-      "no": "21",
+      "no": "17",
       "slug": "yufa-corporate-tvc",
       "title": "渝发 企业宣传片",
       "en": "Yufa Technology Corporate Film",
@@ -1117,10 +1117,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 21
+      "homepageOrder": 17
     },
     {
-      "no": "22",
+      "no": "18",
       "slug": "corporate-logo-image",
       "title": "渝发科技 LOGO 形象片",
       "en": "Yufa Technology Logo Reveal",
@@ -1169,10 +1169,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 22
+      "homepageOrder": 18
     },
     {
-      "no": "23",
+      "no": "19",
       "slug": "jielijia-tvc",
       "title": "杰利佳 TVC",
       "en": "Jielijia TVC",
@@ -1221,10 +1221,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 23
+      "homepageOrder": 19
     },
     {
-      "no": "24",
+      "no": "20",
       "slug": "jianda-tvc",
       "title": "简搭加 TVC",
       "en": "Jianda Modular Display TVC",
@@ -1273,10 +1273,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 24
+      "homepageOrder": 20
     },
     {
-      "no": "25",
+      "no": "21",
       "slug": "degreasing-dish-cloth",
       "title": "去油洗碗布 种草短片",
       "en": "Degreasing Dish Cloth Short",
@@ -1325,10 +1325,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 25
+      "homepageOrder": 21
     },
     {
-      "no": "26",
+      "no": "22",
       "slug": "bamboo-chopsticks",
       "title": "一次性竹筷 产品短片",
       "en": "Disposable Bamboo Chopsticks",
@@ -1377,10 +1377,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 26
+      "homepageOrder": 22
     },
     {
-      "no": "27",
+      "no": "23",
       "slug": "zhongping-antibacterial",
       "title": "中平抗菌 · 品牌形象片",
       "en": "Zhongping Antibacterial Brand Film",
@@ -1429,10 +1429,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 27
+      "homepageOrder": 23
     },
     {
-      "no": "28",
+      "no": "24",
       "slug": "little-road-roller",
       "title": "种下小压路机 · 创意短片",
       "en": "Plant a Little Road Roller",
@@ -1481,10 +1481,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 28
+      "homepageOrder": 24
     },
     {
-      "no": "29",
+      "no": "25",
       "slug": "kangbach-product",
       "title": "康巴赫 · 炒锅产品广告",
       "en": "Kangbach Wok Product Film",
@@ -1533,10 +1533,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 29
+      "homepageOrder": 25
     },
     {
-      "no": "30",
+      "no": "26",
       "slug": "bath-scrub-block",
       "title": "搓澡块 种草短片",
       "en": "Bath Scrub Block",
@@ -1585,10 +1585,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 30
+      "homepageOrder": 26
     },
     {
-      "no": "31",
+      "no": "27",
       "slug": "delta-force-honglang",
       "title": "三角洲行动 · 红狼 AI 短片",
       "en": "Delta Force · Honglang AI Short",
@@ -1637,10 +1637,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 31
+      "homepageOrder": 27
     },
     {
-      "no": "32",
+      "no": "28",
       "slug": "lazy-box",
       "title": "小懒盒保鲜盒 产品短片",
       "en": "Lazy Box Food Containers",
@@ -1689,10 +1689,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 32
+      "homepageOrder": 28
     },
     {
-      "no": "33",
+      "no": "29",
       "slug": "food-storage-bags",
       "title": "抗菌海鲜保鲜袋 产品短片",
       "en": "Antibacterial Seafood Bags",
@@ -1741,10 +1741,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 33
+      "homepageOrder": 29
     },
     {
-      "no": "34",
+      "no": "30",
       "slug": "cleaning-brush",
       "title": "长柄锅刷 AI 创意短片",
       "en": "Cleaning Brush Creative Short",
@@ -1793,10 +1793,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 34
+      "homepageOrder": 30
     },
     {
-      "no": "35",
+      "no": "31",
       "slug": "apollo",
       "title": "APOLLO · 越野电摩品牌形象片",
       "en": "APOLLO E-Motorbike Brand Film",
@@ -1845,10 +1845,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 35
+      "homepageOrder": 31
     },
     {
-      "no": "36",
+      "no": "32",
       "slug": "fruit-fork",
       "title": "竹艺水果叉 产品短片",
       "en": "Bamboo Fruit Forks",
@@ -1897,10 +1897,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 36
+      "homepageOrder": 32
     },
     {
-      "no": "37",
+      "no": "33",
       "slug": "soda-cleaning-eraser",
       "title": "苏打去污擦 产品短片",
       "en": "Soda Cleaning Eraser",
@@ -1949,10 +1949,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 37
+      "homepageOrder": 33
     },
     {
-      "no": "38",
+      "no": "34",
       "slug": "wzry-dasiming",
       "title": "王者荣耀 · 大司命 AI 短片",
       "en": "Honor of Kings · Da Siming AI Short",
@@ -2001,10 +2001,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 38
+      "homepageOrder": 34
     },
     {
-      "no": "39",
+      "no": "35",
       "slug": "meme-comedy",
       "title": "当古人遇上现代物件 · 古装玩梗短片",
       "en": "Ancient Meme Comedy Short",
@@ -2053,10 +2053,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 39
+      "homepageOrder": 35
     },
     {
-      "no": "40",
+      "no": "36",
       "slug": "magic-cleaning-ball",
       "title": "魔术清洁球 产品短片",
       "en": "Magic Cleaning Ball",
@@ -2105,10 +2105,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 40
+      "homepageOrder": 36
     },
     {
-      "no": "41",
+      "no": "37",
       "slug": "cleaning-tvc-short",
       "title": "厨房清洁用品 TVC",
       "en": "Kitchen Cleaning TVC",
@@ -2157,10 +2157,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 41
+      "homepageOrder": 37
     },
     {
-      "no": "42",
+      "no": "38",
       "slug": "product-tvc-short",
       "title": "餐厨日用品系列 TVC",
       "en": "Kitchenware Collection TVC",
@@ -2209,10 +2209,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 42
+      "homepageOrder": 38
     },
     {
-      "no": "43",
+      "no": "39",
       "slug": "hardworking-salesman",
       "title": "如此努力销售 · 创意短片",
       "en": "The Hardworking Salesman",
@@ -2261,10 +2261,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 43
+      "homepageOrder": 39
     },
     {
-      "no": "44",
+      "no": "40",
       "slug": "wzry-ai-video",
       "title": "王者荣耀 AI 短片 · 峡谷遭遇",
       "en": "Honor of Kings AI Short · Rift Encounter",
@@ -2313,10 +2313,10 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 44
+      "homepageOrder": 40
     },
     {
-      "no": "45",
+      "no": "41",
       "slug": "peace-elite-ai-video",
       "title": "和平精英 AI 短片 · 热血战场",
       "en": "Peace Elite AI Short · Battleground",
@@ -2365,7 +2365,7 @@
         "embedUrl": ""
       },
       "featured": false,
-      "homepageOrder": 45
+      "homepageOrder": 41
     }
   ],
   "aiStudio": {
