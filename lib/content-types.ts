@@ -111,6 +111,7 @@ export type CaseStudy = VisualBlock & {
   services?: string[];
   serviceIds?: string[];
   serviceRanks?: Partial<Record<string, number>>;
+  homeBackground?: string;
   industry: string;
   tags: string[];
   process?: string[];

@@ -345,7 +345,8 @@
       "serviceIds": ["ai-brand-film"],
       "serviceRanks": {
         "ai-brand-film": 4
-      }
+      },
+      "homeBackground": "/images/works/home-bg/quanzhou-temple-tour.jpg"
     },
     {
       "no": "03",
@@ -455,7 +456,8 @@
       "serviceIds": ["ai-concept-visual"],
       "serviceRanks": {
         "ai-concept-visual": 1
-      }
+      },
+      "homeBackground": "/images/works/home-bg/junlin-brand-film.jpg"
     },
     {
       "no": "05",
@@ -511,7 +513,8 @@
       "serviceIds": ["ai-concept-visual"],
       "serviceRanks": {
         "ai-concept-visual": 3
-      }
+      },
+      "homeBackground": "/images/works/home-bg/meiyun-elephant-vessel.jpg"
     },
     {
       "no": "06",
@@ -567,7 +570,8 @@
       "serviceIds": ["ai-concept-visual"],
       "serviceRanks": {
         "ai-concept-visual": 2
-      }
+      },
+      "homeBackground": "/images/works/home-bg/bamboo-fiber-cup.jpg"
     },
     {
       "no": "07",
@@ -623,7 +627,8 @@
       "serviceIds": ["ai-commercial-short-film"],
       "serviceRanks": {
         "ai-commercial-short-film": 1
-      }
+      },
+      "homeBackground": "/images/works/home-bg/songguo-health.jpg"
     },
     {
       "no": "08",
@@ -679,7 +684,8 @@
       "serviceIds": ["ai-corporate-film"],
       "serviceRanks": {
         "ai-corporate-film": 4
-      }
+      },
+      "homeBackground": "/images/works/home-bg/guozi-scissors.jpg"
     },
     {
       "no": "09",
@@ -789,7 +795,8 @@
       "serviceIds": ["ai-brand-film"],
       "serviceRanks": {
         "ai-brand-film": 1
-      }
+      },
+      "homeBackground": "/images/works/home-bg/niucha-ai-cut.jpg"
     },
     {
       "no": "11",
@@ -1116,7 +1123,8 @@
       "serviceRanks": {
         "ai-brand-film": 2,
         "ai-corporate-film": 2
-      }
+      },
+      "homeBackground": "/images/works/home-bg/yufa-corporate-tvc.jpg"
     },
     {
       "no": "17",
@@ -1442,7 +1450,8 @@
       "serviceIds": ["ai-corporate-film"],
       "serviceRanks": {
         "ai-corporate-film": 3
-      }
+      },
+      "homeBackground": "/images/works/home-bg/zhongping-antibacterial.jpg"
     },
     {
       "no": "23",
@@ -1552,7 +1561,8 @@
       "serviceIds": ["ai-concept-visual"],
       "serviceRanks": {
         "ai-concept-visual": 4
-      }
+      },
+      "homeBackground": "/images/works/home-bg/kangbach-product.jpg"
     },
     {
       "no": "25",
@@ -1608,7 +1618,8 @@
       "serviceIds": ["social-content-visual"],
       "serviceRanks": {
         "social-content-visual": 2
-      }
+      },
+      "homeBackground": "/images/works/home-bg/bath-scrub-block.jpg"
     },
     {
       "no": "26",
@@ -1664,7 +1675,8 @@
       "serviceIds": ["ai-commercial-short-film"],
       "serviceRanks": {
         "ai-commercial-short-film": 2
-      }
+      },
+      "homeBackground": "/images/works/home-bg/delta-force-honglang.jpg"
     },
     {
       "no": "27",
@@ -1774,7 +1786,8 @@
       "serviceIds": ["social-content-visual"],
       "serviceRanks": {
         "social-content-visual": 1
-      }
+      },
+      "homeBackground": "/images/works/home-bg/food-storage-bags.jpg"
     },
     {
       "no": "29",
@@ -1830,7 +1843,8 @@
       "serviceIds": ["ai-commercial-short-film"],
       "serviceRanks": {
         "ai-commercial-short-film": 5
-      }
+      },
+      "homeBackground": "/images/works/home-bg/cleaning-brush.jpg"
     },
     {
       "no": "30",
@@ -1886,7 +1900,8 @@
       "serviceIds": ["ai-brand-film"],
       "serviceRanks": {
         "ai-brand-film": 3
-      }
+      },
+      "homeBackground": "/images/works/home-bg/apollo.jpg"
     },
     {
       "no": "31",
@@ -1996,7 +2011,8 @@
       "serviceIds": ["social-content-visual"],
       "serviceRanks": {
         "social-content-visual": 5
-      }
+      },
+      "homeBackground": "/images/works/home-bg/soda-cleaning-eraser.jpg"
     },
     {
       "no": "33",
@@ -2214,7 +2230,8 @@
       "serviceIds": ["ai-commercial-short-film"],
       "serviceRanks": {
         "ai-commercial-short-film": 4
-      }
+      },
+      "homeBackground": "/images/works/home-bg/cleaning-tvc-short.jpg"
     },
     {
       "no": "37",
@@ -2324,7 +2341,8 @@
       "serviceIds": ["social-content-visual"],
       "serviceRanks": {
         "social-content-visual": 3
-      }
+      },
+      "homeBackground": "/images/works/home-bg/hardworking-salesman.jpg"
     },
     {
       "no": "39",
@@ -2434,7 +2452,8 @@
       "serviceIds": ["ai-commercial-short-film"],
       "serviceRanks": {
         "ai-commercial-short-film": 3
-      }
+      },
+      "homeBackground": "/images/works/home-bg/peace-elite-ai-video.jpg"
     },
     {
       "no": "41",
@@ -2496,7 +2515,8 @@
       "serviceIds": ["social-content-visual"],
       "serviceRanks": {
         "social-content-visual": 4
-      }
+      },
+      "homeBackground": "/images/works/home-bg/super-absorbent-cloth.jpg"
     },
     {
       "no": "42",
@@ -2612,7 +2632,8 @@
       "serviceIds": ["ai-corporate-film"],
       "serviceRanks": {
         "ai-corporate-film": 1
-      }
+      },
+      "homeBackground": "/images/works/home-bg/niucha-oriental-tvc.jpg"
     },
     {
       "no": "44",
@@ -2668,7 +2689,8 @@
       "serviceIds": ["ai-commercial-short-film"],
       "serviceRanks": {
         "ai-commercial-short-film": 6
-      }
+      },
+      "homeBackground": "/images/works/home-bg/niucha-low-sugar-tvc.jpg"
     }
   ],
   "aiStudio": {

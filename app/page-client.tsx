@@ -57,7 +57,26 @@ const aiStudioIcons = [
   Wand2,
 ];
 
-export default function HomeClient({ content }: { content: SiteContentData }) {
+export default function HomeClient({
+  content,
+  hasPhone,
+}: {
+  content: SiteContentData;
+  hasPhone?: boolean;
+}) {
+  const [phoneValue, setPhoneValue] = useState<string | null>(null);
+
+  async function revealPhone() {
+    try {
+      const res = await fetch("/api/contact-phone");
+      if (!res.ok) return;
+      const data = (await res.json()) as { phone?: string | null };
+      if (data.phone) setPhoneValue(data.phone);
+    } catch {
+      /* 网络异常时保持隐藏 */
+    }
+  }
+
   const featuredWorks = content.works
     .filter((work) => work.featured)
     .sort((a, b) => a.homepageOrder - b.homepageOrder)
@@ -302,11 +321,20 @@ export default function HomeClient({ content }: { content: SiteContentData }) {
             <Mail size={15} />
             {content.contact.email}
           </a>
-          {content.contact.phone ? (
-            <a href={`tel:${content.contact.phone}`}>
+          {phoneValue ? (
+            <a href={`tel:${phoneValue}`}>
               <Phone size={15} />
-              {content.contact.phone}
+              {phoneValue}
             </a>
+          ) : hasPhone ? (
+            <button
+              type="button"
+              className="contact-reveal"
+              onClick={revealPhone}
+            >
+              <Phone size={15} />
+              点击显示手机号
+            </button>
           ) : null}
           <a href="#work">
             <ArrowUpRight size={15} />
@@ -398,7 +426,10 @@ function ServiceWorldChapter({
   );
   const backgroundLayers = [
     { key: "service-cover", image: service.cover },
-    ...visibleWorks.map((work) => ({ key: work.slug, image: work.cover })),
+    ...visibleWorks.map((work) => ({
+      key: work.slug,
+      image: work.homeBackground || work.cover,
+    })),
   ];
 
   return (

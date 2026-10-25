@@ -1852,6 +1852,25 @@ a {
   font-size: 0.96rem;
 }
 
+/* 手机号默认隐藏，点击后才显示，避免被爬虫抓取 */
+.contact-list .contact-reveal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: fit-content;
+  border: 0;
+  padding: 0;
+  color: var(--yito-muted);
+  background: none;
+  font: inherit;
+  font-size: 0.96rem;
+  cursor: pointer;
+}
+
+.contact-list .contact-reveal:hover {
+  color: var(--yito-paper);
+}
+
 .contact-list svg {
   color: var(--yito-green);
 }

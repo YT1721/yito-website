@@ -49,7 +49,7 @@ export type ContactContentData = {
   note: string;
   email: string;
   wechat: string;
-  phone: string;
+  phone?: string;
   xiaohongshu: string;
   location: string;
   cover: string;

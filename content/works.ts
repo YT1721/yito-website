@@ -18,6 +18,7 @@ export type WorkContent = {
   services: string[];
   serviceIds: string[];
   serviceRanks?: Partial<Record<string, number>>;
+  homeBackground?: string;
   tags: string[];
   images: string[];
   featured: boolean;

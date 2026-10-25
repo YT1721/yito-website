@@ -256,6 +256,7 @@ function mapWork(item: EditableCaseStudy, index: number): WorkContent {
       ? item.serviceIds
       : inferServiceIds(item),
     serviceRanks: item.serviceRanks,
+    homeBackground: item.homeBackground,
     tags: item.tags || [],
     images,
     featured: item.featured ?? index < 6,
