@@ -211,6 +211,44 @@ export default async function WorkDetailPage({ params }: WorkPageParams) {
         </section>
       ) : null}
 
+      {work.longImages?.length ? (
+        <section className="case-longform-section">
+          <SectionHeading
+            index={nextIndex()}
+            title="WeChat Article Visuals"
+            subtitle="公众号长图"
+          />
+          <div className="case-longform-grid">
+            {work.longImages.map((item, index) => (
+              <a
+                key={item.image}
+                className="case-longform-card"
+                href={item.image}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <div className="case-longform-media">
+                  <ImageWithFallback
+                    src={item.image}
+                    alt={item.title || `${work.title} 公众号长图 ${index + 1}`}
+                    className="case-longform-image"
+                    sizes="(max-width: 980px) 100vw, 44vw"
+                  />
+                </div>
+                <div className="case-longform-meta">
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <strong>{item.title || "公众号长图"}</strong>
+                  <small>
+                    查看完整长图
+                    <ArrowUpRight size={13} />
+                  </small>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       <section className="case-contact-section">
         <p>Contact YITO</p>
         <h2>想为你的品牌制作类似的商业视觉内容？</h2>

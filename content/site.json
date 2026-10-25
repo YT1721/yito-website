@@ -325,8 +325,10 @@
       "featured": false,
       "homepageOrder": 3,
       "image": "/images/works/imports/huierkang-red-apple/cover.jpg",
-      "serviceIds": [],
-      "serviceRanks": {}
+      "serviceIds": ["ai-brand-film"],
+      "serviceRanks": {
+        "ai-brand-film": 2
+      }
     },
     {
       "no": "04",
@@ -1045,9 +1047,8 @@
       },
       "featured": false,
       "homepageOrder": 16,
-      "serviceIds": ["ai-brand-film", "ai-corporate-film"],
+      "serviceIds": ["ai-corporate-film"],
       "serviceRanks": {
-        "ai-brand-film": 2,
         "ai-corporate-film": 2
       },
       "homeBackground": "/images/works/home-bg/yufa-corporate-tvc.jpg"
@@ -2695,7 +2696,30 @@
         "/images/works/imports/niucha-product-marketing/shot-01.jpg",
         "/images/works/imports/niucha-product-marketing/shot-02.jpg",
         "/images/works/imports/niucha-product-marketing/shot-03.jpg",
-        "/images/works/imports/niucha-product-marketing/shot-04.jpg"
+        "/images/works/imports/niucha-product-marketing/shot-04.jpg",
+        "/images/works/imports/niucha-product-marketing/shot-05.jpg",
+        "/images/works/imports/niucha-product-marketing/shot-06.jpg",
+        "/images/works/imports/niucha-product-marketing/shot-07.jpg",
+        "/images/works/imports/niucha-product-marketing/shot-08.jpg",
+        "/images/works/imports/niucha-product-marketing/shot-09.jpg"
+      ],
+      "longImages": [
+        {
+          "image": "/images/works/imports/niucha-product-marketing/article-01.jpg",
+          "title": "红颜草莓 · 季节上新推文"
+        },
+        {
+          "image": "/images/works/imports/niucha-product-marketing/article-02.jpg",
+          "title": "滋养身心 · 燕窝桃胶银耳汤"
+        },
+        {
+          "image": "/images/works/imports/niucha-product-marketing/article-03.jpg",
+          "title": "水牛奶 · 奶基底升级"
+        },
+        {
+          "image": "/images/works/imports/niucha-product-marketing/article-04.jpg",
+          "title": "她力量 · 燕窝女神饮"
+        }
       ],
       "thumbs": [
         {
@@ -2713,6 +2737,26 @@
         {
           "image": "/images/works/imports/niucha-product-marketing/shot-04.jpg",
           "visual": "niucha-product-marketing-04"
+        },
+        {
+          "image": "/images/works/imports/niucha-product-marketing/shot-05.jpg",
+          "visual": "niucha-product-marketing-05"
+        },
+        {
+          "image": "/images/works/imports/niucha-product-marketing/shot-06.jpg",
+          "visual": "niucha-product-marketing-06"
+        },
+        {
+          "image": "/images/works/imports/niucha-product-marketing/shot-07.jpg",
+          "visual": "niucha-product-marketing-07"
+        },
+        {
+          "image": "/images/works/imports/niucha-product-marketing/shot-08.jpg",
+          "visual": "niucha-product-marketing-08"
+        },
+        {
+          "image": "/images/works/imports/niucha-product-marketing/shot-09.jpg",
+          "visual": "niucha-product-marketing-09"
         }
       ],
       "video": null,
@@ -2745,7 +2789,8 @@
         "/images/works/imports/joybing-product-marketing/shot-01.jpg",
         "/images/works/imports/joybing-product-marketing/shot-02.jpg",
         "/images/works/imports/joybing-product-marketing/shot-03.jpg",
-        "/images/works/imports/joybing-product-marketing/shot-04.jpg"
+        "/images/works/imports/joybing-product-marketing/shot-04.jpg",
+        "/images/works/imports/joybing-product-marketing/shot-05.jpg"
       ],
       "thumbs": [
         {
@@ -2763,6 +2808,10 @@
         {
           "image": "/images/works/imports/joybing-product-marketing/shot-04.jpg",
           "visual": "joybing-product-marketing-04"
+        },
+        {
+          "image": "/images/works/imports/joybing-product-marketing/shot-05.jpg",
+          "visual": "joybing-product-marketing-05"
         }
       ],
       "video": null,
@@ -2770,6 +2819,298 @@
       "homepageOrder": 47,
       "serviceIds": [],
       "serviceRanks": {}
+    },
+    {
+      "no": "48",
+      "slug": "centrum-series-01",
+      "title": "善存 · 22 种营养口播短片",
+      "en": "Centrum 22 Nutrients Oral Spot",
+      "group": "AI Visual Direction",
+      "category": "品牌种草短片",
+      "industry": "营养保健",
+      "year": "2026",
+      "summary": "善存多种维生素矿物质片的种草口播：女生在紫色灯光的工作台前出镜，手边摆着水果蔬菜插画盘，把「22 种营养、科学配比、协同补充」一次讲清，最后掌心托出一片紫色药片做收尾。",
+      "description": "善存多种维生素矿物质片的种草口播：女生在紫色灯光的工作台前出镜，手边摆着水果蔬菜插画盘，把「22 种营养、科学配比、协同补充」一次讲清，最后掌心托出一片紫色药片做收尾。",
+      "tags": [
+        "AI Video",
+        "Health Supplement",
+        "Oral Broadcast",
+        "Product Close-up"
+      ],
+      "meta": ["品牌种草短片"],
+      "cover": "/images/works/imports/centrum-series-01/cover.jpg",
+      "image": "/images/works/imports/centrum-series-01/cover.jpg",
+      "images": [
+        "/images/works/imports/centrum-series-01/shot-01.jpg",
+        "/images/works/imports/centrum-series-01/shot-02.jpg",
+        "/images/works/imports/centrum-series-01/shot-03.jpg",
+        "/images/works/imports/centrum-series-01/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/centrum-series-01/shot-01.jpg",
+          "alt": "善存 · 22 种营养口播短片"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/centrum-series-01/shot-02.jpg",
+          "alt": "善存 · 22 种营养口播短片"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/centrum-series-01/shot-03.jpg",
+          "alt": "善存 · 22 种营养口播短片"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/centrum-series-01/shot-04.jpg",
+          "alt": "善存 · 22 种营养口播短片"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1PNHL6rET4/",
+        "title": "善存 · 22 种营养口播短片",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 48,
+      "serviceIds": ["social-content-visual"],
+      "serviceRanks": {
+        "social-content-visual": 6
+      },
+      "homeBackground": "/images/works/home-bg/centrum-series-01.jpg"
+    },
+    {
+      "no": "49",
+      "slug": "centrum-series-02",
+      "title": "善存 · 职场能量补充短片",
+      "en": "Centrum Workplace Energy Spot",
+      "group": "AI Visual Direction",
+      "category": "品牌种草短片",
+      "industry": "营养保健",
+      "year": "2026",
+      "summary": "面向职场人群的能量补充短片：键盘、外带咖啡、工位三个画面交替，产品讲「B 族维生素 辅助能量代谢」，再用悬浮产品与营养元素图标把卖点视觉化。",
+      "description": "面向职场人群的能量补充短片：键盘、外带咖啡、工位三个画面交替，产品讲「B 族维生素 辅助能量代谢」，再用悬浮产品与营养元素图标把卖点视觉化。",
+      "tags": [
+        "AI Video",
+        "Health Supplement",
+        "Workplace",
+        "Product Animation"
+      ],
+      "meta": ["品牌种草短片"],
+      "cover": "/images/works/imports/centrum-series-02/cover.jpg",
+      "image": "/images/works/imports/centrum-series-02/cover.jpg",
+      "images": [
+        "/images/works/imports/centrum-series-02/shot-01.jpg",
+        "/images/works/imports/centrum-series-02/shot-02.jpg",
+        "/images/works/imports/centrum-series-02/shot-03.jpg",
+        "/images/works/imports/centrum-series-02/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/centrum-series-02/shot-01.jpg",
+          "alt": "善存 · 职场能量补充短片"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/centrum-series-02/shot-02.jpg",
+          "alt": "善存 · 职场能量补充短片"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/centrum-series-02/shot-03.jpg",
+          "alt": "善存 · 职场能量补充短片"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/centrum-series-02/shot-04.jpg",
+          "alt": "善存 · 职场能量补充短片"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1rgHL6TE4x/",
+        "title": "善存 · 职场能量补充短片",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 49,
+      "serviceIds": [],
+      "serviceRanks": {},
+      "homeBackground": "/images/works/home-bg/centrum-series-02.jpg"
+    },
+    {
+      "no": "50",
+      "slug": "centrum-series-03",
+      "title": "善存 · 通勤族营养短片",
+      "en": "Centrum Commuter Nutrition Spot",
+      "group": "AI Visual Direction",
+      "category": "品牌种草短片",
+      "industry": "营养保健",
+      "year": "2026",
+      "summary": "通勤场景短片：地铁里握扶手的白领、仰头喝咖啡，接着切到人体营养素流失示意——B、C、D、锌的进度条一格格掉下去，用「多种营养」收尾。",
+      "description": "通勤场景短片：地铁里握扶手的白领、仰头喝咖啡，接着切到人体营养素流失示意——B、C、D、锌的进度条一格格掉下去，用「多种营养」收尾。",
+      "tags": ["AI Video", "Health Supplement", "Commuter", "Data Visual"],
+      "meta": ["品牌种草短片"],
+      "cover": "/images/works/imports/centrum-series-03/cover.jpg",
+      "image": "/images/works/imports/centrum-series-03/cover.jpg",
+      "images": [
+        "/images/works/imports/centrum-series-03/shot-01.jpg",
+        "/images/works/imports/centrum-series-03/shot-02.jpg",
+        "/images/works/imports/centrum-series-03/shot-03.jpg",
+        "/images/works/imports/centrum-series-03/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/centrum-series-03/shot-01.jpg",
+          "alt": "善存 · 通勤族营养短片"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/centrum-series-03/shot-02.jpg",
+          "alt": "善存 · 通勤族营养短片"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/centrum-series-03/shot-03.jpg",
+          "alt": "善存 · 通勤族营养短片"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/centrum-series-03/shot-04.jpg",
+          "alt": "善存 · 通勤族营养短片"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV12cHL6VEYM/",
+        "title": "善存 · 通勤族营养短片",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 50,
+      "serviceIds": [],
+      "serviceRanks": {},
+      "homeBackground": "/images/works/home-bg/centrum-series-03.jpg"
+    },
+    {
+      "no": "51",
+      "slug": "centrum-series-04",
+      "title": "善存 · 办公室早餐场景短片",
+      "en": "Centrum Office Breakfast Spot",
+      "group": "AI Visual Direction",
+      "category": "品牌种草短片",
+      "industry": "营养保健",
+      "year": "2026",
+      "summary": "办公室 vlog 视角：桌上摆着早餐和咖啡，字幕打「早饭」，女生拿起善存瓶对着镜头说话，再回到工位继续工作，把补剂放进真实的上班节奏里。",
+      "description": "办公室 vlog 视角：桌上摆着早餐和咖啡，字幕打「早饭」，女生拿起善存瓶对着镜头说话，再回到工位继续工作，把补剂放进真实的上班节奏里。",
+      "tags": ["AI Video", "Health Supplement", "Vlog Style", "Office"],
+      "meta": ["品牌种草短片"],
+      "cover": "/images/works/imports/centrum-series-04/cover.jpg",
+      "image": "/images/works/imports/centrum-series-04/cover.jpg",
+      "images": [
+        "/images/works/imports/centrum-series-04/shot-01.jpg",
+        "/images/works/imports/centrum-series-04/shot-02.jpg",
+        "/images/works/imports/centrum-series-04/shot-03.jpg",
+        "/images/works/imports/centrum-series-04/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/centrum-series-04/shot-01.jpg",
+          "alt": "善存 · 办公室早餐场景短片"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/centrum-series-04/shot-02.jpg",
+          "alt": "善存 · 办公室早餐场景短片"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/centrum-series-04/shot-03.jpg",
+          "alt": "善存 · 办公室早餐场景短片"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/centrum-series-04/shot-04.jpg",
+          "alt": "善存 · 办公室早餐场景短片"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV11cHL6VEDB/",
+        "title": "善存 · 办公室早餐场景短片",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 51,
+      "serviceIds": [],
+      "serviceRanks": {},
+      "homeBackground": "/images/works/home-bg/centrum-series-04.jpg"
+    },
+    {
+      "no": "52",
+      "slug": "centrum-series-05",
+      "title": "善存 · 日常作息场景短片",
+      "en": "Centrum Daily Routine Spot",
+      "group": "AI Visual Direction",
+      "category": "品牌种草短片",
+      "industry": "营养保健",
+      "year": "2026",
+      "summary": "把一天拆成碎片：躺床上刷手机、地铁握扶手、喝水、刷牙。用生活里的重复动作带出「每天都在消耗」的潜台词，没有硬讲卖点。",
+      "description": "把一天拆成碎片：躺床上刷手机、地铁握扶手、喝水、刷牙。用生活里的重复动作带出「每天都在消耗」的潜台词，没有硬讲卖点。",
+      "tags": [
+        "AI Visual Direction",
+        "Health Supplement",
+        "Lifestyle",
+        "Cinematic"
+      ],
+      "meta": ["品牌种草短片"],
+      "cover": "/images/works/imports/centrum-series-05/cover.jpg",
+      "image": "/images/works/imports/centrum-series-05/cover.jpg",
+      "images": [
+        "/images/works/imports/centrum-series-05/shot-01.jpg",
+        "/images/works/imports/centrum-series-05/shot-02.jpg",
+        "/images/works/imports/centrum-series-05/shot-03.jpg",
+        "/images/works/imports/centrum-series-05/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "title": "精彩镜头 1",
+          "image": "/images/works/imports/centrum-series-05/shot-01.jpg",
+          "alt": "善存 · 日常作息场景短片"
+        },
+        {
+          "title": "精彩镜头 2",
+          "image": "/images/works/imports/centrum-series-05/shot-02.jpg",
+          "alt": "善存 · 日常作息场景短片"
+        },
+        {
+          "title": "精彩镜头 3",
+          "image": "/images/works/imports/centrum-series-05/shot-03.jpg",
+          "alt": "善存 · 日常作息场景短片"
+        },
+        {
+          "title": "精彩镜头 4",
+          "image": "/images/works/imports/centrum-series-05/shot-04.jpg",
+          "alt": "善存 · 日常作息场景短片"
+        }
+      ],
+      "video": {
+        "type": "bilibili",
+        "url": "https://www.bilibili.com/video/BV12fH56yEQD/",
+        "title": "善存 · 日常作息场景短片",
+        "embedUrl": ""
+      },
+      "featured": false,
+      "homepageOrder": 52,
+      "serviceIds": [],
+      "serviceRanks": {},
+      "homeBackground": "/images/works/home-bg/centrum-series-05.jpg"
     }
   ],
   "aiStudio": {

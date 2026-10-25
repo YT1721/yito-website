@@ -94,6 +94,11 @@ export type ServiceSection = {
   items: ServiceItem[];
 };
 
+export type LongImage = {
+  image: string;
+  title?: string;
+};
+
 export type CaseStudy = VisualBlock & {
   no: string;
   slug: string;
@@ -117,6 +122,7 @@ export type CaseStudy = VisualBlock & {
   process?: string[];
   visualKeywords?: string[];
   images?: string[];
+  longImages?: LongImage[];
   video?: WorkVideo;
   videoUrl?: string;
   featured?: boolean;

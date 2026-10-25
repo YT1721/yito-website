@@ -1,3 +1,8 @@
+export type WorkLongImage = {
+  image: string;
+  title?: string;
+};
+
 export type WorkContent = {
   slug: string;
   title: string;
@@ -21,6 +26,7 @@ export type WorkContent = {
   homeBackground?: string;
   tags: string[];
   images: string[];
+  longImages?: WorkLongImage[];
   featured: boolean;
   homepageOrder: number;
 };

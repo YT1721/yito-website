@@ -2224,6 +2224,7 @@ a {
 .case-direction-section,
 .case-process-section,
 .case-gallery-section,
+.case-longform-section,
 .case-result-section,
 .case-services-section,
 .case-contact-section {
@@ -2471,6 +2472,80 @@ a {
   bottom: 0.75rem;
   z-index: 2;
   color: rgba(244, 244, 239, 0.78);
+  font-size: 0.72rem;
+}
+
+.case-longform-section {
+  display: grid;
+  gap: 2rem;
+}
+
+.case-longform-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.case-longform-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(244, 244, 239, 0.14);
+  background: #11130f;
+  color: inherit;
+  text-decoration: none;
+}
+
+.case-longform-media {
+  position: relative;
+  height: clamp(20rem, 34vw, 32rem);
+  overflow: hidden;
+}
+
+.case-longform-image {
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.6s ease;
+}
+
+.case-longform-media::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 62%, rgba(0, 0, 0, 0.72));
+}
+
+.case-longform-card:hover .case-longform-image {
+  transform: scale(1.02);
+}
+
+.case-longform-meta {
+  display: flex;
+  flex: 1;
+  gap: 0.6rem;
+  align-items: center;
+  padding: 0.85rem 1rem 1rem;
+  border-top: 1px solid rgba(244, 244, 239, 0.1);
+}
+
+.case-longform-meta span {
+  color: var(--yito-green);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+}
+
+.case-longform-meta strong {
+  flex: 1;
+  font-size: 0.86rem;
+  font-weight: 500;
+}
+
+.case-longform-meta small {
+  display: inline-flex;
+  gap: 0.25rem;
+  align-items: center;
+  color: rgba(244, 244, 239, 0.6);
   font-size: 0.72rem;
 }
 
@@ -3733,6 +3808,7 @@ a {
   .case-direction-section,
   .case-process-section,
   .case-gallery-section,
+  .case-longform-section,
   .case-result-section,
   .case-services-section,
   .case-contact-section {
@@ -3752,6 +3828,14 @@ a {
   .case-gallery-grid figure.is-featured {
     grid-column: span 1;
     min-height: 22rem;
+  }
+
+  .case-longform-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .case-longform-media {
+    height: 24rem;
   }
 
   .case-process-section ol {
