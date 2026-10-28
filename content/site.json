@@ -3223,6 +3223,366 @@
       "serviceIds": [],
       "serviceRanks": {},
       "homeBackground": "/images/works/home-bg/centrum-series-05.jpg"
+    },
+    {
+      "no": "53",
+      "slug": "tongli-cultural-brand",
+      "title": "同里 · 东方人文品牌视觉",
+      "en": "Tongli Cultural Brand Visual",
+      "group": "Design Foundation",
+      "category": "品牌识别 / 包装与印刷",
+      "industry": "文旅 / 消费品牌",
+      "year": "2014–2019",
+      "summary": "「同里」品牌视觉系统：从标识、辅助图形到瓶身标签、礼盒与手提袋，围绕东方水乡气质建立一整套克制而温润的视觉语言。",
+      "description": "项目难点在于「雅而不旧」。我们用墨色印章、留白、纸质肌理与细金线条，把传统意象压到最低限度，让产品在货架上显得安静、昂贵，而不是堆砌中国元素。这套系统最终延展到瓶装产品、礼盒、印刷品与终端陈列。",
+      "tags": ["Brand Identity", "Packaging", "Oriental Aesthetic", "Print"],
+      "meta": [
+        "类型  品牌识别 / 包装与印刷",
+        "行业  文旅 / 消费品牌",
+        "服务  品牌识别 / 包装设计 / 印刷物料"
+      ],
+      "cover": "/images/works/imports/tongli-cultural-brand/cover.jpg",
+      "image": "/images/works/imports/tongli-cultural-brand/cover.jpg",
+      "images": [
+        "/images/works/imports/tongli-cultural-brand/shot-01.jpg",
+        "/images/works/imports/tongli-cultural-brand/shot-02.jpg",
+        "/images/works/imports/tongli-cultural-brand/shot-03.jpg",
+        "/images/works/imports/tongli-cultural-brand/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "image": "/images/works/imports/tongli-cultural-brand/shot-01.jpg",
+          "visual": "tongli-cultural-brand-01"
+        },
+        {
+          "image": "/images/works/imports/tongli-cultural-brand/shot-02.jpg",
+          "visual": "tongli-cultural-brand-02"
+        },
+        {
+          "image": "/images/works/imports/tongli-cultural-brand/shot-03.jpg",
+          "visual": "tongli-cultural-brand-03"
+        },
+        {
+          "image": "/images/works/imports/tongli-cultural-brand/shot-04.jpg",
+          "visual": "tongli-cultural-brand-04"
+        }
+      ],
+      "video": null,
+      "featured": false,
+      "homepageOrder": 53,
+      "serviceIds": [],
+      "serviceRanks": {},
+      "galleryLayout": "carousel"
+    },
+    {
+      "no": "54",
+      "slug": "fuyang-brand-system",
+      "title": "富阳 · 城市区域品牌",
+      "en": "Fuyang City Brand System",
+      "group": "Design Foundation",
+      "category": "城市品牌 / 视觉系统",
+      "industry": "城市与文旅",
+      "year": "2014–2019",
+      "summary": "杭州富阳「运动休闲之城」城市区域品牌：以水墨笔势构成的「富」字标识，延展到城市导视、宣传物料、文创包装与户外广告。",
+      "description": "城市品牌的难点是既要被本地人认同，又要在对外传播时立得住。我们从「富春山居图」的地域文脉里提取水波与笔势，做成可大可小的单字标识，再把它落到楼体广告、城市展板、文创礼盒与会议物料上，形成一套能在真实城市空间里落地的系统。",
+      "tags": [
+        "City Branding",
+        "Visual System",
+        "Wayfinding",
+        "Cultural Tourism"
+      ],
+      "meta": [
+        "类型  城市品牌 / 视觉系统",
+        "行业  城市与文旅",
+        "服务  城市品牌 / 导视与物料 / 文创包装"
+      ],
+      "cover": "/images/works/imports/fuyang-brand-system/cover.jpg",
+      "image": "/images/works/imports/fuyang-brand-system/cover.jpg",
+      "images": [
+        "/images/works/imports/fuyang-brand-system/shot-01.jpg",
+        "/images/works/imports/fuyang-brand-system/shot-02.jpg",
+        "/images/works/imports/fuyang-brand-system/shot-03.jpg",
+        "/images/works/imports/fuyang-brand-system/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "image": "/images/works/imports/fuyang-brand-system/shot-01.jpg",
+          "visual": "fuyang-brand-system-01"
+        },
+        {
+          "image": "/images/works/imports/fuyang-brand-system/shot-02.jpg",
+          "visual": "fuyang-brand-system-02"
+        },
+        {
+          "image": "/images/works/imports/fuyang-brand-system/shot-03.jpg",
+          "visual": "fuyang-brand-system-03"
+        },
+        {
+          "image": "/images/works/imports/fuyang-brand-system/shot-04.jpg",
+          "visual": "fuyang-brand-system-04"
+        }
+      ],
+      "video": null,
+      "featured": false,
+      "homepageOrder": 54,
+      "serviceIds": [],
+      "serviceRanks": {},
+      "galleryLayout": "carousel"
+    },
+    {
+      "no": "55",
+      "slug": "foison-securities-brand",
+      "title": "丰收证券 · 金融品牌视觉",
+      "en": "Foison Securities Financial Brand",
+      "group": "Design Foundation",
+      "category": "金融品牌 / 视觉系统",
+      "industry": "金融 / 证券",
+      "year": "2014–2019",
+      "summary": "丰收证券品牌视觉系统：金色谷穗标识、深绿与墨色的色彩体系，从名片、画册、工牌延展到营业厅空间与户外标识。",
+      "description": "金融品牌需要的是「稳」。我们没有用常见的蓝色科技感，而是以深绿与暖金建立信任感，用谷穗意象呼应「丰收」，并把这套系统做进真实的营业厅——门头、墙面标识、柜台、洽谈区，让品牌在物理空间里同样成立。",
+      "tags": ["Financial Brand", "Identity System", "Signage", "Print"],
+      "meta": [
+        "类型  金融品牌 / 视觉系统",
+        "行业  金融 / 证券",
+        "服务  品牌识别 / 应用系统 / 空间标识"
+      ],
+      "cover": "/images/works/imports/foison-securities-brand/cover.jpg",
+      "image": "/images/works/imports/foison-securities-brand/cover.jpg",
+      "images": [
+        "/images/works/imports/foison-securities-brand/shot-01.jpg",
+        "/images/works/imports/foison-securities-brand/shot-02.jpg",
+        "/images/works/imports/foison-securities-brand/shot-03.jpg",
+        "/images/works/imports/foison-securities-brand/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "image": "/images/works/imports/foison-securities-brand/shot-01.jpg",
+          "visual": "foison-securities-brand-01"
+        },
+        {
+          "image": "/images/works/imports/foison-securities-brand/shot-02.jpg",
+          "visual": "foison-securities-brand-02"
+        },
+        {
+          "image": "/images/works/imports/foison-securities-brand/shot-03.jpg",
+          "visual": "foison-securities-brand-03"
+        },
+        {
+          "image": "/images/works/imports/foison-securities-brand/shot-04.jpg",
+          "visual": "foison-securities-brand-04"
+        }
+      ],
+      "video": null,
+      "featured": false,
+      "homepageOrder": 55,
+      "serviceIds": [],
+      "serviceRanks": {},
+      "galleryLayout": "carousel"
+    },
+    {
+      "no": "56",
+      "slug": "ordovician-satellite-brand",
+      "title": "奥陶世卫星 · 国际科技品牌",
+      "en": "Ordovician Satellite International Brand",
+      "group": "Design Foundation",
+      "category": "国际客户 / 科技品牌",
+      "industry": "航天 / 卫星通信",
+      "year": "2014–2019",
+      "summary": "为沙特阿拉伯奥陶世卫星公司建立品牌视觉：环形轨迹标识、深蓝与天光色彩，应用于企业画册、名片、展陈物料与航天场景。",
+      "description": "这是一个跨文化项目：客户来自沙特，业务是卫星通信。我们以「轨道」为形，做出一个既是 O 也是卫星轨迹的环形标识，配色取自大气层边缘的天光；物料在英文语境下保持克制，避免任何地域化的装饰。项目最终用于企业画册、商务物料与航天基地的场景展示。",
+      "tags": ["International Client", "Aerospace", "Identity", "Editorial"],
+      "meta": [
+        "类型  国际客户 / 科技品牌",
+        "行业  航天 / 卫星通信",
+        "服务  品牌识别 / 画册与商务物料"
+      ],
+      "cover": "/images/works/imports/ordovician-satellite-brand/cover.jpg",
+      "image": "/images/works/imports/ordovician-satellite-brand/cover.jpg",
+      "images": [
+        "/images/works/imports/ordovician-satellite-brand/shot-01.jpg",
+        "/images/works/imports/ordovician-satellite-brand/shot-02.jpg",
+        "/images/works/imports/ordovician-satellite-brand/shot-03.jpg",
+        "/images/works/imports/ordovician-satellite-brand/shot-04.jpg",
+        "/images/works/imports/ordovician-satellite-brand/shot-05.jpg"
+      ],
+      "thumbs": [
+        {
+          "image": "/images/works/imports/ordovician-satellite-brand/shot-01.jpg",
+          "visual": "ordovician-satellite-brand-01"
+        },
+        {
+          "image": "/images/works/imports/ordovician-satellite-brand/shot-02.jpg",
+          "visual": "ordovician-satellite-brand-02"
+        },
+        {
+          "image": "/images/works/imports/ordovician-satellite-brand/shot-03.jpg",
+          "visual": "ordovician-satellite-brand-03"
+        },
+        {
+          "image": "/images/works/imports/ordovician-satellite-brand/shot-04.jpg",
+          "visual": "ordovician-satellite-brand-04"
+        },
+        {
+          "image": "/images/works/imports/ordovician-satellite-brand/shot-05.jpg",
+          "visual": "ordovician-satellite-brand-05"
+        }
+      ],
+      "video": null,
+      "featured": false,
+      "homepageOrder": 56,
+      "serviceIds": [],
+      "serviceRanks": {},
+      "galleryLayout": "carousel"
+    },
+    {
+      "no": "57",
+      "slug": "okucool-ip-brand",
+      "title": "欧越酷 · 运动品牌与 IP 形象",
+      "en": "OKUCOOL Sports Brand & IP",
+      "group": "Design Foundation",
+      "category": "品牌识别 / IP 形象",
+      "industry": "体育健身 / 连锁健身",
+      "year": "2014–2019",
+      "summary": "欧越酷健身品牌与 IP 形象：蓝绿撞色的厚重字体、戴帽子的卡通教练角色「欧越酷」，延展到会员周边、球衣、手提袋与门店物料。",
+      "description": "健身行业同质化严重，我们把品牌做成「有人格的角色」而不是一句口号。角色设定成一个总在冲刺的教练，用夸张的比例和撞色让它在门店海报、会员周边、球衣与社交传播里都能一眼被认出，同时保持「全力以赴，你会很酷」的态度表达。",
+      "tags": ["IP Character", "Sports Brand", "Merchandise", "Identity"],
+      "meta": [
+        "类型  品牌识别 / IP 形象",
+        "行业  体育健身 / 连锁健身",
+        "服务  品牌识别 / IP 形象 / 周边设计"
+      ],
+      "cover": "/images/works/imports/okucool-ip-brand/cover.jpg",
+      "image": "/images/works/imports/okucool-ip-brand/cover.jpg",
+      "images": [
+        "/images/works/imports/okucool-ip-brand/shot-01.jpg",
+        "/images/works/imports/okucool-ip-brand/shot-02.jpg",
+        "/images/works/imports/okucool-ip-brand/shot-03.jpg"
+      ],
+      "thumbs": [
+        {
+          "image": "/images/works/imports/okucool-ip-brand/shot-01.jpg",
+          "visual": "okucool-ip-brand-01"
+        },
+        {
+          "image": "/images/works/imports/okucool-ip-brand/shot-02.jpg",
+          "visual": "okucool-ip-brand-02"
+        },
+        {
+          "image": "/images/works/imports/okucool-ip-brand/shot-03.jpg",
+          "visual": "okucool-ip-brand-03"
+        }
+      ],
+      "video": null,
+      "featured": false,
+      "homepageOrder": 57,
+      "serviceIds": [],
+      "serviceRanks": {},
+      "galleryLayout": "carousel"
+    },
+    {
+      "no": "58",
+      "slug": "confucius-institute-brand",
+      "title": "孔子学院总部 · 文化机构视觉",
+      "en": "Confucius Institute HQ Visual System",
+      "group": "Design Foundation",
+      "category": "文化机构 / 视觉系统",
+      "industry": "文化 / 教育",
+      "year": "2014–2019",
+      "summary": "孔子学院总部视觉物料：以汉字笔画为图形母题的礼品袋、包装盒、折页与卡片，用极简的白、米、金建立克制的东方气质。",
+      "description": "国家级文化机构的视觉不能「太设计」。我们直接以汉字笔画的局部作为唯一图形语言，去掉一切装饰纹样，只留白、米、金三种色阶；同一套母题在礼品袋、礼盒、折页与卡片上反复出现，靠节奏而不是靠元素堆叠建立识别度。",
+      "tags": ["Cultural Institution", "Typography", "Packaging", "Minimal"],
+      "meta": [
+        "类型  文化机构 / 视觉系统",
+        "行业  文化 / 教育",
+        "服务  视觉系统 / 包装与礼品设计"
+      ],
+      "cover": "/images/works/imports/confucius-institute-brand/cover.jpg",
+      "image": "/images/works/imports/confucius-institute-brand/cover.jpg",
+      "images": [
+        "/images/works/imports/confucius-institute-brand/shot-01.jpg",
+        "/images/works/imports/confucius-institute-brand/shot-02.jpg",
+        "/images/works/imports/confucius-institute-brand/shot-03.jpg",
+        "/images/works/imports/confucius-institute-brand/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "image": "/images/works/imports/confucius-institute-brand/shot-01.jpg",
+          "visual": "confucius-institute-brand-01"
+        },
+        {
+          "image": "/images/works/imports/confucius-institute-brand/shot-02.jpg",
+          "visual": "confucius-institute-brand-02"
+        },
+        {
+          "image": "/images/works/imports/confucius-institute-brand/shot-03.jpg",
+          "visual": "confucius-institute-brand-03"
+        },
+        {
+          "image": "/images/works/imports/confucius-institute-brand/shot-04.jpg",
+          "visual": "confucius-institute-brand-04"
+        }
+      ],
+      "video": null,
+      "featured": false,
+      "homepageOrder": 58,
+      "serviceIds": [],
+      "serviceRanks": {},
+      "galleryLayout": "carousel"
+    },
+    {
+      "no": "59",
+      "slug": "facai-med-brand",
+      "title": "和悦颜研 · 医美品牌与空间",
+      "en": "Facai Med Aesthetic Brand & Space",
+      "group": "Design Foundation",
+      "category": "品牌识别 / 商业空间",
+      "industry": "医疗美容 / 高端服务",
+      "year": "2014–2019",
+      "summary": "和悦颜研（FACAI MED）医美品牌与线下空间视觉：以极简线条徽标为核心，从压印礼盒、空间门头到接待区、诊疗区与休息区统一气质。",
+      "description": "医美行业的信任感来自「不喧哗」。徽标只用一根线条构成，靠压印与烫金呈现质感；空间部分延续同一套材质逻辑——大面积米白、木饰面、柔和间接光，让品牌从一盒名片到一间诊室都保持一致的高级感。",
+      "tags": [
+        "Healthcare Brand",
+        "Interior Identity",
+        "Minimal",
+        "Premium Service"
+      ],
+      "meta": [
+        "类型  品牌识别 / 商业空间",
+        "行业  医疗美容 / 高端服务",
+        "服务  品牌识别 / 包装 / 空间形象"
+      ],
+      "cover": "/images/works/imports/facai-med-brand/cover.jpg",
+      "image": "/images/works/imports/facai-med-brand/cover.jpg",
+      "images": [
+        "/images/works/imports/facai-med-brand/shot-01.jpg",
+        "/images/works/imports/facai-med-brand/shot-02.jpg",
+        "/images/works/imports/facai-med-brand/shot-03.jpg",
+        "/images/works/imports/facai-med-brand/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "image": "/images/works/imports/facai-med-brand/shot-01.jpg",
+          "visual": "facai-med-brand-01"
+        },
+        {
+          "image": "/images/works/imports/facai-med-brand/shot-02.jpg",
+          "visual": "facai-med-brand-02"
+        },
+        {
+          "image": "/images/works/imports/facai-med-brand/shot-03.jpg",
+          "visual": "facai-med-brand-03"
+        },
+        {
+          "image": "/images/works/imports/facai-med-brand/shot-04.jpg",
+          "visual": "facai-med-brand-04"
+        }
+      ],
+      "video": null,
+      "featured": false,
+      "homepageOrder": 59,
+      "serviceIds": [],
+      "serviceRanks": {},
+      "galleryLayout": "carousel"
     }
   ],
   "aiStudio": {
