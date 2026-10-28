@@ -3533,6 +3533,61 @@
       "serviceIds": [],
       "serviceRanks": {},
       "galleryLayout": "carousel"
+    },
+    {
+      "no": "59",
+      "slug": "esperanto-coffee-brand",
+      "title": "爱丝柏兰图 · 挂耳咖啡品牌视觉",
+      "en": "ESPERANTO Drip Coffee Brand Visual",
+      "group": "Design Foundation",
+      "category": "品牌识别 / 咖啡包装",
+      "industry": "餐饮 / 快消",
+      "year": "2014–2019",
+      "summary": "爱丝柏兰图（ESPERANTO）挂耳咖啡品牌视觉：手写体标识与咖啡杯图形合为一体，配牛皮纸与哑黑两套包装体系，覆盖滤挂包、礼盒、手冲壶与终端物料。",
+      "description": "咖啡包装要做到「一眼记住」并不容易。我们把手写体英文与一只极简杯子图形锁成一体，橙色滤芯作为唯一的高饱和色，出现在每一个载体上；牛皮纸承载日常装、哑黑承载礼盒装，两种材质共用同一套版式，让品牌在电商详情页和线下货架上保持同一张脸。",
+      "tags": [
+        "Brand Identity",
+        "Coffee Packaging",
+        "Hand-drawn Type",
+        "Print"
+      ],
+      "meta": [
+        "类型  品牌识别 / 咖啡包装",
+        "行业  餐饮 / 快消",
+        "服务  标识 / 包装设计 / 印刷物料"
+      ],
+      "cover": "/images/works/imports/esperanto-coffee-brand/cover.jpg",
+      "image": "/images/works/imports/esperanto-coffee-brand/cover.jpg",
+      "images": [
+        "/images/works/imports/esperanto-coffee-brand/shot-01.jpg",
+        "/images/works/imports/esperanto-coffee-brand/shot-02.jpg",
+        "/images/works/imports/esperanto-coffee-brand/shot-03.jpg",
+        "/images/works/imports/esperanto-coffee-brand/shot-04.jpg"
+      ],
+      "thumbs": [
+        {
+          "image": "/images/works/imports/esperanto-coffee-brand/shot-01.jpg",
+          "visual": "esperanto-coffee-brand-01"
+        },
+        {
+          "image": "/images/works/imports/esperanto-coffee-brand/shot-02.jpg",
+          "visual": "esperanto-coffee-brand-02"
+        },
+        {
+          "image": "/images/works/imports/esperanto-coffee-brand/shot-03.jpg",
+          "visual": "esperanto-coffee-brand-03"
+        },
+        {
+          "image": "/images/works/imports/esperanto-coffee-brand/shot-04.jpg",
+          "visual": "esperanto-coffee-brand-04"
+        }
+      ],
+      "video": null,
+      "featured": false,
+      "homepageOrder": 59,
+      "serviceIds": [],
+      "serviceRanks": {},
+      "galleryLayout": "carousel"
     }
   ],
   "aiStudio": {
