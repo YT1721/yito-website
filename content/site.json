@@ -3436,40 +3436,45 @@
     },
     {
       "no": "57",
-      "slug": "okucool-ip-brand",
-      "title": "欧越酷 · 运动品牌与 IP 形象",
-      "en": "OKUCOOL Sports Brand & IP",
+      "slug": "songguo-health-brand",
+      "title": "松果健康 · 品牌视觉系统",
+      "en": "SUNGO Health Brand System",
       "group": "Design Foundation",
-      "category": "品牌识别 / IP 形象",
-      "industry": "体育健身 / 连锁健身",
-      "year": "2014–2019",
-      "summary": "欧越酷健身品牌与 IP 形象：蓝绿撞色的厚重字体、戴帽子的卡通教练角色「欧越酷」，延展到会员周边、球衣、手提袋与门店物料。",
-      "description": "健身行业同质化严重，我们把品牌做成「有人格的角色」而不是一句口号。角色设定成一个总在冲刺的教练，用夸张的比例和撞色让它在门店海报、会员周边、球衣与社交传播里都能一眼被认出，同时保持「全力以赴，你会很酷」的态度表达。",
-      "tags": ["IP Character", "Sports Brand", "Merchandise", "Identity"],
+      "category": "品牌识别 / 健康科技",
+      "industry": "健康科技 / 医疗",
+      "year": "2020",
+      "summary": "松果健康（SUNGO HEALTH）品牌视觉系统：以「松果」几何切面构成的盾形标识，配青绿主色，延展到包装、智能穿戴、办公物料与展陈。",
+      "description": "健康科技品牌最怕两件事：像药，或者像保健品。我们用几何切面的松果做成盾形标识，既保留「守护」的语义，又靠切片结构带出科技感；青绿主色在货架和屏幕上都有足够的辨识度，配套的包装、手环、工位物料保持同一套秩序。",
+      "tags": ["Health Tech", "Identity System", "Packaging", "Wearable"],
       "meta": [
-        "类型  品牌识别 / IP 形象",
-        "行业  体育健身 / 连锁健身",
-        "服务  品牌识别 / IP 形象 / 周边设计"
+        "类型  品牌识别 / 产品视觉",
+        "行业  健康科技 / 医疗",
+        "服务  标识 / 包装 / 应用系统"
       ],
-      "cover": "/images/works/imports/okucool-ip-brand/cover.jpg",
-      "image": "/images/works/imports/okucool-ip-brand/cover.jpg",
+      "cover": "/images/works/imports/songguo-health-brand/cover.jpg",
+      "image": "/images/works/imports/songguo-health-brand/cover.jpg",
       "images": [
-        "/images/works/imports/okucool-ip-brand/shot-01.jpg",
-        "/images/works/imports/okucool-ip-brand/shot-02.jpg",
-        "/images/works/imports/okucool-ip-brand/shot-03.jpg"
+        "/images/works/imports/songguo-health-brand/shot-01.jpg",
+        "/images/works/imports/songguo-health-brand/shot-02.jpg",
+        "/images/works/imports/songguo-health-brand/shot-03.jpg",
+        "/images/works/imports/songguo-health-brand/shot-04.jpg"
       ],
       "thumbs": [
         {
-          "image": "/images/works/imports/okucool-ip-brand/shot-01.jpg",
-          "visual": "okucool-ip-brand-01"
+          "image": "/images/works/imports/songguo-health-brand/shot-01.jpg",
+          "visual": "songguo-health-brand-01"
         },
         {
-          "image": "/images/works/imports/okucool-ip-brand/shot-02.jpg",
-          "visual": "okucool-ip-brand-02"
+          "image": "/images/works/imports/songguo-health-brand/shot-02.jpg",
+          "visual": "songguo-health-brand-02"
         },
         {
-          "image": "/images/works/imports/okucool-ip-brand/shot-03.jpg",
-          "visual": "okucool-ip-brand-03"
+          "image": "/images/works/imports/songguo-health-brand/shot-03.jpg",
+          "visual": "songguo-health-brand-03"
+        },
+        {
+          "image": "/images/works/imports/songguo-health-brand/shot-04.jpg",
+          "visual": "songguo-health-brand-04"
         }
       ],
       "video": null,
@@ -3525,61 +3530,6 @@
       "video": null,
       "featured": false,
       "homepageOrder": 58,
-      "serviceIds": [],
-      "serviceRanks": {},
-      "galleryLayout": "carousel"
-    },
-    {
-      "no": "59",
-      "slug": "facai-med-brand",
-      "title": "和悦颜研 · 医美品牌与空间",
-      "en": "Facai Med Aesthetic Brand & Space",
-      "group": "Design Foundation",
-      "category": "品牌识别 / 商业空间",
-      "industry": "医疗美容 / 高端服务",
-      "year": "2014–2019",
-      "summary": "和悦颜研（FACAI MED）医美品牌与线下空间视觉：以极简线条徽标为核心，从压印礼盒、空间门头到接待区、诊疗区与休息区统一气质。",
-      "description": "医美行业的信任感来自「不喧哗」。徽标只用一根线条构成，靠压印与烫金呈现质感；空间部分延续同一套材质逻辑——大面积米白、木饰面、柔和间接光，让品牌从一盒名片到一间诊室都保持一致的高级感。",
-      "tags": [
-        "Healthcare Brand",
-        "Interior Identity",
-        "Minimal",
-        "Premium Service"
-      ],
-      "meta": [
-        "类型  品牌识别 / 商业空间",
-        "行业  医疗美容 / 高端服务",
-        "服务  品牌识别 / 包装 / 空间形象"
-      ],
-      "cover": "/images/works/imports/facai-med-brand/cover.jpg",
-      "image": "/images/works/imports/facai-med-brand/cover.jpg",
-      "images": [
-        "/images/works/imports/facai-med-brand/shot-01.jpg",
-        "/images/works/imports/facai-med-brand/shot-02.jpg",
-        "/images/works/imports/facai-med-brand/shot-03.jpg",
-        "/images/works/imports/facai-med-brand/shot-04.jpg"
-      ],
-      "thumbs": [
-        {
-          "image": "/images/works/imports/facai-med-brand/shot-01.jpg",
-          "visual": "facai-med-brand-01"
-        },
-        {
-          "image": "/images/works/imports/facai-med-brand/shot-02.jpg",
-          "visual": "facai-med-brand-02"
-        },
-        {
-          "image": "/images/works/imports/facai-med-brand/shot-03.jpg",
-          "visual": "facai-med-brand-03"
-        },
-        {
-          "image": "/images/works/imports/facai-med-brand/shot-04.jpg",
-          "visual": "facai-med-brand-04"
-        }
-      ],
-      "video": null,
-      "featured": false,
-      "homepageOrder": 59,
       "serviceIds": [],
       "serviceRanks": {},
       "galleryLayout": "carousel"
