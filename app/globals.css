@@ -103,6 +103,7 @@ a {
   display: block;
   min-height: 100vh;
   overflow-x: hidden;
+  overflow-x: clip;
   padding-top: 4.4rem;
   background-image:
     linear-gradient(rgba(244, 244, 239, 0.065) 1px, transparent 1px),
@@ -210,6 +211,7 @@ a {
   position: relative;
   display: grid;
   scroll-margin-top: 4.4rem;
+  min-height: calc(100vh - 4.4rem);
   min-height: calc(100svh - 4.4rem);
   gap: clamp(1.2rem, 2.2vw, 2.6rem);
   padding: clamp(2rem, 3.8vw, 4.6rem);
@@ -358,12 +360,14 @@ a {
 
 .scroll-world-hero {
   position: relative;
+  height: calc(100vh - 4.4rem);
   height: calc(100svh - 4.4rem);
   min-height: 42rem;
   scroll-margin-top: 4.4rem;
   border-bottom: 1px solid var(--yito-line);
   background: #030403;
   overflow: hidden;
+  overflow: clip;
 }
 
 .scroll-world-sticky {
