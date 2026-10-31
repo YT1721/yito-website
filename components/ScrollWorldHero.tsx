@@ -21,22 +21,22 @@ export default function ScrollWorldHero({
   const targetProgressRef = useRef(0);
   const seekFrameRef = useRef<number | null>(null);
   const lastSeekTimeRef = useRef(-1);
-  const touchYRef = useRef<number | null>(null);
   const [isReady, setIsReady] = useState(false);
   const [hasVideoError, setHasVideoError] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-  const [prefersMobileVideo, setPrefersMobileVideo] = useState(false);
+  // 首屏穿越依赖鼠标滚轮；触屏设备不启用视频/滚轮劫持，保持原生滑动
+  const [supportsWheelScrub, setSupportsWheelScrub] = useState(false);
   const [activeSceneIndex, setActiveSceneIndex] = useState(0);
 
   const videoSrc = useMemo(
-    () =>
-      prefersMobileVideo
-        ? scrollWorld.mobileVideo || scrollWorld.desktopVideo || ""
-        : scrollWorld.desktopVideo || scrollWorld.mobileVideo || "",
-    [prefersMobileVideo, scrollWorld.desktopVideo, scrollWorld.mobileVideo],
+    () => scrollWorld.desktopVideo || scrollWorld.mobileVideo || "",
+    [scrollWorld.desktopVideo, scrollWorld.mobileVideo],
   );
   const shouldUseVideo =
-    Boolean(videoSrc) && !hasVideoError && !prefersReducedMotion;
+    Boolean(videoSrc) &&
+    supportsWheelScrub &&
+    !hasVideoError &&
+    !prefersReducedMotion;
   const scenes = scrollWorld.scenes?.length
     ? scrollWorld.scenes
     : [
@@ -126,15 +126,15 @@ export default function ScrollWorldHero({
   );
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 767px)");
-    const updateVideoPreference = () =>
-      setPrefersMobileVideo(mediaQuery.matches);
+    const mediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const updateScrubCapability = () =>
+      setSupportsWheelScrub(mediaQuery.matches);
 
-    updateVideoPreference();
-    mediaQuery.addEventListener("change", updateVideoPreference);
+    updateScrubCapability();
+    mediaQuery.addEventListener("change", updateScrubCapability);
 
     return () => {
-      mediaQuery.removeEventListener("change", updateVideoPreference);
+      mediaQuery.removeEventListener("change", updateScrubCapability);
     };
   }, []);
 
@@ -162,35 +162,11 @@ export default function ScrollWorldHero({
       scrubToProgress(progressRef.current + event.deltaY / sensitivity);
     };
 
-    const handleTouchStart = (event: TouchEvent) => {
-      touchYRef.current = event.touches[0]?.clientY ?? null;
-    };
-
-    const handleTouchMove = (event: TouchEvent) => {
-      const currentY = event.touches[0]?.clientY;
-      const previousY = touchYRef.current;
-      if (currentY == null || previousY == null) return;
-
-      const delta = previousY - currentY;
-      touchYRef.current = currentY;
-
-      if (!canScrubInsideHero(delta)) return;
-
-      event.preventDefault();
-      scrubToProgress(progressRef.current + delta / 1800);
-    };
-
     const section = sectionRef.current;
     section?.addEventListener("wheel", handleWheel, { passive: false });
-    section?.addEventListener("touchstart", handleTouchStart, {
-      passive: true,
-    });
-    section?.addEventListener("touchmove", handleTouchMove, { passive: false });
 
     return () => {
       section?.removeEventListener("wheel", handleWheel);
-      section?.removeEventListener("touchstart", handleTouchStart);
-      section?.removeEventListener("touchmove", handleTouchMove);
     };
   }, [isReady, scrubToProgress, shouldUseVideo]);
 
